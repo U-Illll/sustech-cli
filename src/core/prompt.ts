@@ -14,6 +14,16 @@ export async function promptLoginSid(): Promise<string> {
   }
 }
 
+export async function promptYesNo(question: string): Promise<boolean> {
+  requireInteractiveTerminal();
+  const readline = createInterface({ input: process.stdin, output: process.stderr, terminal: true });
+  try {
+    return /^(y|yes)$/i.test((await readline.question(`${question} [y/N] `)).trim());
+  } finally {
+    readline.close();
+  }
+}
+
 export async function promptHiddenPassword(): Promise<string> {
   requireInteractiveTerminal();
   const output = new MutedOutput(process.stderr);

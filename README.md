@@ -33,6 +33,13 @@ npm exec --package=sustech-cli -- sustech version
 your shell `PATH`. Package developers can use `npm install --global .` or
 `npm link` after building.
 
+The CLI checks npm for a newer stable release at most once every 24 hours when
+run in an interactive terminal. If one is available, it asks before updating.
+JSON/JSONL output, redirected commands, and CI runs are never prompted. Use
+`sustech update` to check immediately, `sustech update --yes` to install
+without the confirmation prompt, or set `SUSTECH_DISABLE_UPDATE_CHECK=1` to
+disable automatic checks.
+
 ## Quick start
 
 Public data does not require an account:

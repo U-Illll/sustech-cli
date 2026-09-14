@@ -20,7 +20,7 @@ export function inferCommandName(argv: string[]): string {
 
   const [group, command] = positionals;
   if (!group) return "unknown";
-  if (group === "version" || group === "capabilities" || group === "context" || group === "consequences" || group === "describe") return group;
+  if (group === "version" || group === "update" || group === "capabilities" || group === "context" || group === "consequences" || group === "describe") return group;
   if (!command) return group;
   if (
     (group === "tis" && ["courses", "enroll", "classroom", "selection", "bid", "plan", "degree"].includes(command))

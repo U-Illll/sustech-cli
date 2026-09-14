@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { realpathSync } from "node:fs";
-import { resolve as resolvePath } from "node:path";
+import { dirname, resolve as resolvePath } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 import {
@@ -68,11 +68,13 @@ import {
 import {
   promptHiddenPassword,
   promptLoginSid,
+  promptYesNo,
   readCalendarLinkFromStdin,
   readPasswordFromStdin,
 } from "./core/prompt.js";
 import { parseSemester, type Semester } from "./core/semester.js";
 import { CLI_VERSION } from "./core/version.js";
+import { checkForUpdate, installLatest, shouldAutomaticallyCheck } from "./core/update.js";
 import { AcademicCalendar, CalendarClient } from "./calendar/client.js";
 import { formatCalendarDay, formatCalendarTerms } from "./calendar/text.js";
 import type { CalendarLevel } from "./calendar/types.js";
@@ -416,11 +418,13 @@ import {
 import type { ExamRecord, PersonalScheduleEntry } from "./tis/types.js";
 
 const VERSION = CLI_VERSION;
+const PACKAGE_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 
 const HELP = `sustech — SUSTech services for humans and agents
 
 Usage:
   sustech version [--json|--jsonl]
+  sustech update [--yes] [--json|--jsonl]
   sustech capabilities [--json|--jsonl]
   sustech describe COMMAND... [--json|--jsonl]
   sustech consequences [OPERATION] [--json|--jsonl]
@@ -724,6 +728,7 @@ type Values = OutputFlags & {
   "weight-gap-period"?: string;
   "weight-distinct-weekday"?: string;
   "weight-campus-switch"?: string;
+  yes?: boolean;
   help?: boolean;
 };
 
@@ -750,6 +755,21 @@ async function main(argv: string[]): Promise<void> {
     process.stdout.write(HELP);
     return;
   }
+  if (shouldAutomaticallyCheck(argv)) {
+    const status = await checkForUpdate({ currentVersion: VERSION });
+    if (!status.cached && status.updateAvailable && status.latestVersion) {
+      const accepted = await promptYesNo(`A new sustech-cli version is available: ${VERSION} → ${status.latestVersion}. Update now?`);
+      if (accepted) {
+        try {
+          await installLatest(PACKAGE_ROOT);
+          process.stderr.write(`Updated sustech-cli to ${status.latestVersion}. Run the command again to use it.\n`);
+          return;
+        } catch (error) {
+          process.stderr.write(`Update failed: ${error instanceof Error ? error.message : String(error)}\nContinuing with sustech-cli ${VERSION}.\n`);
+        }
+      }
+    }
+  }
   if (parsed.positionals.length === 0) {
     const credentials = await getCredentialStatus(values.profile);
     process.stdout.write(`${formatDashboard({
@@ -764,6 +784,28 @@ async function main(argv: string[]): Promise<void> {
   const output = resolveOutputOptions(values);
   const [group, command, operation] = parsed.positionals;
   validateCommandOptions(inferCommandName(argv), argv);
+
+  if (group === "update" && command === undefined) {
+    const status = await checkForUpdate({ currentVersion: VERSION, force: true });
+    if (!status.latestVersion) {
+      throw new CliError("Could not check the latest npm release.", "UPDATE_CHECK_FAILED", 1);
+    }
+    let updated = false;
+    let method: "source" | "npm" | undefined;
+    const shouldInstall = status.updateAvailable && (values.yes || (output.mode === "text" && await promptYesNo(`Update sustech-cli ${VERSION} → ${status.latestVersion}?`)));
+    if (shouldInstall) {
+      method = await installLatest(PACKAGE_ROOT, output.mode === "text");
+      updated = true;
+    }
+    const data = { ...status, updated, ...(method ? { method } : {}) };
+    const text = !status.updateAvailable
+      ? `sustech-cli ${VERSION} is up to date.`
+      : updated
+        ? `Updated sustech-cli to ${status.latestVersion}. Run it again to use the new version.`
+        : `sustech-cli ${status.latestVersion} is available (current: ${VERSION}). Run \u0060sustech update --yes\u0060 to install it.`;
+    writeSuccess({ command: "update", data, text }, output);
+    return;
+  }
 
   if (group === "version" && command === undefined) {
     const data = { version: VERSION, runtime: `node ${process.version}` };

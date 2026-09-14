@@ -4,6 +4,12 @@ All notable changes to `sustech-cli` are documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Check the official npm release once per day in interactive terminals and ask
+  before updating. Add `sustech update [--yes]` for an explicit check or
+  confirmed install, while keeping CI, pipes, JSON, and JSONL prompt-free.
+
 ## [0.12.1] - 2026-09-12
 
 ### Fixed

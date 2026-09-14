@@ -131,6 +131,7 @@ export const CLI_PARSE_OPTIONS = {
   json: { type: "boolean", default: false },
   jsonl: { type: "boolean", default: false },
   pretty: { type: "boolean", default: false },
+  yes: { type: "boolean", short: "y", default: false },
   help: { type: "boolean", short: "h", default: false },
 } as const;
 
@@ -139,6 +140,7 @@ export type CliOptionName = keyof typeof CLI_PARSE_OPTIONS;
 export const SHARED_OUTPUT_OPTION_NAMES = ["output", "json", "jsonl", "pretty"] as const;
 
 export const COMMAND_OPTIONS: Readonly<Record<string, readonly CliOptionName[]>> = {
+  update: ["yes"],
   describe: [],
   "auth login": ["profile", "sid", "service", "password-stdin"],
   "auth status": ["profile"],

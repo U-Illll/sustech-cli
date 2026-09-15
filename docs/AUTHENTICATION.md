@@ -80,9 +80,24 @@ store. This store uses AES-256-GCM encryption with PBKDF2 key derivation
 The encrypted store is created at
 `~/.config/sustech-cli/encrypted-credentials/` with file mode `0600`. The
 master password is never stored on disk and must be provided for each CLI
-invocation that accesses stored credentials. For non-interactive use, set
-`SUSTECH_MASTER_PASSWORD` or use `--credentials-file` with explicit
-credentials.
+invocation that accesses stored credentials:
+
+```bash
+# Interactive: prompted for master password on first login
+sustech auth login --sid 12410000 --password-stdin
+
+# Non-interactive: set SUSTECH_MASTER_PASSWORD environment variable
+export SUSTECH_MASTER_PASSWORD="your-master-password"
+sustech auth login --sid 12410000 --password-stdin
+
+# Alternative: use explicit credentials file (no master password needed)
+echo "12410000:password" > credentials.txt
+chmod 600 credentials.txt
+sustech --credentials-file credentials.txt bb courses
+```
+
+For non-interactive use, set `SUSTECH_MASTER_PASSWORD` or use
+`--credentials-file` with explicit credentials.
 
 `auth status` does not read the stored password when checking macOS Keychain.
 It uses a metadata-only `security find-generic-password` lookup without `-w`.

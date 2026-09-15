@@ -70,11 +70,19 @@ when the record is easier to reach through the browser transport.
 | macOS | Keychain through the native Security framework | persistent for the current user |
 | Windows | Credential Manager | persistent for the current Windows user |
 | Linux desktop | freedesktop Secret Service through `secret-tool` | persistent when the user's collection is available and unlocked |
-| Headless Linux, container, CI | no implicit local backend | inject from an external secret manager |
+| Headless Linux, container, CI | encrypted local file (AES-256-GCM) | persistent, encrypted with a user-provided master password |
 
-Linux deliberately requires a desktop D-Bus session and the distribution's
-`secret-tool`/`libsecret-tools` package. It does not silently fall back to a
-plaintext file or a session-only kernel keyring.
+When Linux Secret Service is unavailable (no D-Bus session or `secret-tool` not
+installed), the CLI automatically falls back to an encrypted local credential
+store. This store uses AES-256-GCM encryption with PBKDF2 key derivation
+(600,000 iterations) and requires a master password on first use.
+
+The encrypted store is created at
+`~/.config/sustech-cli/encrypted-credentials/` with file mode `0600`. The
+master password is never stored on disk and must be provided for each CLI
+invocation that accesses stored credentials. For non-interactive use, set
+`SUSTECH_MASTER_PASSWORD` or use `--credentials-file` with explicit
+credentials.
 
 `auth status` does not read the stored password when checking macOS Keychain.
 It uses a metadata-only `security find-generic-password` lookup without `-w`.
@@ -84,11 +92,17 @@ sets `reasonCode` to `CREDENTIAL_STORE_TIMEOUT`, marks the backend unavailable
 for that probe, and leaves the credential and profile metadata unchanged.
 
 Credential writes are verified by an immediate read-back before profile
-metadata is committed. Linux errors distinguish a locked collection, a missing
-desktop D-Bus/Secret Service session, an access denial, and an unclassified
-`secret-tool` failure. Run `sustech auth status --json` in the same unlocked
-graphical session and follow its `remediation`; do not delete profile metadata
-or assume the password expired merely because the collection is locked.
+metadata is committed. Linux Secret Service errors distinguish a locked
+collection, a missing desktop D-Bus/Secret Service session, an access denial,
+and an unclassified `secret-tool` failure. Run `sustech auth status --json` in
+the same unlocked graphical session and follow its `remediation`; do not delete
+profile metadata or assume the password expired merely because the collection
+is locked.
+
+For the encrypted-file backend, decryption failures indicate an incorrect
+master password. The backend does not impose a retry limit or lockout; protect
+the master password accordingly. Each encrypted credential entry uses a unique
+salt and initialization vector to prevent cross-entry attacks.
 
 ## Profiles
 

@@ -39,9 +39,11 @@ export async function resolveCredentials(
   }
 
   try {
+    const masterPasswordEnv = env.SUSTECH_MASTER_PASSWORD;
     const stored = await loadStoredCredentials(options.profile, {
       ...options.store,
       env: options.store?.env ?? env,
+      encryptedStoreMasterPassword: masterPasswordEnv,
     });
     return {
       sid: stored.sid,

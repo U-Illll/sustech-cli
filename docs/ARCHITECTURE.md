@@ -22,10 +22,11 @@ output renderer       text | versioned JSON | streaming JSONL
 - `src/core` owns credentials, errors, output contracts, capabilities,
   consequences, and other shared primitives.
 - `src/core/keyring.ts` keeps long-lived secrets behind platform adapters:
-  macOS Keychain, Windows Credential Manager, or Linux Secret Service. CAS
-  passwords and Blackboard native calendar links use separate secret
-  namespaces. The local config contains profile metadata only for CAS
-  credentials; the Blackboard calendar link does not create on-disk metadata.
+  macOS Keychain, Windows Credential Manager, Linux Secret Service, or (when
+  Secret Service is unavailable) an encrypted local file store. CAS passwords
+  and Blackboard native calendar links use separate secret namespaces. The
+  local config contains profile metadata only for CAS credentials; the
+  Blackboard calendar link does not create on-disk metadata.
 - `src/sso` owns generic CAS session flow. TIS, Blackboard, and WS reuse this
   layer instead of reimplementing login logic separately.
 - `src/tis` owns TIS protocol details, normalized course models, persistent
@@ -132,8 +133,10 @@ commands for them.
   that step manually. The CLI does not accept browser credentials, does not
   solve CAPTCHAs, and does not persist browser cookies.
 - `auth login` verifies the selected service before storing a password in the
-  operating-system credential store. Linux refuses a session-only keyutils or
-  plaintext fallback when Secret Service is unavailable.
+  operating-system credential store. When Linux Secret Service is unavailable,
+  the CLI falls back to an encrypted local file store (AES-256-GCM) that
+  requires a master password. It never falls back to plaintext storage or
+  session-only kernel keyrings.
 - If CAS responds with an interactive slide CAPTCHA, the shared login layer
   returns `CAS_INTERACTIVE_CHALLENGE_REQUIRED` before password submission
   instead of trying to bypass the challenge.

@@ -25,12 +25,20 @@ export async function promptYesNo(question: string): Promise<boolean> {
 }
 
 export async function promptHiddenPassword(): Promise<string> {
+  return await promptHiddenInput("Password: ");
+}
+
+export async function promptMasterPassword(): Promise<string> {
+  return await promptHiddenInput("Master password: ");
+}
+
+async function promptHiddenInput(prompt: string): Promise<string> {
   requireInteractiveTerminal();
   const output = new MutedOutput(process.stderr);
   const readline = createInterface({ input: process.stdin, output, terminal: true });
   const controller = new AbortController();
   readline.once("SIGINT", () => controller.abort());
-  process.stderr.write("Password: ");
+  process.stderr.write(prompt);
   output.muted = true;
   try {
     return await readline.question("", { signal: controller.signal });

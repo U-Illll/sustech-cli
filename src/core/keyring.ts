@@ -4,6 +4,7 @@ import { constants } from "node:fs";
 import { access, mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { delimiter, join } from "node:path";
 import { CliError } from "./errors.js";
+import { EncryptedStore } from "./encrypted-store.js";
 import { defaultConfigDirectory } from "./local-store.js";
 
 export const DEFAULT_CREDENTIAL_PROFILE = "default";
@@ -14,7 +15,8 @@ export const DEFAULT_CREDENTIAL_COMMAND_TIMEOUT_MS = 5_000;
 export type CredentialBackend =
   | "macos-keychain"
   | "windows-credential-manager"
-  | "linux-secret-service";
+  | "linux-secret-service"
+  | "linux-encrypted-file";
 
 export interface SecretStore {
   readonly backend: CredentialBackend;
@@ -31,6 +33,8 @@ export interface CredentialStoreOptions {
   platform?: NodeJS.Platform;
   store?: SecretStore;
   credentialCommandTimeoutMs?: number;
+  encryptedStoreMasterPassword?: string;
+  promptForMasterPassword?: () => Promise<string>;
 }
 
 interface StoredProfile {
@@ -576,23 +580,11 @@ async function resolveLinuxSecretService(
   const env = options.env ?? process.env;
   const timeoutMs = credentialCommandTimeoutMs(options);
   if (!env.DBUS_SESSION_BUS_ADDRESS) {
-    return {
-      backend: "linux-secret-service",
-      available: false,
-      persistent: true,
-      reason: "No desktop D-Bus session is available, so Secret Service cannot be used safely.",
-      remediation: "Run inside an unlocked desktop session, or inject credentials from an external secret manager.",
-    };
+    return await resolveLinuxEncryptedFile(options, namespace);
   }
   const executable = await findExecutable("secret-tool", env.PATH);
   if (!executable) {
-    return {
-      backend: "linux-secret-service",
-      available: false,
-      persistent: true,
-      reason: "secret-tool is not installed; the CLI will not fall back to session-only kernel keyrings.",
-      remediation: "Install libsecret-tools for your distribution, or inject credentials from an external secret manager.",
-    };
+    return await resolveLinuxEncryptedFile(options, namespace);
   }
   const store: SecretStore = {
     backend: "linux-secret-service",
@@ -625,6 +617,55 @@ async function resolveLinuxSecretService(
   };
   return {
     backend: "linux-secret-service",
+    available: true,
+    persistent: true,
+    store,
+  };
+}
+
+async function resolveLinuxEncryptedFile(
+  options: CredentialStoreOptions,
+  namespace: SecretNamespace,
+): Promise<BackendResolution> {
+  const backend = "linux-encrypted-file" as const;
+  const configDir = credentialConfigDirectory(options);
+  const storePath = join(configDir, "encrypted-credentials", `${namespace.service}.json`);
+
+  const getMasterPassword = async (): Promise<string> => {
+    if (options.encryptedStoreMasterPassword) {
+      return options.encryptedStoreMasterPassword;
+    }
+    if (options.promptForMasterPassword) {
+      return await options.promptForMasterPassword();
+    }
+    throw new Error("Encrypted credential store requires a master password, but no password provider was configured.");
+  };
+
+  const encryptedStore = new EncryptedStore({ storePath, getMasterPassword });
+
+  const store: SecretStore = {
+    backend,
+    persistent: true,
+    async has(account) {
+      return await encryptedStore.has(account);
+    },
+    async get(account) {
+      return await encryptedStore.get(account);
+    },
+    async set(account, password) {
+      if (!await encryptedStore.exists()) {
+        const masterPassword = await getMasterPassword();
+        await encryptedStore.initialize(masterPassword);
+      }
+      await encryptedStore.set(account, password);
+    },
+    async delete(account) {
+      return await encryptedStore.delete(account);
+    },
+  };
+
+  return {
+    backend,
     available: true,
     persistent: true,
     store,
@@ -930,7 +971,7 @@ function isCredentialConfig(value: unknown): value is CredentialConfig {
 }
 
 function isCredentialBackend(value: unknown): value is CredentialBackend {
-  return value === "macos-keychain" || value === "windows-credential-manager" || value === "linux-secret-service";
+  return value === "macos-keychain" || value === "windows-credential-manager" || value === "linux-secret-service" || value === "linux-encrypted-file";
 }
 
 function isNodeError(error: unknown, code?: string): error is NodeJS.ErrnoException {

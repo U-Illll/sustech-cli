@@ -68,6 +68,7 @@ import {
 import {
   promptHiddenPassword,
   promptLoginSid,
+  promptMasterPassword,
   promptYesNo,
   readCalendarLinkFromStdin,
   readPasswordFromStdin,
@@ -2135,7 +2136,13 @@ async function runAuth(positionals: readonly string[], values: Values, output: O
     if (values["password-stdin"] && !values.sid) {
       throw usageError("--password-stdin requires --sid so stdin contains only the password.");
     }
-    const backend = await getCredentialBackendStatus();
+
+    const masterPasswordEnv = process.env.SUSTECH_MASTER_PASSWORD;
+    const promptForMasterPassword = masterPasswordEnv ? undefined : async () => await promptMasterPassword();
+    const backend = await getCredentialBackendStatus({
+      encryptedStoreMasterPassword: masterPasswordEnv,
+      promptForMasterPassword,
+    });
     if (!backend.available) {
       throw new CliError(
         backend.reason ?? "No secure system credential store is available.",
@@ -2153,7 +2160,10 @@ async function runAuth(positionals: readonly string[], values: Values, output: O
       values["password-stdin"] ? await readPasswordFromStdin() : await promptHiddenPassword(),
     );
     const authenticated = await authenticateCredentials({ sid, password, source: "interactive" }, service);
-    const stored = await saveStoredCredentials({ profile, sid, password });
+    const stored = await saveStoredCredentials({ profile, sid, password }, {
+      encryptedStoreMasterPassword: masterPasswordEnv,
+      promptForMasterPassword,
+    });
     const identity = authenticated.identity ? `\nIdentity: ${authenticated.identity}` : "";
     writeSuccess({
       command: "auth login",

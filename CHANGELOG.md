@@ -9,6 +9,19 @@ All notable changes to `sustech-cli` are documented in this file.
 - Check the official npm release once per day in interactive terminals and ask
   before updating. Add `sustech update [--yes]` for an explicit check or
   confirmed install, while keeping CI, pipes, JSON, and JSONL prompt-free.
+- Linux credential storage now falls back to an encrypted local file store
+  (AES-256-GCM with PBKDF2 key derivation) when freedesktop Secret Service is
+  unavailable. This enables `sustech auth login` to persist credentials on
+  headless servers, containers, and CI environments without requiring a desktop
+  D-Bus session or `secret-tool`. The encrypted store requires a master password
+  on first use and never stores credentials in plaintext.
+
+### Changed
+
+- Linux `auth login` no longer fails with `CREDENTIAL_STORE_UNAVAILABLE` when
+  Secret Service is unavailable. Instead, it automatically uses the encrypted
+  file backend at `~/.config/sustech-cli/encrypted-credentials/` with file
+  mode `0600`.
 
 ## [0.12.1] - 2026-09-12
 

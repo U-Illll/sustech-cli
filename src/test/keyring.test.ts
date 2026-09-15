@@ -258,22 +258,87 @@ test("invalid credential metadata fails closed instead of being overwritten", as
   }
 });
 
-test("headless Linux reports Secret Service unavailable without a keyutils fallback", async () => {
-  const headless = await getCredentialBackendStatus({
-    platform: "linux",
-    env: { PATH: "/usr/bin" },
-  });
-  assert.equal(headless.backend, "linux-secret-service");
-  assert.equal(headless.available, false);
-  assert.match(headless.reason ?? "", /D-Bus/);
+test("headless Linux falls back to encrypted-file backend when Secret Service unavailable", async () => {
+  const configDir = await mkdtemp(join(tmpdir(), "sustech-cli-encrypted-fallback-"));
+  try {
+    const headless = await getCredentialBackendStatus({
+      platform: "linux",
+      env: { PATH: "/usr/bin" },
+      configDir,
+      encryptedStoreMasterPassword: "test-master-password",
+    });
+    assert.equal(headless.backend, "linux-encrypted-file");
+    assert.equal(headless.available, true);
+    assert.equal(headless.persistent, true);
 
-  const missingTool = await getCredentialBackendStatus({
-    platform: "linux",
-    env: { PATH: "", DBUS_SESSION_BUS_ADDRESS: "unix:path=/tmp/mock-bus" },
-  });
-  assert.equal(missingTool.available, false);
-  assert.match(missingTool.reason ?? "", /secret-tool/);
-  assert.doesNotMatch(missingTool.reason ?? "", /keyutils available/i);
+    const missingTool = await getCredentialBackendStatus({
+      platform: "linux",
+      env: { PATH: "", DBUS_SESSION_BUS_ADDRESS: "unix:path=/tmp/mock-bus" },
+      configDir,
+      encryptedStoreMasterPassword: "test-master-password",
+    });
+    assert.equal(missingTool.backend, "linux-encrypted-file");
+    assert.equal(missingTool.available, true);
+  } finally {
+    await rm(configDir, { recursive: true, force: true });
+  }
+});
+
+test("linux-encrypted-file backend stores and retrieves credentials", async () => {
+  const configDir = await mkdtemp(join(tmpdir(), "sustech-cli-encrypted-credentials-"));
+  const masterPassword = "strong-master-password-123";
+  try {
+    const saved = await saveStoredCredentials(
+      { profile: "encrypted", sid: "12410000", password: "user-password" },
+      {
+        configDir,
+        platform: "linux",
+        env: { PATH: "/nonexistent" },
+        encryptedStoreMasterPassword: masterPassword,
+      },
+    );
+    assert.equal(saved.backend, "linux-encrypted-file");
+    assert.equal(saved.persistent, true);
+
+    const loaded = await loadStoredCredentials("encrypted", {
+      configDir,
+      platform: "linux",
+      env: { PATH: "/nonexistent" },
+      encryptedStoreMasterPassword: masterPassword,
+    });
+    assert.equal(loaded.sid, "12410000");
+    assert.equal(loaded.password, "user-password");
+    assert.equal(loaded.backend, "linux-encrypted-file");
+
+    const status = await getCredentialStatus("encrypted", {
+      configDir,
+      platform: "linux",
+      env: { PATH: "/nonexistent" },
+      encryptedStoreMasterPassword: masterPassword,
+    });
+    assert.equal(status.configured, true);
+    assert.equal(status.credentialAvailable, true);
+    assert.equal(status.backend, "linux-encrypted-file");
+
+    const deleted = await deleteStoredCredentials("encrypted", {
+      configDir,
+      platform: "linux",
+      env: { PATH: "/nonexistent" },
+      encryptedStoreMasterPassword: masterPassword,
+    });
+    assert.equal(deleted.removed, true);
+    assert.equal(deleted.backend, "linux-encrypted-file");
+
+    const statusAfterDelete = await getCredentialStatus("encrypted", {
+      configDir,
+      platform: "linux",
+      env: { PATH: "/nonexistent" },
+      encryptedStoreMasterPassword: masterPassword,
+    });
+    assert.equal(statusAfterDelete.configured, false);
+  } finally {
+    await rm(configDir, { recursive: true, force: true });
+  }
 });
 
 test("Linux Secret Service wiring performs store, lookup, and clear through secret-tool", {

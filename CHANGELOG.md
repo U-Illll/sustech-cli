@@ -18,10 +18,13 @@ All notable changes to `sustech-cli` are documented in this file.
 - `tis schedule` now supports `--date YYYY-MM-DD` to query a specific date's
   schedule, resolving the teaching week from the academic calendar automatically.
   The `today` behavior uses `--date` with the current Shanghai date internally.
-- Personal schedule entries (`tis schedule`) and course catalog search results
-  now include structured `startAt` / `endAt` clock times (Asia/Shanghai `HH:MM`)
-  alongside the existing `periodStart` / `periodEnd` fields when period data is
-  available. The official SUSTech period→clock mapping is documented in
+- Personal schedule entries from week-specific queries (`tis schedule --week N`,
+  `--date YYYY-MM-DD`, or current-week default) now include full ISO-8601
+  timestamps: `startAt` / `endAt` in Asia/Shanghai time (e.g.
+  `2026-09-15T14:00:00+08:00`) combining class date with period-based clock
+  times. The existing `periodStart` / `periodEnd` fields remain for
+  compatibility. Catalog `schedule[]` slots lack concrete dates and retain
+  period fields only. The official SUSTech period→clock mapping is documented in
   `docs/ARCHITECTURE.md` so agents and humans share one source of truth.
 - Schedule entries with multiple rooms (e.g. "505, 506") now populate a
   structured `rooms` array when parseable, while keeping the primary `room`

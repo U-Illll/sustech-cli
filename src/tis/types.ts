@@ -4,8 +4,6 @@ export interface ScheduleSlot {
   dayName: string;
   periodStart: number;
   periodEnd: number;
-  startAt?: string;
-  endAt?: string;
   room: string;
   rooms?: string[];
 }

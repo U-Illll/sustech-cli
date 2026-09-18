@@ -1072,7 +1072,20 @@ async function main(argv: string[]): Promise<void> {
       week = parsePositiveInteger(values.week, 1, "--week");
     }
     if (week !== undefined && week > 36) throw usageError("--week must be between 1 and 36.");
-    const entries = await client.schedule(semester, week);
+    let entries = await client.schedule(semester, week);
+    
+    if (week !== undefined) {
+      const calendar = await new CalendarClient().loadYear(Number(semester.xn.split("-")[0]), "undergraduate");
+      const term = calendar.terms().find((t: CalendarTerm) => t.snapshot.semester.value === semester.value);
+      if (term) {
+        const { enrichScheduleEntriesWithDatetimes } = await import("./tis/client.js");
+        entries = enrichScheduleEntriesWithDatetimes(entries, {
+          teachingStartDate: term.snapshot.teachingStart,
+          week,
+        });
+      }
+    }
+    
     const data = {
       semester,
       ...(week !== undefined ? { week } : {}),

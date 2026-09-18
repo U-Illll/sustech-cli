@@ -192,14 +192,14 @@ export class TisClient {
 
   public async enrolled(semester: Semester): Promise<PersonalScheduleEntry[]> {
     const response = await this.session.postForm("/xszykb/queryxszykbzong", { xn: semester.xn, xq: semester.xq });
-    return asRecords(response).map(normalisePersonalScheduleEntry).map(enrichScheduleEntryWithTime);
+    return asRecords(response).map(normalisePersonalScheduleEntry);
   }
 
   public async schedule(semester: Semester, week?: number): Promise<PersonalScheduleEntry[]> {
     const response = week === undefined
       ? await this.session.postForm("/xszykb/queryxszykbzong", { xn: semester.xn, xq: semester.xq })
       : await this.session.postForm("/xszykb/queryxszykbzhou", { xn: semester.xn, xq: semester.xq, zc: week });
-    return asRecords(response).map(normalisePersonalScheduleEntry).map(enrichScheduleEntryWithTime);
+    return asRecords(response).map(normalisePersonalScheduleEntry);
   }
 
   public async currentWeek(): Promise<number> {
@@ -663,23 +663,49 @@ function mutationTransportError(
   );
 }
 
-function enrichScheduleEntryWithTime(entry: PersonalScheduleEntry): PersonalScheduleEntry {
-  if (entry.periodStart === undefined || entry.periodEnd === undefined) {
+export function enrichScheduleEntriesWithDatetimes(
+  entries: PersonalScheduleEntry[],
+  options: { teachingStartDate: string; week?: number },
+): PersonalScheduleEntry[] {
+  return entries.map((entry) => enrichScheduleEntryWithDatetime(entry, options));
+}
+
+function enrichScheduleEntryWithDatetime(
+  entry: PersonalScheduleEntry,
+  options: { teachingStartDate: string; week?: number },
+): PersonalScheduleEntry {
+  if (entry.periodStart === undefined || entry.periodEnd === undefined || entry.day === undefined) {
     return entry;
   }
+  
   const startSlot = PERIOD_START_TIMES[entry.periodStart];
   const endSlot = PERIOD_START_TIMES[entry.periodEnd];
   if (!startSlot || !endSlot) {
     return entry;
   }
+
+  if (options.week === undefined || !entry.weeks.includes(options.week)) {
+    return entry;
+  }
+
+  const teachingStart = new Date(options.teachingStartDate);
+  const mondayOfWeek = new Date(teachingStart);
+  mondayOfWeek.setUTCDate(teachingStart.getUTCDate() + (options.week - 1) * 7);
+  
+  const classDate = new Date(mondayOfWeek);
+  classDate.setUTCDate(mondayOfWeek.getUTCDate() + (entry.day - 1));
+  
+  const dateStr = classDate.toISOString().slice(0, 10);
+  
   const startHour = String(startSlot[0]).padStart(2, "0");
   const startMinute = String(startSlot[1]).padStart(2, "0");
   const endMinutes = endSlot[0] * 60 + endSlot[1] + PERIOD_DURATION_MINUTES;
   const endHour = String(Math.floor(endMinutes / 60)).padStart(2, "0");
   const endMinute = String(endMinutes % 60).padStart(2, "0");
+  
   return {
     ...entry,
-    startAt: `${startHour}:${startMinute}`,
-    endAt: `${endHour}:${endMinute}`,
+    startAt: `${dateStr}T${startHour}:${startMinute}:00+08:00`,
+    endAt: `${dateStr}T${endHour}:${endMinute}:00+08:00`,
   };
 }

@@ -1,0 +1,1187 @@
+{
+ "generated_at": "2026-09-18 22:07:56",
+ "counts": {
+  "ok": 87,
+  "warn": 4,
+  "bad": 0,
+  "info": 13
+ },
+ "findings": [
+  {
+   "axis": "A",
+   "level": "info",
+   "item": "A1 顶层键",
+   "detail": "共 15 个：artifacts_dir_actual, baseline, baseline_numbers, baseline_sha256, current_stage, data_dir, generated_at, generator, notes, notes_meta, stage, stages, supplementary, updated_at, wall_seconds",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "info",
+   "item": "A1 stages 分段",
+   "detail": "共 9 段：P0, P1, P2, P3, P4, P5, R2-A, R2-B, R2-C",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A2 P0 镜像",
+   "detail": "顶层遗留键（11 个）与 stages.P0 逐字段相等 —— 双写未漂移",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A3 P0 契约字段齐全",
+   "detail": "11/11 必填键齐备；扩展键 0 个：无",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A3 P1 契约字段齐全",
+   "detail": "8/8 必填键齐备；扩展键 6 个：freq_stats, noise_rate, noise_sample, noise_sample_note, noisy_items, r2a_refresh",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A3 P2 契约字段齐全",
+   "detail": "10/10 必填键齐备；扩展键 6 个：acceptance_scripts, p2-tuning, r1_fix, r2a_refresh, r2d_sync, tuning_evidence",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A3 P3 契约字段齐全",
+   "detail": "12/12 必填键齐备；扩展键 2 个：caliber_freeze, r2c_rerun_note",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A3 P4 契约字段齐全",
+   "detail": "10/10 必填键齐备；扩展键 1 个：r1_1_fix",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A4 README 承诺键 P0",
+   "detail": "11 个承诺键全部实存（stage, baseline, baseline_sha256, baseline_numbers, data_dir, artifacts_dir_actual, generated_at, generator, wall_seconds, notes, supplementary）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A4 README 承诺键 P1",
+   "detail": "11 个承诺键全部实存（generator, seconds, params, counts, freq_stats, noise_rate, noise_sample, noisy_items, artifacts, report_file, r2a_refresh）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A4 README 承诺键 P2",
+   "detail": "11 个承诺键全部实存（params, counts, edge_stats, self_test, artifacts, report_file, tuning_evidence, p2-tuning, acceptance_scripts, r1_fix, r2a_refresh）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A4 README 承诺键 P3",
+   "detail": "11 个承诺键全部实存（config, definitions, coverage, performance, connectivity, decay, artifacts, report_file, verdict, caliber_freeze, r2c_rerun_note）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A4 README 承诺键 P4",
+   "detail": "8 个承诺键全部实存（commands, diffusion, search_expansion, guards, stub, acceptance, artifacts, r1_1_fix）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A4 README 承诺键 P5",
+   "detail": "8 个承诺键全部实存（scope, acceptance, deliverables, export, final_values, artifacts, interface_proposal, r2d_sync）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P1 generated_at",
+   "detail": "段与报告同刻：2026-09-18 21:06:25",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P1 seconds",
+   "detail": "34.0s 一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P1.params",
+   "detail": "12 项逐项相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P1.counts",
+   "detail": "23 项逐项相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P2 generated_at",
+   "detail": "段与报告同刻：2026-09-18 21:35:07",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P2 seconds",
+   "detail": "14.3s 一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P2.params",
+   "detail": "26 项逐项相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P2.counts",
+   "detail": "16 项逐项相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P2.edge_stats",
+   "detail": "11 项逐项相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P2.self_test",
+   "detail": "5 项逐项相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P2.artifacts",
+   "detail": "报告的 3 个产物指针全部被 meta 收录（meta 另增登记 ['topics/p2-build-r2a.log', 'topics/p2-build-report.json']）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 generated_at",
+   "detail": "段与报告同刻：2026-09-18 21:29:36",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "info",
+   "item": "A5 P3 计时",
+   "detail": "段=None 报告=5.63",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3.config",
+   "detail": "7 项逐项相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3.definitions",
+   "detail": "7 项逐项相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 coverage.cluster_only.mean",
+   "detail": "=0.9246404381082953 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 coverage.cluster_only.median",
+   "detail": "=0.9473684210526315 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 coverage.cluster_or_cls.mean",
+   "detail": "=0.9927011191897308 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 coverage.undirected_closure.mean",
+   "detail": "=0.9286324252877824 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 performance.p50_ms",
+   "detail": "=2.5801940005294455 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 performance.p95_ms",
+   "detail": "=3.7395421501059896 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 connectivity.components",
+   "detail": "=4 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 connectivity.largest_component",
+   "detail": "=5504 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 connectivity.largest_pct",
+   "detail": "=0.9994552387869984 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 decay.hop1_mean",
+   "detail": "=0.3093051679432392 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 decay.hop3_mean",
+   "detail": "=0.07506031888537108 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 decay.decay_factor",
+   "detail": "=0.86 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 门槛判定 cluster_only",
+   "detail": "mean=0.9246 vs gate=0.90 → pass=True 自洽",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 门槛判定 cluster_or_cls",
+   "detail": "mean=0.9927 vs gate=0.90 → pass=True 自洽",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A5 P3 门槛判定 undirected_closure",
+   "detail": "mean=0.9286 vs gate=0.90 → pass=True 自洽",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A6 current_stage 存在性",
+   "detail": "current_stage=P5 在 stages 中有对应段",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A6 current_stage 时序",
+   "detail": "最新 generated_at 段=P5 与 current_stage 一致（2026-09-18 22:07:47）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "info",
+   "item": "A6 updated_at",
+   "detail": "登记 updated_at=2026-09-18T22:07:47+0800；meta.json 文件 mtime=2026-09-18 22:07:47",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "warn",
+   "item": "A7 顶层 stage 双轨",
+   "detail": "顶层 stage='P0'（P0 遗留，为兼容 acceptance/topics-p0.sh 的 stage==P0 断言而冻结） 与 current_stage='P5' 并存 → 任何只读 meta[\"stage\"] 的消费者会把已到 P5 的产物判为 P0",
+   "expect": "P5",
+   "actual": "P0"
+  },
+  {
+   "axis": "A",
+   "level": "info",
+   "item": "A7 stage 键消费者",
+   "detail": "工具链内命中 10 处（含各阶段 acceptance 脚本的 TOP_STAGE 断言）：topic_edges.py:520; topics_report.py:618; topics_meta.py:141; topic_build.py:728; acceptance/topics-p5.sh:123; acceptance/topics-p3.sh:52; acceptance/topics-p3.sh:156; acceptance/topics-p0.sh:70; acceptance/topics-p1.sh:144; acceptance/topics-p2.sh:215",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "warn",
+   "item": "A7 兼容断言耦合",
+   "detail": "6 处 acceptance 断言把顶层 stage 硬编码为 P0；该冻结使元数据无法自我描述真实阶段（真实阶段须读 current_stage=P5）。R2-D 已在 README §2.4 与 meta.notes_meta 显式声明该双轨语义，并把解除方案登记为 R3 待办",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A7 登记链含 P5",
+   "detail": "stages.P5 已登记（R2-D 补登）；stages 现含 9 段：P0, P1, P2, P3, P4, P5, R2-A, R2-B, R2-C",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A8 notes_meta",
+   "detail": "2 条无重复",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A9 P1.report_file 指针",
+   "detail": "topics/p1-build-report.json 实存",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A9 P2.report_file 指针",
+   "detail": "topics/p2-build-report.json 实存",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A9 P2.tuning_evidence 指针",
+   "detail": "topics/p2-tuning.md 实存",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "ok",
+   "item": "A9 P3.report_file 指针",
+   "detail": "topics/topics-report.json 实存",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "A",
+   "level": "info",
+   "item": "A9 artifacts 指针",
+   "detail": "各段 artifacts 逐项做了存在性检查（见上）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "info",
+   "item": "B0 报告哈希登记量",
+   "detail": "ACCEPTANCE-REPORT.md 全文 64 位完整 sha256 共 50 项（去重后 40 项）；另有 3 处缩写形式（xxxxxxxx…xxxxxxxx），无法机器校验",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "warn",
+   "item": "B0 缩哈希不可校验",
+   "detail": "缩写登记 ebd46be0…f456de2 —— 人工对账可读，但断掉了自动化复算（建议一律写全 64 位）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "info",
+   "item": "B1 合计",
+   "detail": "登记项 31 ｜ 逐字节一致 31 ｜ 漂移 0 ｜ 缺文件 0 ｜ 另跳过历史沿革行 12（按表头判定，不参与漂移）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "info",
+   "item": "B2 manifest 清单",
+   "detail": "sustc-library-catalog-topics：files=9，total_bytes=4255902，generated_at=2026-09-18 21:37:42",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/nodes.json",
+   "detail": "sha256+size 双一致（727446 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/edges_indptr.i64.bin",
+   "detail": "sha256+size 双一致（44064 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/edges_indices.i32.bin",
+   "detail": "sha256+size 双一致（421656 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/edges_weights.u8.bin",
+   "detail": "sha256+size 双一致（105414 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/edges_types.u8.bin",
+   "detail": "sha256+size 双一致（105414 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/card_topics_indptr.i32.bin",
+   "detail": "sha256+size 双一致（754052 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/card_topics_ids.i32.bin",
+   "detail": "sha256+size 双一致（2004820 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/meta.json",
+   "detail": "sha256+size 双一致（88858 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 topics/manifest.topics.json",
+   "detail": "sha256+size 双一致（4178 B）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 total_bytes",
+   "detail": "4255902 与逐文件求和相等",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 项数",
+   "detail": "9 项（R1 时 8 项；R2-C 起新增 edges_types.u8.bin 边型位图）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B2 内层 manifest",
+   "detail": "manifest.topics.json 8/8 项哈希自洽",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "ok",
+   "item": "B3 baseline_sha256",
+   "detail": "baseline-p0.txt 复算与登记一致（ff2a32ad0076…）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "B",
+   "level": "warn",
+   "item": "B4 包内 meta 为打包时点快照",
+   "detail": "导出版冻结 meta.json（88858 B @2026-09-18 21:37:42）≠ 活件（95617 B @2026-09-18 22:07:47）—— 属**快照语义**（包内 meta 与包内数据同源，由 manifest#snapshot.meta_binding 校验），但**不包含打包之后的登记变更**（如 stages.P5）；manifest 全绿只证明「包内自洽」，不证明「包内 = 最新口径」。**R3 待办**：需要最新口径时重新导出（`export_release.py --topics-only`）或在包内 manifest 注明「本包 meta 对应活件 sha256」",
+   "expect": "a55d871e85ba3c16241a265710a41e94ce57bb7bc809caa85ee62fa0f6736379",
+   "actual": "9baca57153478057d228d1dcaa6a29925439684ba5a9a27ee6ef5a38dd35222b"
+  },
+  {
+   "axis": "B",
+   "level": "info",
+   "item": "B4 冻结副本差异",
+   "detail": "缺段=['P5']；段内缺键=P2 缺 r2d_sync",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C1 README current_stage",
+   "detail": "=P5 与 meta 一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C1 README updated_at",
+   "detail": "未硬编码（指向 meta.json，无陈旧风险）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C2 README self_test",
+   "detail": "0.9246/0.9257 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C3 README 验收断言数",
+   "detail": "[8, 17, 35, 21, 38, 28] 与末次复跑日志一致（合计 147）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C4 README 平均出度",
+   "detail": "19.1420 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C4 README w=1 占比",
+   "detail": "0.0805 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C5 README p50/p95",
+   "detail": "2.580/3.740 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C6 README P2 耗时/边数",
+   "detail": "14.3s / 105414 与报告一致",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C7 文件指针",
+   "detail": "三份文档的 topics/docs-draft/export-sample/acceptance 指针均可达",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C9 报告内部断言计数",
+   "detail": "全部「30/30」出现处均已加时点/更正标注；当前计数声明 = 142 项",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C10 P2 产物登记",
+   "detail": "variant 产物已登记",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "info",
+   "item": "C10 报告 variant 指针",
+   "detail": "p2-build-report.artifacts 为 dict（3 键），meta.stages.P2.artifacts 为 list（4 项）—— 两者类型与构成均不同，A5 的类型差异属设计而非漂移",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C8 节点数 5,187",
+   "detail": "README含=True 报告含=True 各源值=[5507, 5507]",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "C",
+   "level": "ok",
+   "item": "C8 边数 99,268",
+   "detail": "README含=True 报告含=True 各源值=[105414, 105414]",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D1 因果 nodes.json（P1 产物） → p1-build-report.json",
+   "detail": "产物晚于输入 +0.0s（2026-09-18 21:06:25 → 2026-09-18 21:06:25）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D1 因果 card_topics.jsonl（证据链） → edges.csr.npz（图的边）",
+   "detail": "产物晚于输入 +2.8s（2026-09-18 21:35:05 → 2026-09-18 21:35:07）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D1 因果 card_topics.jsonl（证据链） → p2-build-report.json",
+   "detail": "产物晚于输入 +2.8s（2026-09-18 21:35:05 → 2026-09-18 21:35:07）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D1 因果 edges.csr.npz（图的边） → topics-report.json（P3 读数）（已证良性）",
+   "detail": "报告早于 npz 重写 331.8s，但 R2-C 仅新增 types.npy；indptr/indices/weights 与 edges.csr.pre-r2c.npz 逐位 sha256 一致 → 报告读数有效",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D1 因果 topics-report.json → export-sample manifest",
+   "detail": "产物晚于输入 +486.2s（2026-09-18 21:29:36 → 2026-09-18 21:37:42）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D1 因果 edges.csr.npz → README.md",
+   "detail": "产物晚于输入 +1903.4s（2026-09-18 21:35:07 → 2026-09-18 22:06:51）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D1 因果 p2-build-report.json → meta.json（P2 段写入）",
+   "detail": "产物晚于输入 +1959.4s（2026-09-18 21:35:07 → 2026-09-18 22:07:47）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D1 因果 topics-report.json → meta.json（P3 段写入）",
+   "detail": "产物晚于输入 +2291.2s（2026-09-18 21:29:36 → 2026-09-18 22:07:47）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D2 脚本先于产物 topic_build.py（已证可复现）",
+   "detail": "脚本晚于产物 2278.0s，但按当前脚本在隔离目录复跑得到**逐字节相同**的产物（2026-09-18 22:02:41；sha256 ba1ff2603ee7…）→ 错配由非语义改动（docstring）造成，产物仍可解释",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D2 脚本先于产物 topic_edges.py",
+   "detail": "+40.9s（脚本 2026-09-18 21:34:26 → 产物 2026-09-18 21:35:07）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D2 脚本先于产物 topics_report.py",
+   "detail": "+9405.2s（脚本 2026-09-18 18:52:50 → 产物 2026-09-18 21:29:36）",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "info",
+   "item": "D3 P4 产物 vs 脚本",
+   "detail": "p4-relevance.md 2026-09-18 20:00:33 ｜ topic_graph.py 2026-09-18 21:15:15（差 -4481s）→ 产物早于脚本，需人工确认产物是否对应最终脚本版本",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "ok",
+   "item": "D4 报告/meta 写入顺序（自登记，按设计）",
+   "detail": "meta.json（2026-09-18 22:07:47）晚于报告（2026-09-18 22:07:47）0s，但 meta 的 stages.P5.doc_hashes 登记的正是该报告的当前 sha256（77444124541d…）→ 顺序为「先定稿报告、再登记其哈希」，属设计使然",
+   "expect": null,
+   "actual": null
+  },
+  {
+   "axis": "D",
+   "level": "info",
+   "item": "D5 导出包 vs 活件 meta",
+   "detail": "导出包生成 2026-09-18 21:37:42，活件 meta.json 最后改动 2026-09-18 22:07:47（晚 1805s）→ 包内 meta 为历史快照",
+   "expect": null,
+   "actual": null
+  }
+ ],
+ "hash_items": [
+  {
+   "line": 38,
+   "path": "acceptance/topics-p0.sh",
+   "registered": "730475f0b351dbae62c9a1a6d81d282f53f92e5784463ceced7fc9bc748f100e",
+   "size": 3152,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p0.sh",
+   "actual": "730475f0b351dbae62c9a1a6d81d282f53f92e5784463ceced7fc9bc748f100e",
+   "actual_size": 3152,
+   "mtime": "2026-09-18 17:32:20",
+   "status": "match"
+  },
+  {
+   "line": 39,
+   "path": "acceptance/topics-p1.sh",
+   "registered": "82737d263bae6b6c5612e6e95164c6de834e70b01c0e9efa06823fcbad7b34ce",
+   "size": 7197,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p1.sh",
+   "actual": "82737d263bae6b6c5612e6e95164c6de834e70b01c0e9efa06823fcbad7b34ce",
+   "actual_size": 7197,
+   "mtime": "2026-09-18 18:40:30",
+   "status": "match"
+  },
+  {
+   "line": 40,
+   "path": "acceptance/topics-p2.sh",
+   "registered": "198086287f340ee6f38c9eedbca5ef6c8ca436d8a873abb6cb388b15055e6fbc",
+   "size": 14469,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p2.sh",
+   "actual": "198086287f340ee6f38c9eedbca5ef6c8ca436d8a873abb6cb388b15055e6fbc",
+   "actual_size": 14469,
+   "mtime": "2026-09-18 21:37:06",
+   "status": "match"
+  },
+  {
+   "line": 41,
+   "path": "acceptance/topics-p3.sh",
+   "registered": "822856e60ddf1832681ed9fa80ce76c6f89c6034de8ab06c575b2715209d664c",
+   "size": 9383,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p3.sh",
+   "actual": "822856e60ddf1832681ed9fa80ce76c6f89c6034de8ab06c575b2715209d664c",
+   "actual_size": 9383,
+   "mtime": "2026-09-18 19:56:00",
+   "status": "match"
+  },
+  {
+   "line": 42,
+   "path": "acceptance/topics-p4.sh",
+   "registered": "fb7fca2bbf1a41d99ae0f98644c94636828344e037646cf16d16358fd6bd8821",
+   "size": 15490,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p4.sh",
+   "actual": "fb7fca2bbf1a41d99ae0f98644c94636828344e037646cf16d16358fd6bd8821",
+   "actual_size": 15490,
+   "mtime": "2026-09-18 19:56:00",
+   "status": "match"
+  },
+  {
+   "line": 43,
+   "path": "acceptance/topics-p5.sh",
+   "registered": "a0a92b588a62f68f9a7c038e330dc0b9c57b6a93186b97ebd162afec819e3672",
+   "size": 7521,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p5.sh",
+   "actual": "a0a92b588a62f68f9a7c038e330dc0b9c57b6a93186b97ebd162afec819e3672",
+   "actual_size": 7521,
+   "mtime": "2026-09-18 19:22:19",
+   "status": "match"
+  },
+  {
+   "line": 44,
+   "path": "topic_build.py",
+   "registered": "1f0da80e8d9a3fbbdeb48e29fc66ffe7e58ec7941a1196881728d37a352ed8e2",
+   "size": 39054,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/topic_build.py",
+   "actual": "1f0da80e8d9a3fbbdeb48e29fc66ffe7e58ec7941a1196881728d37a352ed8e2",
+   "actual_size": 39054,
+   "mtime": "2026-09-18 21:44:23",
+   "status": "match"
+  },
+  {
+   "line": 45,
+   "path": "topic_edges.py",
+   "registered": "d0ce2228b51862d2d6706d1ed61c352c64e667217b9c06f2b63ca2b7f26c7549",
+   "size": 33515,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/topic_edges.py",
+   "actual": "d0ce2228b51862d2d6706d1ed61c352c64e667217b9c06f2b63ca2b7f26c7549",
+   "actual_size": 33515,
+   "mtime": "2026-09-18 21:34:26",
+   "status": "match"
+  },
+  {
+   "line": 46,
+   "path": "topics_report.py",
+   "registered": "980b9f6502367507f6b2c11f9e95668a85360f16b162a3406bc4b920492e55f9",
+   "size": 40980,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/topics_report.py",
+   "actual": "980b9f6502367507f6b2c11f9e95668a85360f16b162a3406bc4b920492e55f9",
+   "actual_size": 40980,
+   "mtime": "2026-09-18 18:52:50",
+   "status": "match"
+  },
+  {
+   "line": 47,
+   "path": "topic_graph.py",
+   "registered": "39e04d9bae7f5fd2bc729a7fbcd918baceabc29b2a69abec97815bb648bfd4ce",
+   "size": 45738,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/topic_graph.py",
+   "actual": "39e04d9bae7f5fd2bc729a7fbcd918baceabc29b2a69abec97815bb648bfd4ce",
+   "actual_size": 45738,
+   "mtime": "2026-09-18 21:15:15",
+   "status": "match"
+  },
+  {
+   "line": 335,
+   "path": "cards.jsonl",
+   "registered": "9e9dffd2cf237b2ab7db24444154881b89d7afd352df171c64a28b8e7093fcfd",
+   "size": 68268212,
+   "resolved": "/home/wzh/go/lib-catalog-data/cards.jsonl",
+   "actual": "9e9dffd2cf237b2ab7db24444154881b89d7afd352df171c64a28b8e7093fcfd",
+   "actual_size": 68268212,
+   "mtime": "2026-09-18 13:21:24",
+   "status": "match"
+  },
+  {
+   "line": 336,
+   "path": "clusters.json",
+   "registered": "7a28d434a2625a6a680580d1ad6358e282dcebbaf2438991044f9b6c06fa966c",
+   "size": 214022,
+   "resolved": "/home/wzh/go/lib-catalog-data/clusters.json",
+   "actual": "7a28d434a2625a6a680580d1ad6358e282dcebbaf2438991044f9b6c06fa966c",
+   "actual_size": 214022,
+   "mtime": "2026-09-18 13:55:06",
+   "status": "match"
+  },
+  {
+   "line": 337,
+   "path": "shelves.json",
+   "registered": "a9c70efcb6e421415a7584d1d59517bc6298579790e69fea974ed3e4d680b16f",
+   "size": 91203,
+   "resolved": "/home/wzh/go/lib-catalog-data/shelves.json",
+   "actual": "a9c70efcb6e421415a7584d1d59517bc6298579790e69fea974ed3e4d680b16f",
+   "actual_size": 91203,
+   "mtime": "2026-09-18 13:21:24",
+   "status": "match"
+  },
+  {
+   "line": 338,
+   "path": "subjects.json",
+   "registered": "5920acf22678d672fced518dace1b05e531c4c668e26e8666d648ee79d432059",
+   "size": 15255,
+   "resolved": "/home/wzh/go/lib-catalog-data/subjects.json",
+   "actual": "5920acf22678d672fced518dace1b05e531c4c668e26e8666d648ee79d432059",
+   "actual_size": 15255,
+   "mtime": "2026-09-18 13:21:24",
+   "status": "match"
+  },
+  {
+   "line": 339,
+   "path": "compile_report.json",
+   "registered": "7144fa75daf5cec40a2d284754c08ddb215daedf59e9ef06f23d0c393868c2b4",
+   "size": null,
+   "resolved": "/home/wzh/go/lib-catalog-data/compile_report.json",
+   "actual": "7144fa75daf5cec40a2d284754c08ddb215daedf59e9ef06f23d0c393868c2b4",
+   "actual_size": 443,
+   "mtime": "2026-09-18 13:21:24",
+   "status": "match"
+  },
+  {
+   "line": 340,
+   "path": "index/embeddings.npy",
+   "registered": "2bc123416f2673007dc54452f51205800fdf7171ea5ddb99a05dea43f318e2f5",
+   "size": 386072704,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/embeddings.npy",
+   "actual": "2bc123416f2673007dc54452f51205800fdf7171ea5ddb99a05dea43f318e2f5",
+   "actual_size": 386072704,
+   "mtime": "2026-09-18 13:40:46",
+   "status": "match"
+  },
+  {
+   "line": 341,
+   "path": "index/tfidf.npz",
+   "registered": "c62aa8af6ec08516372e26ded792adb51ef04be46df589d702f4c5d359fc855d",
+   "size": 19712358,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/tfidf.npz",
+   "actual": "c62aa8af6ec08516372e26ded792adb51ef04be46df589d702f4c5d359fc855d",
+   "actual_size": 19712358,
+   "mtime": "2026-09-18 13:34:56",
+   "status": "match"
+  },
+  {
+   "line": 342,
+   "path": "index/knn_csr.npz",
+   "registered": "579b7561ee8d05de86c5f6bcde27ff17de1401ce760ec43db8ec1645aafc59c1",
+   "size": 6854780,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/knn_csr.npz",
+   "actual": "579b7561ee8d05de86c5f6bcde27ff17de1401ce760ec43db8ec1645aafc59c1",
+   "actual_size": 6854780,
+   "mtime": "2026-09-18 13:55:06",
+   "status": "match"
+  },
+  {
+   "line": 343,
+   "path": "index/mms_index.json",
+   "registered": "d9355d7342f4495397483443aaaa737af039ee7851072b4a12edb751f2b4aa31",
+   "size": 5544250,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/mms_index.json",
+   "actual": "d9355d7342f4495397483443aaaa737af039ee7851072b4a12edb751f2b4aa31",
+   "actual_size": 5544250,
+   "mtime": "2026-09-18 13:34:56",
+   "status": "match"
+  },
+  {
+   "line": 344,
+   "path": "index/vocab.json",
+   "registered": "aeb86587d95d8b53a538e6df9c86cd6340c51c4c3833e6e44c6d9872c2024c6b",
+   "size": 3539087,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/vocab.json",
+   "actual": "aeb86587d95d8b53a538e6df9c86cd6340c51c4c3833e6e44c6d9872c2024c6b",
+   "actual_size": 3539087,
+   "mtime": "2026-09-18 13:34:56",
+   "status": "match"
+  },
+  {
+   "line": 345,
+   "path": "index/offsets.npy",
+   "registered": "06f669651e27c22119791cd9c402e96a95fef100a6bd22d7e7e8464231b911c4",
+   "size": 1508224,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/offsets.npy",
+   "actual": "06f669651e27c22119791cd9c402e96a95fef100a6bd22d7e7e8464231b911c4",
+   "actual_size": 1508224,
+   "mtime": "2026-09-18 13:34:56",
+   "status": "match"
+  },
+  {
+   "line": 346,
+   "path": "index/idf.npy",
+   "registered": "a48dc40d8a78710d1c01953665494f40f60ac993c453b6b191a8139e73ac0973",
+   "size": 1353560,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/idf.npy",
+   "actual": "a48dc40d8a78710d1c01953665494f40f60ac993c453b6b191a8139e73ac0973",
+   "actual_size": 1353560,
+   "mtime": "2026-09-18 13:34:56",
+   "status": "match"
+  },
+  {
+   "line": 347,
+   "path": "index/cluster_centroids.npy",
+   "registered": "bd850385a8e7e32755df602e2ed4fa722cd0caaa3c3d723044d32646a09890be",
+   "size": 819328,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/cluster_centroids.npy",
+   "actual": "bd850385a8e7e32755df602e2ed4fa722cd0caaa3c3d723044d32646a09890be",
+   "actual_size": 819328,
+   "mtime": "2026-09-18 13:55:06",
+   "status": "match"
+  },
+  {
+   "line": 348,
+   "path": "index/clusters.npy",
+   "registered": "f54fe2b5f65ca772c15a26835f72abeb713c951ca97fe754563b1879a3ac0ed7",
+   "size": 754176,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/clusters.npy",
+   "actual": "f54fe2b5f65ca772c15a26835f72abeb713c951ca97fe754563b1879a3ac0ed7",
+   "actual_size": 754176,
+   "mtime": "2026-09-18 13:55:06",
+   "status": "match"
+  },
+  {
+   "line": 349,
+   "path": "index/graph_meta.json",
+   "registered": "9dc9ca221c202ec9c78afcc71eed9ce4fd68ce2e8789b1547b629d40d76022de",
+   "size": null,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/graph_meta.json",
+   "actual": "9dc9ca221c202ec9c78afcc71eed9ce4fd68ce2e8789b1547b629d40d76022de",
+   "actual_size": 235,
+   "mtime": "2026-09-18 13:55:06",
+   "status": "match"
+  },
+  {
+   "line": 350,
+   "path": "index/meta.json",
+   "registered": "c6a1b122b65944ea29f5b348ca78cbe2812f64807a12159a037247fc70826375",
+   "size": null,
+   "resolved": "/home/wzh/go/lib-catalog-data/index/meta.json",
+   "actual": "c6a1b122b65944ea29f5b348ca78cbe2812f64807a12159a037247fc70826375",
+   "actual_size": 168,
+   "mtime": "2026-09-18 13:40:46",
+   "status": "match"
+  },
+  {
+   "line": 356,
+   "path": "build_graph.py",
+   "registered": "4749f526e33b784bcda176e73ea96b6c06a61ef1b420b901a693368cb458e49e",
+   "size": 11953,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/build_graph.py",
+   "actual": "4749f526e33b784bcda176e73ea96b6c06a61ef1b420b901a693368cb458e49e",
+   "actual_size": 11953,
+   "mtime": "2026-09-18 13:49:08",
+   "status": "match"
+  },
+  {
+   "line": 357,
+   "path": "catalog_vector.py",
+   "registered": "b41e2da26ad5b98f18471e2ff1434d162b635e9b90aee4124dce769388b57327",
+   "size": 28353,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/catalog_vector.py",
+   "actual": "b41e2da26ad5b98f18471e2ff1434d162b635e9b90aee4124dce769388b57327",
+   "actual_size": 28353,
+   "mtime": "2026-09-18 13:34:47",
+   "status": "match"
+  },
+  {
+   "line": 358,
+   "path": "graph_report.py",
+   "registered": "c2e91e343436c3f1188ebcf698fc3486dc54583cba91392e54de27d376959724",
+   "size": 5760,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/graph_report.py",
+   "actual": "c2e91e343436c3f1188ebcf698fc3486dc54583cba91392e54de27d376959724",
+   "actual_size": 5760,
+   "mtime": "2026-09-18 13:57:56",
+   "status": "match"
+  },
+  {
+   "line": 359,
+   "path": "compile_cards.py",
+   "registered": "4551856dd079923b6ad84b7685350f15a08c38a2647b58d57295d9b693d17b78",
+   "size": 14759,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/compile_cards.py",
+   "actual": "4551856dd079923b6ad84b7685350f15a08c38a2647b58d57295d9b693d17b78",
+   "actual_size": 14759,
+   "mtime": "2026-09-18 13:31:49",
+   "status": "match"
+  },
+  {
+   "line": 360,
+   "path": "check_completeness.py",
+   "registered": "2a2163ed52a90f5fa91d454b8b81f78108e8d63d5365cc45b8dfb69d1c6aa31f",
+   "size": 12475,
+   "resolved": "/home/wzh/go/reasonix-scripts/lib-catalog/check_completeness.py",
+   "actual": "2a2163ed52a90f5fa91d454b8b81f78108e8d63d5365cc45b8dfb69d1c6aa31f",
+   "actual_size": 12475,
+   "mtime": "2026-09-16 16:46:38",
+   "status": "match"
+  }
+ ],
+ "snapshot_ref": "snapshot.json"
+}

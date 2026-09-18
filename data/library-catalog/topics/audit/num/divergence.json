@@ -1,0 +1,1519 @@
+{
+  "snapshot_start": {
+    "/home/wzh/go/lib-catalog-data/topics/card_topics.jsonl": {
+      "sha256": "161a6ab87dc8328e93e5f972ce6319c2153085df959d3af665cf176b809def8d",
+      "size": 9551328,
+      "mtime": "2026-09-18T19:45:24"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/nodes.json": {
+      "sha256": "9f5437d7034bfdaad8d47915777738ea254830d1a37f2039744d9bf501f70460",
+      "size": 685410,
+      "mtime": "2026-09-18T18:12:14"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/meta.json": {
+      "sha256": "c907c84126874cb3100c75ea3c3a1f5819adb88cfc8839792915643b98139cba",
+      "size": 79503,
+      "mtime": "2026-09-18T20:01:04"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/p2-build-report.json": {
+      "sha256": "a08effc03d6052634d810906d12fd8d54b06bb235a1d429930babf91822f35e5",
+      "size": 27165,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/p2-build.log": {
+      "sha256": "e28f7a13e31ce06c1f949af78871192a0b27fbfdeedec391d41addebd0cb3297",
+      "size": 685,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/cards.jsonl": {
+      "sha256": "9e9dffd2cf237b2ab7db24444154881b89d7afd352df171c64a28b8e7093fcfd",
+      "size": 68268212,
+      "mtime": "2026-09-18T13:21:24"
+    },
+    "/home/wzh/go/lib-catalog-data/index/clusters.npy": {
+      "sha256": "f54fe2b5f65ca772c15a26835f72abeb713c951ca97fe754563b1879a3ac0ed7",
+      "size": 754176,
+      "mtime": "2026-09-18T13:55:06"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.csr.npz": {
+      "sha256": "509c285aac82b9a13d6aa9efde4921a656b251504c16e99b3f0a7dd4b8238cc6",
+      "size": 836406,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.csr.pre-r1.npz": {
+      "sha256": "f7c6ada3fd7191c025ead69ca158eb391a7b26d4f7c903b3fdf64e15539fc764",
+      "size": 836406,
+      "mtime": "2026-09-18T18:50:24"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.variant-spec.csr.npz": {
+      "sha256": "e57676799a3bbe86f348b031a815df5c73b8284a99fce328edcaf1a2870262f1",
+      "size": 780286,
+      "mtime": "2026-09-18T19:45:26"
+    }
+  },
+  "artifacts": {
+    "edges.csr.npz": {
+      "path": "/home/wzh/go/lib-catalog-data/topics/edges.csr.npz",
+      "disk_edges": 99268,
+      "with_evidence": 99268,
+      "extra_no_evidence": 0,
+      "float_delta": {
+        "max_abs_delta": 3e-08,
+        "mean_abs_delta": 4e-09,
+        "over_1e-6": 0
+      },
+      "weight_buckets": {
+        "ok": 99268
+      },
+      "weight_samples": [],
+      "truncation": {
+        "sources_total": 5187,
+        "src_exact_match_intent": 5178,
+        "src_exact_match_code_model": 5187,
+        "slot_diff_vs_intent": 18,
+        "slot_diff_vs_code_model": 0,
+        "extra_in_alt": 9,
+        "missing_unexplained": 9
+      },
+      "truncation_samples": [
+        {
+          "kind": "disk_extra",
+          "src": 116,
+          "dst": 2103,
+          "in_alt_top20": true,
+          "term_src": "global",
+          "term_dst": "citizenship"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 116,
+          "dst": 5,
+          "in_alt_top20": false,
+          "term_src": "global",
+          "term_dst": "F8"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 153,
+          "dst": 229,
+          "in_alt_top20": true,
+          "term_src": "实验",
+          "term_dst": "基础"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 153,
+          "dst": 43,
+          "in_alt_top20": false,
+          "term_src": "实验",
+          "term_dst": "TP3"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 348,
+          "dst": 405,
+          "in_alt_top20": true,
+          "term_src": "方法",
+          "term_dst": "实践"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 348,
+          "dst": 14,
+          "in_alt_top20": false,
+          "term_src": "方法",
+          "term_dst": "F2"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 391,
+          "dst": 490,
+          "in_alt_top20": true,
+          "term_src": "时代",
+          "term_dst": "高校"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 391,
+          "dst": 14,
+          "in_alt_top20": false,
+          "term_src": "时代",
+          "term_dst": "F2"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 392,
+          "dst": 328,
+          "in_alt_top20": true,
+          "term_src": "computational",
+          "term_dst": "biology"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 392,
+          "dst": 43,
+          "in_alt_top20": false,
+          "term_src": "computational",
+          "term_dst": "TP3"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 427,
+          "dst": 310,
+          "in_alt_top20": true,
+          "term_src": "世纪",
+          "term_dst": "法国"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 427,
+          "dst": 22,
+          "in_alt_top20": false,
+          "term_src": "世纪",
+          "term_dst": "I2"
+        }
+      ]
+    },
+    "edges.csr.pre-r1.npz": {
+      "path": "/home/wzh/go/lib-catalog-data/topics/edges.csr.pre-r1.npz",
+      "disk_edges": 99268,
+      "with_evidence": 99268,
+      "extra_no_evidence": 0,
+      "float_delta": {
+        "max_abs_delta": 3e-08,
+        "mean_abs_delta": 5e-09,
+        "over_1e-6": 0
+      },
+      "weight_buckets": {
+        "ok": 99268
+      },
+      "weight_samples": [],
+      "truncation": {
+        "sources_total": 5187,
+        "src_exact_match_intent_defect": 5175,
+        "src_exact_match_code_model_defect": 5187,
+        "slot_diff_vs_intent_defect": 24,
+        "slot_diff_vs_code_model_defect": 0,
+        "extra_in_alt": 12,
+        "missing_unexplained": 12
+      },
+      "truncation_samples": [
+        {
+          "kind": "disk_extra",
+          "src": 18,
+          "dst": 66,
+          "in_alt_top20": true,
+          "term_src": "中国",
+          "term_dst": "K2"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 18,
+          "dst": 22,
+          "in_alt_top20": false,
+          "term_src": "中国",
+          "term_dst": "I2"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 20,
+          "dst": 375,
+          "in_alt_top20": true,
+          "term_src": "international",
+          "term_dst": "politics"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 20,
+          "dst": 43,
+          "in_alt_top20": false,
+          "term_src": "international",
+          "term_dst": "TP3"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 91,
+          "dst": 1709,
+          "in_alt_top20": true,
+          "term_src": "技术",
+          "term_dst": "路由"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 91,
+          "dst": 43,
+          "in_alt_top20": false,
+          "term_src": "技术",
+          "term_dst": "TP3"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 94,
+          "dst": 107,
+          "in_alt_top20": true,
+          "term_src": "现代",
+          "term_dst": "政治"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 94,
+          "dst": 22,
+          "in_alt_top20": false,
+          "term_src": "现代",
+          "term_dst": "I2"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 97,
+          "dst": 91,
+          "in_alt_top20": true,
+          "term_src": "系统",
+          "term_dst": "技术"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 97,
+          "dst": 43,
+          "in_alt_top20": false,
+          "term_src": "系统",
+          "term_dst": "TP3"
+        },
+        {
+          "kind": "disk_extra",
+          "src": 144,
+          "dst": 368,
+          "in_alt_top20": true,
+          "term_src": "理论",
+          "term_dst": "信息"
+        },
+        {
+          "kind": "expected_missing",
+          "src": 144,
+          "dst": 14,
+          "in_alt_top20": false,
+          "term_src": "理论",
+          "term_dst": "F2"
+        }
+      ]
+    },
+    "edges.variant-spec.csr.npz": {
+      "path": "/home/wzh/go/lib-catalog-data/topics/edges.variant-spec.csr.npz",
+      "disk_edges": 92253,
+      "with_evidence": 92253,
+      "extra_no_evidence": 0,
+      "float_delta": {
+        "max_abs_delta": 3e-08,
+        "mean_abs_delta": 4e-09,
+        "over_1e-6": 0
+      },
+      "weight_buckets": {
+        "ok": 92253
+      },
+      "weight_samples": [],
+      "truncation": {
+        "sources_total": 5187,
+        "src_exact_match_spec_intent": 5187,
+        "slot_diff_vs_spec_intent": 0,
+        "slot_diff_vs_spec_weight": 46610,
+        "src_exact_match_spec_weight": 1563
+      },
+      "truncation_samples": []
+    }
+  },
+  "ordering_probe": {
+    "vs_assoc_intent": {
+      "sources_exact_match": 5178,
+      "sources_total": 5187,
+      "slot_diff": 18,
+      "extra": 9,
+      "missing": 9,
+      "match_rate": 0.9983
+    },
+    "vs_weight_intent": {
+      "sources_exact_match": 903,
+      "sources_total": 5187,
+      "slot_diff": 60898,
+      "extra": 30449,
+      "missing": 30449,
+      "match_rate": 0.1741
+    },
+    "vs_code_model_dedupe": {
+      "sources_exact_match": 5187,
+      "sources_total": 5187,
+      "slot_diff": 0,
+      "extra": 0,
+      "missing": 0,
+      "match_rate": 1.0
+    }
+  },
+  "hierarchy": {
+    "edges.csr.npz": {
+      "expected_hier_edges": 4832,
+      "duplicate_key_at_risk": 858,
+      "present_in_artifact": 4823,
+      "missing_in_artifact": 9,
+      "missing_share_of_kw": 0.00186,
+      "missing_detail": [
+        {
+          "src": 623,
+          "term_src": "经典",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 67,
+          "cooccur_cnt": 67,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.02083,
+          "replacement_edges": [
+            {
+              "dst": 1485,
+              "term": "入门经典",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 142,
+              "term": "世界",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 18,
+              "term": "中国",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 348,
+          "term_src": "方法",
+          "dst": 14,
+          "term_dst": "F2",
+          "votes": 131,
+          "cooccur_cnt": 131,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.031598,
+          "replacement_edges": [
+            {
+              "dst": 1860,
+              "term": "研究方法",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 144,
+              "term": "理论",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 7,
+              "term": "数学",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 391,
+          "term_src": "时代",
+          "dst": 14,
+          "term_dst": "F2",
+          "votes": 79,
+          "cooccur_cnt": 79,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.024939,
+          "replacement_edges": [
+            {
+              "dst": 1209,
+              "term": "新时代",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 57,
+              "term": "D2",
+              "w": 1.0,
+              "type": "cls"
+            },
+            {
+              "dst": 150,
+              "term": "数字",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 427,
+          "term_src": "世纪",
+          "dst": 22,
+          "term_dst": "I2",
+          "votes": 83,
+          "cooccur_cnt": 83,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.026787,
+          "replacement_edges": [
+            {
+              "dst": 1696,
+              "term": "中世纪",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 832,
+              "term": "成就",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 674,
+              "term": "century",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 116,
+          "term_src": "global",
+          "dst": 5,
+          "term_dst": "F8",
+          "votes": 78,
+          "cooccur_cnt": 78,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.029239,
+          "replacement_edges": [
+            {
+              "dst": 282,
+              "term": "全球",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 64,
+              "term": "climate",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 141,
+              "term": "P4",
+              "w": 1.0,
+              "type": "cls"
+            }
+          ]
+        },
+        {
+          "src": 578,
+          "term_src": "principles",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 101,
+          "cooccur_cnt": 101,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.025729,
+          "replacement_edges": [
+            {
+              "dst": 506,
+              "term": "practice",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 189,
+              "term": "原理",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 11,
+              "term": "applications",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 153,
+          "term_src": "实验",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 80,
+          "cooccur_cnt": 80,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.021722,
+          "replacement_edges": [
+            {
+              "dst": 776,
+              "term": "实验教程",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 491,
+              "term": "生物学实验",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 130,
+              "term": "生物学",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 392,
+          "term_src": "computational",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 72,
+          "cooccur_cnt": 72,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.027144,
+          "replacement_edges": [
+            {
+              "dst": 93,
+              "term": "O3",
+              "w": 1.0,
+              "type": "cls"
+            },
+            {
+              "dst": 177,
+              "term": "计算",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 70,
+              "term": "O4",
+              "w": 1.0,
+              "type": "cls"
+            }
+          ]
+        },
+        {
+          "src": 738,
+          "term_src": "仿真",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 68,
+          "cooccur_cnt": 68,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.030786,
+          "replacement_edges": [
+            {
+              "dst": 97,
+              "term": "系统",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 99,
+              "term": "电路",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 6,
+              "term": "设计",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        }
+      ],
+      "at_risk_sample": [
+        {
+          "src": 4,
+          "term_src": "经济学",
+          "dst": 8,
+          "term_dst": "F0",
+          "votes": 837,
+          "cooccur_cnt": 837,
+          "cooccur_same_cluster": 458,
+          "cooccur_w": 1.0,
+          "assoc": 0.441078
+        },
+        {
+          "src": 37,
+          "term_src": "哲学",
+          "dst": 143,
+          "term_dst": "B5",
+          "votes": 265,
+          "cooccur_cnt": 265,
+          "cooccur_same_cluster": 127,
+          "cooccur_w": 1.0,
+          "assoc": 0.167739
+        },
+        {
+          "src": 0,
+          "term_src": "经济",
+          "dst": 8,
+          "term_dst": "F0",
+          "votes": 928,
+          "cooccur_cnt": 928,
+          "cooccur_same_cluster": 419,
+          "cooccur_w": 1.0,
+          "assoc": 0.307762
+        },
+        {
+          "src": 785,
+          "term_src": "capital",
+          "dst": 5,
+          "term_dst": "F8",
+          "votes": 127,
+          "cooccur_cnt": 127,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.090228
+        },
+        {
+          "src": 235,
+          "term_src": "analysis",
+          "dst": 12,
+          "term_dst": "O1",
+          "votes": 362,
+          "cooccur_cnt": 362,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.100293
+        },
+        {
+          "src": 689,
+          "term_src": "国家",
+          "dst": 176,
+          "term_dst": "D6",
+          "votes": 78,
+          "cooccur_cnt": 78,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.063091
+        },
+        {
+          "src": 174,
+          "term_src": "战争",
+          "dst": 320,
+          "term_dst": "E2",
+          "votes": 125,
+          "cooccur_cnt": 125,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.332769
+        },
+        {
+          "src": 330,
+          "term_src": "社会主义",
+          "dst": 176,
+          "term_dst": "D6",
+          "votes": 85,
+          "cooccur_cnt": 85,
+          "cooccur_same_cluster": 47,
+          "cooccur_w": 1.0,
+          "assoc": 0.127128
+        },
+        {
+          "src": 71,
+          "term_src": "主义",
+          "dst": 127,
+          "term_dst": "A8",
+          "votes": 171,
+          "cooccur_cnt": 171,
+          "cooccur_same_cluster": 126,
+          "cooccur_w": 1.0,
+          "assoc": 0.19835
+        },
+        {
+          "src": 79,
+          "term_src": "发展",
+          "dst": 60,
+          "term_dst": "F1",
+          "votes": 242,
+          "cooccur_cnt": 242,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.105467
+        },
+        {
+          "src": 23,
+          "term_src": "社会",
+          "dst": 219,
+          "term_dst": "C9",
+          "votes": 274,
+          "cooccur_cnt": 274,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.098461
+        },
+        {
+          "src": 234,
+          "term_src": "资本",
+          "dst": 5,
+          "term_dst": "F8",
+          "votes": 156,
+          "cooccur_cnt": 156,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.078305
+        }
+      ]
+    },
+    "edges.csr.pre-r1.npz": {
+      "expected_hier_edges": 4832,
+      "duplicate_key_at_risk": 858,
+      "present_in_artifact": 4820,
+      "missing_in_artifact": 12,
+      "missing_share_of_kw": 0.00248,
+      "missing_detail": [
+        {
+          "src": 144,
+          "term_src": "理论",
+          "dst": 14,
+          "term_dst": "F2",
+          "votes": 176,
+          "cooccur_cnt": 176,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.034884,
+          "replacement_edges": [
+            {
+              "dst": 942,
+              "term": "理论与实",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 1102,
+              "term": "理论与实践",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 348,
+              "term": "方法",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 18,
+          "term_src": "中国",
+          "dst": 22,
+          "term_dst": "I2",
+          "votes": 834,
+          "cooccur_cnt": 834,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.087024,
+          "replacement_edges": [
+            {
+              "dst": 389,
+              "term": "中国文化",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 76,
+              "term": "china",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 95,
+              "term": "集成",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 348,
+          "term_src": "方法",
+          "dst": 14,
+          "term_dst": "F2",
+          "votes": 131,
+          "cooccur_cnt": 131,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.031598,
+          "replacement_edges": [
+            {
+              "dst": 1860,
+              "term": "研究方法",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 144,
+              "term": "理论",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 2119,
+              "term": "最优化",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 189,
+          "term_src": "原理",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 271,
+          "cooccur_cnt": 271,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.053032,
+          "replacement_edges": [
+            {
+              "dst": 1000,
+              "term": "原理与应用",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 511,
+              "term": "及应",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 638,
+              "term": "单片机原理",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 427,
+          "term_src": "世纪",
+          "dst": 22,
+          "term_dst": "I2",
+          "votes": 83,
+          "cooccur_cnt": 83,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.026787,
+          "replacement_edges": [
+            {
+              "dst": 1696,
+              "term": "中世纪",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 1541,
+              "term": "新世纪",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 832,
+              "term": "成就",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 94,
+          "term_src": "现代",
+          "dst": 22,
+          "term_dst": "I2",
+          "votes": 161,
+          "cooccur_cnt": 161,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.034705,
+          "replacement_edges": [
+            {
+              "dst": 293,
+              "term": "现代化",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 18,
+              "term": "中国",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 65,
+              "term": "文学",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 532,
+          "term_src": "及其",
+          "dst": 12,
+          "term_dst": "O1",
+          "votes": 77,
+          "cooccur_cnt": 77,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.028375,
+          "replacement_edges": [
+            {
+              "dst": 1755,
+              "term": "其在",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 3423,
+              "term": "其他",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 145,
+              "term": "应用",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 229,
+          "term_src": "基础",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 310,
+          "cooccur_cnt": 310,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.055768,
+          "replacement_edges": [
+            {
+              "dst": 715,
+              "term": "学基础",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 38,
+              "term": "机械",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 4014,
+              "term": "零基础",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 91,
+          "term_src": "技术",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 501,
+          "cooccur_cnt": 501,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.062249,
+          "replacement_edges": [
+            {
+              "dst": 827,
+              "term": "技术与应用",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 145,
+              "term": "应用",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 890,
+              "term": "制造技术",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 153,
+          "term_src": "实验",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 80,
+          "cooccur_cnt": 80,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.021722,
+          "replacement_edges": [
+            {
+              "dst": 776,
+              "term": "实验教程",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 491,
+              "term": "生物学实验",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 1565,
+              "term": "物化学实验",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 97,
+          "term_src": "系统",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 372,
+          "cooccur_cnt": 372,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.0685,
+          "replacement_edges": [
+            {
+              "dst": 582,
+              "term": "系统设计",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 659,
+              "term": "电力系统",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 236,
+              "term": "控制",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        },
+        {
+          "src": 20,
+          "term_src": "international",
+          "dst": 43,
+          "term_dst": "TP3",
+          "votes": 272,
+          "cooccur_cnt": 272,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.05712,
+          "replacement_edges": [
+            {
+              "dst": 230,
+              "term": "law",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 265,
+              "term": "september",
+              "w": 1.0,
+              "type": "kw"
+            },
+            {
+              "dst": 113,
+              "term": "reviewed",
+              "w": 1.0,
+              "type": "kw"
+            }
+          ]
+        }
+      ],
+      "at_risk_sample": [
+        {
+          "src": 4,
+          "term_src": "经济学",
+          "dst": 8,
+          "term_dst": "F0",
+          "votes": 837,
+          "cooccur_cnt": 837,
+          "cooccur_same_cluster": 458,
+          "cooccur_w": 1.0,
+          "assoc": 0.441078
+        },
+        {
+          "src": 37,
+          "term_src": "哲学",
+          "dst": 143,
+          "term_dst": "B5",
+          "votes": 265,
+          "cooccur_cnt": 265,
+          "cooccur_same_cluster": 127,
+          "cooccur_w": 1.0,
+          "assoc": 0.167739
+        },
+        {
+          "src": 0,
+          "term_src": "经济",
+          "dst": 8,
+          "term_dst": "F0",
+          "votes": 928,
+          "cooccur_cnt": 928,
+          "cooccur_same_cluster": 419,
+          "cooccur_w": 1.0,
+          "assoc": 0.307762
+        },
+        {
+          "src": 785,
+          "term_src": "capital",
+          "dst": 5,
+          "term_dst": "F8",
+          "votes": 127,
+          "cooccur_cnt": 127,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.090228
+        },
+        {
+          "src": 235,
+          "term_src": "analysis",
+          "dst": 12,
+          "term_dst": "O1",
+          "votes": 362,
+          "cooccur_cnt": 362,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.100293
+        },
+        {
+          "src": 689,
+          "term_src": "国家",
+          "dst": 176,
+          "term_dst": "D6",
+          "votes": 78,
+          "cooccur_cnt": 78,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.063091
+        },
+        {
+          "src": 174,
+          "term_src": "战争",
+          "dst": 320,
+          "term_dst": "E2",
+          "votes": 125,
+          "cooccur_cnt": 125,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.332769
+        },
+        {
+          "src": 330,
+          "term_src": "社会主义",
+          "dst": 176,
+          "term_dst": "D6",
+          "votes": 85,
+          "cooccur_cnt": 85,
+          "cooccur_same_cluster": 47,
+          "cooccur_w": 1.0,
+          "assoc": 0.127128
+        },
+        {
+          "src": 71,
+          "term_src": "主义",
+          "dst": 127,
+          "term_dst": "A8",
+          "votes": 171,
+          "cooccur_cnt": 171,
+          "cooccur_same_cluster": 126,
+          "cooccur_w": 1.0,
+          "assoc": 0.19835
+        },
+        {
+          "src": 79,
+          "term_src": "发展",
+          "dst": 60,
+          "term_dst": "F1",
+          "votes": 242,
+          "cooccur_cnt": 242,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.105467
+        },
+        {
+          "src": 23,
+          "term_src": "社会",
+          "dst": 219,
+          "term_dst": "C9",
+          "votes": 274,
+          "cooccur_cnt": 274,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.098461
+        },
+        {
+          "src": 234,
+          "term_src": "资本",
+          "dst": 5,
+          "term_dst": "F8",
+          "votes": 156,
+          "cooccur_cnt": 156,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.078305
+        }
+      ]
+    },
+    "edges.variant-spec.csr.npz": {
+      "expected_hier_edges": 4832,
+      "duplicate_key_at_risk": 858,
+      "present_in_artifact": 4832,
+      "missing_in_artifact": 0,
+      "missing_share_of_kw": 0.0,
+      "missing_detail": [],
+      "at_risk_sample": [
+        {
+          "src": 4,
+          "term_src": "经济学",
+          "dst": 8,
+          "term_dst": "F0",
+          "votes": 837,
+          "cooccur_cnt": 837,
+          "cooccur_same_cluster": 458,
+          "cooccur_w": 1.0,
+          "assoc": 0.441078
+        },
+        {
+          "src": 37,
+          "term_src": "哲学",
+          "dst": 143,
+          "term_dst": "B5",
+          "votes": 265,
+          "cooccur_cnt": 265,
+          "cooccur_same_cluster": 127,
+          "cooccur_w": 1.0,
+          "assoc": 0.167739
+        },
+        {
+          "src": 0,
+          "term_src": "经济",
+          "dst": 8,
+          "term_dst": "F0",
+          "votes": 928,
+          "cooccur_cnt": 928,
+          "cooccur_same_cluster": 419,
+          "cooccur_w": 1.0,
+          "assoc": 0.307762
+        },
+        {
+          "src": 785,
+          "term_src": "capital",
+          "dst": 5,
+          "term_dst": "F8",
+          "votes": 127,
+          "cooccur_cnt": 127,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.090228
+        },
+        {
+          "src": 235,
+          "term_src": "analysis",
+          "dst": 12,
+          "term_dst": "O1",
+          "votes": 362,
+          "cooccur_cnt": 362,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.100293
+        },
+        {
+          "src": 689,
+          "term_src": "国家",
+          "dst": 176,
+          "term_dst": "D6",
+          "votes": 78,
+          "cooccur_cnt": 78,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.063091
+        },
+        {
+          "src": 174,
+          "term_src": "战争",
+          "dst": 320,
+          "term_dst": "E2",
+          "votes": 125,
+          "cooccur_cnt": 125,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.332769
+        },
+        {
+          "src": 330,
+          "term_src": "社会主义",
+          "dst": 176,
+          "term_dst": "D6",
+          "votes": 85,
+          "cooccur_cnt": 85,
+          "cooccur_same_cluster": 47,
+          "cooccur_w": 1.0,
+          "assoc": 0.127128
+        },
+        {
+          "src": 71,
+          "term_src": "主义",
+          "dst": 127,
+          "term_dst": "A8",
+          "votes": 171,
+          "cooccur_cnt": 171,
+          "cooccur_same_cluster": 126,
+          "cooccur_w": 1.0,
+          "assoc": 0.19835
+        },
+        {
+          "src": 79,
+          "term_src": "发展",
+          "dst": 60,
+          "term_dst": "F1",
+          "votes": 242,
+          "cooccur_cnt": 242,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.105467
+        },
+        {
+          "src": 23,
+          "term_src": "社会",
+          "dst": 219,
+          "term_dst": "C9",
+          "votes": 274,
+          "cooccur_cnt": 274,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.098461
+        },
+        {
+          "src": 234,
+          "term_src": "资本",
+          "dst": 5,
+          "term_dst": "F8",
+          "votes": 156,
+          "cooccur_cnt": 156,
+          "cooccur_same_cluster": 0,
+          "cooccur_w": 1.0,
+          "assoc": 0.078305
+        }
+      ]
+    }
+  },
+  "methodology_proof": {
+    "note": "pre-r1 权重 vs 独立重算：按对型建模（kw-kw 双计 / kw-cls 单计）= 缺陷模型；若反事实地给全部对都双计则只吻合 kw-kw 那部分",
+    "pre_r1_edges": 99268,
+    "match_defect_model_per_pairtype": 99268,
+    "match_rate_per_pairtype": 1.0,
+    "match_single_count_model": 20003,
+    "match_rate_single": 0.201505,
+    "kwkw_edges_in_pre_r1": 81306,
+    "kwkw_match_rate": 1.0,
+    "kwcls_match_rate": 1.0
+  },
+  "registrar": {
+    "meta_generated_at": "2026-09-18T19:45:26+0800",
+    "files": {
+      "meta.json": {
+        "generated_at": "2026-09-18T19:45:26+0800",
+        "seconds": 13.9
+      }
+    },
+    "mismatch": [],
+    "unregistered": [
+      {
+        "registry": "meta.json#stages.P2.edge_stats",
+        "key": "out_degree",
+        "registered": {
+          "min": 0,
+          "median": 20,
+          "p90": 20.0,
+          "max": 20
+        },
+        "note": "本审计未独立复算该项"
+      },
+      {
+        "registry": "meta.json#stages.P2.edge_stats",
+        "key": "weight_dist",
+        "registered": {
+          "n": 99268,
+          "min": 0.1763,
+          "median": 0.2292,
+          "mean": 0.3647,
+          "p90": 0.8734,
+          "max": 1.0
+        },
+        "note": "本审计未独立复算该项"
+      },
+      {
+        "registry": "meta.json#stages.P2.edge_stats",
+        "key": "kwkw_edge_share",
+        "registered": 0.7438,
+        "note": "本审计未独立复算该项"
+      },
+      {
+        "registry": "p2-build-report.json#edge_stats",
+        "key": "out_degree",
+        "registered": {
+          "min": 0,
+          "median": 20,
+          "p90": 20.0,
+          "max": 20
+        },
+        "note": "本审计未独立复算该项"
+      },
+      {
+        "registry": "p2-build-report.json#edge_stats",
+        "key": "weight_dist",
+        "registered": {
+          "n": 99268,
+          "min": 0.1763,
+          "median": 0.2292,
+          "mean": 0.3647,
+          "p90": 0.8734,
+          "max": 1.0
+        },
+        "note": "本审计未独立复算该项"
+      },
+      {
+        "registry": "p2-build-report.json#edge_stats",
+        "key": "kwkw_edge_share",
+        "registered": 0.7438,
+        "note": "本审计未独立复算该项"
+      }
+    ],
+    "hierarchy_actual": {
+      "registered": 4832,
+      "evidence_expected": 4832,
+      "present_in_artifact": 4823,
+      "missing_in_artifact": 9
+    }
+  }
+}

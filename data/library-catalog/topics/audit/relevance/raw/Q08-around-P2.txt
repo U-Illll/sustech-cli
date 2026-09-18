@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 408 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = 佛教 (整词命中中 freq 最低)
+=== around 408 「佛教」 (kw, freq=150, cluster=311, cls=B) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 194 主题 / 书证据 40375 本 / 扫描边 420 / 权重 0.058~1.000(中位 0.339) / 261.2ms
+
+[hop 1] 20 个主题（显示 top 10）
+    103 B9                      cls  score=0.8600   via 佛教
+     18 中国                      kw   score=0.7511   via 佛教
+   2344 buddhism                kw   score=0.6322   via 佛教
+    142 世界                      kw   score=0.6197   via 佛教
+    427 世纪                      kw   score=0.6064   via 佛教
+     21 文化                      kw   score=0.5923   via 佛教
+     32 history                 kw   score=0.5923   via 佛教
+    312 印度                      kw   score=0.5036   via 佛教
+    575 唐代                      kw   score=0.3919   via 佛教
+   1618 大典                      kw   score=0.3919   via 佛教
+
+[hop 2] 173 个主题（显示 top 10）
+    920 神话                      kw   score=0.7396   via 佛教 → B9
+   2470 宗教                      kw   score=0.7396   via 佛教 → B9
+     22 I2                      cls  score=0.6460   via 佛教 → 中国
+     37 哲学                      kw   score=0.6460   via 佛教 → B9
+     44 J6                      cls  score=0.6460   via 佛教 → 中国
+     58 B2                      cls  score=0.6460   via 佛教 → 中国
+     60 F1                      cls  score=0.6460   via 佛教 → 中国
+     65 文学                      kw   score=0.6460   via 佛教 → 中国
+     66 K2                      cls  score=0.6460   via 佛教 → 中国
+     76 china                   kw   score=0.6460   via 佛教 → 中国
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991001555315104181  世界佛教通史 = A general history of the world Budd   cls=B/B9  via 「佛教」
+  991001555315004181  世界佛教通史 = A general history of the world Budd   cls=B/B9  via 「佛教」
+  991001555314604181  世界佛教通史 = A general history of the world Budd   cls=B/B9  via 「佛教」
+  991001555315204181  世界佛教通史 = A general history of the world Budd   cls=B/B9  via 「佛教」
+  991001555315404181  世界佛教通史 = A general history of the world Budd   cls=B/B9  via 「佛教」
+
+---stderr---
+

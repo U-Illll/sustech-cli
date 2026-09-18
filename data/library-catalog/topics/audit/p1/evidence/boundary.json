@@ -1,0 +1,208 @@
+{
+ "freq_gate_by_source": {
+  "A": {
+   "n": 403,
+   "min": 1,
+   "median": 17
+  },
+  "A+B": {
+   "n": 954,
+   "min": 13,
+   "median": 209
+  },
+  "B": {
+   "n": 3481,
+   "min": 12,
+   "median": 24
+  },
+  "C": {
+   "n": 349,
+   "min": 1,
+   "median": 99
+  }
+ },
+ "en_gate": {
+  "n": 2693,
+  "freq_lt_200": 2385,
+  "only_cls_rep_disjunct(freq<200 & len<9)": 785,
+  "len_ge_9_bypass": 1715,
+  "freq_lt_min_df_12": 25,
+  "min_freq": 3,
+  "lt12_sample": [
+   {
+    "term": "concertos",
+    "freq": 10,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "nationals",
+    "freq": 10,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "protein-protein",
+    "freq": 10,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "hsia",
+    "freq": 11,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "ien",
+    "freq": 11,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "jean-christophe",
+    "freq": 9,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "periodontal",
+    "freq": 9,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "chicken",
+    "freq": 11,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "soup",
+    "freq": 11,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "flag",
+    "freq": 8,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "symphonie",
+    "freq": 8,
+    "sources": [
+     "A"
+    ]
+   },
+   {
+    "term": "1q84",
+    "freq": 7,
+    "sources": [
+     "A"
+    ]
+   }
+  ],
+  "only_cls_rep_cohort": 785,
+  "only_cls_rep_cohort_without_cls1_data": 27,
+  "kw_nodes_with_fallback_filled_cls": 114,
+  "cards_without_cls1": 7118
+ },
+ "b_cjk_audit": {
+  "sub_lex_n": 57,
+  "b_only_cjk_n": 1361,
+  "in_subject_lex": 10,
+  "in_a_set": 0,
+  "sample": [
+   {
+    "term": "机械",
+    "freq": 532
+   },
+   {
+    "term": "科学",
+    "freq": 695
+   },
+   {
+    "term": "电磁",
+    "freq": 148
+   },
+   {
+    "term": "生命",
+    "freq": 273
+   },
+   {
+    "term": "电子",
+    "freq": 292
+   },
+   {
+    "term": "文明",
+    "freq": 212
+   },
+   {
+    "term": "口腔",
+    "freq": 121
+   },
+   {
+    "term": "逻辑",
+    "freq": 220
+   },
+   {
+    "term": "航空",
+    "freq": 139
+   },
+   {
+    "term": "飞行",
+    "freq": 99
+   },
+   {
+    "term": "化工",
+    "freq": 159
+   },
+   {
+    "term": "信号",
+    "freq": 110
+   }
+  ],
+  "admitted_by_df_path_only": 1351,
+  "report_policy": "B-only CJK 需在 A 词表或学科词表内；否则剔除"
+ },
+ "provenance": {
+  "a_set_n": 2841,
+  "report_a_kept": 1518,
+  "a_set_in_nodes_no_A_source": 0,
+  "A_only_n": 403,
+  "A_only_min_freq": 1,
+  "C_only_n": 349,
+  "C_only_min_freq": 1,
+  "B_only_min_freq": 12
+ },
+ "align": {
+  "cards_jsonl_lines": 188512,
+  "indptr_rows": 188512,
+  "labels": 188512,
+  "aligned": true,
+  "silent_drop_risk": false
+ },
+ "merge_check": {
+  "my_unique": 224511,
+  "code_unique": 224511,
+  "report_unique": 224511,
+  "my_keep": 9044,
+  "code_keep": 9044,
+  "report_keep": 9044,
+  "interest_df_equal": 6680,
+  "interest_n": 6680,
+  "keep_symdiff_sample": []
+ }
+}

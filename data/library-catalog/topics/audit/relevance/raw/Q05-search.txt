@@ -1,0 +1,21 @@
+$ topic_graph.py --data $D search "climate change" --top 10
+[exit=0]
+[search] query='climate change' → 归一 'climatechange' | 字面命中 3 个 | 近词扩展 9 个（50 张卡命中 945 张） | 506.4ms
+    id term                     type    freq  cluster cls   src                   w
+    64 climate                  kw       544      172 P     token             5.671
+  4308 exchanges                kw        17      266 F     substr            1.734
+  3382 climates                 kw        12      172 P     substr            1.539
+
+[近词扩展] TF-IDF 检索相关书目 → 聚合书的 top-5 主题（退化路径 ②；源: catalog_vector 同源 TF-IDF）
+   447 policy                   kw       536      351 F     tfidf-expand      0.519   支持书: 991000162669704181、991000089709704181
+   116 global                   kw      1092      266 F     tfidf-expand      0.504   支持书: 991000168289704181、991000053909704181
+   375 politics                 kw       509        1 D     tfidf-expand      0.496   支持书: 991000052339704181、991000036379704181
+  2221 challenge                kw        82      266 F     tfidf-expand      0.477   支持书: 991000089709704181、991000200719704181
+    62 economics                kw       960      362 F     tfidf-expand      0.423   支持书: 991000485839704181、991000052339704181
+   115 science                  kw      2294      293 N     tfidf-expand      0.363   支持书: 991000162669704181、991000047349704181
+  1309 assessment               kw       247      288 G     tfidf-expand      0.344   支持书: 991000101119704181、991000347549704181
+   450 urban                    kw       254      294 C     tfidf-expand      0.336   支持书: 991000101119704181、991000162119704181
+   487 political                kw       453        1 D     tfidf-expand      0.287   支持书: 991000044899704181、991000053909704181
+
+---stderr---
+

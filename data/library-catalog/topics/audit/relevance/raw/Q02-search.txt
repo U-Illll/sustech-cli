@@ -1,0 +1,22 @@
+$ topic_graph.py --data $D search "量子 计算" --top 10
+[exit=0]
+[search] query='量子 计算' → 归一 '量子计算' | 字面命中 6 个 | 近词扩展 7 个（50 张卡命中 1708 张） | 540.2ms
+    id term                     type    freq  cluster cls   src                   w
+   177 计算                       kw      1323       38 TP    token             6.470
+   184 量子                       kw       415      167 O     token             5.428
+   477 计算机                      kw       567       61 TP    substr            3.805
+   729 云计算                      kw        98      334 TP    substr            2.757
+  5143 统计算                      kw         3       90 U     substr            0.832
+  5145 计算法                      kw         3       72 TP    substr            0.832
+
+[近词扩展] TF-IDF 检索相关书目 → 聚合书的 top-5 主题（退化路径 ②；源: catalog_vector 同源 TF-IDF）
+    30 力学                       kw      1437      332 O     tfidf-expand      1.057   支持书: 991001603294804181、991001559212904181
+   166 quantum                  kw      1284      214 O     tfidf-expand      0.894   支持书: 991001603294804181、991000663409704181
+  1227 computation              kw       189       88 TP    tfidf-expand      0.405   支持书: 991000663409704181、991001555906504181
+   298 mechanics                kw       953      214 O     tfidf-expand      0.402   支持书: 991001603294804181、991001230939704181
+   208 编程                       kw       722       90 TP    tfidf-expand      0.362   支持书: 991001345676504181、991001611661304181
+   339 computing                kw       718       88 TP    tfidf-expand      0.304   支持书: 991001611661304181、991001561474004181
+   144 理论                       kw      3384      191 F     tfidf-expand      0.181   支持书: 991001761871504181、991000784029704181
+
+---stderr---
+

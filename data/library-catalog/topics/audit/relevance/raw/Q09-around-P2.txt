@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 407 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = deep (整词命中中 freq 最低)
+=== around 407 「deep」 (kw, freq=267, cluster=156, cls=TP) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 247 主题 / 书证据 32660 本 / 扫描边 420 / 权重 0.053~1.000(中位 0.223) / 349.1ms
+
+[hop 1] 20 个主题（显示 top 10）
+     33 learning                kw   score=0.8600   via deep
+     47 学习                      kw   score=0.8600   via deep
+     78 TP1                     cls  score=0.8600   via deep
+   1075 neural                  kw   score=0.6659   via deep
+    109 python                  kw   score=0.6197   via deep
+    139 machine                 kw   score=0.6197   via deep
+     35 networks                kw   score=0.6064   via deep
+   1174 pytorch                 kw   score=0.5825   via deep
+    319 space                   kw   score=0.5610   via deep
+   1702 reinforcement           kw   score=0.5432   via deep
+
+[hop 2] 226 个主题（显示 top 10）
+     54 智能                      kw   score=0.7396   via deep → TP1
+     56 机器                      kw   score=0.7396   via deep → 学习
+     75 intelligence            kw   score=0.7396   via deep → TP1
+     85 G6                      cls  score=0.7396   via deep → learning
+     87 模型                      kw   score=0.7396   via deep → TP1
+    152 G4                      cls  score=0.7396   via deep → learning
+    361 基于                      kw   score=0.7396   via deep → 学习
+    398 teaching                kw   score=0.7396   via deep → learning
+    421 ai                      kw   score=0.7396   via deep → TP1
+    752 algorithms              kw   score=0.7396   via deep → learning
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991001555989504181  TensorFlow深度学习项目实战 = TensorFlow deep learnin   cls=TP/TP1  via 「deep」
+  991002556502704181  多智能体强化学习 = Multi-agent reinforcement learnin   cls=TP/TP1  via 「学习」
+  991001561435504181  TensorFlow机器学习 = Machine learning with Tenso   cls=TP/TP1  via 「学习」
+  991001317851404181  Python+Tensorflow机器学习实战                        cls=TP/TP1  via 「学习」
+  991002354025504181  TensorFlow神经网络设计 基于 的深度学习实战                    cls=TP/TP1  via 「学习」
+
+---stderr---
+

@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 62 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = economics (整词命中中 freq 最低)
+=== around 62 「economics」 (kw, freq=960, cluster=362, cls=F) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 286 主题 / 书证据 59538 本 / 扫描边 420 / 权重 0.053~1.000(中位 0.338) / 268.9ms
+
+[hop 1] 20 个主题（显示 top 10）
+      0 经济                      kw   score=0.8600   via economics
+      4 经济学                     kw   score=0.8600   via economics
+      8 F0                      cls  score=0.8600   via economics
+     14 F2                      cls  score=0.8600   via economics
+     60 F1                      cls  score=0.8600   via economics
+   1371 behavioral              kw   score=0.8600   via economics
+    268 X1                      cls  score=0.7713   via economics
+   1319 行为                      kw   score=0.7606   via economics
+    190 business                kw   score=0.7511   via economics
+    578 principles              kw   score=0.7439   via economics
+
+[hop 2] 265 个主题（显示 top 10）
+     13 管理                      kw   score=0.7396   via economics → F2
+     18 中国                      kw   score=0.7396   via economics → 经济
+     52 management              kw   score=0.7396   via economics → F2
+     53 创新                      kw   score=0.7396   via economics → F2
+     72 financial               kw   score=0.7396   via economics → F2
+     79 发展                      kw   score=0.7396   via economics → 经济
+     82 企业                      kw   score=0.7396   via economics → F2
+    107 政治                      kw   score=0.7396   via economics → 经济
+    120 economic                kw   score=0.7396   via economics → 经济
+    147 development             kw   score=0.7396   via economics → F1
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991002621915804181  经济学原理 = Principles of economics 第10版 微观经济学分册   cls=F/F0  via 「economics」
+  991002621551604181  经济学原理 = Principles of economics 第10版 宏观经济学分册   cls=F/F0  via 「economics」
+  991001616776104181  管理经济学 = Managerial economics                   cls=C/C9  via 「economics」
+  991002401390204181  微观经济学 = Microeconomics                         cls=F/F0  via 「经济学」
+  991002128214504181  微观经济学 = Microeconomics                         cls=F/F0  via 「经济学」
+
+---stderr---
+

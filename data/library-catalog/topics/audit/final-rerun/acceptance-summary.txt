@@ -1,0 +1,6 @@
+topics-p0.sh	exit=0	pass=8	fail=0	info=0	TOPICS-P0: PASS (pass=8 fail=0)
+topics-p1.sh	exit=0	pass=17	fail=0	info=0	TOPICS-P1: PASS (pass=17 fail=0)
+topics-p2.sh	exit=0	pass=30	fail=0	info=0	TOPICS-P2: PASS (pass=30 fail=0)
+topics-p3.sh	exit=0	pass=21	fail=0	info=3	TOPICS-P3: PASS (pass=21 fail=0)
+topics-p4.sh	exit=0	pass=38	fail=0	info=0	TOPICS-P4: PASS (pass=38 fail=0)
+topics-p5.sh	exit=0	pass=28	fail=0	info=1	TOPICS-P5: PASS (pass=28 fail=0)

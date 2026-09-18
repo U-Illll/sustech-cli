@@ -1,0 +1,65 @@
+{
+ "seed": {
+  "id": 0,
+  "term": "a",
+  "type": "kw",
+  "freq": 10,
+  "cluster": -1,
+  "cls": ""
+ },
+ "hops": 1,
+ "decay": 0.86,
+ "threshold": 0.05,
+ "layers": [
+  {
+   "hop": 1,
+   "n": 1,
+   "nodes": [
+    {
+     "id": 1,
+     "term": "b",
+     "type": "kw",
+     "score": 0.774,
+     "path": [
+      "a",
+      "b"
+     ],
+     "hops_used": 1
+    }
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "mms": "M1",
+   "title": "A",
+   "cls": "",
+   "cls2": "",
+   "year": "",
+   "via_topic": "a",
+   "via_id": 0,
+   "region_cover_score": 1.774
+  },
+  {
+   "mms": "M2",
+   "title": "B",
+   "cls": "",
+   "cls2": "",
+   "year": "",
+   "via_topic": "b",
+   "via_id": 1,
+   "region_cover_score": 0.774
+  }
+ ],
+ "stats": {
+  "visited": 2,
+  "edges_scanned": 1,
+  "books": 2,
+  "books_capped": false,
+  "saturated_budget": false,
+  ,
+  "weight_min": 0.774,
+  "weight_median": 0.887,
+  "weight_max": 1.0
+ }
+}

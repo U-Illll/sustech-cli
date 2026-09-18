@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 9 --hops 2 --top 10 --evidence 5
+[exit=0]  # seed term = 数据  (search rank-1)
+=== around 9 「数据」 (kw, freq=1988, cluster=37, cls=TP) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 232 主题 / 书证据 53382 本 / 扫描边 416 / 权重 0.082~1.000(中位 0.679) / 388.2ms
+
+[hop 1] 20 个主题（显示 top 10）
+     10 data                    kw   score=0.8600   via 数据
+     43 TP3                     cls  score=0.8600   via 数据
+     63 TP2                     cls  score=0.8600   via 数据
+     91 技术                      kw   score=0.8600   via 数据
+    101 分析                      kw   score=0.8600   via 数据
+    109 python                  kw   score=0.8600   via 数据
+    137 结构                      kw   score=0.8600   via 数据
+    145 应用                      kw   score=0.8600   via 数据
+    162 数据分析                    kw   score=0.8600   via 数据
+    196 实战                      kw   score=0.8600   via 数据
+
+[hop 2] 211 个主题（显示 top 10）
+      5 F8                      cls  score=0.7396   via 数据 → 分析
+      6 设计                      kw   score=0.7396   via 数据 → 结构
+      7 数学                      kw   score=0.7396   via 数据 → 分析
+     12 O1                      cls  score=0.7396   via 数据 → 分析
+     14 F2                      cls  score=0.7396   via 数据 → 分析
+     16 材料                      kw   score=0.7396   via 数据 → 结构
+     27 开发                      kw   score=0.7396   via 数据 → TP3
+     30 力学                      kw   score=0.7396   via 数据 → 结构
+     34 security                kw   score=0.7396   via 数据 → TP3
+     46 TB3                     cls  score=0.7396   via 数据 → 结构
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991002618509804181  数据分析不求人 = Self-service data analysis  可视化分析原   cls=C/C8  via 「数据」
+  991002328988204181  SPSS数据分析实用教程 = SPSS data analysis              cls=C/C8  via 「数据」
+  991001561463804181  Hadoop与大数据挖掘 = Big data mining based on Hado   cls=TP/TP2  via 「数据」
+  991001613113704181  Python数学建模算法与应用习题解答                            cls=O/O1  via 「算法」
+  991001549712104181  Python数学建模算法与应用                                cls=O/O1  via 「算法」
+
+---stderr---
+

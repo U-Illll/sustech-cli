@@ -1,0 +1,2795 @@
+{
+  "stage": "P0",
+  "baseline": "topics/baseline-p0.txt",
+  "generated_at": "2026-09-18T17:32:05+08:00",
+  "generator": "python3 graph_report.py --data /home/wzh/go/lib-catalog-data",
+  "data_dir": "/home/wzh/go/lib-catalog-data",
+  "artifacts_dir_actual": "/home/wzh/go/lib-catalog-data/topics",
+  "baseline_sha256": "ff2a32ad00761499e328ad46803ed8796b4da65c53fc72fecc7877b763f2fa06",
+  "wall_seconds": 18.2,
+  "baseline_numbers": {
+    "nodes": 188512,
+    "k_out": 10,
+    "edges": 1885120,
+    "mutual_ratio": 0.423,
+    "hop12_coverage_mean": 0.902,
+    "hop12_coverage_median": 0.938,
+    "connectivity_components": 3,
+    "largest_component": 188488,
+    "largest_component_pct": 0.9999,
+    "clusters_single_component": "397/400",
+    "decay_1hop": 0.73,
+    "decay_2hop": 0.636,
+    "decay_3hop": 0.584,
+    "decay_random_baseline": 0.408,
+    "seconds": 17
+  },
+  "notes": [
+    "基线口径与交接文档 §1.3 一致：12 跳同簇覆盖 90.2%、无向连通 99.99%、衰减 0.730/0.636/0.584（随机基线 0.408）。",
+    "v1 既有文件（cards.jsonl / index/* / clusters.json / shelves.json / subjects.json）全程只读，未改动。",
+    "口径备注：§1.3 的 400 簇/衰减数字对应 graph_report.py docstring 描述的 400 抽样；但脚本 argparse 默认值为 100（本次正式基线用任务书原命令，即默认 100 抽样），故 §1.3 的 12 跳 90.2% 与正式基线 0.902 完全吻合。"
+  ],
+  "supplementary": {
+    "curve400_file": "topics/baseline-p0-curve400.txt",
+    "note": "graph_report.py argparse 默认 --curve-samples 100（正式基线即该默认口径）；额外以 400 簇抽样复跑，12 跳覆盖 0.911，仍在 90.2%±2% 带内。",
+    "hop12_coverage_mean_400": 0.911,
+    "seconds_400": 69
+  },
+  "stages": {
+    "P0": {
+      "stage": "P0",
+      "baseline": "topics/baseline-p0.txt",
+      "generated_at": "2026-09-18T17:32:05+08:00",
+      "generator": "python3 graph_report.py --data /home/wzh/go/lib-catalog-data",
+      "data_dir": "/home/wzh/go/lib-catalog-data",
+      "artifacts_dir_actual": "/home/wzh/go/lib-catalog-data/topics",
+      "baseline_sha256": "ff2a32ad00761499e328ad46803ed8796b4da65c53fc72fecc7877b763f2fa06",
+      "wall_seconds": 18.2,
+      "baseline_numbers": {
+        "nodes": 188512,
+        "k_out": 10,
+        "edges": 1885120,
+        "mutual_ratio": 0.423,
+        "hop12_coverage_mean": 0.902,
+        "hop12_coverage_median": 0.938,
+        "connectivity_components": 3,
+        "largest_component": 188488,
+        "largest_component_pct": 0.9999,
+        "clusters_single_component": "397/400",
+        "decay_1hop": 0.73,
+        "decay_2hop": 0.636,
+        "decay_3hop": 0.584,
+        "decay_random_baseline": 0.408,
+        "seconds": 17
+      },
+      "notes": [
+        "基线口径与交接文档 §1.3 一致：12 跳同簇覆盖 90.2%、无向连通 99.99%、衰减 0.730/0.636/0.584（随机基线 0.408）。",
+        "v1 既有文件（cards.jsonl / index/* / clusters.json / shelves.json / subjects.json）全程只读，未改动。",
+        "口径备注：§1.3 的 400 簇/衰减数字对应 graph_report.py docstring 描述的 400 抽样；但脚本 argparse 默认值为 100（本次正式基线用任务书原命令，即默认 100 抽样），故 §1.3 的 12 跳 90.2% 与正式基线 0.902 完全吻合。"
+      ],
+      "supplementary": {
+        "curve400_file": "topics/baseline-p0-curve400.txt",
+        "note": "graph_report.py argparse 默认 --curve-samples 100（正式基线即该默认口径）；额外以 400 簇抽样复跑，12 跳覆盖 0.911，仍在 90.2%±2% 带内。",
+        "hop12_coverage_mean_400": 0.911,
+        "seconds_400": 69
+      }
+    },
+    "P1": {
+      "stage": "P1",
+      "generated_at": "2026-09-18T18:12:14+0800",
+      "generator": "python3 topic_build.py --data /home/wzh/go/lib-catalog-data",
+      "seconds": 54.3,
+      "params": {
+        "top_per_card": 10,
+        "min_df": 12,
+        "min_df_cjk": 15,
+        "en_gate": {
+          "min_freq": 200,
+          "min_cls_rep": 0.6,
+          "min_len": 9
+        },
+        "max_nodes": 20000,
+        "min_nodes": 5000,
+        "b_word_mode": "top-title-tokens + build_graph.merge_bigrams(max_len=5,min_ratio=0.25)",
+        "b_cjk_policy": "B-only CJK 需在 A 词表或学科词表内；否则剔除",
+        "normalization": "NFKC + 去空白 + 长度1-16 + ASCII 小写 + 停用词表",
+        "a_fragment_filter": "A 源 CJK 词长词包含率>=0.9 判为碎片剔除",
+        "stopword_count": 988,
+        "stopwords": [
+          "a",
+          "about",
+          "above",
+          "abstract",
+          "academic",
+          "acknowledgement",
+          "acknowledgements",
+          "across",
+          "activities",
+          "activity",
+          "administrator",
+          "advanced",
+          "advances",
+          "affair",
+          "after",
+          "afterwards",
+          "afterword",
+          "again",
+          "against",
+          "age",
+          "akademie",
+          "al",
+          "all",
+          "almost",
+          "alone",
+          "along",
+          "already",
+          "also",
+          "alternative",
+          "although",
+          "always",
+          "am",
+          "among",
+          "amongst",
+          "amoungst",
+          "amount",
+          "an",
+          "analyst",
+          "and",
+          "another",
+          "any",
+          "anyhow",
+          "anyone",
+          "anything",
+          "anyway",
+          "anywhere",
+          "appendix",
+          "are",
+          "area",
+          "areas",
+          "aren't",
+          "around",
+          "articles",
+          "as",
+          "at",
+          "author",
+          "author.",
+          "authors",
+          "availability",
+          "back",
+          "bad",
+          "based",
+          "basic",
+          "be",
+          "became",
+          "because",
+          "become",
+          "becomes",
+          "becoming",
+          "been",
+          "before",
+          "beforehand",
+          "beginning",
+          "behind",
+          "being",
+          "below",
+          "beside",
+          "besides",
+          "best",
+          "better",
+          "between",
+          "beyond",
+          "bibliography",
+          "big",
+          "bill",
+          "billion",
+          "book",
+          "books",
+          "both",
+          "bottom",
+          "breakthrough",
+          "brief",
+          "but",
+          "by",
+          "call",
+          "came",
+          "campaigns",
+          "can",
+          "can't",
+          "cannot",
+          "cant",
+          "careers",
+          "case",
+          "cases",
+          "centuries",
+          "certain",
+          "cf",
+          "change",
+          "chapter",
+          "chapters",
+          "characteristics",
+          "choosing",
+          "city",
+          "classic",
+          "co",
+          "coching",
+          "collected",
+          "collecting",
+          "college",
+          "combination",
+          "come",
+          "comes",
+          "commonly",
+          "companion",
+          "competence",
+          "complete",
+          "complex",
+          "con",
+          "conclusion",
+          "condition",
+          "conditions",
+          "conference",
+          "contents",
+          "contexts",
+          "conversation",
+          "cooperation",
+          "could",
+          "couldn't",
+          "couldnt",
+          "course",
+          "courses",
+          "cry",
+          "curie",
+          "current",
+          "de",
+          "degrees",
+          "describe",
+          "description",
+          "desire",
+          "despite",
+          "detail",
+          "devoted",
+          "dictionary",
+          "did",
+          "didn't",
+          "differences",
+          "different",
+          "difficult",
+          "direction",
+          "do",
+          "does",
+          "doesn't",
+          "doing",
+          "don't",
+          "done",
+          "down",
+          "due",
+          "during",
+          "each",
+          "easy",
+          "economists",
+          "ed",
+          "ed.",
+          "edited",
+          "edition",
+          "editions",
+          "editor",
+          "editor.",
+          "editorial",
+          "editors",
+          "eds",
+          "effect",
+          "effects",
+          "eg",
+          "eight",
+          "eighth",
+          "eighty",
+          "either",
+          "elements",
+          "eleven",
+          "else",
+          "elsevier",
+          "elsewhere",
+          "empty",
+          "encyclopedia",
+          "endangered",
+          "ending",
+          "engaging",
+          "enough",
+          "envisioning",
+          "epilogue",
+          "especially",
+          "essays",
+          "et",
+          "etc",
+          "even",
+          "ever",
+          "every",
+          "everyone",
+          "everything",
+          "everywhere",
+          "example",
+          "examples",
+          "excellence",
+          "except",
+          "experience",
+          "exploratory",
+          "exploring",
+          "fantastic",
+          "fast",
+          "few",
+          "fifteen",
+          "fifth",
+          "fifty",
+          "figure",
+          "fill",
+          "find",
+          "finding",
+          "finds",
+          "fire",
+          "first",
+          "five",
+          "for",
+          "foreword",
+          "former",
+          "formerly",
+          "forty",
+          "found",
+          "four",
+          "fourth",
+          "francaise",
+          "from",
+          "front",
+          "fu",
+          "full",
+          "fully",
+          "functioning",
+          "further",
+          "furthermore",
+          "gaps",
+          "gatsby",
+          "gave",
+          "general",
+          "generally",
+          "generations",
+          "get",
+          "gets",
+          "give",
+          "gives",
+          "giving",
+          "glossary",
+          "go",
+          "goes",
+          "good",
+          "got",
+          "great",
+          "guide",
+          "had",
+          "hadn't",
+          "handbook",
+          "hands",
+          "hard",
+          "has",
+          "hasn't",
+          "hasnt",
+          "have",
+          "haven't",
+          "having",
+          "he",
+          "he'd",
+          "he'll",
+          "he's",
+          "hence",
+          "her",
+          "here",
+          "here's",
+          "hereafter",
+          "hereby",
+          "herein",
+          "hereupon",
+          "hers",
+          "herself",
+          "high",
+          "highly",
+          "hills",
+          "him",
+          "himself",
+          "his",
+          "homme",
+          "honor",
+          "how",
+          "how's",
+          "however",
+          "hundred",
+          "i",
+          "i'd",
+          "i'll",
+          "i'm",
+          "i've",
+          "ie",
+          "if",
+          "ill",
+          "ill.",
+          "impact",
+          "impacts",
+          "important",
+          "improving",
+          "in",
+          "inc",
+          "include",
+          "included",
+          "includes",
+          "including",
+          "indeed",
+          "index",
+          "influence",
+          "inside",
+          "inspiration",
+          "instead",
+          "interests",
+          "interpretations",
+          "into",
+          "intro",
+          "introduction",
+          "investigation",
+          "investigations",
+          "is",
+          "isn't",
+          "issue",
+          "issues",
+          "it",
+          "it's",
+          "italiano",
+          "its",
+          "itself",
+          "juliet",
+          "kants",
+          "keep",
+          "keywords",
+          "kind",
+          "kinds",
+          "klick",
+          "knew",
+          "know",
+          "known",
+          "knows",
+          "l.",
+          "lab",
+          "labs",
+          "large",
+          "largely",
+          "last",
+          "latter",
+          "latterly",
+          "least",
+          "lecture",
+          "lectures",
+          "less",
+          "let's",
+          "level",
+          "levels",
+          "librarian",
+          "limitations",
+          "limited",
+          "little",
+          "long",
+          "low",
+          "ltd",
+          "lu",
+          "lucky",
+          "ma",
+          "made",
+          "main",
+          "mainly",
+          "major",
+          "make",
+          "makes",
+          "making",
+          "manners",
+          "manual",
+          "many",
+          "may",
+          "me",
+          "meanwhile",
+          "method",
+          "methods",
+          "midnight",
+          "might",
+          "mill",
+          "millennium",
+          "million",
+          "mine",
+          "minor",
+          "modern",
+          "monograph",
+          "more",
+          "moreover",
+          "most",
+          "mostly",
+          "move",
+          "moving",
+          "much",
+          "must",
+          "mustn't",
+          "mutual",
+          "my",
+          "myself",
+          "n.j.",
+          "name",
+          "namely",
+          "negotiating",
+          "neither",
+          "never",
+          "nevertheless",
+          "new",
+          "next",
+          "nine",
+          "ninety",
+          "ninth",
+          "no",
+          "nobody",
+          "none",
+          "noone",
+          "nor",
+          "not",
+          "notes",
+          "nothing",
+          "now",
+          "nowhere",
+          "number",
+          "numbers",
+          "ny",
+          "of",
+          "off",
+          "often",
+          "old",
+          "on",
+          "once",
+          "one",
+          "only",
+          "onto",
+          "or",
+          "ordered",
+          "origin",
+          "other",
+          "others",
+          "otherwise",
+          "ought",
+          "our",
+          "ours",
+          "ourselves",
+          "out",
+          "outside",
+          "over",
+          "overview",
+          "own",
+          "papers",
+          "part",
+          "particular",
+          "particularly",
+          "partly",
+          "parts",
+          "past",
+          "per",
+          "perhaps",
+          "period",
+          "periods",
+          "perspective",
+          "perspectives",
+          "physicist",
+          "pic",
+          "place",
+          "please",
+          "point",
+          "points",
+          "population",
+          "practical",
+          "predicting",
+          "preface",
+          "present",
+          "presentation",
+          "presented",
+          "presenting",
+          "presents",
+          "preserving",
+          "press",
+          "pretest",
+          "primary",
+          "private",
+          "problem",
+          "problems",
+          "proceedings",
+          "process",
+          "processes",
+          "progress",
+          "prologue",
+          "promises",
+          "provide",
+          "provided",
+          "provides",
+          "providing",
+          "publisher",
+          "publishers",
+          "publishing",
+          "put",
+          "question",
+          "questions",
+          "quite",
+          "rather",
+          "re",
+          "reader",
+          "readings",
+          "realizing",
+          "recent",
+          "references",
+          "reforming",
+          "relationship",
+          "report",
+          "research",
+          "result",
+          "results",
+          "review",
+          "reviews",
+          "revised",
+          "role",
+          "roles",
+          "s.",
+          "same",
+          "saw",
+          "schooling",
+          "second",
+          "secondary",
+          "section",
+          "sections",
+          "see",
+          "seem",
+          "seemed",
+          "seeming",
+          "seems",
+          "seen",
+          "sees",
+          "selected",
+          "seminar",
+          "series",
+          "serious",
+          "seven",
+          "seventh",
+          "seventy",
+          "several",
+          "shadows",
+          "shan't",
+          "shared",
+          "she",
+          "she'd",
+          "she'll",
+          "she's",
+          "short",
+          "should",
+          "shouldn't",
+          "show",
+          "showed",
+          "showing",
+          "shows",
+          "side",
+          "sides",
+          "significance",
+          "similar",
+          "simple",
+          "since",
+          "sincere",
+          "situation",
+          "situations",
+          "six",
+          "sixth",
+          "sixty",
+          "slow",
+          "small",
+          "so",
+          "solutions",
+          "solved",
+          "some",
+          "somehow",
+          "someone",
+          "something",
+          "sometime",
+          "sometimes",
+          "somewhere",
+          "specific",
+          "sponsor",
+          "sponsored",
+          "sponsoring",
+          "springer",
+          "state-of-the-art",
+          "states",
+          "still",
+          "structuring",
+          "studies",
+          "study",
+          "such",
+          "summary",
+          "superior",
+          "supplement",
+          "survey",
+          "surveys",
+          "sustaining",
+          "symposium",
+          "take",
+          "takes",
+          "taking",
+          "talk",
+          "talks",
+          "teichm",
+          "ten",
+          "tenth",
+          "textbook",
+          "than",
+          "that",
+          "that's",
+          "the",
+          "their",
+          "theirs",
+          "them",
+          "themselves",
+          "then",
+          "thence",
+          "there",
+          "there's",
+          "thereafter",
+          "thereby",
+          "therefore",
+          "therein",
+          "thereupon",
+          "these",
+          "they",
+          "they'd",
+          "they'll",
+          "they're",
+          "they've",
+          "thick",
+          "thin",
+          "think",
+          "thinks",
+          "third",
+          "thirty",
+          "this",
+          "those",
+          "though",
+          "thought",
+          "thousand",
+          "three",
+          "through",
+          "throughout",
+          "thru",
+          "thus",
+          "to",
+          "today",
+          "together",
+          "told",
+          "too",
+          "took",
+          "top",
+          "toward",
+          "towards",
+          "trans",
+          "trans.",
+          "transform",
+          "transforms",
+          "translating",
+          "translation",
+          "translations",
+          "translator",
+          "trends",
+          "twain",
+          "twelve",
+          "twenty",
+          "two",
+          "type",
+          "types",
+          "typically",
+          "u.k.",
+          "u.s.",
+          "u.s.a.",
+          "ug",
+          "uk",
+          "ultimate",
+          "ulysses",
+          "un",
+          "under",
+          "understand",
+          "understanding",
+          "unexpected",
+          "university",
+          "until",
+          "up",
+          "updated",
+          "upon",
+          "us",
+          "usa",
+          "usage",
+          "use",
+          "used",
+          "using",
+          "usually",
+          "utilization",
+          "various",
+          "versus",
+          "very",
+          "via",
+          "view",
+          "viewpoint",
+          "views",
+          "vol",
+          "volume",
+          "volumes",
+          "vs",
+          "vs.",
+          "w.",
+          "was",
+          "wasn't",
+          "we",
+          "we'd",
+          "we'll",
+          "we're",
+          "we've",
+          "well",
+          "went",
+          "were",
+          "weren't",
+          "what",
+          "what's",
+          "whatever",
+          "when",
+          "when's",
+          "whence",
+          "whenever",
+          "where",
+          "where's",
+          "whereafter",
+          "whereas",
+          "whereby",
+          "wherein",
+          "whereupon",
+          "wherever",
+          "whether",
+          "which",
+          "while",
+          "whither",
+          "who",
+          "who's",
+          "whoever",
+          "whole",
+          "whom",
+          "whose",
+          "why",
+          "why's",
+          "widely",
+          "wiley",
+          "will",
+          "with",
+          "within",
+          "without",
+          "won't",
+          "wonder",
+          "work",
+          "workbook",
+          "works",
+          "workshop",
+          "would",
+          "wouldn't",
+          "wu",
+          "yet",
+          "you",
+          "you'd",
+          "you'll",
+          "you're",
+          "you've",
+          "your",
+          "yours",
+          "yourself",
+          "yourselves",
+          "zero",
+          "zhang",
+          "一卷",
+          "一般",
+          "三卷",
+          "上",
+          "上册",
+          "上卷",
+          "上的",
+          "下",
+          "下册",
+          "下卷",
+          "下的",
+          "与",
+          "丛书",
+          "丛刊",
+          "丛集",
+          "中",
+          "中华文",
+          "中卷",
+          "中小学",
+          "中的",
+          "中级",
+          "中英",
+          "为",
+          "主审",
+          "主编",
+          "之",
+          "了",
+          "事件",
+          "二卷",
+          "人们的",
+          "人在",
+          "人的",
+          "从",
+          "他们的",
+          "他的",
+          "代文化",
+          "代的",
+          "代通俗",
+          "伟大",
+          "传媒经",
+          "你们的",
+          "你的",
+          "例解",
+          "修订",
+          "入门",
+          "全书",
+          "全译",
+          "全集",
+          "其",
+          "其应",
+          "典型",
+          "决定",
+          "分变函数",
+          "初级",
+          "到",
+          "力和",
+          "动与",
+          "卷五",
+          "及",
+          "双重",
+          "变革",
+          "名家",
+          "和",
+          "哲学与",
+          "四卷",
+          "四行",
+          "国的",
+          "图解",
+          "图鉴",
+          "在",
+          "增订",
+          "大全",
+          "大卫",
+          "大学",
+          "大的",
+          "天然",
+          "奥秘",
+          "她的",
+          "字典",
+          "学探",
+          "学校",
+          "学生",
+          "它的",
+          "守护",
+          "完美",
+          "实例",
+          "实操",
+          "实用",
+          "实的",
+          "小的",
+          "崩溃",
+          "工电工",
+          "影印",
+          "征服",
+          "忠实",
+          "情人",
+          "感悟",
+          "我们的",
+          "我的",
+          "战中",
+          "手册",
+          "打造",
+          "技术及",
+          "把",
+          "报告",
+          "指南",
+          "指导",
+          "探究",
+          "探索",
+          "教材",
+          "教程",
+          "文库",
+          "文选",
+          "文集",
+          "新唐",
+          "新的",
+          "新编",
+          "方向",
+          "族卷",
+          "旧的",
+          "是",
+          "本",
+          "术全",
+          "材料的",
+          "校注",
+          "案例",
+          "概论",
+          "民用",
+          "汇编",
+          "没有",
+          "注释",
+          "漫长",
+          "点校",
+          "物图鉴",
+          "现状",
+          "珍藏",
+          "由",
+          "百科",
+          "的",
+          "的人",
+          "的女人",
+          "的工",
+          "的应",
+          "的政",
+          "的旅",
+          "研究",
+          "积极",
+          "第",
+          "第一",
+          "第七",
+          "第三",
+          "第九",
+          "第二",
+          "第五",
+          "第八",
+          "第六",
+          "第十",
+          "第四",
+          "等",
+          "简史",
+          "简明",
+          "简编",
+          "精选",
+          "系列",
+          "终结",
+          "编",
+          "编委",
+          "编著",
+          "职业",
+          "聚焦",
+          "胜算",
+          "著",
+          "被",
+          "解析",
+          "解读",
+          "让",
+          "讲记",
+          "论文",
+          "评论",
+          "词典",
+          "译",
+          "诞生",
+          "详解",
+          "读本",
+          "辑",
+          "追求",
+          "选读",
+          "选集",
+          "通史",
+          "通论",
+          "那些",
+          "险的",
+          "青少年",
+          "高等",
+          "高级",
+          "龙八部"
+        ]
+      },
+      "counts": {
+        "nodes": 5187,
+        "kw": 4838,
+        "cls": 349,
+        "sources": {
+          "A+B": 954,
+          "C": 349,
+          "B": 3481,
+          "A": 403
+        },
+        "source_a_kept": 1518,
+        "source_a_dropped_zero_freq": 429,
+        "source_a_dropped_embedded": 894,
+        "source_a_raw_unique": 3345,
+        "source_b_merged_unique": 224511,
+        "source_b_df5": 21965,
+        "source_b_df8": 13585,
+        "source_b_df10": 10862,
+        "source_b_kept": 9044,
+        "source_b_accepted": 4435,
+        "source_b_dropped_cjk": 2822,
+        "source_b_dropped_cjk_contained": 1801,
+        "source_b_dropped_cjk_max_df": 464,
+        "source_b_dropped_en_quality": 1787,
+        "source_c": 349,
+        "truncated": false
+      },
+      "freq_stats": {
+        "min": 1,
+        "p25": 17,
+        "median": 29,
+        "p75": 78,
+        "p90": 267,
+        "max": 11534,
+        "zero_freq": 0
+      },
+      "artifacts": [
+        "topics/nodes.json",
+        "topics/p1-build-report.json",
+        "topics/p1-sample50.txt",
+        "topics/p1-build.log"
+      ],
+      "noise_sample": {
+        "n": 50,
+        "noisy": 2,
+        "noise_rate": 0.04,
+        "method": "50 词分层抽检（高/中/低频分层，人工判定）",
+        "file": "topics/p1-sample50.txt"
+      },
+      "noise_rate": 0.04,
+      "noisy_items": [
+        {
+          "stratum": "mid",
+          "id": "4013",
+          "term": "重大",
+          "type": "kw",
+          "verdict": "噪声",
+          "reason": "泛词（形容词），非主题"
+        },
+        {
+          "stratum": "mid",
+          "id": "3613",
+          "term": "业化",
+          "type": "kw",
+          "verdict": "噪声",
+          "reason": "跨词残片（工业化/产业化）"
+        }
+      ],
+      "report_file": "topics/p1-build-report.json"
+    },
+    "P2": {
+      "stage": "P2",
+      "generated_at": "2026-09-18T19:45:26+0800",
+      "generator": "python3 topic_edges.py --data /home/wzh/go/lib-catalog-data",
+      "seconds": 13.9,
+      "params": {
+        "top_per_card": 10,
+        "top_k": 5,
+        "max_out": 20,
+        "cap_count": 50,
+        "combine": "sum",
+        "variant": "aug",
+        "rank_by": "assoc",
+        "variant_mode": "auto",
+        "cls_in_cooccurrence": "auto",
+        "coverage_samples": 400,
+        "seed": 42,
+        "b1_weight_rule": "score(card,term)=Σ tfidf(card, token) over tokens⊆term（ASCII 精确/CJK 相邻 bigram 求和）",
+        "b1_cls_policy": "cls 不占卡 top-5 名额",
+        "b2_pair_members": "卡 top-5 kw ∪ {卡 cls2}",
+        "b2_weight": "w1=log1p(min(共现书数,cap))/log1p(cap)",
+        "b3_weight": "w2=0.3×log1p(簇内共现)/log1p(cap)",
+        "b3_combine": "sum",
+        "b3_new_pairs": 0,
+        "b3_note": "同簇对必然已有共现边（cnt_sc>0 ⟹ cnt>0）；sum 口径下 ② 为加成项，max 口径下 ② 恒被 ① 支配而失效",
+        "b4_weight": "主题→cls2 类目，w=1.0，单向（无自环）",
+        "b4_target_rule": "cls 节点词表 = §3.1 源 C 的 CLC cls2；节点表 cls 字段是 cls1（无对应节点），故层级边目标由卡级证据投票取众数 cls2",
+        "b5_arrays": {
+          "indptr": "int64",
+          "indices": "int32",
+          "weights": "float32"
+        },
+        "normalization": "三类公式均已用 log1p(cap) 归一到 [0,1]；最终 clamp ≤1.0",
+        "tie_break": "R1 修复后：primary=assoc 时键序 src↑ → 关联度↓ → 权重↓ → dst↑（权重退为 tie-break）；primary=weight 时 src↑ → 权重↓ → 关联度↓ → dst↑。两种模式层级边均置顶（tie=1e9/w=1.0）",
+        "rank_by_note": "截断排序键默认 assoc=count/√(freq_u·freq_v)（权重公式不变）；--rank-by weight 可复现 §3.2 字面口径；R1 修复②前 assoc 仅作权重平局 tie-break（未生效），修复后为**主键**"
+      },
+      "counts": {
+        "nodes": 5187,
+        "kw": 4838,
+        "cls": 349,
+        "cards": 188512,
+        "cards_with_cls2": 179587,
+        "cards_empty_topics": 22573,
+        "cards_topic_count_hist": {
+          "0": 22573,
+          "1": 32886,
+          "2": 38925,
+          "3": 34190,
+          "4": 25063,
+          "5": 34875
+        },
+        "pairs_aug_raw": 1112854,
+        "pairs_spec_raw": 640623,
+        "pairs_same_cluster_raw": 60185,
+        "distinct_pairs_aug": 330426,
+        "distinct_pairs_kwkw": 245779,
+        "distinct_pairs_same_cluster": 9167,
+        "hierarchical_edges": 4832,
+        "kw_without_hier_edge": 6,
+        "edges_final": 99268
+      },
+      "edge_stats": {
+        "chosen": "aug",
+        "avg_out_degree": 19.138,
+        "out_degree": {
+          "min": 0,
+          "median": 20,
+          "p90": 20.0,
+          "max": 20
+        },
+        "isolated_out0": 3,
+        "weight_dist": {
+          "n": 99268,
+          "min": 0.1763,
+          "median": 0.2292,
+          "mean": 0.3647,
+          "p90": 0.8734,
+          "max": 1.0
+        },
+        "w_eq_1_share": 0.0807,
+        "cooccur_count_dist": {
+          "n": 330426,
+          "min": 1.0,
+          "median": 1.0,
+          "mean": 3.368,
+          "p90": 5.0,
+          "max": 1256.0
+        },
+        "cooccur_saturated_pairs": 2253,
+        "cooccur_saturated_share": 0.0068,
+        "cooccur_singleton_share": 0.6227,
+        "kwkw_edge_share": 0.7438
+      },
+      "self_test": {
+        "avg_out_degree_le_max": true,
+        "hop12_kw_seeds_mean": 0.9188,
+        "hop12_all_seeds_mean": 0.9234,
+        "components": {
+          "components": 4,
+          "largest": 5184,
+          "largest_pct": 0.999422
+        },
+        "hot_nodes": [
+          {
+            "id": 43,
+            "term": "TP3",
+            "type": "cls",
+            "freq": 11534,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "security",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "software",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "计算机",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "web",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "computer",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "linux",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "computing",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "windows",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.1,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 18,
+            "term": "中国",
+            "type": "kw",
+            "freq": 10379,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "D6",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "中国文化",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "K2",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "china",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": true
+              },
+              {
+                "term": "集成",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "中国民族",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "文化",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "chinese",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.1,
+            "neighbor_same_cls_pct": 0.15
+          },
+          {
+            "id": 22,
+            "term": "I2",
+            "type": "cls",
+            "freq": 8849,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "文学",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "小说",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "散文",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "演义",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "中国",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "诗词",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "红楼梦",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "唐诗",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.05,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 14,
+            "term": "F2",
+            "type": "cls",
+            "freq": 7522,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "企业",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "财务",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "管理",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "accounting",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "公司",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "corporate",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "business",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "审计",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.15,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 5,
+            "term": "F8",
+            "type": "cls",
+            "freq": 6517,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "金融",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "投资",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "financial",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "银行",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "货币",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "保险",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "finance",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "banking",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.2,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 91,
+            "term": "技术",
+            "type": "kw",
+            "freq": 5616,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "技术与应用",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": true
+              },
+              {
+                "term": "应用",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "制造技术",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "处理技术",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "控制技术",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "测试",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "及应",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "电子",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.05,
+            "neighbor_same_cls_pct": 0.35
+          },
+          {
+            "id": 12,
+            "term": "O1",
+            "type": "cls",
+            "freq": 5121,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "数学",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "geometry",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "differential",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "代数",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "algebra",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "equations",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "mathematics",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "algebraic",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.05,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 145,
+            "term": "应用",
+            "type": "kw",
+            "freq": 4824,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "及应",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "技术与应用",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "原理与应用",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "及其",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "技术",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "原理",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "TP3",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "开发",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.0,
+            "neighbor_same_cls_pct": 0.6
+          },
+          {
+            "id": 42,
+            "term": "K8",
+            "type": "cls",
+            "freq": 4785,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "发掘报告",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "考古",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "archaeology",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "学家",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "成就",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "评传",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "回忆录",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "民俗",
+                "w": 0.9625,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.25,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 70,
+            "term": "O4",
+            "type": "cls",
+            "freq": 4638,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "quantum",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "量子",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "physics",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "relativity",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "mechanics",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "optics",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "field",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "光学",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.5,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 6,
+            "term": "设计",
+            "type": "kw",
+            "freq": 4440,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "TB4",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "机械设计",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "TH1",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "机械",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "design",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "J5",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "系统设计",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "电路设计",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.05,
+            "neighbor_same_cls_pct": 0.3
+          },
+          {
+            "id": 104,
+            "term": "B8",
+            "type": "cls",
+            "freq": 4281,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "心理学",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "人生",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "psychology",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "美学",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "理学",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "自己",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "伦理学",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "aesthetics",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.15,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 11,
+            "term": "applications",
+            "type": "kw",
+            "freq": 4108,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "fundamentals",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "theory",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "TB3",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "properties",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "synthesis",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "principles",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "O1",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "nanomaterials",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.05,
+            "neighbor_same_cls_pct": 0.15
+          },
+          {
+            "id": 31,
+            "term": "I5",
+            "type": "cls",
+            "freq": 3987,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "shakespeare",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "shakespearian",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "dover",
+                "w": 0.9318,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "wilson",
+                "w": 0.9318,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "la",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "诗选",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "poetry",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "莎士比亚",
+                "w": 0.9318,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.15,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 49,
+            "term": "TN9",
+            "type": "cls",
+            "freq": 3829,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "signal",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "communications",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "wireless",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "mobile",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "信号处理",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "radar",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "processing",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "雷达",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.4,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 2,
+            "term": "D9",
+            "type": "cls",
+            "freq": 3717,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "law",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "法律",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "dispute",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "reports",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "settlement",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "法治",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "criminal",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "法典",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.4,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 0,
+            "term": "经济",
+            "type": "kw",
+            "freq": 3598,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "经济学",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": true
+              },
+              {
+                "term": "F0",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "F1",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "economics",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": true
+              },
+              {
+                "term": "宏观",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": true
+              },
+              {
+                "term": "经济发展",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "增长",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "economic",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.45,
+            "neighbor_same_cls_pct": 0.8
+          },
+          {
+            "id": 66,
+            "term": "K2",
+            "type": "cls",
+            "freq": 3575,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "文化",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "历史",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "中国",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "中国文化",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "anti-japanese",
+                "w": 0.8734,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "wap",
+                "w": 0.8734,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "思勉全集",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "史记",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.15,
+            "neighbor_same_cls_pct": 0.0
+          },
+          {
+            "id": 81,
+            "term": "theory",
+            "type": "kw",
+            "freq": 3548,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "O1",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "practice",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "O4",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "field",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": true
+              },
+              {
+                "term": "quantum",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": true
+              },
+              {
+                "term": "applications",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": true
+              },
+              {
+                "term": "O2",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "理论",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.4,
+            "neighbor_same_cls_pct": 0.6
+          },
+          {
+            "id": 46,
+            "term": "TB3",
+            "type": "cls",
+            "freq": 3436,
+            "deg": 20,
+            "top_neighbors": [
+              {
+                "term": "材料",
+                "w": 1.0,
+                "same_cluster": true,
+                "same_cls": false
+              },
+              {
+                "term": "materials",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "nanomaterials",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "composites",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "composite",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "properties",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "graphene",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              },
+              {
+                "term": "nanoscience",
+                "w": 1.0,
+                "same_cluster": false,
+                "same_cls": false
+              }
+            ],
+            "neighbor_same_cluster_pct": 0.05,
+            "neighbor_same_cls_pct": 0.0
+          }
+        ]
+      },
+      "artifacts": [
+        "topics/edges.csr.npz",
+        "topics/card_topics.jsonl",
+        "topics/p2-build-report.json",
+        "topics/p2-build.log"
+      ],
+      "report_file": "topics/p2-build-report.json",
+      "p2-tuning": [
+        {
+          "cfg": "weight/20",
+          "rank_by": "weight",
+          "max_out": 20,
+          "mutual": 0,
+          "avg_out": 19.138,
+          "kw": 0.7744,
+          "all_": 0.7874,
+          "uc": 0.8429,
+          "sym": 0.92,
+          "edges": 99268
+        },
+        {
+          "cfg": "weight/30",
+          "rank_by": "weight",
+          "max_out": 30,
+          "mutual": 0,
+          "avg_out": 27.814,
+          "kw": 0.8553,
+          "all_": 0.867,
+          "uc": null,
+          "sym": null,
+          "edges": 144272
+        },
+        {
+          "cfg": "assoc/20",
+          "rank_by": "assoc",
+          "max_out": 20,
+          "mutual": 0,
+          "avg_out": 19.138,
+          "kw": 0.8972,
+          "all_": 0.903,
+          "uc": 0.9797,
+          "sym": 0.92,
+          "edges": 99268
+        },
+        {
+          "cfg": "assoc/30",
+          "rank_by": "assoc",
+          "max_out": 30,
+          "mutual": 0,
+          "avg_out": 27.814,
+          "kw": 0.9028,
+          "all_": 0.9088,
+          "uc": 0.9845,
+          "sym": 0.92,
+          "edges": 144272
+        },
+        {
+          "cfg": "assoc/20+mutual1",
+          "rank_by": "assoc",
+          "max_out": 20,
+          "mutual": 1,
+          "avg_out": 19.138,
+          "kw": 0.8972,
+          "all_": 0.903,
+          "uc": 0.9797,
+          "sym": 0.92,
+          "edges": 99268
+        },
+        {
+          "cfg": "assoc/20+mutual3",
+          "rank_by": "assoc",
+          "max_out": 20,
+          "mutual": 3,
+          "avg_out": 19.138,
+          "kw": 0.8972,
+          "all_": 0.903,
+          "uc": 0.9797,
+          "sym": 0.92,
+          "edges": 99268
+        }
+      ],
+      "tuning_evidence": "topics/p2-tuning.md",
+      "acceptance_scripts": [
+        "acceptance/topics-p0.sh",
+        "acceptance/topics-p1.sh",
+        "acceptance/topics-p2.sh",
+        "acceptance/topics-p3.sh",
+        "acceptance/topics-p4.sh",
+        "acceptance/topics-p5.sh"
+      ],
+      "r1_fix": {
+        "date": "2026-09-18 R1 修复轮",
+        "defects": [
+          {
+            "id": "①",
+            "defect": "共现重复计数：kw-kw 对在 spec 循环与 aug 循环各写一次 → 每对每卡计两次",
+            "impact": "共现书数翻倍、权重整体偏高、饱和对偏多",
+            "fix": "合并为单轮枚举（top-5 kw ∪ {cls2}），每无序对每卡只计一次；同簇计数器独立计数不叠加",
+            "verified": "settlement↔entanglement(MMS 991000938579704181) 权重 0.2794153094 → 0.1762914360（= log1p(1)/log1p(50)，与 card_topics 独立重算一致）",
+            "counter": "distinct 对数不变（330,426），原始对实例 1,753,477 → 1,112,854；同簇原始 96,874 → 60,185"
+          },
+          {
+            "id": "②",
+            "defect": "assoc 排序键未生效：topk_csr 的 lexsort 实为「权重优先」，assoc 仅作平局 tie-break",
+            "impact": "--rank-by assoc 名义生效实质未生效；低频节点仍被高频词挤出 top-20",
+            "fix": "primary=assoc 时键序改为 src↑ → 关联度↓ → 权重↓ → dst↑（权重退为 tie-break）；primary=weight 保持字面口径",
+            "verified": "终审反例复现并修正：经济学(id=4) 邻域中 economist(assoc 0.0578,共现10) 修复前缺席 → 修复后进入(w=0.7775)；economic(assoc 0.0353,共现39) 修复前在邻域(w=1.0) → 修复后让位"
+          }
+        ],
+        "before_after": {
+          "edges": {
+            "before": 99268,
+            "after": 99268
+          },
+          "avg_outdegree": {
+            "before": 19.138,
+            "after": 19.138
+          },
+          "weight_mean": {
+            "before": 0.5187,
+            "after": 0.3647
+          },
+          "weight_median": {
+            "before": 0.4093,
+            "after": 0.2292
+          },
+          "weight_eq1_ratio": {
+            "before": 0.1138,
+            "after": 0.081
+          },
+          "cooccur_saturated_pairs": {
+            "before": 3878,
+            "after": 2253
+          },
+          "cover_hop12_kw400_cluster": {
+            "before": 0.8972,
+            "after": 0.9188
+          },
+          "cover_hop12_kw400_union": {
+            "before": 0.9797,
+            "after": 0.9912
+          },
+          "cover_hop12_all400_cluster": {
+            "before": 0.903,
+            "after": 0.9218
+          },
+          "cover_hop12_exhaustive5187_cluster": {
+            "before": 0.8992,
+            "after": 0.9194
+          },
+          "cover_hop12_exhaustive5187_union": {
+            "before": null,
+            "after": 0.9856
+          }
+        },
+        "artifacts": {
+          "pre_fix_edges": "topics/edges.csr.pre-r1.npz",
+          "pre_fix_note": "topics/edges.csr.pre-r1.npz.NOTE.txt",
+          "exhaustive": "topics/topics-report-exhaustive.json"
+        }
+      }
+    },
+    "P3": {
+      "stage": "P3",
+      "generated_at": "2026-09-18T19:46:15+0800",
+      "generator": "python3 topics_report.py --data /home/wzh/go/lib-catalog-data --samples 400 --hops 12 --seed 42 (见 config)",
+      "config": {
+        "samples": 400,
+        "hops": 12,
+        "seed": 42,
+        "source_type": "kw",
+        "perf_samples": 50,
+        "max_outdeg": 20,
+        "random_baseline": true
+      },
+      "definitions": {
+        "same_cluster": "源点与目标节点的 nodes.json `cluster` 字段相等（cluster=-1 的源点丢弃并单列）",
+        "coverage": "第 h 跳累计同簇覆盖 = |{可达节点 ∩ 同簇节点}| / |同簇节点总数|（图上 cluster 字段成员数）",
+        "bfs": "有向出边、逐跳新增（首访即标记）、≤12 跳；levels 集合与 graph_report.bfs_levels 等价",
+        "decay": "w_hop = w_parent × edge_w × 0.86；逐层取各节点入边中得分最大的路径（乘性最优）",
+        "decay_theory": "0.86^hop（edge_w≡1 的理论线）",
+        "connectivity": "边视为无向，scipy connected_components(A + A.T)",
+        "csr_spec": "indptr int64(n+1) / indices int32 / weights float32；有向，权重∈[0,1]，每节点出度≤20"
+      },
+      "report_file": "topics/topics-report.json",
+      "coverage": {
+        "gate": 0.9,
+        "cluster_only": {
+          "mean": 0.9187989336293301,
+          "median": 0.9411764705882353,
+          "pass": true,
+          "role": "严格观察项（与 v1 基线 0.902 基本持平）"
+        },
+        "cluster_or_cls": {
+          "mean": 0.9911547523415218,
+          "median": 0.9963030286464027,
+          "pass": true,
+          "role": "硬门槛口径（§4-P3 原文「主簇或分类」）"
+        },
+        "undirected_closure": {
+          "mean": 0.9200401344574874,
+          "median": 0.9411764705882353,
+          "pass": true,
+          "role": "方向性诊断列"
+        },
+        "denominators": {
+          "same_cluster": "同 cluster 字段的节点数（图上）",
+          "union": "|cluster==c ∪ cls==C| 的节点数（图上，去重并集）",
+          "undirected": "同 cluster 字段的节点数；可达域换为无向连通闭包",
+          "same_cluster_share": "可达节点总数（字面口径，不用于门槛）"
+        }
+      },
+      "performance": {
+        "p50_ms": 2.6229025024804287,
+        "p95_ms": 3.305051249117241,
+        "target_ms": 1000,
+        "pass": true
+      },
+      "connectivity": {
+        "components": 4,
+        "largest_component": 5184,
+        "largest_pct": 0.9994216310005783,
+        "singleton_components": 3
+      },
+      "decay": {
+        "decay_factor": 0.86,
+        "hop1_mean": 0.3058161597326398,
+        "hop3_mean": 0.07812661336269229,
+        "mean_edge_weight_global": 0.3647242486476898,
+        "mean_edge_weight_on_best_paths": 0.40934451258626403
+      },
+      "artifacts": [
+        "topics/topics-report.json",
+        "topics/topics-report.txt",
+        "topics/topics-report-allseed.json",
+        "topics/acceptance-p3.log"
+      ],
+      "verdict": "P3 口径终裁（主会话 2026-09-18）：硬门槛按 §4-P3 原文读法「主题的簇 = 主簇或分类」= ②（主簇∪类目）判定，门槛 0.90 硬编码在 acceptance/topics-p3.sh；①（仅主簇）作为并列严格观察项如实报告。R1 修复轮后（共现去重 + assoc 主排序键）主簇口径首次自然过线：400 采样 ①0.9188 / ②0.9912，穷举 5187 源点 ①0.9194 / ②0.9856；修复前为 ①0.8972（400 采样）/ 0.8992（穷举）。不调 P2 出度救覆盖（20→30 实测仅 +0.6pp 且破「出度≤20」规格，已证伪）；变体 CSR（edges.variant-spec.csr.npz）与修复前边表（edges.csr.pre-r1.npz）保留作研究记录，不进发行。",
+      "caliber_freeze": {
+        "frozen_at": "2026-09-18 R1（终审⑤要求把口径冻结成记录）",
+        "gate": 0.9,
+        "gate_applied_to": "② 主簇∪类目（§4-P3 原文）",
+        "same_cluster_set": "目标节点与源点 nodes.json `cluster` 字段相等；② 口径为「同 cluster 或同 cls」的并集",
+        "denominator": "|源点目标集合|（含源点本身；分子不含源点），对齐 graph_report.py 的 len(seen & mem)/len(mem)",
+        "sampling": "400 个随机源点，numpy default_rng(seed=42)，pool = kw 源点 4,838（--source-type kw，默认）/ 全节点 5,187（--source-type all）；另提供穷举 5,187 源点版本 topics-report-exhaustive.json",
+        "source_handling": "源点自身不计入分子；cluster=-1 的源点丢弃并单列（本图无 cluster=-1）；跳数上限 12，BFS 为有向出边、首访即标记、跳内去重",
+        "report_files": [
+          "topics/topics-report.json (kw 400)",
+          "topics/topics-report-allseed.json (all 400)",
+          "topics/topics-report-exhaustive.json (穷举 5187)"
+        ],
+        "decay_tolerance": {
+          "hop1_mean_min": 0.3,
+          "effective_hop_factor_range": [
+            0.3,
+            0.9
+          ],
+          "saturation_hop": "第 9 跳起无新增节点视为正常饱和",
+          "note": "主题图 0.86 沿用 §3.4/v1 实测值；比理论线应看「有效逐跳因子 = 最优路径平均边权 × 0.86」而非平均得分"
+        }
+      }
+    },
+    "P4": {
+      "stage": "P4",
+      "generated_at": "2026-09-18T20:01:04+0800",
+      "generator": "python3 topic_graph.py（查询编排）+ acceptance/topics-p4.sh（验收）",
+      "commands": {
+        "search": "主题检索：词面匹配（整词精确 exact / 查询 token 精确 token / 前缀 prefix / 子串 substr）× log1p(freq)；不加载书卡",
+        "around": "加权扩散邻域 + 分层输出 + card_topics 反查书证据（抽书卡样例）",
+        "graph": "JSON 子图 {nodes:[{id,term,type,cluster,w}], edges:[{src,dst,w}], stats}",
+        "summarize": "LLM 接口存根 summarize_topic_region(region)->str（region 结构与 INTERFACE-PROPOSAL.md 对齐）"
+      },
+      "diffusion": {
+        "rule": "w_hop = w_parent × edge_w × 0.86",
+        "threshold": 0.05,
+        "budget_nodes": 50000,
+        "hops_default": 2,
+        "hops_max": 12,
+        "note": "0.86 沿用 §3.4/v1 实测值，可用 --decay 覆盖（interface 待决 #11）"
+      },
+      "search_expansion": {
+        "when": "--expand auto（默认）：查询本身不是主题词表词（无整词精确命中，含零命中）时启用",
+        "path": "① 词面（exact/token/prefix/substr，已有）→ ② TF-IDF 近词扩展（新增）：复用 v1 索引 index/tfidf.npz（与 catalog_vector.Index.q_kw 同口径：token 计数×idf、查询向量 L2 归一、X@qᵀ 余弦）→ 取 top --expand-cards（默认 200）张相关书 → 聚合其 card_topics top-5 主题 → 映射回主题节点",
+        "output": "--expand-cards/--expand-top 可调；输出 src=tfidf-expand 标注来源，并给出 n_support_cards 与支持书 mms（--json 全量）",
+        "verified": "抽测 3 条非词表查询（机器学习 入门 / 量子 科普 / 人工智能 伦理）均返回相关主题，见 topics/p4-smoke.txt"
+      },
+      "guards": {
+        "hops_out_of_range": "exit 1（提示 1..12）",
+        "topic_id_out_of_range": "exit 1（提示有效范围）",
+        "strict_llm": "TOPIC_LLM 非 off/mock 且未实现时 exit 3（--strict-llm）",
+        "llm_default": "TOPIC_LLM 未设置 = off（纯结构化占位，不触网）"
+      },
+      "stub": {
+        "signature": "summarize_topic_region(region: dict) -> str",
+        "deterministic": true,
+        "network": "无（静态检查：无 requests/urllib/http/socket/url 调用面）",
+        "placeholder_fields": [
+          "扩散规则",
+          "区域规模（主题数/证据书数）",
+          "权重分布 min/中位/max",
+          "层级分布",
+          "代表主题",
+          "证据书样例"
+        ]
+      },
+      "acceptance": "acceptance/topics-p4.sh（四命令 exit0 / 手算扩散 1-2 跳 / 存根确定性 / 无网络 / 护栏 / JSON 结构）",
+      "artifacts": [
+        "topics/p4-smoke.txt",
+        "topics/acceptance-p4.log"
+      ],
+      "r1_1_fix": {
+        "date": "2026-09-18 R1.1（相关性闭环机理修复）",
+        "search_expansion": {
+          "window_before": 200,
+          "window_after": 50,
+          "defect": "聚合窗口过宽 → 泛化书目稀释意图限定词（人工智能伦理: ethics 排第 13，top-10 丢失）",
+          "after": "ethics 排第 1；该例相关性 B→A",
+          "rank_key": "agg（证据强度）为主序；agg/√freq 专指度归一实测有同形词回归（神经病学/neurology 顶到第 2-3），仅作 --expand-rank spec 选项"
+        },
+        "evidence_sampling": {
+          "before": "每主题按 card_topics 前 8 张卡（卡序）",
+          "after": "按对区域的加权覆盖度 Σ region_score(卡所含区域主题) 排序（平局按行号）",
+          "defect": "around 56 证据混入《跟毛泽东学习幽默智慧》(via 学习)，离题 1/3 → B",
+          "result": "around 56 证据 6/6 同域；around 18 由 6/6 cls=A 变为多域分布；#5/#10 B→A"
+        },
+        "relevance": {
+          "before": "7/10 (未达 ≥8)",
+          "after": "10/10",
+          "criteria": "S1–S5 未放宽；原判定保留，复测见 topics/p4-relevance.md §4"
+        },
+        "guards": {
+          "decay": "(0,1]",
+          "budget": "≥1（visited 含源点，region ≤ budget）",
+          "threshold": "[0,1]"
+        },
+        "acceptance": "六脚本 142 项断言全绿（P0 8 / P1 17 / P2 30 / P3 21 / P4 38 / P5 28）"
+      }
+    }
+  },
+  "current_stage": "P4",
+  "updated_at": "2026-09-18T20:01:04+0800",
+  "notes_meta": [
+    "多阶段结构说明：顶层既有键为 P0 遗留（保持兼容 acceptance/topics-p0.sh 的 stage==P0 断言）；各阶段口径以 stages.<STAGE> 为准。本结构由 topics_meta.py 维护（2026-09-18 18:40 追加 P1）。",
+    "多阶段结构说明：顶层既有键为 P0 遗留（保持兼容 acceptance/topics-p0.sh 的 stage==P0 断言）；各阶段口径以 stages.<STAGE> 为准。本结构由 topics_meta.py 维护（2026-09-18 18:50 追加 P2）。",
+    "多阶段结构说明：顶层既有键为 P0 遗留（保持兼容 acceptance/topics-p0.sh 的 stage==P0 断言）；各阶段口径以 stages.<STAGE> 为准。本结构由 topics_meta.py 维护（2026-09-18 18:51 追加 P2）。",
+    "多阶段结构说明：顶层既有键为 P0 遗留（保持兼容 acceptance/topics-p0.sh 的 stage==P0 断言）；各阶段口径以 stages.<STAGE> 为准。本结构由 topics_meta.py 维护（2026-09-18 19:04 追加 P3）。",
+    "多阶段结构说明：顶层既有键为 P0 遗留（保持兼容 acceptance/topics-p0.sh 的 stage==P0 断言）；各阶段口径以 stages.<STAGE> 为准。本结构由 topics_meta.py 维护（2026-09-18 19:13 追加 P4）。",
+    "多阶段结构说明：顶层既有键为 P0 遗留（保持兼容 acceptance/topics-p0.sh 的 stage==P0 断言）；各阶段口径以 stages.<STAGE> 为准。本结构由 topics_meta.py 维护（2026-09-18 19:48 追加 P2）。",
+    "多阶段结构说明：顶层既有键为 P0 遗留（保持兼容 acceptance/topics-p0.sh 的 stage==P0 断言）；各阶段口径以 stages.<STAGE> 为准。本结构由 topics_meta.py 维护（2026-09-18 19:48 追加 P3）。",
+    "多阶段结构说明：顶层既有键为 P0 遗留（保持兼容 acceptance/topics-p0.sh 的 stage==P0 断言）；各阶段口径以 stages.<STAGE> 为准。本结构由 topics_meta.py 维护（2026-09-18 20:01 追加 P4）。"
+  ]
+}

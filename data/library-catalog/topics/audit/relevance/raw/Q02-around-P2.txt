@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 184 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = 量子 (整词命中中 freq 最低)
+=== around 184 「量子」 (kw, freq=415, cluster=167, cls=O) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 242 主题 / 书证据 52612 本 / 扫描边 420 / 权重 0.058~1.000(中位 0.376) / 300.1ms
+
+[hop 1] 20 个主题（显示 top 10）
+     30 力学                      kw   score=0.8600   via 量子
+     70 O4                      cls  score=0.8600   via 量子
+    166 quantum                 kw   score=0.8600   via 量子
+    298 mechanics               kw   score=0.7898   via 量子
+    177 计算                      kw   score=0.6761   via 量子
+    243 动力学                     kw   score=0.6756   via 量子
+    368 信息                      kw   score=0.6659   via 量子
+    171 光学                      kw   score=0.6197   via 量子
+    565 物理学                     kw   score=0.6197   via 量子
+    624 导论                      kw   score=0.6197   via 量子
+
+[hop 2] 221 个主题（显示 top 10）
+     16 材料                      kw   score=0.7396   via 量子 → 力学
+     46 TB3                     cls  score=0.7396   via 量子 → 力学
+     55 V2                      cls  score=0.7396   via 量子 → 力学
+     81 theory                  kw   score=0.7396   via 量子 → O4
+     93 O3                      cls  score=0.7396   via 量子 → 力学
+    137 结构                      kw   score=0.7396   via 量子 → 力学
+    144 理论                      kw   score=0.7396   via 量子 → 力学
+    198 工程                      kw   score=0.7396   via 量子 → 力学
+    207 physics                 kw   score=0.7396   via 量子 → O4
+    220 动力                      kw   score=0.7396   via 量子 → 力学
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991001723707204181  热力学与统计物理 = Thermodynamics and statistical ph   cls=O/O4  via 「力学」
+  991002618526704181  Structural mechanics = 结构力学                    cls=O/O3  via 「力学」
+  991000725959704181  分析结构力学 = Mechanics of analysis structural      cls=O/O3  via 「力学」
+  991001594907904181  结构力学 = Structural mechanics 下册                 cls=O/O3  via 「力学」
+  991002618947704181  Many-body quantum theory in condensed matter   cls=O/O4  via 「quantum」
+
+---stderr---
+

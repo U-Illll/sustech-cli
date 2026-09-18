@@ -1,0 +1,293 @@
+N=188512 B(df>=5)=50,109  pass1=2.4s
+A lex=3,344 subject parts=72
+field scan done cards=188512 5.9s
+
+B after title_hits>=5 & ratio>=0.5: 35,223 (from 50,109)
+  title_hits>=1: 35,223
+  title_hits>=2: 35,223
+  title_hits>=3: 35,223
+  title_hits>=5: 35,223
+  title_hits>=8: 22,903
+  title_hits>=10: 18,627
+  title_hits>=15: 12,676
+  ascii=9,047 cjk=26,176
+  inA: 1,752
+  inSubj: 15
+  neither A nor subj: 33,466
+  cjk neither A nor subj: 25,261
+
+TOP 150 CJK filtered, not in A/subj, by title_hits:
+  th=  762 mh=   12 df=  762  '济学' len=2
+  th=  682 mh=    7 df=  682  '概论' len=2
+  th=  622 mh=    0 df=  622  '理与' len=2
+  th=  615 mh=    4 df=  616  '心理' len=2
+  th=  596 mh=    1 df=  596  '论与' len=2
+  th=  549 mh=   13 df=  550  '物理' len=2
+  th=  540 mh=    0 df=  540  '与实' len=2
+  th=  524 mh=    1 df=  524  '入门' len=2
+  th=  472 mh=   75 df=  478  '会计' len=2
+  th=  471 mh=   42 df=  475  '统计' len=2
+  th=  464 mh=    2 df=  464  '术与' len=2
+  th=  453 mh=    7 df=  453  '物学' len=2
+  th=  440 mh=    0 df=  440  '序设' len=2
+  th=  435 mh=    4 df=  435  '国古' len=2
+  th=  434 mh=    6 df=  434  '处理' len=2
+  th=  422 mh=    0 df=  422  '计与' len=2
+  th=  420 mh=   11 df=  426  '文明' len=2
+  th=  412 mh=   11 df=  415  '学与' len=2
+  th=  410 mh=    0 df=  410  '学史' len=2
+  th=  378 mh=    8 df=  382  '近代' len=2
+  th=  369 mh=    0 df=  369  '第一' len=2
+  th=  363 mh=    0 df=  363  '下册' len=2
+  th=  353 mh=    0 df=  353  '学实' len=2
+  th=  351 mh=    0 df=  351  '法与' len=2
+  th=  349 mh=    6 df=  349  '制造' len=2
+  th=  335 mh=    3 df=  335  '器人' len=2
+  th=  333 mh=    0 df=  333  '指导' len=2
+  th=  330 mh=    0 df=  330  '实例' len=2
+  th=  330 mh=    2 df=  330  '简史' len=2
+  th=  323 mh=    0 df=  323  '学原' len=2
+  th=  316 mh=    0 df=  316  '与技' len=2
+  th=  314 mh=   30 df=  317  '克思' len=2
+  th=  313 mh=    0 df=  313  '人的' len=2
+  th=  313 mh=    3 df=  313  '通信' len=2
+  th=  311 mh=    0 df=  311  '析与' len=2
+  th=  308 mh=    0 df=  308  '文版' len=2
+  th=  308 mh=    2 df=  308  '逻辑' len=2
+  th=  306 mh=    0 df=  306  '与中' len=2
+  th=  305 mh=    0 df=  305  '生命' len=2
+  th=  303 mh=    0 df=  303  '其应' len=2
+  th=  301 mh=    0 df=  301  '我的' len=2
+  th=  299 mh=    3 df=  299  '伦理' len=2
+  th=  296 mh=  156 df=  338  '民族' len=2
+  th=  293 mh=    4 df=  295  '项目' len=2
+  th=  293 mh=    0 df=  293  '术及' len=2
+  th=  293 mh=    0 df=  293  '的历' len=2
+  th=  293 mh=    0 df=  293  '高级' len=2
+  th=  292 mh=    0 df=  292  '产品' len=2
+  th=  291 mh=    2 df=  291  '国的' len=2
+  th=  289 mh=    0 df=  289  '学导' len=2
+  th=  286 mh=    4 df=  286  '治理' len=2
+  th=  284 mh=    0 df=  284  '理及' len=2
+  th=  283 mh=    0 df=  283  '的中' len=2
+  th=  277 mh=    4 df=  277  '精神' len=2
+  th=  276 mh=    6 df=  277  '自然' len=2
+  th=  276 mh=    0 df=  276  '与文' len=2
+  th=  273 mh=    2 df=  273  '建模' len=2
+  th=  271 mh=    0 df=  271  '图像' len=2
+  th=  269 mh=    1 df=  269  '工智' len=2
+  th=  268 mh=    8 df=  269  '学生' len=2
+  th=  268 mh=    2 df=  268  '国近' len=2
+  th=  266 mh=   89 df=  348  '代文' len=2
+  th=  266 mh=    1 df=  266  '人工' len=2
+  th=  265 mh=    1 df=  265  '传统' len=2
+  th=  264 mh=    5 df=  267  '软件' len=2
+  th=  263 mh=    1 df=  263  '简明' len=2
+  th=  262 mh=    0 df=  262  '第三' len=2
+  th=  259 mh=    0 df=  259  '代的' len=2
+  th=  259 mh=    1 df=  259  '化与' len=2
+  th=  258 mh=    0 df=  258  '与方' len=2
+  th=  257 mh=    1 df=  257  '信号' len=2
+  th=  255 mh=    2 df=  255  '比较' len=2
+  th=  253 mh=   10 df=  260  '学教' len=2
+  th=  253 mh=    1 df=  253  '关系' len=2
+  th=  251 mh=   15 df=  264  '新编' len=2
+  th=  251 mh=   16 df=  254  '思主' len=2
+  th=  249 mh=    5 df=  249  '图解' len=2
+  th=  245 mh=   73 df=  246  '标准' len=2
+  th=  243 mh=    0 df=  243  '础与' len=2
+  th=  242 mh=    1 df=  242  '化工' len=2
+  th=  241 mh=  145 df=  272  '民间' len=2
+  th=  241 mh=    0 df=  241  '用教' len=2
+  th=  233 mh=    0 df=  233  '优化' len=2
+  th=  233 mh=    0 df=  233  '电磁' len=2
+  th=  233 mh=    2 df=  233  '风险' len=2
+  th=  231 mh=    2 df=  233  '深度' len=2
+  th=  231 mh=    2 df=  232  '人文' len=2
+  th=  230 mh=    0 df=  230  '解析' len=2
+  th=  229 mh=    8 df=  229  '通史' len=2
+  th=  228 mh=    0 df=  228  '术基' len=2
+  th=  228 mh=    2 df=  228  '综合' len=2
+  th=  228 mh=    7 df=  228  '金属' len=2
+  th=  226 mh=    0 df=  226  '与设' len=2
+  th=  225 mh=    1 df=  226  '之路' len=2
+  th=  223 mh=    1 df=  223  '体系' len=2
+  th=  222 mh=    3 df=  222  '学概' len=2
+  th=  222 mh=    2 df=  222  '础教' len=2
+  th=  221 mh=    0 df=  221  '与人' len=2
+  th=  220 mh=    1 df=  221  '题研' len=2
+  th=  219 mh=    4 df=  222  '大全' len=2
+  th=  218 mh=   12 df=  230  '二十' len=2
+  th=  218 mh=    1 df=  218  '价值' len=2
+  th=  218 mh=    4 df=  218  '模式' len=2
+  th=  217 mh=    9 df=  217  '选集' len=2
+  th=  216 mh=    2 df=  218  '学思' len=2
+  th=  215 mh=    1 df=  216  '笔记' len=2
+  th=  214 mh=   71 df=  236  '考古' len=2
+  th=  214 mh=    2 df=  214  '与工' len=2
+  th=  213 mh=    2 df=  213  '百年' len=2
+  th=  212 mh=   57 df=  229  '百科' len=2
+  th=  209 mh=    0 df=  209  '统设' len=2
+  th=  208 mh=    6 df=  209  '服务' len=2
+  th=  208 mh=    0 df=  208  '基本' len=2
+  th=  207 mh=   15 df=  210  '建设' len=2
+  th=  207 mh=    3 df=  208  '性能' len=2
+  th=  207 mh=    0 df=  207  '国历' len=2
+  th=  207 mh=    0 df=  207  '的理' len=2
+  th=  206 mh=    3 df=  208  '文选' len=2
+  th=  206 mh=    0 df=  206  '上的' len=2
+  th=  205 mh=    4 df=  206  '汉语' len=2
+  th=  205 mh=    0 df=  205  '例教' len=2
+  th=  205 mh=    0 df=  205  '时间' len=2
+  th=  204 mh=    5 df=  204  '一本' len=2
+  th=  204 mh=    2 df=  204  '用技' len=2
+  th=  203 mh=    3 df=  204  '创业' len=2
+  th=  203 mh=   11 df=  203  '国史' len=2
+  th=  203 mh=    0 df=  203  '详解' len=2
+  th=  202 mh=    5 df=  203  '与分' len=2
+  th=  202 mh=    2 df=  202  '械设' len=2
+  th=  201 mh=    2 df=  201  '论文' len=2
+  th=  200 mh=    1 df=  200  '与数' len=2
+  th=  200 mh=    0 df=  200  '的生' len=2
+  th=  200 mh=    1 df=  200  '神经' len=2
+  th=  197 mh=   49 df=  206  '全书' len=2
+  th=  197 mh=    1 df=  198  '自动' len=2
+  th=  197 mh=    0 df=  197  '习指' len=2
+  th=  197 mh=    1 df=  197  '测量' len=2
+  th=  196 mh=    5 df=  198  '化研' len=2
+  th=  196 mh=    4 df=  196  '学术' len=2
+  th=  196 mh=    5 df=  196  '检测' len=2
+  th=  196 mh=    0 df=  196  '行为' len=2
+  th=  195 mh=    0 df=  195  '流体' len=2
+  th=  195 mh=    2 df=  195  '计实' len=2
+  th=  194 mh=   22 df=  216  '解读' len=2
+  th=  194 mh=    1 df=  194  '畫全' len=2
+  th=  194 mh=    1 df=  194  '飞行' len=2
+  th=  193 mh=    4 df=  194  '法学' len=2
+  th=  192 mh=    2 df=  192  '纳米' len=2
+  th=  191 mh=    0 df=  191  '度学' len=2
+  th=  190 mh=    4 df=  192  '前沿' len=2
+
+TOP 120 ASCII filtered, not in A/subj, by title_hits:
+  th= 6798 mh=  174 df= 6854  'and'
+  th= 6418 mh=  310 df= 6482  'the'
+  th= 5642 mh=  516 df= 5802  'of'
+  th= 5166 mh=  189 df= 5282  'in'
+  th= 3527 mh=   52 df= 3537  'for'
+  th= 2865 mh=   20 df= 2870  'to'
+  th= 1788 mh=  115 df= 1875  'an'
+  th= 1531 mh=   10 df= 1535  'with'
+  th= 1522 mh=  198 df= 1634  'on'
+  th= 1384 mh=    9 df= 1386  'from'
+  th=  439 mh=    1 df=  439  'understanding'
+  th=  426 mh=   17 df=  440  'basic'
+  th=  423 mh=   30 df=  446  'at'
+  th=  419 mh=   28 df=  444  'age'
+  th=  396 mh=    0 df=  396  'perspective'
+  th=  395 mh=    5 df=  396  'its'
+  th=  369 mh=  104 df=  469  'course'
+  th=  358 mh=    0 df=  358  'making'
+  th=  355 mh=    8 df=  357  'natural'
+  th=  354 mh=    0 df=  354  'beyond'
+  th=  348 mh=    1 df=  348  'critical'
+  th=  343 mh=    5 df=  343  'their'
+  th=  339 mh=   36 df=  368  'by'
+  th=  334 mh=    0 df=  334  'through'
+  th=  332 mh=    2 df=  333  'ancient'
+  th=  330 mh=    8 df=  330  'process'
+  th=  329 mh=    2 df=  331  'solutions'
+  th=  322 mh=    5 df=  322  'physical'
+  th=  320 mh=    6 df=  326  'as'
+  th=  313 mh=    4 df=  316  'case'
+  th=  311 mh=    4 df=  313  'tools'
+  th=  310 mh=    9 df=  311  'complex'
+  th=  307 mh=   32 df=  333  'sciences'
+  th=  307 mh=    0 df=  307  'essentials'
+  th=  295 mh=    0 df=  295  'essays'
+  th=  286 mh=   32 df=  311  'state'
+  th=  283 mh=    3 df=  286  'classical'
+  th=  280 mh=    3 df=  281  'approaches'
+  th=  278 mh=    0 df=  278  'essential'
+  th=  270 mh=    6 df=  271  'matter'
+  th=  265 mh=  122 df=  386  'is'
+  th=  262 mh=    4 df=  264  'issues'
+  th=  251 mh=    4 df=  251  'theories'
+  th=  245 mh=    3 df=  248  'part'
+  th=  241 mh=    0 df=  241  'revolution'
+  th=  234 mh=    7 df=  235  'trends'
+  th=  230 mh=    8 df=  232  'theoretical'
+  th=  230 mh=    1 df=  230  'planning'
+  th=  229 mh=    0 df=  229  'managing'
+  th=  224 mh=   13 df=  236  'people'
+  th=  220 mh=    1 df=  221  'western'
+  th=  216 mh=    0 df=  216  'manual'
+  th=  212 mh=    4 df=  215  'real'
+  th=  208 mh=    1 df=  209  'historical'
+  th=  208 mh=    1 df=  208  'things'
+  th=  206 mh=    1 df=  206  'finite'
+  th=  204 mh=    5 df=  209  'plant'
+  th=  204 mh=    1 df=  204  'that'
+  th=  203 mh=    3 df=  203  'behavior'
+  th=  201 mh=    1 df=  202  'into'
+  th=  201 mh=    2 df=  202  'method'
+  th=  201 mh=    4 df=  201  'solid'
+  th=  200 mh=   22 df=  201  'composites'
+  th=  199 mh=    0 df=  199  'elements'
+  th=  199 mh=    1 df=  199  'thermodynamics'
+  th=  197 mh=    0 df=  197  'about'
+  th=  195 mh=    1 df=  195  'developing'
+  th=  195 mh=    2 df=  195  'generation'
+  th=  194 mh=    8 df=  198  'probability'
+  th=  194 mh=    1 df=  194  'implementation'
+  th=  190 mh=    0 df=  190  'basics'
+  th=  188 mh=    4 df=  189  'integration'
+  th=  188 mh=    3 df=  188  'transport'
+  th=  187 mh=    5 df=  187  'testing'
+  th=  186 mh=    5 df=  186  'aspects'
+  th=  185 mh=    2 df=  185  'interaction'
+  th=  183 mh=    4 df=  185  'experimental'
+  th=  183 mh=    3 df=  183  'between'
+  th=  183 mh=    2 df=  183  'cognitive'
+  th=  183 mh=    0 df=  183  'decision'
+  th=  182 mh=    1 df=  182  'measurement'
+  th=  181 mh=   11 df=  189  'one'
+  th=  181 mh=    6 df=  182  'recent'
+  th=  181 mh=    1 df=  181  'relations'
+  th=  180 mh=   21 df=  198  'british'
+  th=  179 mh=    2 df=  180  'based'
+  th=  177 mh=   47 df=  211  'review'
+  th=  177 mh=    1 df=  177  'problem'
+  th=  176 mh=    0 df=  176  'era'
+  th=  175 mh=   12 df=  179  'special'
+  th=  175 mh=    2 df=  175  'all'
+  th=  174 mh=    1 df=  174  'effective'
+  th=  174 mh=    0 df=  174  'thought'
+  th=  173 mh=    6 df=  175  'topics'
+  th=  173 mh=    0 df=  173  'origins'
+  th=  171 mh=    7 df=  171  'sensors'
+  th=  169 mh=    5 df=  170  'laser'
+  th=  169 mh=    2 df=  169  'surface'
+  th=  168 mh=    2 df=  168  'dynamic'
+  th=  168 mh=    0 df=  168  'exploring'
+  th=  168 mh=    0 df=  168  'transformation'
+  th=  167 mh=    8 df=  167  'evaluation'
+  th=  166 mh=   18 df=  183  'organization'
+  th=  166 mh=    3 df=  167  'use'
+  th=  165 mh=    2 df=  165  'genetics'
+  th=  165 mh=    0 df=  165  'present'
+  th=  165 mh=    1 df=  165  'rise'
+  th=  164 mh=   10 df=  164  '21st'
+  th=  164 mh=    3 df=  164  'operations'
+  th=  164 mh=    0 df=  164  'second'
+  th=  163 mh=    0 df=  163  'changing'
+  th=  163 mh=    0 df=  163  'role'
+  th=  162 mh=    4 df=  163  'experiments'
+  th=  162 mh=    1 df=  163  'two'
+  th=  161 mh=    0 df=  161  'heat'
+  th=  159 mh=    1 df=  159  'towards'
+  th=  158 mh=   18 df=  175  'or'
+  th=  157 mh=   61 df=  199  'national'
+  th=  157 mh=    0 df=  157  'experience'
+  th=  157 mh=    0 df=  157  'mastering'
+
+total 6.0s

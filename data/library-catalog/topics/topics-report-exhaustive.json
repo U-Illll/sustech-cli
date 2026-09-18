@@ -1,0 +1,8 @@
+{
+ "exhaustive_sources": 5507,
+ "hops": 12,
+ "cluster_only_mean": 0.923707,
+ "cluster_or_cls_mean": 0.986745,
+ "undirected_mean": 0.926992,
+ "note": "R2-C 重跑（R2-A 新数据：5507 节点 / 105414 边；assoc 主排序键+共现去重仍生效）穷举全量口径"
+}

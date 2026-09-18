@@ -1,0 +1,299 @@
+{
+ "generated_at": "2026-09-18T20:47:39+0800",
+ "data_dir": "/home/wzh/go/lib-catalog-data",
+ "S0_artifact": {
+  "path": "topics/edges.csr.npz",
+  "arrays": [
+   "indptr",
+   "indices",
+   "weights"
+  ],
+  "dtypes": {
+   "indptr": "int64",
+   "indices": "int32",
+   "weights": "float32"
+  },
+  "nodes": 5187,
+  "edges": 99268,
+  "edge_array_bytes": {
+   "indptr": 41504,
+   "indices": 397072,
+   "weights": 397072
+  },
+  "file_bytes": 836406,
+  "info_lost": "边型（①②③ 组成）未落盘；weights 中 w1/w2 与 w3 不可分辨",
+  "not_recoverable_from_npz": [
+   "cnt(u,v)",
+   "cnt_sc(u,v)",
+   "cls_of[u]"
+  ]
+ },
+ "S1_reconstruct": {
+  "inputs": [
+   "topics/card_topics.jsonl",
+   "cards.jsonl",
+   "index/clusters.npy",
+   "topics/nodes.json"
+  ],
+  "cards": 188512,
+  "pairs_raw": 1112854,
+  "samesc_raw": 60185,
+  "distinct_pairs": 330426,
+  "hier_edges": 4832,
+  "kw_without_hier": 6
+ },
+ "S2_fidelity_gate": {
+  "indptr_equal": true,
+  "indices_equal": true,
+  "weights_bitwise_equal": true,
+  "max_abs_weight_diff": 0.0,
+  "pass": true
+ },
+ "S3_truth_mask": {
+  "distribution": [
+   {
+    "mask": 0,
+    "bits": [
+     "(none)"
+    ],
+    "count": 0,
+    "share": 0.0
+   },
+   {
+    "mask": 1,
+    "bits": [
+     "COOCCUR"
+    ],
+    "count": 84888,
+    "share": 0.85514
+   },
+   {
+    "mask": 2,
+    "bits": [
+     "SAMECLUSTER"
+    ],
+    "count": 0,
+    "share": 0.0
+   },
+   {
+    "mask": 3,
+    "bits": [
+     "COOCCUR",
+     "SAMECLUSTER"
+    ],
+    "count": 9557,
+    "share": 0.096275
+   },
+   {
+    "mask": 4,
+    "bits": [
+     "HIER"
+    ],
+    "count": 0,
+    "share": 0.0
+   },
+   {
+    "mask": 5,
+    "bits": [
+     "COOCCUR",
+     "HIER"
+    ],
+    "count": 4104,
+    "share": 0.041343
+   },
+   {
+    "mask": 6,
+    "bits": [
+     "SAMECLUSTER",
+     "HIER"
+    ],
+    "count": 0,
+    "share": 0.0
+   },
+   {
+    "mask": 7,
+    "bits": [
+     "COOCCUR",
+     "SAMECLUSTER",
+     "HIER"
+    ],
+    "count": 719,
+    "share": 0.007243
+   }
+  ],
+  "invariants": {
+   "orphan_edges(mask=0)": 0,
+   "hier_implies_cooccur": true,
+   "samesc_implies_cooccur": true,
+   "cooccur_edges": 99268,
+   "samecluster_edges": 10276,
+   "hier_edges": 4823,
+   "multi_type_edges": 14380
+  }
+ },
+ "S4_determinability": {
+  "proofs": {
+   "I0_hier_implies_cooccur": "③ 的投票卡必然把对 (主题, cls2) 并入 ① 的 pair 集 ⟹ bit0 ≡ 1",
+   "I1_hier_weight_is_1": "③ w3=1.0 且去重取 max ⟹ 存活 w<1.0 ⟹ bit2=0",
+   "I2_samecluster_is_pairwise": "② 是 (u,v) 对级加成，u,v 簇不同则 bit1=0"
+  },
+  "unknown_bits": {
+   "bit0_COOCCUR": 0,
+   "bit1_SAMECLUSTER": 11844,
+   "bit2_HIER": 5288
+  },
+  "edges_by_unknown_count": {
+   "0_fully_determined": 82964,
+   "1_bit_unknown": 15476,
+   "2_bits_unknown": 828
+  },
+  "shares": {
+   "fully_determined": 0.835758,
+   "needs_recompute": 0.164242
+  },
+  "naive_shape_only_unknown(no I1 applied)": 12148,
+  "bit1_known_zero_by_cluster_mismatch": 87424,
+  "bit2_known_zero_by_w_or_shape": 93980,
+  "recompute_required_edges": 16304,
+  "recompute_required_share": 0.164242,
+  "inference_selfcheck": {
+   "bit2_false_zero_violations": 0,
+   "bit1_false_zero_violations": 0
+  }
+ },
+ "S5_prototype_a": {
+  "sample": {
+   "nodes": 512,
+   "edges": 10233,
+   "dir": "topics/audit/edgetype/proto/"
+  },
+  "files": [
+   "sample_legacy_3array.csr.npz",
+   "sample_typed_4array.csr.npz",
+   "sample_legacy_3array.c.npz",
+   "sample_typed_4array.c.npz"
+  ],
+  "roundtrip_ok": true,
+  "legacy_reader_compat_ok": true,
+  "bytes": {
+   "legacy_3array": 86726,
+   "typed_4array": 97201,
+   "delta_uncompressed": 10475,
+   "legacy_savez_compressed": 34599,
+   "typed_savez_compressed": 36633,
+   "delta_compressed": 2034
+  },
+  "sample_type_hist": {
+   "0": 0,
+   "1": 7733,
+   "2": 0,
+   "3": 2100,
+   "4": 0,
+   "5": 304,
+   "6": 0,
+   "7": 96
+  },
+  "query_hier_sample": [
+   {
+    "u": "经济",
+    "v": "F0",
+    "w": 1.0,
+    "mask": 7
+   },
+   {
+    "u": "design",
+    "v": "TP3",
+    "w": 1.0,
+    "mask": 5
+   },
+   {
+    "u": "金融",
+    "v": "F8",
+    "w": 1.0,
+    "mask": 7
+   },
+   {
+    "u": "经济学",
+    "v": "F0",
+    "w": 1.0,
+    "mask": 7
+   },
+   {
+    "u": "设计",
+    "v": "TP3",
+    "w": 1.0,
+    "mask": 5
+   }
+  ],
+  "query_samecluster_sample": [
+   {
+    "u": "经济",
+    "v": "经济学",
+    "w": 1.0,
+    "mask": 3
+   },
+   {
+    "u": "经济",
+    "v": "F0",
+    "w": 1.0,
+    "mask": 7
+   },
+   {
+    "u": "经济",
+    "v": "economics",
+    "w": 1.0,
+    "mask": 3
+   },
+   {
+    "u": "经济",
+    "v": "宏观",
+    "w": 1.0,
+    "mask": 3
+   },
+   {
+    "u": "经济",
+    "v": "F",
+    "w": 1.0,
+    "mask": 3
+   }
+  ],
+  "full_graph_projection": {
+   "raw_array_bytes": 835648,
+   "with_types_u8": 934916,
+   "delta_bytes": 99268,
+   "delta_pct_of_raw": 11.88,
+   "delta_pct_of_file": 11.87
+  },
+  "query_cost": "位测试 O(deg) 向量化，与现有 CSR 遍历同阶，不引入新索引"
+ },
+ "S6_scheme_cost": {
+  "a_typemask_u8": {
+   "extra_arrays": 1,
+   "extra_bytes": 99268,
+   "schema": "additive（新增键 types）",
+   "breakage": "无（旧读取方忽略新键）",
+   "query": "O(deg) 位测试",
+   "migration": "重跑 P2 即可产出；无需重算节点"
+  },
+  "b_three_csr": {
+   "extra_arrays": 6,
+   "extra_bytes_est": 2506944,
+   "ratio_vs_a": 25.25,
+   "breakage": "高：indptr 语义一分为三，现有读取方全部要改；②⊂① 无法独立成图",
+   "query": "单型查询少扫边，但跨型查询需三次遍历+合并",
+   "note": "①99,268 / ③19,292 / ②参与10,276"
+  },
+  "c_status_quo": {
+   "extra_arrays": 0,
+   "extra_bytes": 0,
+   "breakage": "无",
+   "query": "NPZ 内不可查；需重跑 P2 或读离线掩码",
+   "offline_mask": {
+    "path": "topics/audit/edgetype/edge_type_mask.mask.npy",
+    "bytes": 99268,
+    "aligned_to": "edges.csr.npz 的 indices 行序"
+   }
+  }
+ },
+ "seconds": 1.4
+}

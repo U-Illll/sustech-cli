@@ -1,0 +1,135 @@
+{
+ "name": "sustc-library-catalog-topics",
+ "package_kind": "topics-only",
+ "generated_at": "2026-09-18 21:37:42",
+ "snapshot": {
+  "source_data_dir": "/home/wzh/go/lib-catalog-data",
+  "source_sha256": {
+   "nodes.json": "ba1ff2603ee759b2b36a04474c8b1a23c305fd26b13fa104a910fc993d322286",
+   "edges.csr.npz": "afd32610bd9b1adb18c9e3b480fb687b6ff0ef966b21f02981f325056c26750a",
+   "card_topics.jsonl": "3890295d514f66bd30fa8edda8da46feb5b6d7690b2b18efd381dc642b1ca77b",
+   "meta.json": "9baca57153478057d228d1dcaa6a29925439684ba5a9a27ee6ef5a38dd35222b",
+   "cards.jsonl": "9e9dffd2cf237b2ab7db24444154881b89d7afd352df171c64a28b8e7093fcfd"
+  },
+  "meta_binding": {
+   "checked": true,
+   "consistent": true,
+   "mismatches": [],
+   "registered": {
+    "nodes": 5507,
+    "edges": 105414,
+    "cards": 188512,
+    "avg_out_degree": 19.142,
+    "weight_mean": 0.3656,
+    "w_eq_1_share": 0.0805
+   },
+   "measured": {
+    "nodes": 5507,
+    "edges": 105414,
+    "cards": 188512,
+    "avg_out_degree": 19.142,
+    "weight_mean": 0.3656,
+    "w_eq_1_share": 0.0805
+   },
+   "u8_recomputed_w_eq1_count": 8491,
+   "meta_snapshot": {
+    "stage": "R2-C",
+    "updated_at": "2026-09-18T21:37:37+0800"
+   }
+  }
+ },
+ "stats": {
+  "nodes": 5507,
+  "edges": 105414,
+  "avg_outdeg": 19.142,
+  "max_outdeg": 20,
+  "cards": 188512,
+  "card_topic_links": 501205,
+  "dtypes": {
+   "indptr": "int64",
+   "indices": "int32",
+   "weights_u8": "uint8",
+   "card_indptr": "int32",
+   "card_ids": "int32"
+  },
+  "restore": {
+   "edge_weight": "w = v / 255.0",
+   "nodes": "JSON 数组，id = CSR 行号",
+   "card_topics": "第 i 行（0-based）对应 cards.jsonl 第 i 行"
+  },
+  "quant": {
+   "rule": "code = clip(round(w*255), 0, 255)",
+   "step": 0.00392156862745098,
+   "max_abs_err": 0.00196078431372549,
+   "w_min": 0.176291,
+   "w_max": 1.0,
+   "codes_used": 112,
+   "saturated_share": 0.0805,
+   "restore": "w ≈ v / 255.0"
+  },
+  "edge_types": {
+   "dtype": "uint8",
+   "bits": {
+    "0": "共现",
+    "1": "同簇加成",
+    "2": "层级"
+   },
+   "hist": {
+    "1": 89643,
+    "3": 10620,
+    "5": 4358,
+    "7": 793
+   }
+  }
+ },
+ "files": [
+  {
+   "path": "topics/nodes.json",
+   "size": 727446,
+   "sha256": "ba1ff2603ee759b2b36a04474c8b1a23c305fd26b13fa104a910fc993d322286",
+   "note": "主题节点表（JSON；{id,term,type:kw|cls,freq,cluster,cls,sources}）"
+  },
+  {
+   "path": "topics/edges_indptr.i64.bin",
+   "size": 44064,
+   "sha256": "f2545600efa81656b7d36008b67bbbd983e90557e2f32af4afa8138f32614bef",
+   "note": "主题图 CSR 行偏移（int64 LE, n+1；与节点表行序对齐）"
+  },
+  {
+   "path": "topics/edges_indices.i32.bin",
+   "size": 421656,
+   "sha256": "071998fa99a804212bcb203b0a57361eb6d28aab87cc6844767cb9b5cf4b08b5",
+   "note": "主题图 CSR 列索引（int32 LE, nnz；有向，出度 ≤20；行内按构建期 rank 序，非列升序）"
+  },
+  {
+   "path": "topics/edges_weights.u8.bin",
+   "size": 105414,
+   "sha256": "ac358ec263eeb794ca9c5699801433ba7eee491e857c9d4e9cd946168cc821e5",
+   "note": "主题图边权 uint8 LE（还原: w = v / 255.0；原始 float32 ∈[0,1]，1.0 = 层级边/饱和共现）"
+  },
+  {
+   "path": "topics/edges_types.u8.bin",
+   "size": 105414,
+   "sha256": "3b3b040933b15433caacbcd9f0de143218ffd8deb0d417f8267cd0151d198a8b",
+   "note": "边型 bitmask uint8 LE（与 edges_indices 行序对齐；bit0=共现 bit1=同簇加成 bit2=层级）"
+  },
+  {
+   "path": "topics/card_topics_indptr.i32.bin",
+   "size": 754052,
+   "sha256": "4f03dfb17c87e25a204d9789b770a92c72f49179b8c67c615c381b90bc183eac",
+   "note": "证据链 CSR 行偏移（int32 LE, N_cards+1；与 cards.jsonl 行序一致）"
+  },
+  {
+   "path": "topics/card_topics_ids.i32.bin",
+   "size": 2004820,
+   "sha256": "0dbc2a73af0448c7f371a1f247a36642305b02f9be2008eee13eea5943d4e75c",
+   "note": "证据链主题 id（int32 LE, nnz；每卡 top-5 主题，按词权降序）"
+  },
+  {
+   "path": "topics/meta.json",
+   "size": 88858,
+   "sha256": "9baca57153478057d228d1dcaa6a29925439684ba5a9a27ee6ef5a38dd35222b",
+   "note": "主题图口径登记（stages.P0–R2-C：参数/计数/统计/裁定；见 manifest#snapshot 的同源校验）"
+  }
+ ]
+}

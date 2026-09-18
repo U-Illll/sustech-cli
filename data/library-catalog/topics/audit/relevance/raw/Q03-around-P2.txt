@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 65 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = 文学 (整词命中中 freq 最低)
+=== around 65 「文学」 (kw, freq=1482, cluster=376, cls=I) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 268 主题 / 书证据 51135 本 / 扫描边 409 / 权重 0.059~1.000(中位 0.454) / 260.4ms
+
+[hop 1] 20 个主题（显示 top 10）
+     18 中国                      kw   score=0.8600   via 文学
+     21 文化                      kw   score=0.8600   via 文学
+     22 I2                      cls  score=0.8600   via 文学
+     94 现代                      kw   score=0.8600   via 文学
+    409 literature              kw   score=0.8600   via 文学
+    427 世纪                      kw   score=0.8600   via 文学
+    475 当代                      kw   score=0.8600   via 文学
+    543 作品                      kw   score=0.8600   via 文学
+    557 I0                      cls  score=0.8600   via 文学
+    714 I1                      cls  score=0.8600   via 文学
+
+[hop 2] 247 个主题（显示 top 10）
+     23 社会                      kw   score=0.7396   via 文学 → 文化
+     31 I5                      cls  score=0.7396   via 文学 → literature
+     32 history                 kw   score=0.7396   via 文学 → literature
+     37 哲学                      kw   score=0.7396   via 文学 → 现代
+     42 K8                      cls  score=0.7396   via 文学 → 文化
+     44 J6                      cls  score=0.7396   via 文学 → 中国
+     58 B2                      cls  score=0.7396   via 文学 → 中国
+     59 J2                      cls  score=0.7396   via 文学 → 作品
+     60 F1                      cls  score=0.7396   via 文学 → 中国
+     66 K2                      cls  score=0.7396   via 文学 → 中国
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991000928229704181  现代之后 = After modernity 20世纪晚期西方哲学              cls=B/B5  via 「世纪」
+  991002354093404181  现代化的中国选择 = China's choice of modernization     cls=D/D6  via 「现代」
+  991001747511504181  20世纪马克思主义发展史 = The history of Marxism in the   cls=A/A8  via 「世纪」
+  991001747511304181  20世纪马克思主义发展史 = The history of Marxism in the   cls=A/A8  via 「世纪」
+  991001747211304181  20世纪马克思主义发展史 = The history of Marxism in the   cls=A/A8  via 「世纪」
+
+---stderr---
+

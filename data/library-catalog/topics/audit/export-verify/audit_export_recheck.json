@@ -1,0 +1,58 @@
+{
+ "finding_confirmed": true,
+ "register_vs_payload": [
+  {
+   "field": "n",
+   "register": 99268,
+   "payload_recomputed": 99268.0,
+   "post_r1": 99268,
+   "pre_r1": 99268,
+   "register_matches": "pre-r1"
+  },
+  {
+   "field": "w_eq_1_share",
+   "register": 0.1138,
+   "payload_recomputed": 0.0807,
+   "post_r1": 0.0807,
+   "pre_r1": 0.1138,
+   "register_matches": "pre-r1"
+  },
+  {
+   "field": "w_mean",
+   "register": 0.5187,
+   "payload_recomputed": 0.3646,
+   "post_r1": 0.3647,
+   "pre_r1": 0.5187,
+   "register_matches": "pre-r1"
+  },
+  {
+   "field": "w_median",
+   "register": 0.4093,
+   "payload_recomputed": 0.2275,
+   "post_r1": 0.2292,
+   "pre_r1": 0.4093,
+   "register_matches": "pre-r1"
+  },
+  {
+   "field": "w_p90",
+   "register": 1.0,
+   "payload_recomputed": 0.8745,
+   "post_r1": 0.8734,
+   "pre_r1": 1.0,
+   "register_matches": "pre-r1"
+  }
+ ],
+ "register_points_to": "pre-r1",
+ "payload_points_to": "post-r1",
+ "timeline": {
+  "登记刷新(源)": "2026-09-18T20:01:04+0800",
+  "载荷 edges.csr.npz mtime": "2026-09-18T19:45:26",
+  "随包生成": "2026-09-18 19:46:33",
+  "随包登记 updated_at": "2026-09-18T19:13:59+0800",
+  "随包登记 P2.generated_at": "2026-09-18T18:50:24+0800"
+ },
+ "root_cause": "snapshot-staleness (verbatim copy of pre-R1 register at export time)",
+ "contributing_defect": "export_topics 无跨产物一致性校验/无快照绑定，缺陷静默通过",
+ "primary_fix": "重跑 topics_meta.py 后重导出（登记已刷新，见 §G4 已验证自洽）",
+ "hardening": "复制前断言 meta.counts.{nodes,edges_final,cards} == 导出实际规模；--strict 不一致即失败"
+}

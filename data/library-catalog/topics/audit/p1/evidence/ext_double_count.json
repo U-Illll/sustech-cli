@@ -1,0 +1,242 @@
+{
+ "ext_unique": 335335,
+ "ext_code_increments": 1052602,
+ "ext_dedup_cards": 845006,
+ "double_count_events": 207596,
+ "ext_terms_inflated": 75926,
+ "identity_code_minus_union_equals_inter": 0,
+ "worst_inflation": [
+  {
+   "ext": "德国农民",
+   "code": 8,
+   "cards": 4,
+   "ratio": 2.0
+  },
+  {
+   "ext": "德国农",
+   "code": 8,
+   "cards": 4,
+   "ratio": 2.0
+  },
+  {
+   "ext": "资本论第",
+   "code": 2,
+   "cards": 1,
+   "ratio": 2.0
+  },
+  {
+   "ext": "资本论手",
+   "code": 2,
+   "cards": 1,
+   "ratio": 2.0
+  },
+  {
+   "ext": "述金融危",
+   "code": 2,
+   "cards": 1,
+   "ratio": 2.0
+  },
+  {
+   "ext": "家与革命",
+   "code": 8,
+   "cards": 4,
+   "ratio": 2.0
+  },
+  {
+   "ext": "国家与革",
+   "code": 8,
+   "cards": 4,
+   "ratio": 2.0
+  },
+  {
+   "ext": "毛泽东早",
+   "code": 4,
+   "cards": 2,
+   "ratio": 2.0
+  },
+  {
+   "ext": "毛泽东自",
+   "code": 2,
+   "cards": 1,
+   "ratio": 2.0
+  },
+  {
+   "ext": "毛泽东选",
+   "code": 10,
+   "cards": 5,
+   "ratio": 2.0
+  }
+ ],
+ "b_keep_cjk_n": 4590,
+ "ratio_gt1_terms": 580,
+ "ratio_gt1_sample": [
+  {
+   "term": "据技",
+   "freq": 32,
+   "ratio_code": 1.625,
+   "ratio_dedup": 1.0
+  },
+  {
+   "term": "插画技",
+   "freq": 2,
+   "ratio_code": 1.5,
+   "ratio_dedup": 1.0
+  },
+  {
+   "term": "高分子",
+   "freq": 112,
+   "ratio_code": 1.107,
+   "ratio_dedup": 0.67
+  },
+  {
+   "term": "畫全集",
+   "freq": 196,
+   "ratio_code": 1.051,
+   "ratio_dedup": 0.949
+  },
+  {
+   "term": "学森",
+   "freq": 31,
+   "ratio_code": 1.806,
+   "ratio_dedup": 1.0
+  },
+  {
+   "term": "融制",
+   "freq": 20,
+   "ratio_code": 1.05,
+   "ratio_dedup": 0.95
+  },
+  {
+   "term": "文全集",
+   "freq": 36,
+   "ratio_code": 1.556,
+   "ratio_dedup": 0.778
+  },
+  {
+   "term": "通史料",
+   "freq": 1,
+   "ratio_code": 2.0,
+   "ratio_dedup": 1.0
+  }
+ ],
+ "fragment_drop_flips": 129,
+ "flip_sample": [
+  {
+   "term": "治理论",
+   "freq": 45,
+   "ratio_code": 0.978,
+   "ratio_dedup": 0.867,
+   "in_nodes": false
+  },
+  {
+   "term": "高分子",
+   "freq": 112,
+   "ratio_code": 1.107,
+   "ratio_dedup": 0.67,
+   "in_nodes": false
+  },
+  {
+   "term": "文全集",
+   "freq": 36,
+   "ratio_code": 1.556,
+   "ratio_dedup": 0.778,
+   "in_nodes": false
+  },
+  {
+   "term": "信集",
+   "freq": 69,
+   "ratio_code": 1.043,
+   "ratio_dedup": 0.667,
+   "in_nodes": false
+  },
+  {
+   "term": "国城乡",
+   "freq": 7,
+   "ratio_code": 1.143,
+   "ratio_dedup": 0.571,
+   "in_nodes": false
+  },
+  {
+   "term": "学模拟",
+   "freq": 4,
+   "ratio_code": 1.25,
+   "ratio_dedup": 0.75,
+   "in_nodes": false
+  },
+  {
+   "term": "恩格斯",
+   "freq": 63,
+   "ratio_code": 1.127,
+   "ratio_dedup": 0.778,
+   "in_nodes": false
+  },
+  {
+   "term": "超声速",
+   "freq": 44,
+   "ratio_code": 1.159,
+   "ratio_dedup": 0.841,
+   "in_nodes": false
+  },
+  {
+   "term": "探要",
+   "freq": 4,
+   "ratio_code": 1.0,
+   "ratio_dedup": 0.5,
+   "in_nodes": false
+  },
+  {
+   "term": "读库",
+   "freq": 13,
+   "ratio_code": 1.538,
+   "ratio_dedup": 0.769,
+   "in_nodes": false
+  },
+  {
+   "term": "民初",
+   "freq": 25,
+   "ratio_code": 1.52,
+   "ratio_dedup": 0.76,
+   "in_nodes": false
+  },
+  {
+   "term": "竺可桢",
+   "freq": 27,
+   "ratio_code": 1.778,
+   "ratio_dedup": 0.889,
+   "in_nodes": false
+  }
+ ],
+ "flips_absent_from_nodes": 129,
+ "a_source_funnel": {
+  "a_set_n": 2841,
+  "a_keep_recomputed": 1518,
+  "dropped_zero_recomputed": 429,
+  "dropped_embedded_recomputed": 894,
+  "report_a_kept": 1518,
+  "report_dropped_zero": 429,
+  "report_dropped_embedded": 894,
+  "a_keep_terms_in_nodes": 1357,
+  "a_keep_terms_absent_from_nodes": 161,
+  "a_keep_absent_english": 161,
+  "a_keep_absent_sample": [
+   "1a",
+   "1b",
+   "access",
+   "albert",
+   "animals",
+   "apps",
+   "april",
+   "artists",
+   "arts",
+   "asian",
+   "august",
+   "autocad"
+  ],
+  "report_has_counter_for_absent": false
+ },
+ "report_dropped_a_embedded": 894,
+ "report_dropped_a_zero_freq": 429,
+ "report_source_a_kept": 1518,
+ "a_set_n": 2841,
+ "a_kept_in_nodes": 1357
+}

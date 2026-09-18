@@ -1,0 +1,34 @@
+# topics P0 — 环境自查与证据（2026-09-18）
+
+## 任务书步骤 0 原样输出
+$ pwd; python3 -c "import numpy;print('numpy',numpy.__version__)"; ls ~/go/lib-catalog-data | head -20; mkdir -p ~/go/lib-catalog-data/topics && echo WRITE_OK
+/home/wzh/go/reasonix-scripts/lib-catalog
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import numpy;print('numpy',numpy.__version__)
+    ^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'numpy'
+cards.jsonl
+clusters.json
+compile_report.json
+graph_smoke
+index
+shelves.json
+subjects.json
+mkdir: Read-only file system
+（exit=1，WRITE_OK 未打印）
+
+## 诊断
+- findmnt -T ~/go/lib-catalog-data: `/  /dev/sdd  ext4  ro,...errors=remount-ro...`
+- ~/go/reasonix-scripts/lib-catalog 是同设备独立 rw 挂载（ext4 rw），WORKDIR_WRITE_OK
+- sudo -n true: "no new privileges" flag；CapEff=0000000000000000（无 CAP_SYS_ADMIN）→ 无法 remount / bind
+- 系统 python 3.14.4 无 numpy；graph_report.py 内置 sys.path 注入 ~/go/pylibs
+  → numpy 2.5.2 / scipy 1.18.0 可用（报告正常产出）
+
+## 处置
+按任务书『中间文件一律放 ~/go/lib-catalog-data/topics/ 或本工作目录』，P0 产物落本工作目录 topics/。
+acceptance/topics-p0.sh 先解析 data-dir，缺失时回退 workdir，并打印实际解析路径。
+
+## 产物
+$ ls -la topics acceptance
+（见同目录；v1 数据目录仍只读，未新增/未改动任何文件）

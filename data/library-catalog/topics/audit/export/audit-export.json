@@ -1,0 +1,544 @@
+{
+ "findings": [
+  {
+   "id": "E4",
+   "severity": "medium",
+   "title": "CSR 行内列索引非排序，note/manifest 未声明（消费方按标准 CSR 二分查找会静默错答）",
+   "evidence": "5139/5187 行（99.07%）行内不是列升序；note 仅写「有向，出度 ≤20」，未声明行内次序口径",
+   "fix": "① note 增补「行内按构建期 rank 序（assoc）排列，非列升序」；② 或新增 --sort-indices 开关；③ 消费方文档给出 O(deg) 线性扫描而非二分查找的用法。"
+  },
+  {
+   "id": "E5",
+   "severity": "low",
+   "title": "量化契约只登记还原公式，未登记步长/误差上界/分辨率与饱和码位",
+   "evidence": "实测 max|Δw|=1.959e-03（=1/510）、step=1/255=3.922e-03、码位 [45,255]（0–44 空置）、296 个原始值→112 个码、同排位次扰动 155 槽",
+   "fix": "在 manifest.topics.json#stats 增记 quant:{rule,step,max_abs_err,w_min,w_max,codes_used,saturated_share}；若下游按路径乘积打分需更严精度，改 f16（实测 max_err 2.44e-04，仅 +0.397 MB）。"
+  },
+  {
+   "id": "E6",
+   "severity": "low",
+   "title": "导出器无内置回读自检（写入即算 sha256，但从不重读校验自洽）",
+   "evidence": "manifest 的 sha256 由 note_file 在写入后即时计算；全程无 indptr/indices/weights 三者互洽校验、无 cards.jsonl 行数校验、无 meta 交叉校验。本审计以外部套件补齐（全量+抽样回读 6 项全 PASS）",
+   "fix": "增 --verify：导出后重读三个 bin 断言 indptr[-1]==len(indices)、indices<n、weights∈[0,1]，并断言 card_topics indptr 长度 == cards.jsonl 行数。"
+  },
+  {
+   "id": "E1",
+   "severity": "high",
+   "title": "随包 meta.json 的口径登记与随包数据不同源（导出未做任何跨文件一致性校验）",
+   "evidence": "包内 edges_weights.u8.bin 反算 w_eq_1_share=0.0807（= post-R1 边表），而包内 meta.json 登记 0.1138（= pre-R1 边表，且无 r1_fix 键、P2 时间戳 2026-09-18T18:50:24+0800 vs 数据 19:45）",
+   "fix": "export_topics 在复制 meta.json 时校验 counts.edges_final/nodes 与本次导出的 stats 一致、并在 manifest.topics.json 记录 meta 的 sha256 与数据快照 sha256；不一致则 --strict 失败。"
+  },
+  {
+   "id": "E2",
+   "severity": "high",
+   "title": "card_topics→CSR 无行数校验 + 空行 continue → 证据链静默错位",
+   "evidence": "夹具 card_topics.jsonl 含 1 个空行（3 行数据）时，导出 indptr 长度 3（应 4），被跳过的行之后所有卡的主题 id 全部左移一格；主体代码不读 cards.jsonl、不做任何行数断言，manifest 仍声明「N_cards+1；与 cards.jsonl 行序一致」",
+   "fix": "① 循环去掉 continue，空行显式报错；② 断言 len(ip)-1 == cards.jsonl 行数；③ 抽样比对 mms 行序（成本 O(1) 内存）。"
+  },
+  {
+   "id": "E10",
+   "severity": "info",
+   "title": "NaN 权重/int32 上限属潜伏面（现有数据不触发，但导出层无断言）",
+   "evidence": "weights 含 NaN 时 np.round→clip→astype(uint8) 无异常无告警上限，得 0（+ RuntimeWarning）；int64→int32 超限静默回绕（2**31+5 → -2147483643）",
+   "fix": "export_topics 开头断言 np.isfinite(w).all()、w∈[0,1]、nnz<2**31-1；失败即 fail-fast。"
+  },
+  {
+   "id": "E9",
+   "severity": "info",
+   "title": "模块 docstring 的产物清单与实现不符（文档漂移）",
+   "evidence": "docstring 列出 ['embeddings_int8.npy', 'knn_csr.npz']，实现产出 embeddings_int8.bin 与 knn_indptr/indices/sims 三件套",
+   "fix": "同步 docstring；或由 manifest 生成（docstring 是 v1 时代遗留）。"
+  },
+  {
+   "id": "E8",
+   "severity": "info",
+   "title": "--topics-only 与全量导出同名 manifest.json 但 schema 不同（消费方须按 name 分支）",
+   "evidence": "仅 topics 包 stats 只有 ['topics']（无 cards/tfidf/dim），且缺 docid_rule；两者 name 不同（sustc-library-catalog-topics）尚可判别；topics/manifest.topics.json 亦不收录自身反哈希",
+   "fix": "顶层 manifest 增 package_kind: topics-only|full，并让 topics 子清单收录自身 sha256（写入后再补一行）。"
+  },
+  {
+   "id": "E3",
+   "severity": "low",
+   "title": "cards.jsonl.gz 不可复现：gzip 头 MTIME = 打包时刻，manifest 的 sha256 无法被重建校验",
+   "evidence": "同一份 cards.jsonl 两次导出：sha256 不同、解压后 68,268,212 B 逐字节相同；gz 头 ['1f8b0808c0d3ac6a02ff', '1f8b08083532ad6a02ff']（第 5–8 字节为 MTIME）",
+   "fix": "gzip.GzipFile(fileobj=f, mode='wb', mtime=0) 或 gzip.compress(..., mtime=0)；否则每次重打包 tarball 哈希都变，无法做发布物一致性核验。"
+  }
+ ],
+ "checks": [
+  {
+   "check": "审计对象 export_release.py 可读且非空",
+   "ok": true,
+   "detail": "393 行 a45b57c6b16e5f53"
+  },
+  {
+   "check": "实发样例 indptr 全量逐位一致",
+   "ok": true,
+   "detail": "5188 项"
+  },
+  {
+   "check": "实发样例 indices 全量逐位一致",
+   "ok": true,
+   "detail": "99268 项"
+  },
+  {
+   "check": "实发样例 weights_u8 == round(w*255)（非 floor/非 *254）",
+   "ok": true,
+   "detail": "floor=False *254=False"
+  },
+  {
+   "check": "实发样例 抽样 2000 条 (行,槽) 回读逐条一致",
+   "ok": true,
+   "detail": "不一致 0/2000"
+  },
+  {
+   "check": "实发样例 card_topics indptr/ids 全量逐位一致",
+   "ok": true,
+   "detail": "188513 / 487933"
+  },
+  {
+   "check": "实发样例 抽样 2000 条卡→主题链接回读一致",
+   "ok": true,
+   "detail": "含 mms 行序反查"
+  },
+  {
+   "check": "现跑 --topics-only 导出成功",
+   "ok": true,
+   "detail": "[export] 仅 topics 完成 → /home/wzh/go/lib-catalog-data/topics/audit/export/repro/v1（0s；4.01 MB / 8 个文件）"
+  },
+  {
+   "check": "复跑：数据面文件与实发样例逐字节一致",
+   "ok": true,
+   "detail": "6/6 项：['card_topics_ids.i32.bin', 'card_topics_indptr.i32.bin', 'edges_indices.i32.bin', 'edges_indptr.i64.bin', 'edges_weights.u8.bin', 'nodes.json']"
+  },
+  {
+   "check": "复跑：manifest.topics.json 除 generated_at / meta 哈希外完全一致",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "量化误差 ≤ 1/510（round 到最近格点）",
+   "ok": true,
+   "detail": "max=1.959e-03"
+  },
+  {
+   "check": "边界 w=0→0 / w=1→255 / w>1 被 clip",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "indptr[0]=0 / 单调 / indptr[-1]=nnz",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "行数 == nodes.json 项数",
+   "ok": true,
+   "detail": "5187"
+  },
+  {
+   "check": "manifest 声称 id = CSR 行号（nodes[i].id == i）",
+   "ok": true,
+   "detail": "违反 0"
+  },
+  {
+   "check": "indices ∈ [0,n)、无自环、无行内重复列",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "权重有限且 ∈[0,1]、无 NaN",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "max_outdeg=20 与 note「出度 ≤20」一致",
+   "ok": true,
+   "detail": "avg=19.1378"
+  },
+  {
+   "check": "空出度节点以空行合法表达（3 个）",
+   "ok": true,
+   "detail": "行 [2686, 3922, 5088] = ['Z3', 'TG', '沪甬风俗画']"
+  },
+  {
+   "check": "indptr 长度 == cards.jsonl 行数 + 1",
+   "ok": true,
+   "detail": "188513 vs 188513"
+  },
+  {
+   "check": "每卡 ≤5 条链接（文档声称 top-5）",
+   "ok": true,
+   "detail": "max=5"
+  },
+  {
+   "check": "主题 id ∈ [0,5187)",
+   "ok": true,
+   "detail": "range=[0, 5186]"
+  },
+  {
+   "check": "card_topics.jsonl 与 cards.jsonl 的 mms 逐行对齐",
+   "ok": true,
+   "detail": "错位 0 行"
+  },
+  {
+   "check": "0 链接卡数 == P2 登记 22573",
+   "ok": true,
+   "detail": "22573"
+  },
+  {
+   "check": "topics manifest 全部 sha256 与实际文件一致",
+   "ok": true,
+   "detail": "7 项"
+  },
+  {
+   "check": "顶层 manifest 全部 sha256 与实际文件一致",
+   "ok": true,
+   "detail": "8 项"
+  },
+  {
+   "check": "顶层 manifest total_bytes == Σsize",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "夹具: 空出度行/w=0/w=1 原样落盘",
+   "ok": true,
+   "detail": "u8=[0, 255, 128] card_indptr=[0, 2, 2]"
+  },
+  {
+   "check": "夹具: 空行被静默跳过（行数 3 → indptr 长度 3，非 4）",
+   "ok": true,
+   "detail": "card_indptr=[0, 2, 3]：第 2 行证据被并到第 1 行，后续全部左移"
+  },
+  {
+   "check": "夹具: 30 万卡 indptr 正确落盘、单调、int32 未溢出",
+   "ok": true,
+   "detail": "len=300001 nnz=3"
+  },
+  {
+   "check": "模块 docstring 的产物清单与实现一致",
+   "ok": false,
+   "detail": "陈旧条目：['embeddings_int8.npy', 'knn_csr.npz']（实现写 embeddings_int8.bin / knn_* 三件套）"
+  },
+  {
+   "check": "顶层 manifest 可区分「仅 topics」与「全量」两种包型",
+   "ok": true,
+   "detail": "name=sustc-library-catalog-topics；stats 键=['topics']"
+  },
+  {
+   "check": "旧版(14:01) bytecode 快照可用",
+   "ok": true,
+   "detail": "SKIP：当前 __pycache__ 非 topics 前快照 → 改用可复现的 v1 全量复跑作为无回归证据"
+  },
+  {
+   "check": "v1 复跑 vs 2026-09-18 14:01 发布包：数据逐字节一致（gz 仅头时间戳）",
+   "ok": true,
+   "detail": "sha256 一致 19/20；差异 ['cards.jsonl.gz'] 解压后一致=True"
+  }
+ ],
+ "snapshot": {
+  "edges.csr.npz": {
+   "sha256_16": "509c285aac82b9a1",
+   "size": 836406,
+   "mtime": "2026-09-18 19:45:26"
+  },
+  "card_topics.jsonl": {
+   "sha256_16": "161a6ab87dc8328e",
+   "size": 9551328,
+   "mtime": "2026-09-18 19:45:24"
+  },
+  "nodes.json": {
+   "sha256_16": "9f5437d7034bfdaa",
+   "size": 685410,
+   "mtime": "2026-09-18 18:12:14"
+  },
+  "meta.json": {
+   "sha256_16": "c907c84126874cb3",
+   "size": 79503,
+   "mtime": "2026-09-18 20:01:04"
+  },
+  "export_release.py": {
+   "sha256_16": "a45b57c6b16e5f53",
+   "lines": 393
+  }
+ },
+ "quant": {
+  "restore": "w = v / 255.0",
+  "quant_rule": "code = clip(round(w*255),0,255)",
+  "err_max": 0.001959390266268901,
+  "err_bound_theory": 0.00196078431372549,
+  "err_mean": 0.0005275143079173798,
+  "err_p50": 0.00017915227833917302,
+  "err_p95": 0.0016451204524320362,
+  "err_p99": 0.0019445344513537854,
+  "w_min": 0.17629143595695496,
+  "w_max": 1.0,
+  "w_eq1_share": 0.08069065559898457,
+  "distinct_w": 296,
+  "distinct_codes": 112,
+  "codes_used": [
+   45,
+   255
+  ],
+  "collapse_ratio": 2.642857142857143,
+  "adjacent_slots": 94084,
+  "ties_raw": 39347,
+  "ties_u8": 39373,
+  "ties_added": 26,
+  "rank_slots_perturbed": 155,
+  "path_amp_worst_12hop": 1.1419439638158326,
+  "boundary": {
+   "0.0": {
+    "code": 0,
+    "restore": 0.0,
+    "err": 0.0
+   },
+   "1e-09": {
+    "code": 0,
+    "restore": 0.0,
+    "err": 1e-09
+   },
+   "0.00392156862745098": {
+    "code": 1,
+    "restore": 0.00392156862745098,
+    "err": 0.0
+   },
+   "0.5": {
+    "code": 128,
+    "restore": 0.5019607843137255,
+    "err": -0.0019607843137254832
+   },
+   "1.0": {
+    "code": 255,
+    "restore": 1.0,
+    "err": 0.0
+   },
+   "1.0000001": {
+    "code": 255,
+    "restore": 1.0,
+    "err": 1.0000000005838672e-07
+   },
+   "2.0": {
+    "code": 255,
+    "restore": 1.0,
+    "err": 1.0
+   }
+  },
+  "f16_max_err": 0.00024402141571044922,
+  "f16_extra_bytes": 397072
+ },
+ "csr": {
+  "n": 5187,
+  "nnz": 99268,
+  "nodes_json_len": 5187,
+  "indptr_monotone": true,
+  "indptr0": 0,
+  "last_eq_nnz": true,
+  "min_outdeg": 0,
+  "max_outdeg": 20,
+  "avg_outdeg": 19.1378,
+  "empty_rows": [
+   2686,
+   3922,
+   5088
+  ],
+  "empty_row_terms": [
+   "Z3",
+   "TG",
+   "沪甬风俗画"
+  ],
+  "idx_range": [
+   0,
+   5186
+  ],
+  "selfloops": 0,
+  "rows_with_dup_cols": 0,
+  "rows_not_col_ascending": 5139,
+  "rows_not_col_ascending_pct": 99.07,
+  "rows_col_ascending": 48,
+  "w_range": [
+   0.17629143595695496,
+   1.0
+  ],
+  "w_nan": 0,
+  "w_eq1": 8010,
+  "nodes_id_ne_index": 0,
+  "nodes_export_byteexact": true,
+  "nodes_json_ids_unique": true
+ },
+ "card": {
+  "cards_jsonl_lines": 188512,
+  "card_topics_lines": 188512,
+  "indptr_len": 188513,
+  "links": 487933,
+  "max_links": 5,
+  "min_links": 0,
+  "cards_with_0_links": 22573,
+  "id_range": [
+   0,
+   5186
+  ],
+  "mms_aligned": true,
+  "mms_mismatch_rows": 0,
+  "dtype_int32_headroom": 2146995714,
+  "int32_wrap_demo": -2147483643
+ },
+ "manifest": {
+  "topics_files": 7,
+  "top_level_files": 8,
+  "topics_sha_mismatch": [],
+  "top_sha_mismatch": [],
+  "topics_manifest_missing": [
+   "topics/manifest.topics.json"
+  ],
+  "topics_manifest_ghost": [],
+  "total_bytes_ok": true,
+  "topics_stats": {
+   "nodes": 5187,
+   "edges": 99268,
+   "avg_outdeg": 19.138,
+   "max_outdeg": 20,
+   "cards": 188512,
+   "card_topic_links": 487933,
+   "dtypes": {
+    "indptr": "int64",
+    "indices": "int32",
+    "weights_u8": "uint8",
+    "card_indptr": "int32",
+    "card_ids": "int32"
+   },
+   "restore": {
+    "edge_weight": "w = v / 255.0",
+    "nodes": "JSON 数组，id = CSR 行号",
+    "card_topics": "第 i 行（0-based）对应 cards.jsonl 第 i 行"
+   }
+  },
+  "top_level_name": "sustc-library-catalog-topics",
+  "top_level_stats_keys": [
+   "topics"
+  ],
+  "meta_cross_check": {
+   "sample_P2_generated_at": "2026-09-18T18:50:24+0800",
+   "sample_P2_counts_edges_final": 99268,
+   "sample_P2_w_eq1_share": 0.1138,
+   "sample_P2_w_mean": 0.5187,
+   "sample_has_r1_fix": false,
+   "src_P2_generated_at": "2026-09-18T19:45:26+0800",
+   "src_P2_w_eq1_share": 0.0807,
+   "src_has_r1_fix": true,
+   "live_from_shipped_weights": {
+    "edges": 99268,
+    "w_mean": 0.3646,
+    "w_eq1_share": 0.0807
+   }
+  }
+ },
+ "v1": {
+  "prior_pyc": {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/__pycache__/export_release.cpython-314.pyc",
+   "size": 32042,
+   "note": "快照已是 topics 之后版本（被 Python 缓存机制刷新）"
+  },
+  "first_round_measurement": {
+   "note": "首轮审计（20:2x）在 23,026 B / 2026-09-18 14:01 的 topics 前 pyc 快照上实测；该快照在本轮夹具导入时被 Python 缓存刷新覆盖（见 REPORT 约束披露），结果按实测记录留档",
+   "funcs_identical": {
+    "resolve_data": true,
+    "sha256_file": true,
+    "quantize_int8": true,
+    "quality_check_against": true,
+    "export_tfidf": true
+   },
+   "main_instr": {
+    "old": 1159,
+    "new": 1330,
+    "inserted": 155,
+    "deleted": 0,
+    "replaced_blocks": 47
+   },
+   "module_names_only_new": [
+    "export_topics"
+   ],
+   "module_names_only_old": []
+  },
+  "rerun_seconds": 13.1,
+  "rerun_compare": {
+   "files": 20,
+   "sha_identical": 19,
+   "diffs": [
+    {
+     "path": "cards.jsonl.gz",
+     "gz_payload_identical": true,
+     "gz_header_old_new": [
+      "1f8b0808c0d3ac6a02ff",
+      "1f8b08083532ad6a02ff"
+     ]
+    }
+   ],
+   "stats_identical": true,
+   "meta_identical": true
+  }
+ },
+ "fixtures": {
+  "normal": {
+   "indptr": [
+    0,
+    1,
+    2,
+    3,
+    3,
+    3
+   ],
+   "weights_u8": [
+    0,
+    255,
+    128
+   ],
+   "card_indptr": [
+    0,
+    2,
+    2
+   ]
+  },
+  "blank_line": {
+   "card_indptr": [
+    0,
+    2,
+    3
+   ],
+   "cards_declared": 3
+  },
+  "long_indptr": {
+   "indptr_len": 300001,
+   "nnz": 3,
+   "monotone": true,
+   "last": 3
+  },
+  "int32_overflow_demo": {
+   "int64_to_int32_2p31_plus_5": -2147483643,
+   "python_int_direct_to_int32": "numpy>=2 抛 OverflowError（未静默）",
+   "nan_to_uint8": 0
+  }
+ },
+ "repro": {
+  "card_topics_ids.i32.bin": true,
+  "card_topics_indptr.i32.bin": true,
+  "edges_indices.i32.bin": true,
+  "edges_indptr.i64.bin": true,
+  "edges_weights.u8.bin": true,
+  "manifest.topics.json": false,
+  "meta.json": false,
+  "nodes.json": true
+ },
+ "repro_meta_stale": {
+  "sample_sha": "5a760c76e5f6da6b",
+  "source_sha": "c907c84126874cb3",
+  "sample_size": 72830,
+  "source_size": 79503
+ },
+ "elapsed_s": 14.7,
+ "summary": {
+  "checks": 34,
+  "failed": 1,
+  "findings": 9
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "机器": {
+  "my_b_df": 339,
+  "code_b_df": 339,
+  "in_topM_cards": 621,
+  "in_nodes": true
+ },
+ "器学": {
+  "my_b_df": 72,
+  "code_b_df": 72,
+  "in_topM_cards": 278,
+  "in_nodes": false
+ },
+ "学习": {
+  "my_b_df": 176,
+  "code_b_df": 176,
+  "in_topM_cards": 892,
+  "in_nodes": true
+ },
+ "机器学习": {
+  "my_b_df": 0,
+  "code_b_df": 0,
+  "in_topM_cards": 0,
+  "in_nodes": false
+ },
+ "人工": {
+  "my_b_df": 225,
+  "code_b_df": 225,
+  "in_topM_cards": 317,
+  "in_nodes": false
+ },
+ "工智": {
+  "my_b_df": 87,
+  "code_b_df": 87,
+  "in_topM_cards": 307,
+  "in_nodes": false
+ },
+ "智能": {
+  "my_b_df": 353,
+  "code_b_df": 353,
+  "in_topM_cards": 731,
+  "in_nodes": true
+ },
+ "人工智能": {
+  "my_b_df": 0,
+  "code_b_df": 0,
+  "in_topM_cards": 0,
+  "in_nodes": false
+ },
+ "深度": {
+  "my_b_df": 177,
+  "code_b_df": 177,
+  "in_topM_cards": 267,
+  "in_nodes": false
+ },
+ "度学": {
+  "my_b_df": 37,
+  "code_b_df": 37,
+  "in_topM_cards": 202,
+  "in_nodes": false
+ },
+ "深度学习": {
+  "my_b_df": 0,
+  "code_b_df": 0,
+  "in_topM_cards": 0,
+  "in_nodes": false
+ },
+ "神经": {
+  "my_b_df": 142,
+  "code_b_df": 142,
+  "in_topM_cards": 232,
+  "in_nodes": false
+ },
+ "经网": {
+  "my_b_df": 23,
+  "code_b_df": 23,
+  "in_topM_cards": 78,
+  "in_nodes": false
+ },
+ "网络": {
+  "my_b_df": 391,
+  "code_b_df": 391,
+  "in_topM_cards": 761,
+  "in_nodes": true
+ },
+ "神经网络": {
+  "my_b_df": 0,
+  "code_b_df": 0,
+  "in_topM_cards": 0,
+  "in_nodes": false
+ }
+}

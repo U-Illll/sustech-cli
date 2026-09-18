@@ -1,0 +1,69 @@
+{
+ "C1_typed_artifact": {
+  "path": "topics/audit/edgetype/compat/topics/edges.csr.npz",
+  "keys": [
+   "indices",
+   "indptr",
+   "types",
+   "weights"
+  ],
+  "edges": 99268,
+  "bytes_official": 836406,
+  "bytes_typed": 935916
+ },
+ "C2_acceptance_p2_gate": {
+  "official_rc": 0,
+  "typed_rc": 0,
+  "stderr": "",
+  "identical": true,
+  "official_output": [
+   "DTYPES=int64/int32/float32",
+   "N=5187",
+   "NNZ=99268",
+   "IP0=0",
+   "IPLAST=99268",
+   "IP_MONOTONE=True",
+   "IP_LEN_OK=True",
+   "IDX_RANGE_OK=True",
+   "W_RANGE_OK=True",
+   "W_MAX=1.000000",
+   "W_EQ1=8010",
+   "DEG_MEAN=19.1378"
+  ],
+  "typed_output": [
+   "DTYPES=int64/int32/float32",
+   "N=5187",
+   "NNZ=99268",
+   "IP0=0",
+   "IPLAST=99268",
+   "IP_MONOTONE=True",
+   "IP_LEN_OK=True",
+   "IDX_RANGE_OK=True",
+   "W_RANGE_OK=True",
+   "W_MAX=1.000000",
+   "W_EQ1=8010",
+   "DEG_MEAN=19.1378"
+  ]
+ },
+ "C3_consumer_topics_report": {
+  "official_rc": 0,
+  "typed_rc": 0,
+  "both_ok": true,
+  "json_identical": true,
+  "official_stderr": "",
+  "typed_stderr": ""
+ },
+ "C4_legacy_read_path": {
+  "indptr_bitwise_equal": true,
+  "indices_bitwise_equal": true,
+  "weights_bitwise_equal": true,
+  "extra_key_invisible_to_key_reader": true,
+  "pass": true
+ },
+ "verdict": {
+  "additive_types_key_breaks_no_consumer": true,
+  "readers_requiring_the_key": [
+   "export_release.py → 需**新增** edges_types.u8.bin 导出（当前不导出，属增强非破坏）"
+  ]
+ }
+}

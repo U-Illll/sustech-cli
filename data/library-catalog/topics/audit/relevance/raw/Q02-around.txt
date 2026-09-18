@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 177 --hops 2 --top 10 --evidence 5
+[exit=0]  # seed term = 计算  (search rank-1)
+=== around 177 「计算」 (kw, freq=1323, cluster=38, cls=TP) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 279 主题 / 书证据 56021 本 / 扫描边 420 / 权重 0.073~1.000(中位 0.524) / 347.6ms
+
+[hop 1] 20 个主题（显示 top 10）
+     43 TP3                     cls  score=0.8600   via 计算
+     80 网络                      kw   score=0.8600   via 计算
+     97 系统                      kw   score=0.8600   via 计算
+    145 应用                      kw   score=0.8600   via 计算
+    189 原理                      kw   score=0.8600   via 计算
+    229 基础                      kw   score=0.8600   via 计算
+    339 computing               kw   score=0.8600   via 计算
+    348 方法                      kw   score=0.8600   via 计算
+    392 computational           kw   score=0.8600   via 计算
+    477 计算机                     kw   score=0.8600   via 计算
+
+[hop 2] 258 个主题（显示 top 10）
+      6 设计                      kw   score=0.7396   via 计算 → 系统
+      7 数学                      kw   score=0.7396   via 计算 → 方法
+      9 数据                      kw   score=0.7396   via 计算 → 应用
+     10 data                    kw   score=0.7396   via 计算 → TP3
+     16 材料                      kw   score=0.7396   via 计算 → 基础
+     17 TH1                     cls  score=0.7396   via 计算 → 基础
+     27 开发                      kw   score=0.7396   via 计算 → TP3
+     34 security                kw   score=0.7396   via 计算 → TP3
+     35 networks                kw   score=0.7396   via 计算 → 网络
+     38 机械                      kw   score=0.7396   via 计算 → 基础
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991002621946504181  无线网络数学建模方法与应用                                  cls=TN/TN9  via 「网络」
+  991001763777004181  液压系统Amesim计算机仿真进阶教程                            cls=TH/TH1  via 「计算」
+  991001536267204181  数据科学并行计算 = Parallel computing data science     cls=TP/TP2  via 「计算」
+  991001058619704181  AT89S51单片机原理及应用技术                              cls=TP/TP3  via 「原理」
+  991000719809704181  CC430无线传感网络单片机原理与应用                            cls=TP/TP3  via 「网络」
+
+---stderr---
+

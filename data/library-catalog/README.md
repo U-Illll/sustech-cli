@@ -62,3 +62,48 @@ accumulate `Σ data[k] * q[col]` over the TF-IDF CSR, then sort.
 Public bibliographic facts from the SUSTech Library public Primo read-only
 interface (no login required). Intended for offline use with
 [sustech-cli](https://github.com/wormforce/sustech-cli).
+
+---
+
+## GraphRAG topic layer (v2) — `topics/`
+
+A topic-level GraphRAG layer built on top of the per-card data. All files are
+plain JSON / NumPy little-endian arrays.
+
+| File | Shape / Type | Description |
+|---|---|---|
+| `topics/nodes.json` | JSON array | **5,507 topic nodes** (`id/term/type/freq/cluster/cls/sources`; kw + CLC-class terms) |
+| `topics/edges.csr.npz` | NPZ (i64/i32/f32/u8) | Weighted topic graph — `indptr`, `indices`, `weights` ∈ [0,1], and a per-edge `types` **bitmask** (1=co-occurrence, 2=same-cluster, 4=hierarchy); max out-degree 20, 105,414 edges |
+| `topics/card_topics.jsonl` | JSONL × 188,512 | Per-card top-5 topics (evidence chain from topic → books) |
+| `topics/meta.json` | JSON | Stage-wise registry (P0–P5 + R1/R2 fix records, calibers, judgments) |
+| `topics/README.md` | MD | Field reference, CLI usage, caliber definitions |
+| `topics/ACCEPTANCE-REPORT.md` | MD | End-to-end acceptance (147 assertions, all green) + independent audit records |
+| `topics/INTERFACE-PROPOSAL.md` | MD | Proposed `summarize_topic_region(region) -> str` LLM interface — **stub only, not wired** (see note below) |
+| `topics/audit/` | dir | 16 independent audit reports with reproducible checks |
+| `topics/export-sample/` | dir | Quantized export sample (u8 weights + CSR, self-consistent) |
+
+Verified quality gates: 12-hop same-cluster coverage **0.9927** (threshold 0.90),
+99.95% single connected component, per-edge types verified over the full graph,
+p50 query latency ~2.6 ms. History: an incremental fix round (R1/R2) and an
+independent model review are documented in the reports.
+
+> **LLM note**: the interface proposal is a frozen stub
+> (`TOPIC_LLM=off`); it is intentionally not wired to any provider.
+>
+> `summarize_topic_region(region) -> str` — takes a diffusion region
+> (nodes/edges/weights + evidence books) and returns a natural-language summary.
+> sustech-cli itself does not embed an LLM today, so this interface is left for
+> future integration (agent side or optional CLI capability).
+
+## Toolchain — `tools/lib-catalog/`
+
+The Python toolchain that built both layers, kept alongside for reproducibility:
+
+- Data: `compile_cards.py`, `catalog_vector.py`, `build_graph.py`, `graph_report.py`, `export_release.py`
+- Topic layer: `topic_build.py`, `topic_edges.py`, `topics_report.py`, `topic_graph.py` (search / around / graph / summarize CLI)
+- Checks: `acceptance/` (topics-p0..p5.sh) and `tests/regression/` (237-check regression suite)
+
+## Crawler — `tools/library-crawler/`
+
+Resumable Primo crawler + incremental refresh pipeline (see `tools/library-crawler/README.md`).
+

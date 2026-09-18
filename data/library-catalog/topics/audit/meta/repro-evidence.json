@@ -1,0 +1,22 @@
+{
+ "_note": "复算证据：用**当前**工具链在隔离目录复跑，验证产物可逐字节再生（用于裁定 D2 脚本-产物 mtime 错配是否良性）。",
+ "generated_at": "2026-09-18 22:02:41",
+ "method": "python3 topic_build.py --data <D> --out topics/audit/meta/scratch-p1 --report <S>/p1-build-report.json --sample-out <S>/sample50.txt（不写 topics/）",
+ "artifacts": {
+  "topics/nodes.json": {
+   "when": "2026-09-18 22:02:41",
+   "sha256": "ba1ff2603ee759b2b36a04474c8b1a23c305fd26b13fa104a910fc993d322286",
+   "scratch_sha256": "ba1ff2603ee759b2b36a04474c8b1a23c305fd26b13fa104a910fc993d322286",
+   "identical": true,
+   "note": "按当前 topic_build.py（含 R2-D docstring 改动）复跑 → 与线上 nodes.json **逐字节相同**；故 21:44 的脚本 mtime 晚于 21:06 的产物 mtime 属**非语义改动**（模块 docstring `--min-df` 默认值 8→12），产物仍可解释。"
+  }
+ },
+ "report_field_diff": {
+  "topics/p1-build-report.json": [
+   "generated_at",
+   "nodes_path",
+   "out_dir"
+  ],
+  "note": "报告仅在这三个运行元数据字段上不同，其余（params/counts/freq_stats）逐项相等。"
+ }
+}

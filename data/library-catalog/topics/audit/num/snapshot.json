@@ -1,0 +1,107 @@
+{
+  "start": {
+    "/home/wzh/go/lib-catalog-data/topics/card_topics.jsonl": {
+      "sha256": "161a6ab87dc8328e93e5f972ce6319c2153085df959d3af665cf176b809def8d",
+      "size": 9551328,
+      "mtime": "2026-09-18T19:45:24"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/nodes.json": {
+      "sha256": "9f5437d7034bfdaad8d47915777738ea254830d1a37f2039744d9bf501f70460",
+      "size": 685410,
+      "mtime": "2026-09-18T18:12:14"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/meta.json": {
+      "sha256": "c907c84126874cb3100c75ea3c3a1f5819adb88cfc8839792915643b98139cba",
+      "size": 79503,
+      "mtime": "2026-09-18T20:01:04"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/p2-build-report.json": {
+      "sha256": "a08effc03d6052634d810906d12fd8d54b06bb235a1d429930babf91822f35e5",
+      "size": 27165,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/p2-build.log": {
+      "sha256": "e28f7a13e31ce06c1f949af78871192a0b27fbfdeedec391d41addebd0cb3297",
+      "size": 685,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/cards.jsonl": {
+      "sha256": "9e9dffd2cf237b2ab7db24444154881b89d7afd352df171c64a28b8e7093fcfd",
+      "size": 68268212,
+      "mtime": "2026-09-18T13:21:24"
+    },
+    "/home/wzh/go/lib-catalog-data/index/clusters.npy": {
+      "sha256": "f54fe2b5f65ca772c15a26835f72abeb713c951ca97fe754563b1879a3ac0ed7",
+      "size": 754176,
+      "mtime": "2026-09-18T13:55:06"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.csr.npz": {
+      "sha256": "509c285aac82b9a13d6aa9efde4921a656b251504c16e99b3f0a7dd4b8238cc6",
+      "size": 836406,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.csr.pre-r1.npz": {
+      "sha256": "f7c6ada3fd7191c025ead69ca158eb391a7b26d4f7c903b3fdf64e15539fc764",
+      "size": 836406,
+      "mtime": "2026-09-18T18:50:24"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.variant-spec.csr.npz": {
+      "sha256": "e57676799a3bbe86f348b031a815df5c73b8284a99fce328edcaf1a2870262f1",
+      "size": 780286,
+      "mtime": "2026-09-18T19:45:26"
+    }
+  },
+  "end": {
+    "/home/wzh/go/lib-catalog-data/topics/card_topics.jsonl": {
+      "sha256": "161a6ab87dc8328e93e5f972ce6319c2153085df959d3af665cf176b809def8d",
+      "size": 9551328,
+      "mtime": "2026-09-18T19:45:24"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/nodes.json": {
+      "sha256": "9f5437d7034bfdaad8d47915777738ea254830d1a37f2039744d9bf501f70460",
+      "size": 685410,
+      "mtime": "2026-09-18T18:12:14"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/meta.json": {
+      "sha256": "c907c84126874cb3100c75ea3c3a1f5819adb88cfc8839792915643b98139cba",
+      "size": 79503,
+      "mtime": "2026-09-18T20:01:04"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/p2-build-report.json": {
+      "sha256": "a08effc03d6052634d810906d12fd8d54b06bb235a1d429930babf91822f35e5",
+      "size": 27165,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/p2-build.log": {
+      "sha256": "e28f7a13e31ce06c1f949af78871192a0b27fbfdeedec391d41addebd0cb3297",
+      "size": 685,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/cards.jsonl": {
+      "sha256": "9e9dffd2cf237b2ab7db24444154881b89d7afd352df171c64a28b8e7093fcfd",
+      "size": 68268212,
+      "mtime": "2026-09-18T13:21:24"
+    },
+    "/home/wzh/go/lib-catalog-data/index/clusters.npy": {
+      "sha256": "f54fe2b5f65ca772c15a26835f72abeb713c951ca97fe754563b1879a3ac0ed7",
+      "size": 754176,
+      "mtime": "2026-09-18T13:55:06"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.csr.npz": {
+      "sha256": "509c285aac82b9a13d6aa9efde4921a656b251504c16e99b3f0a7dd4b8238cc6",
+      "size": 836406,
+      "mtime": "2026-09-18T19:45:26"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.csr.pre-r1.npz": {
+      "sha256": "f7c6ada3fd7191c025ead69ca158eb391a7b26d4f7c903b3fdf64e15539fc764",
+      "size": 836406,
+      "mtime": "2026-09-18T18:50:24"
+    },
+    "/home/wzh/go/lib-catalog-data/topics/edges.variant-spec.csr.npz": {
+      "sha256": "e57676799a3bbe86f348b031a815df5c73b8284a99fce328edcaf1a2870262f1",
+      "size": 780286,
+      "mtime": "2026-09-18T19:45:26"
+    }
+  },
+  "changed_during_audit": []
+}

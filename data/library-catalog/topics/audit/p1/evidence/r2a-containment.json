@@ -1,0 +1,121 @@
+{
+ "a_set_n": 2841,
+ "ext_old_increments": 1052602,
+ "old_ratio_max": 2.0,
+ "new_ratio_max": 1.0,
+ "old_terms_ratio_gt1": 580,
+ "new_terms_ratio_gt1": 0,
+ "flip_terms": 129,
+ "flip_terms_in_new_nodes": 129,
+ "flip_sample": [
+  {
+   "term": "路基",
+   "freq": 36,
+   "ratio_old": 0.9444,
+   "ratio_new": 0.8056
+  },
+  {
+   "term": "计思维",
+   "freq": 36,
+   "ratio_old": 1.1944,
+   "ratio_new": 0.8056
+  },
+  {
+   "term": "史文学",
+   "freq": 2,
+   "ratio_old": 1.0,
+   "ratio_new": 0.5
+  },
+  {
+   "term": "照片处理",
+   "freq": 16,
+   "ratio_old": 1.375,
+   "ratio_new": 0.8125
+  },
+  {
+   "term": "吉祥",
+   "freq": 24,
+   "ratio_old": 1.4167,
+   "ratio_new": 0.7083
+  },
+  {
+   "term": "译本",
+   "freq": 179,
+   "ratio_old": 1.0615,
+   "ratio_new": 0.7877
+  },
+  {
+   "term": "业机",
+   "freq": 58,
+   "ratio_old": 1.5345,
+   "ratio_new": 0.8103
+  },
+  {
+   "term": "国经",
+   "freq": 355,
+   "ratio_old": 1.3493,
+   "ratio_new": 0.862
+  },
+  {
+   "term": "连环",
+   "freq": 22,
+   "ratio_old": 1.5909,
+   "ratio_new": 0.8182
+  },
+  {
+   "term": "治疗学",
+   "freq": 49,
+   "ratio_old": 1.0204,
+   "ratio_new": 0.5306
+  },
+  {
+   "term": "程序",
+   "freq": 711,
+   "ratio_old": 1.0745,
+   "ratio_new": 0.6709
+  },
+  {
+   "term": "世界大",
+   "freq": 107,
+   "ratio_old": 1.1963,
+   "ratio_new": 0.8879
+  },
+  {
+   "term": "雄山",
+   "freq": 3,
+   "ratio_old": 1.3333,
+   "ratio_new": 0.6667
+  },
+  {
+   "term": "度文化",
+   "freq": 3,
+   "ratio_old": 1.3333,
+   "ratio_new": 0.6667
+  },
+  {
+   "term": "子光谱",
+   "freq": 7,
+   "ratio_old": 1.0,
+   "ratio_new": 0.5714
+  }
+ ],
+ "report_a_containment_ratio_max": 1.0,
+ "report_a_terms_ratio_gt1": 0,
+ "report_source_a_kept": 1647,
+ "report_source_a_dropped_embedded": 765,
+ "cross_check_report_ratio_max": true,
+ "cross_check_report_gt1": true,
+ "funnel_delta": {
+  "a_kept": [
+   1518,
+   1647,
+   129
+  ],
+  "a_dropped_embedded": [
+   894,
+   765,
+   -129
+  ],
+  "matches_flip_count": true
+ }
+}

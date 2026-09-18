@@ -1,0 +1,459 @@
+{
+  "stage": "P3",
+  "generated_at": "2026-09-18T21:44:53+0800",
+  "data_dir": "/home/wzh/go/lib-catalog-data",
+  "artifacts_dir": "/home/wzh/go/lib-catalog-data/topics",
+  "edges_source": "/home/wzh/go/lib-catalog-data/topics/edges.csr.npz",
+  "config": {
+    "samples": 400,
+    "hops": 12,
+    "seed": 42,
+    "source_type": "all",
+    "perf_samples": 50,
+    "max_outdeg": 20,
+    "random_baseline": false
+  },
+  "definitions": {
+    "same_cluster": "源点与目标节点的 nodes.json `cluster` 字段相等（cluster=-1 的源点丢弃并单列）",
+    "coverage": "第 h 跳累计同簇覆盖 = |{可达节点 ∩ 同簇节点}| / |同簇节点总数|（图上 cluster 字段成员数）",
+    "bfs": "有向出边、逐跳新增（首访即标记）、≤12 跳；levels 集合与 graph_report.bfs_levels 等价",
+    "decay": "w_hop = w_parent × edge_w × 0.86；逐层取各节点入边中得分最大的路径（乘性最优）",
+    "decay_theory": "0.86^hop（edge_w≡1 的理论线）",
+    "connectivity": "边视为无向，scipy connected_components(A + A.T)",
+    "csr_spec": "indptr int64(n+1) / indices int32 / weights float32；有向，权重∈[0,1]，每节点出度≤20"
+  },
+  "csr": {
+    "path": "/home/wzh/go/lib-catalog-data/topics/edges.csr.npz",
+    "dtype_checks": [
+      "indptr int64 OK",
+      "indices int32 OK",
+      "weights float32 OK",
+      "结构 OK（n=5,507, nnz=105,414）"
+    ],
+    "indptr_dtype": "int64",
+    "indices_dtype": "int32",
+    "weights_dtype": "float32",
+    "n": 5507,
+    "nnz": 105414,
+    "max_outdeg_observed": 20,
+    "nodes_over_max_outdeg": 0,
+    "weights_below_0": 0,
+    "weights_above_1": 0
+  },
+  "nodes": {
+    "count": 5507,
+    "type_counts": {
+      "kw": 5158,
+      "cls": 349
+    },
+    "kw": 5158,
+    "cls": 349,
+    "clusters": 397,
+    "cluster_minus1": 0,
+    "cluster_min": 0,
+    "cluster_max": 399
+  },
+  "edges": {
+    "count": 105414,
+    "avg_outdeg": 19.141819502451426,
+    "outdeg": {
+      "min": 0,
+      "median": 20,
+      "mean": 19.141819502451426,
+      "p90": 20,
+      "max": 20
+    },
+    "weights": {
+      "min": 0.17629143595695496,
+      "median": 0.22917886078357697,
+      "mean": 0.36559853428816746,
+      "p90": 0.8733823895454407,
+      "max": 1.0
+    },
+    "weight_zero_ratio": 0.0,
+    "weight_one_ratio": 0.08051112755421481,
+    "weight_mean_global": 0.36559852957725525
+  },
+  "coverage": {
+    "samples": 400,
+    "source_type": "all",
+    "pool_size": 5507,
+    "dropped_no_cluster": 0,
+    "per_hop": [
+      {
+        "hop": 1,
+        "coverage_mean": 0.12735368363959107,
+        "coverage_median": 0.08759590792838876,
+        "same_cluster_share_mean": 0.12731390831390832,
+        "same_cluster_share_median": 0.1,
+        "union_coverage_mean": 0.04120741449614617,
+        "union_coverage_median": 0.01860248447204969,
+        "undirected_coverage_mean": 0.14219059097725284,
+        "undirected_coverage_median": 0.09090909090909091,
+        "reach_mean": 18.8075,
+        "reach_median": 20.0,
+        "new_nodes_mean": 18.8075
+      },
+      {
+        "hop": 2,
+        "coverage_mean": 0.41051632626944773,
+        "coverage_median": 0.383974358974359,
+        "same_cluster_share_mean": 0.033223408317148706,
+        "same_cluster_share_median": 0.023921440395659195,
+        "union_coverage_mean": 0.24780945370737562,
+        "union_coverage_median": 0.19920848878528163,
+        "undirected_coverage_mean": 0.6071742207182738,
+        "undirected_coverage_median": 0.6496163682864451,
+        "reach_mean": 290.87,
+        "reach_median": 312.5,
+        "new_nodes_mean": 272.0625
+      },
+      {
+        "hop": 3,
+        "coverage_mean": 0.7907006806106057,
+        "coverage_median": 0.8461538461538461,
+        "same_cluster_share_mean": 0.007989102564393334,
+        "same_cluster_share_median": 0.0058674200015622156,
+        "union_coverage_mean": 0.7680505492288877,
+        "union_coverage_median": 0.7896520963425513,
+        "undirected_coverage_mean": 0.9055516473878662,
+        "undirected_coverage_median": 0.9333333333333333,
+        "reach_mean": 2475.4275,
+        "reach_median": 2613.0,
+        "new_nodes_mean": 2184.5575
+      },
+      {
+        "hop": 4,
+        "coverage_mean": 0.9107058656123482,
+        "coverage_median": 0.9411764705882353,
+        "same_cluster_share_mean": 0.0040856490490904845,
+        "same_cluster_share_median": 0.003153589009593673,
+        "union_coverage_mean": 0.9773675752024908,
+        "union_coverage_median": 0.9933993399339934,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5236.8475,
+        "reach_median": 5366.5,
+        "new_nodes_mean": 2761.42
+      },
+      {
+        "hop": 5,
+        "coverage_mean": 0.920225548915465,
+        "coverage_median": 0.9428104575163399,
+        "same_cluster_share_mean": 0.003934047337585828,
+        "same_cluster_share_median": 0.003102755977368133,
+        "union_coverage_mean": 0.9851884166035534,
+        "union_coverage_median": 0.9958930679709901,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5474.625,
+        "reach_median": 5479.0,
+        "new_nodes_mean": 237.7775
+      },
+      {
+        "hop": 6,
+        "coverage_mean": 0.920225548915465,
+        "coverage_median": 0.9428104575163399,
+        "same_cluster_share_mean": 0.003931164762622552,
+        "same_cluster_share_median": 0.0031021897810218978,
+        "union_coverage_mean": 0.9854454447104298,
+        "union_coverage_median": 0.9958930679709901,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5479.95,
+        "reach_median": 5480.0,
+        "new_nodes_mean": 5.325
+      },
+      {
+        "hop": 7,
+        "coverage_mean": 0.920225548915465,
+        "coverage_median": 0.9428104575163399,
+        "same_cluster_share_mean": 0.0039311123895820555,
+        "same_cluster_share_median": 0.0031021897810218978,
+        "union_coverage_mean": 0.9854454447104298,
+        "union_coverage_median": 0.9958930679709901,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5480.0075,
+        "reach_median": 5480.0,
+        "new_nodes_mean": 0.0575
+      },
+      {
+        "hop": 8,
+        "coverage_mean": 0.920225548915465,
+        "coverage_median": 0.9428104575163399,
+        "same_cluster_share_mean": 0.0039311123895820555,
+        "same_cluster_share_median": 0.0031021897810218978,
+        "union_coverage_mean": 0.9854454447104298,
+        "union_coverage_median": 0.9958930679709901,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5480.0075,
+        "reach_median": 5480.0,
+        "new_nodes_mean": 0.0
+      },
+      {
+        "hop": 9,
+        "coverage_mean": 0.920225548915465,
+        "coverage_median": 0.9428104575163399,
+        "same_cluster_share_mean": 0.0039311123895820555,
+        "same_cluster_share_median": 0.0031021897810218978,
+        "union_coverage_mean": 0.9854454447104298,
+        "union_coverage_median": 0.9958930679709901,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5480.0075,
+        "reach_median": 5480.0,
+        "new_nodes_mean": 0.0
+      },
+      {
+        "hop": 10,
+        "coverage_mean": 0.920225548915465,
+        "coverage_median": 0.9428104575163399,
+        "same_cluster_share_mean": 0.0039311123895820555,
+        "same_cluster_share_median": 0.0031021897810218978,
+        "union_coverage_mean": 0.9854454447104298,
+        "union_coverage_median": 0.9958930679709901,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5480.0075,
+        "reach_median": 5480.0,
+        "new_nodes_mean": 0.0
+      },
+      {
+        "hop": 11,
+        "coverage_mean": 0.920225548915465,
+        "coverage_median": 0.9428104575163399,
+        "same_cluster_share_mean": 0.0039311123895820555,
+        "same_cluster_share_median": 0.0031021897810218978,
+        "union_coverage_mean": 0.9854454447104298,
+        "union_coverage_median": 0.9958930679709901,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5480.0075,
+        "reach_median": 5480.0,
+        "new_nodes_mean": 0.0
+      },
+      {
+        "hop": 12,
+        "coverage_mean": 0.920225548915465,
+        "coverage_median": 0.9428104575163399,
+        "same_cluster_share_mean": 0.0039311123895820555,
+        "same_cluster_share_median": 0.0031021897810218978,
+        "union_coverage_mean": 0.9854454447104298,
+        "union_coverage_median": 0.9958930679709901,
+        "undirected_coverage_mean": 0.9247356520369813,
+        "undirected_coverage_median": 0.9444444444444444,
+        "reach_mean": 5480.0075,
+        "reach_median": 5480.0,
+        "new_nodes_mean": 0.0
+      }
+    ],
+    "final": {
+      "hop": 12,
+      "coverage_mean": 0.920225548915465,
+      "coverage_median": 0.9428104575163399,
+      "gate": 0.9,
+      "pass": true
+    },
+    "final_union": {
+      "hop": 12,
+      "coverage_mean": 0.9854454447104298,
+      "coverage_median": 0.9958930679709901,
+      "gate": 0.9,
+      "pass": true
+    },
+    "final_undirected": {
+      "hop": 12,
+      "coverage_mean": 0.9247356520369813,
+      "coverage_median": 0.9444444444444444,
+      "gate": 0.9,
+      "pass": true
+    },
+    "denominators": {
+      "same_cluster": "同 cluster 字段的节点数（图上）",
+      "union": "|cluster==c ∪ cls==C| 的节点数（图上，去重并集）",
+      "undirected": "同 cluster 字段的节点数；可达域换为无向连通闭包",
+      "same_cluster_share": "可达节点总数（字面口径，不用于门槛）"
+    },
+    "cls_code": {
+      "distinct": 356
+    }
+  },
+  "connectivity": {
+    "components": 4,
+    "largest_component": 5504,
+    "largest_pct": 0.9994552387869984,
+    "singleton_components": 3
+  },
+  "decay": {
+    "decay_factor": 0.86,
+    "per_hop": [
+      {
+        "hop": 1,
+        "score_mean": 0.3220309719443321,
+        "score_median": 0.26626886427402496,
+        "samples_with_new_nodes": 400,
+        "retention_vs_prev": null,
+        "path_edge_weight_mean": 0.37445458889007566,
+        "effective_hop_factor": 0.3220309527218342,
+        "theory_086": 0.86,
+        "theory_wbar": 0.36559852957725525
+      },
+      {
+        "hop": 2,
+        "score_mean": 0.1610929761081934,
+        "score_median": 0.1330818459391594,
+        "samples_with_new_nodes": 400,
+        "retention_vs_prev": 0.5002406294511347,
+        "path_edge_weight_mean": 0.4620485352724791,
+        "effective_hop_factor": 0.39736174762248994,
+        "theory_086": 0.7395999999999999,
+        "theory_wbar": 0.3144147354364395
+      },
+      {
+        "hop": 3,
+        "score_mean": 0.07849119915626943,
+        "score_median": 0.0678691565990448,
+        "samples_with_new_nodes": 400,
+        "retention_vs_prev": 0.48724159831495756,
+        "path_edge_weight_mean": 0.42011821784079073,
+        "effective_hop_factor": 0.36130167357623577,
+        "theory_086": 0.636056,
+        "theory_wbar": 0.27039667247533794
+      },
+      {
+        "hop": 4,
+        "score_mean": 0.06605476962868125,
+        "score_median": 0.06071202643215656,
+        "samples_with_new_nodes": 400,
+        "retention_vs_prev": 0.8415563826101282,
+        "path_edge_weight_mean": 0.4326273811608553,
+        "effective_hop_factor": 0.37205955490469933,
+        "theory_086": 0.54700816,
+        "theory_wbar": 0.23254113832879064
+      },
+      {
+        "hop": 5,
+        "score_mean": 0.04849994068266824,
+        "score_median": 0.04395712725818157,
+        "samples_with_new_nodes": 400,
+        "retention_vs_prev": 0.7342382837046392,
+        "path_edge_weight_mean": 0.39191761165857314,
+        "effective_hop_factor": 0.3370491509512067,
+        "theory_086": 0.47042701759999994,
+        "theory_wbar": 0.19998537896275995
+      },
+      {
+        "hop": 6,
+        "score_mean": 0.01071463177388455,
+        "score_median": 0.005721783731132746,
+        "samples_with_new_nodes": 301,
+        "retention_vs_prev": 0.22092051295463733,
+        "path_edge_weight_mean": 0.4595031427881646,
+        "effective_hop_factor": 0.39517271588015,
+        "theory_086": 0.40456723513599996,
+        "theory_wbar": 0.17198742590797356
+      },
+      {
+        "hop": 7,
+        "score_mean": 0.002933568126931989,
+        "score_median": 0.0023082138504832983,
+        "samples_with_new_nodes": 23,
+        "retention_vs_prev": 0.2737908487048673,
+        "path_edge_weight_mean": 0.6230779406817063,
+        "effective_hop_factor": 0.535847061354181,
+        "theory_086": 0.34792782221695995,
+        "theory_wbar": 0.14790918628085725
+      },
+      {
+        "hop": 8,
+        "score_mean": null,
+        "score_median": null,
+        "samples_with_new_nodes": 0,
+        "retention_vs_prev": null,
+        "path_edge_weight_mean": null,
+        "effective_hop_factor": null,
+        "theory_086": 0.29921792710658557,
+        "theory_wbar": 0.12720190020153724
+      },
+      {
+        "hop": 9,
+        "score_mean": null,
+        "score_median": null,
+        "samples_with_new_nodes": 0,
+        "retention_vs_prev": null,
+        "path_edge_weight_mean": null,
+        "effective_hop_factor": null,
+        "theory_086": 0.2573274173116636,
+        "theory_wbar": 0.10939363417332203
+      },
+      {
+        "hop": 10,
+        "score_mean": null,
+        "score_median": null,
+        "samples_with_new_nodes": 0,
+        "retention_vs_prev": null,
+        "path_edge_weight_mean": null,
+        "effective_hop_factor": null,
+        "theory_086": 0.22130157888803068,
+        "theory_wbar": 0.09407852538905695
+      },
+      {
+        "hop": 11,
+        "score_mean": null,
+        "score_median": null,
+        "samples_with_new_nodes": 0,
+        "retention_vs_prev": null,
+        "path_edge_weight_mean": null,
+        "effective_hop_factor": null,
+        "theory_086": 0.19031935784370638,
+        "theory_wbar": 0.08090753183458897
+      },
+      {
+        "hop": 12,
+        "score_mean": null,
+        "score_median": null,
+        "samples_with_new_nodes": 0,
+        "retention_vs_prev": null,
+        "path_edge_weight_mean": null,
+        "effective_hop_factor": null,
+        "theory_086": 0.1636746477455875,
+        "theory_wbar": 0.06958047737774652
+      }
+    ],
+    "retention_hop2_hop1": 0.5002406294511347,
+    "samples_with_new_nodes": [
+      400,
+      400,
+      400,
+      400,
+      400,
+      301,
+      23,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mean_edge_weight_global": 0.36559852957725525,
+    "mean_edge_weight_on_best_paths": 0.45196391689894927,
+    "hop1_mean": 0.3220309719443321,
+    "hop3_mean": 0.07849119915626943,
+    "random_walk_baseline": null
+  },
+  "performance": {
+    "hops": 12,
+    "samples": 50,
+    "p50_ms": 2.9142304997549218,
+    "p95_ms": 7.728775550322097,
+    "max_ms": 8.547491000172158,
+    "mean_ms": 3.886383860044589,
+    "target_ms": 1000,
+    "ideal_ms": 300,
+    "verdict": "PASS(<300ms 理想档)",
+    "pass": true
+  },
+  "wall_seconds": 6.77
+}

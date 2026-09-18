@@ -1,0 +1,13 @@
+### 主题区域摘要（存根）· 机器（id=56, kw, freq=817）
+
+【off：纯结构化占位输出（未调用任何模型）】
+
+- **扩散规则**：w_hop = w_parent × edge_w × 0.86，阈值 0.05，hops=2
+- **区域规模**：242 个主题 / 证据书 38115 本
+- **权重分布**：min 0.0839 / 中位 0.4206 / max 1.0000
+- **层级**：hop1 20 个；hop2 221 个
+- **代表主题**：学习、智能、TP2、TP1、machine、数据、data、TH1
+- **证据书样例**：《基于ROS的智能机器人控制》(991002424546304181)；《TensorFlow机器学习 = Machine learning with TensorFlow》(991001561435504181)；《基于ROS的机器人设计与开发》(991002129306804181)
+
+> 本段由 `summarize_topic_region(region) -> str` 存根生成：**签名固定、待与作者讨论**；
+> 默认 `TOPIC_LLM=off` 不触网，结构化数据请用 `graph --json` / `around --json`。

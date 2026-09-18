@@ -1,0 +1,28 @@
+{
+ "n": 5507,
+ "in_5k_20k": true,
+ "schema_bad": 0,
+ "id_continuous": true,
+ "term_unique": true,
+ "freq_zero": 0,
+ "kw": 5158,
+ "cls": 349,
+ "report_nodes": 5507,
+ "report_kw": 5158,
+ "report_cls": 349,
+ "truncated": false,
+ "sources": {
+  "A+B": 1010,
+  "C": 349,
+  "B": 3672,
+  "A": 476
+ },
+ "report_sources": {
+  "A+B": 1010,
+  "C": 349,
+  "B": 3672,
+  "A": 476
+ },
+ "pre_r2_n": 5187,
+ "a1_ok": true
+}

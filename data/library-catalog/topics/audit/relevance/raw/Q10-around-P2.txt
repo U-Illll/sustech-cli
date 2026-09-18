@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 901 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = 规划 (整词命中中 freq 最低)
+=== around 901 「规划」 (kw, freq=317, cluster=368, cls=F) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 268 主题 / 书证据 55072 本 / 扫描边 420 / 权重 0.059~1.000(中位 0.300) / 320.4ms
+
+[hop 1] 20 个主题（显示 top 10）
+     74 城市                      kw   score=0.8600   via 规划
+    651 TU9                     cls  score=0.8600   via 规划
+   1584 planning                kw   score=0.8557   via 规划
+     79 发展                      kw   score=0.7041   via 规划
+     85 G6                      cls  score=0.6659   via 规划
+     36 环境                      kw   score=0.6440   via 规划
+    351 战略                      kw   score=0.6440   via 规划
+    448 X3                      cls  score=0.5772   via 规划
+   2324 生涯                      kw   score=0.5772   via 规划
+    314 空间                      kw   score=0.5610   via 规划
+
+[hop 2] 247 个主题（显示 top 10）
+     14 F2                      cls  score=0.7396   via 规划 → 城市
+     88 water                   kw   score=0.7396   via 规划 → TU9
+    219 C9                      cls  score=0.7396   via 规划 → 城市
+    450 urban                   kw   score=0.7396   via 规划 → 城市
+     69 生态                      kw   score=0.7075   via 规划 → 城市
+    887 wastewater              kw   score=0.6736   via 规划 → TU9
+    327 K9                      cls  score=0.6633   via 规划 → 城市
+      6 设计                      kw   score=0.6460   via 规划 → TU9
+    282 全球                      kw   score=0.6200   via 规划 → 城市
+      0 经济                      kw   score=0.6055   via 规划 → 发展
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991002555237204181  职业生涯发展与规划 = Career development and planning    cls=C/C9  via 「规划」
+  991000682319704181  战略人生规划 = Strategic planning for your success   cls=B/B8  via 「规划」
+  991002555199304181  《中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要》释义       cls=D/D6  via 「规划」
+  991001289019704181  中国大学教育基金会发展报告                                  cls=G/G6  via 「发展」
+  991001536360404181  流域水环境学 = Watershed water environment           cls=X/X1  via 「water」
+
+---stderr---
+

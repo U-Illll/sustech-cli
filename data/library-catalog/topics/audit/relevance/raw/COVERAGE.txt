@@ -1,0 +1,6 @@
+graph vs around 一致性（同 seed 同 hops=2）
+Q06	graph 529	rc=0	nodes=99	edges=540	visited=99	scanned=402	253.8ms
+Q09	graph 33	rc=0	nodes=240	edges=1603	visited=240	scanned=420	259.5ms
+
+summarize 存根确定性（同参两次输出一致）: True
+summarize(seed=529) 长度=537 字符

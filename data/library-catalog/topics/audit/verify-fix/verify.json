@@ -1,0 +1,482 @@
+{
+ "generated_at": "2026-09-18T20:28:42+0800",
+ "meta": {
+  "edges_sha256_16": "509c285aac82b9a1",
+  "tool_sha256_16": "7c993f3035639ae4",
+  "card_topics_sha256_16": "161a6ab87dc8328e"
+ },
+ "checks": [
+  {
+   "check": "0.1 topic_graph.py / edges.csr.npz 可读且非空",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "1.1 共有卡恰为终审给定 MMS",
+   "ok": true,
+   "detail": "共现卡=['991000938579704181']"
+  },
+  {
+   "check": "1.2 独立重算权重 == 0.1762914344 (±1e-6)",
+   "ok": true,
+   "detail": "Δ=-1.112e-11"
+  },
+  {
+   "check": "1.3 存活方向 == 独立复刻的 top-20 期望（含反向截断）",
+   "ok": true,
+   "detail": "168→4232 存活=True(期望True) 4232→168 存活=False(期望False)"
+  },
+  {
+   "check": "1.4 落盘权重与独立重算一致 (≤1e-6)",
+   "ok": true,
+   "detail": "max|Δw|=1.568e-09"
+  },
+  {
+   "check": "1.5 落盘值 == 0.1762914344 (±1e-6)",
+   "ok": true,
+   "detail": "max|Δ|=1.557e-09"
+  },
+  {
+   "check": "1.6 落盘 float32 值 == float32(0.1762914344)",
+   "ok": true,
+   "detail": "落盘=[0.17629143595695496] f32期望=0.17629143595695496"
+  },
+  {
+   "check": "1.7 有牙：修复前双计公式复现 pre-R1 落盘值，且与修复后值可判别",
+   "ok": true,
+   "detail": "双计重算=0.2794153127 pre-R1=0.2794153094291687 修复后=0.1762914344 判别间距=0.1031"
+  },
+  {
+   "check": "1.8 有牙：pre-R1 备份同边权重 == 双计值（0.2794），非当前值",
+   "ok": true,
+   "detail": "pre-R1=0.2794153094291687 Δvs双计=+2.92e-11"
+  },
+  {
+   "check": "2.1 出度一致（top-20 截断未满则等长）",
+   "ok": true,
+   "detail": "actual=20 exp=20"
+  },
+  {
+   "check": "2.2 期望序与实际 dst 序逐位相同",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "2.3 对应边权逐位一致 (≤1e-6)",
+   "ok": true,
+   "detail": "max|Δw|=2.849e-08"
+  },
+  {
+   "check": "2.4 economist 在邻域内（终审：R1 前缺席）",
+   "ok": true,
+   "detail": "名次=15"
+  },
+  {
+   "check": "2.5 economic 已让位（终审：R1 前在邻域 w=1.0）",
+   "ok": true,
+   "detail": "名次=None"
+  },
+  {
+   "check": "2.6 economist 的 w 与独立重算一致",
+   "ok": true,
+   "detail": "落盘=0.7775173783302307 期望=0.777517"
+  },
+  {
+   "check": "2.7 assoc(economist) > assoc(economic) 且 w(economic) 本可入列",
+   "ok": true,
+   "detail": "0.0578 > 0.0353；economic w=0.9382"
+  },
+  {
+   "check": "2.8 有牙：修复前键序（权重优先）给出与落盘不同的邻域序",
+   "ok": true,
+   "detail": "修复前序首位=[0, 8, 62, 680, 417] vs 落盘=[0, 8, 62, 680, 417]"
+  },
+  {
+   "check": "2.9 有牙：economist 在修复前键序下确实缺席（终审反例可复现）",
+   "ok": true,
+   "detail": "修复前名次=—；修复后名次=15"
+  },
+  {
+   "check": "3.0 不变式检查器自测（注入 13 边父链须被检出，且 12 跳请求下判 FAIL）",
+   "ok": true,
+   "detail": "检出长度=13 边，超 12 跳=True"
+  },
+  {
+   "check": "3.a1 CLI `around 139 --hops 2` exit 0",
+   "ok": true,
+   "detail": "rc=0"
+  },
+  {
+   "check": "3.a2 around --hops 2 自报 hops_used ≤2",
+   "ok": true,
+   "detail": "max hops_used=2"
+  },
+  {
+   "check": "3.a3 around 展示 path 长度 ≤3 节点（2 边）",
+   "ok": true,
+   "detail": "max len(path)=3"
+  },
+  {
+   "check": "3.a4 自研父链：全部入区节点路径 ≤2 边",
+   "ok": true,
+   "detail": "visited=251 max_edges=2"
+  },
+  {
+   "check": "3.a5 真实图：layer ≡ 父链长度（0 例脱钩）",
+   "ok": true,
+   "detail": "脱钩=0"
+  },
+  {
+   "check": "3.b1 修复后：14 节点反例最深父链 ≤12 边",
+   "ok": true,
+   "detail": "节点数=14 最深=id13 12 边 (layer=12)"
+  },
+  {
+   "check": "3.b2 修复后：layer ≡ 父链长度",
+   "ok": true,
+   "detail": "脱钩=0"
+  },
+  {
+   "check": "3.b3 反例确达边界（修复后最深 == 12，非平凡）",
+   "ok": true,
+   "detail": "最深=12"
+  },
+  {
+   "check": "3.b4 反例有牙：R1 前语义重建在同一图上超跳（>12 边）",
+   "ok": true,
+   "detail": "最深=13 边，超跳节点=[(13, 13)]"
+  },
+  {
+   "check": "3.c1 5 个随机种子 × (hops=2,12) 全部 ≤hops 且 layer 一致且无环",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "4.1 每条实际边都能在证据链中找到对应共现对（计数）",
+   "ok": true,
+   "detail": "无证据边=0"
+  },
+  {
+   "check": "4.2 基权重公式分歧 = 0（|Δw| > 1e-6，含层级边覆盖）",
+   "ok": true,
+   "detail": "分歧=0 / 一致=99268 / max|Δw|=2.980e-08"
+  },
+  {
+   "check": "4.3 top-20 截断复刻后：期望边集 == 实际边集",
+   "ok": true,
+   "detail": "缺=0 多=0"
+  },
+  {
+   "check": "4.4 层级边实存 == 期望（无被截断吃掉）",
+   "ok": true,
+   "detail": "期望=4823 实存=4823"
+  },
+  {
+   "check": "4.5 登记层级边 4,832 与存活 4,823 的 9 条差额可由截断独立复现",
+   "ok": true,
+   "detail": "丢失=[(116, 'global', 'F8'), (153, '实验', 'TP3'), (348, '方法', 'F2'), (391, '时代', 'F2'), (392, 'computational', 'TP3'), (427, '世纪', 'I2'), (578, 'principles', 'TP3'), (623, '经典', 'TP3'), (738, '仿真', 'TP3')]"
+  }
+ ],
+ "pass": 34,
+ "fail": 0,
+ "counterexample_1_weight": {
+  "count": 1,
+  "cnt_sc": 0,
+  "w_expected": 0.1762914343888821,
+  "w_expected_f32": 0.17629143595695496,
+  "assoc": 0.016643566632465155,
+  "on_disk": {
+   "168->4232": 0.17629143595695496,
+   "4232->168": null
+  },
+  "expected_alive": {
+   "168->4232": true,
+   "4232->168": false
+  },
+  "doublecount_w": 0.27941531270472214,
+  "pre_r1_w": 0.2794153094291687
+ },
+ "counterexample_2_order": {
+  "expected_order": [
+   0,
+   8,
+   62,
+   680,
+   417,
+   593,
+   1403,
+   612,
+   923,
+   983,
+   107,
+   597,
+   845,
+   60,
+   1319,
+   2139,
+   2061,
+   14,
+   487,
+   3233
+  ],
+  "actual_order": [
+   0,
+   8,
+   62,
+   680,
+   417,
+   593,
+   1403,
+   612,
+   923,
+   983,
+   107,
+   597,
+   845,
+   60,
+   1319,
+   2139,
+   2061,
+   14,
+   487,
+   3233
+  ],
+  "prefix_key_order": [
+   0,
+   8,
+   62,
+   680,
+   417,
+   593,
+   1403,
+   612,
+   923,
+   983,
+   107,
+   597,
+   845,
+   60,
+   1319,
+   14,
+   189,
+   5,
+   487,
+   648
+  ],
+  "prefix_key_economist_rank": null,
+  "economist": {
+   "rank": 15,
+   "assoc": 0.05780733130160799,
+   "w": 0.7775173498426546,
+   "count": 10
+  },
+  "economic": {
+   "rank": null,
+   "assoc": 0.035250119445179966,
+   "w": 0.9382103375621837,
+   "count": 39
+  }
+ },
+ "counterexample_3_overhop": {
+  "a": {
+   "visited": 251,
+   "max_edges": 2,
+   "layer_mismatch": 0,
+   "cli_hops_used_max": 2
+  },
+  "b": {
+   "fixed_max_edges": 12,
+   "fixed_nodes": 14,
+   "legacy_max_edges": 13,
+   "legacy_overhop_ids": [
+    13
+   ],
+   "hops_requested": 12,
+   "n_nodes": 14
+  },
+  "c": [
+   {
+    "seed": 2523,
+    "term": "S4",
+    "runs": [
+     {
+      "hops": 2,
+      "visited": 170,
+      "max_edges": 2,
+      "layer_mismatch": 0,
+      "cycle": false
+     },
+     {
+      "hops": 12,
+      "visited": 3953,
+      "max_edges": 7,
+      "layer_mismatch": 0,
+      "cycle": false
+     }
+    ]
+   },
+   {
+    "seed": 1262,
+    "term": "塑料",
+    "runs": [
+     {
+      "hops": 2,
+      "visited": 198,
+      "max_edges": 2,
+      "layer_mismatch": 0,
+      "cycle": false
+     },
+     {
+      "hops": 12,
+      "visited": 4011,
+      "max_edges": 7,
+      "layer_mismatch": 0,
+      "cycle": false
+     }
+    ]
+   },
+   {
+    "seed": 5061,
+    "term": "论与实验",
+    "runs": [
+     {
+      "hops": 2,
+      "visited": 257,
+      "max_edges": 2,
+      "layer_mismatch": 0,
+      "cycle": false
+     },
+     {
+      "hops": 12,
+      "visited": 4069,
+      "max_edges": 7,
+      "layer_mismatch": 0,
+      "cycle": false
+     }
+    ]
+   },
+   {
+    "seed": 413,
+    "term": "love",
+    "runs": [
+     {
+      "hops": 2,
+      "visited": 249,
+      "max_edges": 2,
+      "layer_mismatch": 0,
+      "cycle": false
+     },
+     {
+      "hops": 12,
+      "visited": 4810,
+      "max_edges": 7,
+      "layer_mismatch": 0,
+      "cycle": false
+     }
+    ]
+   },
+   {
+    "seed": 4969,
+    "term": "incentives",
+    "runs": [
+     {
+      "hops": 2,
+      "visited": 189,
+      "max_edges": 2,
+      "layer_mismatch": 0,
+      "cycle": false
+     },
+     {
+      "hops": 12,
+      "visited": 3907,
+      "max_edges": 8,
+      "layer_mismatch": 0,
+      "cycle": false
+     }
+    ]
+   }
+  ]
+ },
+ "sweep": {
+  "edges_actual": 99268,
+  "edges_expected_set": 99268,
+  "divergence_formula": 0,
+  "divergence_count": 0,
+  "divergence_tolerance": 0,
+  "tolerance_ok": 99268,
+  "hier_override": 3974,
+  "no_evidence_edges": 0,
+  "missing_edges": 0,
+  "extra_edges": 0,
+  "max_abs_dw": 2.98015058186607e-08,
+  "formula_examples": [],
+  "missing_examples": [],
+  "extra_examples": [],
+  "hier_registered": 4832,
+  "hier_expected": 4823,
+  "hier_actual": 4823,
+  "hier_truncated": [
+   {
+    "src": 116,
+    "term": "global",
+    "dst": 5,
+    "dst_term": "F8"
+   },
+   {
+    "src": 153,
+    "term": "实验",
+    "dst": 43,
+    "dst_term": "TP3"
+   },
+   {
+    "src": 348,
+    "term": "方法",
+    "dst": 14,
+    "dst_term": "F2"
+   },
+   {
+    "src": 391,
+    "term": "时代",
+    "dst": 14,
+    "dst_term": "F2"
+   },
+   {
+    "src": 392,
+    "term": "computational",
+    "dst": 43,
+    "dst_term": "TP3"
+   },
+   {
+    "src": 427,
+    "term": "世纪",
+    "dst": 22,
+    "dst_term": "I2"
+   },
+   {
+    "src": 578,
+    "term": "principles",
+    "dst": 43,
+    "dst_term": "TP3"
+   },
+   {
+    "src": 623,
+    "term": "经典",
+    "dst": 43,
+    "dst_term": "TP3"
+   },
+   {
+    "src": 738,
+    "term": "仿真",
+    "dst": 43,
+    "dst_term": "TP3"
+   }
+  ]
+ },
+ "evidence": {
+  "cards": 188512,
+  "distinct_pairs": 330426,
+  "hier_edges": 4832,
+  "nodes": 5187,
+  "cls_cards": 179587
+ }
+}

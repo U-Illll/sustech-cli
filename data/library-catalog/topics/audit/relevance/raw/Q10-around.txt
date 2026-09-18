@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 74 --hops 2 --top 10 --evidence 5
+[exit=0]  # seed term = 城市  (search rank-1)
+=== around 74 「城市」 (kw, freq=686, cluster=368, cls=F) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 298 主题 / 书证据 55408 本 / 扫描边 420 / 权重 0.053~1.000(中位 0.438) / 333.4ms
+
+[hop 1] 20 个主题（显示 top 10）
+     14 F2                      cls  score=0.8600   via 城市
+     79 发展                      kw   score=0.8600   via 城市
+    219 C9                      cls  score=0.8600   via 城市
+    450 urban                   kw   score=0.8600   via 城市
+    651 TU9                     cls  score=0.8600   via 城市
+    901 规划                      kw   score=0.8600   via 城市
+     69 生态                      kw   score=0.8227   via 城市
+     36 环境                      kw   score=0.7713   via 城市
+    327 K9                      cls  score=0.7713   via 城市
+    448 X3                      cls  score=0.7511   via 城市
+
+[hop 2] 277 个主题（显示 top 10）
+      0 经济                      kw   score=0.7396   via 城市 → 发展
+      3 金融                      kw   score=0.7396   via 城市 → 发展
+      5 F8                      cls  score=0.7396   via 城市 → 发展
+     13 管理                      kw   score=0.7396   via 城市 → F2
+     18 中国                      kw   score=0.7396   via 城市 → 发展
+     23 社会                      kw   score=0.7396   via 城市 → C9
+     29 教育                      kw   score=0.7396   via 城市 → 发展
+     52 management              kw   score=0.7396   via 城市 → F2
+     53 创新                      kw   score=0.7396   via 城市 → F2
+     60 F1                      cls  score=0.7396   via 城市 → 发展
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991000935499704181  中国的人口与经济发展                                     cls=C/C9  via 「发展」
+  991002401378204181  财务管理学 = Financial management                   cls=F/F2  via 「财务管理」
+  991002555237204181  职业生涯发展与规划 = Career development and planning    cls=C/C9  via 「规划」
+  991002624425104181  深圳社会组织发展报告 = Annual report on social organiz   cls=C/C9  via 「organizations」
+  991001536360404181  流域水环境学 = Watershed water environment           cls=X/X1  via 「环境」
+
+---stderr---
+

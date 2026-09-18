@@ -1,0 +1,174 @@
+N=188512 V=338358 nnz=3665655
+top10 scan done in 1.0s; unique terms hit=314,426
+passing basic filter: 308,394
+normalized unique: 308,394
+thresholds (#terms passing filter with df>=T):
+  T=  2: 131,611
+  T=  3: 84,602
+  T=  4: 62,681
+  T=  5: 50,109
+  T=  6: 41,744
+  T=  8: 31,578
+  T= 10: 25,486
+  T= 12: 21,340
+  T= 15: 17,147
+  T= 20: 12,942
+  T= 30: 8,688
+  T= 50: 5,059
+  T=100: 2,322
+cluster keywords unique (normalized)=3,345
+of B terms df>=5 in cluster keywords: 1,815; df>=10: 1,750
+
+TOP 150 by df (term, df, in_cluster_kw, len):
+    6854  'and'  kw=False  len=3
+    6482  'the'  kw=False  len=3
+    5802  'of'  kw=False  len=2
+    5595  'york'  kw=False  len=4
+    5282  'in'  kw=False  len=2
+    4628  'cambridge'  kw=True  len=9
+    4439  'university'  kw=False  len=10
+    4127  'press'  kw=False  len=5
+    3921  'new'  kw=True  len=3
+    3537  'for'  kw=False  len=3
+    3092  'oxford'  kw=True  len=6
+    3031  'applications'  kw=True  len=12
+    2986  'springer'  kw=False  len=8
+    2870  '北京'  kw=False  len=2
+    2870  'to'  kw=False  len=2
+    2535  'london'  kw=False  len=6
+    2493  'volume'  kw=True  len=6
+    2489  'introduction'  kw=True  len=12
+    2376  'author.'  kw=False  len=7
+    2315  'theory'  kw=True  len=6
+    2197  '版社'  kw=False  len=2
+    2188  '上海'  kw=False  len=2
+    2022  'science'  kw=True  len=7
+    1958  'systems'  kw=True  len=7
+    1875  'an'  kw=False  len=2
+    1813  'design'  kw=True  len=6
+    1739  'analysis'  kw=True  len=8
+    1736  'ny'  kw=False  len=2
+    1634  'on'  kw=False  len=2
+    1631  'history'  kw=True  len=7
+    1568  'handbook'  kw=True  len=8
+    1551  'materials'  kw=True  len=9
+    1535  'with'  kw=False  len=4
+    1492  'crc'  kw=False  len=3
+    1443  '人民'  kw=False  len=2
+    1441  'engineering'  kw=True  len=11
+    1431  '中国'  kw=True  len=2
+    1430  'world'  kw=True  len=5
+    1420  '科学'  kw=False  len=2
+    1386  'routledge'  kw=True  len=9
+    1386  'from'  kw=False  len=4
+    1378  'elsevier'  kw=False  len=8
+    1377  'amsterdam'  kw=False  len=9
+    1359  '大学'  kw=True  len=2
+    1345  'international'  kw=True  len=13
+    1326  '学出'  kw=False  len=2
+    1316  'data'  kw=True  len=4
+    1307  'j.'  kw=False  len=2
+    1291  'academic'  kw=False  len=8
+    1287  'management'  kw=True  len=10
+    1284  'methods'  kw=True  len=7
+    1283  'a.'  kw=False  len=2
+    1272  '文学'  kw=True  len=2
+    1270  'taylor'  kw=False  len=6
+    1265  'boca'  kw=False  len=4
+    1225  'physics'  kw=True  len=7
+    1214  'john'  kw=True  len=4
+    1213  'research'  kw=True  len=8
+    1212  'cham'  kw=False  len=4
+    1192  'guide'  kw=True  len=5
+    1186  'hoboken'  kw=False  len=7
+    1177  'm.'  kw=False  len=2
+    1172  '基础'  kw=True  len=2
+    1140  '印书'  kw=False  len=2
+    1134  'wiley'  kw=False  len=5
+    1130  'berlin'  kw=False  len=6
+    1109  '设计'  kw=True  len=2
+    1107  'group'  kw=False  len=5
+    1104  'technology'  kw=True  len=10
+    1095  'quantum'  kw=True  len=7
+    1092  'princeton'  kw=False  len=9
+    1092  '京大'  kw=False  len=2
+    1083  'principles'  kw=True  len=10
+    1061  'boston'  kw=False  len=6
+    1049  'education'  kw=True  len=9
+    1037  'learning'  kw=True  len=8
+    1028  '教程'  kw=True  len=2
+    1005  'fundamentals'  kw=True  len=12
+     998  '清华'  kw=False  len=2
+     993  'modern'  kw=True  len=6
+     987  'francis'  kw=False  len=7
+     984  '经济'  kw=True  len=2
+     973  '文化'  kw=True  len=2
+     968  '艺出'  kw=False  len=2
+     961  'approach'  kw=True  len=8
+     959  '出版'  kw=False  len=2
+     949  '理学'  kw=True  len=2
+     946  'jersey'  kw=False  len=6
+     939  'fl'  kw=False  len=2
+     934  '等教'  kw=False  len=2
+     930  '主编'  kw=False  len=2
+     924  'r.'  kw=False  len=2
+     920  'scientific'  kw=False  len=10
+     917  'development'  kw=True  len=11
+     891  'n.j.'  kw=False  len=4
+     890  'advanced'  kw=True  len=8
+     889  '工程'  kw=True  len=2
+     887  'uk'  kw=False  len=2
+     882  'raton'  kw=False  len=5
+     878  'singapore'  kw=False  len=9
+     863  's.'  kw=False  len=2
+     863  '民文'  kw=False  len=2
+     862  '管理'  kw=True  len=2
+     859  'nj'  kw=False  len=2
+     858  '技术'  kw=True  len=2
+     853  'publishers'  kw=False  len=10
+     853  'sons'  kw=False  len=4
+     844  'mechanics'  kw=True  len=9
+     841  '南京'  kw=False  len=2
+     834  'global'  kw=True  len=6
+     830  'digital'  kw=True  len=7
+     826  '材料'  kw=True  len=2
+     824  '力学'  kw=True  len=2
+     822  '现代'  kw=True  len=2
+     820  '原理'  kw=True  len=2
+     816  '务印'  kw=False  len=2
+     816  '金融'  kw=True  len=2
+     814  '高等'  kw=False  len=2
+     813  'ma'  kw=False  len=2
+     807  'practice'  kw=True  len=8
+     799  'financial'  kw=True  len=9
+     797  'life'  kw=True  len=4
+     787  '民出'  kw=False  len=2
+     785  'art'  kw=True  len=3
+     781  'economics'  kw=True  len=9
+     779  '数学'  kw=True  len=2
+     776  'c.'  kw=False  len=2
+     765  'kingdom'  kw=False  len=7
+     762  '济学'  kw=False  len=2
+     757  '哲学'  kw=True  len=2
+     756  'books'  kw=False  len=5
+     755  '研究'  kw=True  len=2
+     754  'information'  kw=True  len=11
+     753  'security'  kw=True  len=8
+     750  'control'  kw=True  len=7
+     746  'techniques'  kw=True  len=10
+     744  '华书'  kw=False  len=2
+     738  'david'  kw=False  len=5
+     735  '数据'  kw=True  len=2
+     733  '机械'  kw=False  len=2
+     733  '生物'  kw=True  len=2
+     730  'l.'  kw=False  len=2
+     730  'publishing'  kw=False  len=10
+     730  'mathematical'  kw=True  len=12
+     723  'social'  kw=True  len=6
+     723  'w.'  kw=False  len=2
+     723  'advances'  kw=True  len=8
+     721  'modeling'  kw=True  len=8
+     717  '艺术'  kw=True  len=2
+     713  'practical'  kw=True  len=9
+
+total 1.6s

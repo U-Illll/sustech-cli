@@ -1,0 +1,80 @@
+{
+ "name": "sustc-library-catalog-topics",
+ "version": "v1",
+ "generated_at": "2026-09-18 20:44:36",
+ "source": "南方科技大学图书馆公开检索系统导出（主题图 GraphRAG-lite 子集）",
+ "license_note": "公开书目事实数据；仅供 sustech-cli 等项目离线使用（本包只生成不发布）",
+ "stats": {
+  "topics": {
+   "nodes": 5187,
+   "edges": 99268,
+   "avg_outdeg": 19.138,
+   "max_outdeg": 20,
+   "cards": 188512,
+   "card_topic_links": 487933,
+   "dtypes": {
+    "indptr": "int64",
+    "indices": "int32",
+    "weights_u8": "uint8",
+    "card_indptr": "int32",
+    "card_ids": "int32"
+   },
+   "restore": {
+    "edge_weight": "w = v / 255.0",
+    "nodes": "JSON 数组，id = CSR 行号",
+    "card_topics": "第 i 行（0-based）对应 cards.jsonl 第 i 行"
+   }
+  }
+ },
+ "files": [
+  {
+   "path": "topics/nodes.json",
+   "size": 685410,
+   "sha256": "9f5437d7034bfdaad8d47915777738ea254830d1a37f2039744d9bf501f70460",
+   "note": "主题节点表（JSON；{id,term,type:kw|cls,freq,cluster,cls,sources}）"
+  },
+  {
+   "path": "topics/edges_indptr.i64.bin",
+   "size": 41504,
+   "sha256": "4a573bfbcf76a3e759c2c12a99bf54fcc9f11597af170ca8c284a688c87aab7e",
+   "note": "主题图 CSR 行偏移（int64 LE, n+1；与节点表行序对齐）"
+  },
+  {
+   "path": "topics/edges_indices.i32.bin",
+   "size": 397072,
+   "sha256": "0badd6188b3ea0a2d60a0065befdca05f38e3f778867b6bd892077f4104544a7",
+   "note": "主题图 CSR 列索引（int32 LE, nnz；有向，出度 ≤20）"
+  },
+  {
+   "path": "topics/edges_weights.u8.bin",
+   "size": 99268,
+   "sha256": "9f0aadbce1892e6b09dbe426b0acbb0fb160551fcdd691d907a1c53e29686104",
+   "note": "主题图边权 uint8 LE（还原: w = v / 255.0；原始 float32 ∈[0,1]，1.0 = 层级边/饱和共现）"
+  },
+  {
+   "path": "topics/card_topics_indptr.i32.bin",
+   "size": 754052,
+   "sha256": "b7892bc0c4e4f8b2529e641d435be7912f4f5040d1ffde7bb123ab839ad9a837",
+   "note": "证据链 CSR 行偏移（int32 LE, N_cards+1；与 cards.jsonl 行序一致）"
+  },
+  {
+   "path": "topics/card_topics_ids.i32.bin",
+   "size": 1951732,
+   "sha256": "dd11ddebfe71d8ce32fb1ef66f5dd8c567e80c48b64e5ef15b8b06d201dd7cb5",
+   "note": "证据链主题 id（int32 LE, nnz；每卡 top-5 主题，按词权降序）"
+  },
+  {
+   "path": "topics/meta.json",
+   "size": 79503,
+   "sha256": "c907c84126874cb3100c75ea3c3a1f5819adb88cfc8839792915643b98139cba",
+   "note": "主题图口径登记（stages.P0–P4：参数/计数/统计/裁定）"
+  },
+  {
+   "path": "topics/manifest.topics.json",
+   "size": 2238,
+   "sha256": "1ac18e6ba236552aa04a55d8a25eecdbdecbfa7dd2097043717e422a84081ef0",
+   "note": "topics 导出版清单（含各文件 sha256 与还原公式）"
+  }
+ ],
+ "total_bytes": 4010779
+}

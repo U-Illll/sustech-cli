@@ -1,0 +1,15 @@
+{
+ "payload_revision": "post-r1",
+ "match": {
+  "post-r1": [
+   99268,
+   99268
+  ],
+  "pre-r1": [
+   13812,
+   99268
+  ]
+ },
+ "register_updated_at": "2026-09-18T19:13:59+0800",
+ "source_updated_at": "2026-09-18T20:01:04+0800"
+}

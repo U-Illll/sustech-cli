@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 18 --hops 2 --top 10 --evidence 5
+[exit=0]  # seed term = 中国  (search rank-1)
+=== around 18 「中国」 (kw, freq=10379, cluster=323, cls=F) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 274 主题 / 书证据 51287 本 / 扫描边 420 / 权重 0.130~1.000(中位 0.650) / 288.9ms
+
+[hop 1] 20 个主题（显示 top 10）
+     21 文化                      kw   score=0.8600   via 中国
+     22 I2                      cls  score=0.8600   via 中国
+     44 J6                      cls  score=0.8600   via 中国
+     58 B2                      cls  score=0.8600   via 中国
+     60 F1                      cls  score=0.8600   via 中国
+     65 文学                      kw   score=0.8600   via 中国
+     66 K2                      cls  score=0.8600   via 中国
+     76 china                   kw   score=0.8600   via 中国
+     79 发展                      kw   score=0.8600   via 中国
+     94 现代                      kw   score=0.8600   via 中国
+
+[hop 2] 253 个主题（显示 top 10）
+      0 经济                      kw   score=0.7396   via 中国 → F1
+      3 金融                      kw   score=0.7396   via 中国 → 发展
+      4 经济学                     kw   score=0.7396   via 中国 → F1
+      5 F8                      cls  score=0.7396   via 中国 → china
+     20 international           kw   score=0.7396   via 中国 → china
+     23 社会                      kw   score=0.7396   via 中国 → 文化
+     29 教育                      kw   score=0.7396   via 中国 → 发展
+     32 history                 kw   score=0.7396   via 中国 → china
+     37 哲学                      kw   score=0.7396   via 中国 → B2
+     42 K8                      cls  score=0.7396   via 中国 → 文化
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991000680649704181  现代性价值的近代追索 中国近代的现代化思想史                         cls=B/B2  via 「中国」
+  991000502149704181  2011年中国休闲发展报告 = Annual report on China's lei   cls=C/C9  via 「中国」
+  991002354093404181  现代化的中国选择 = China's choice of modernization     cls=D/D6  via 「中国」
+  991002621917104181  中国经济 宏观经济治理与发展战略研究                             cls=F/F1  via 「中国」
+  991000953869704181  儒学与中国文化现代化                                     cls=B/B2  via 「中国文化」
+
+---stderr---
+

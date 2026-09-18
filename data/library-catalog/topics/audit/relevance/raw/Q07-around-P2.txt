@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 255 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = 算法 (整词命中中 freq 最低)
+=== around 255 「算法」 (kw, freq=603, cluster=194, cls=TP) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 245 主题 / 书证据 55041 本 / 扫描边 412 / 权重 0.059~1.000(中位 0.482) / 303.6ms
+
+[hop 1] 20 个主题（显示 top 10）
+      9 数据                      kw   score=0.8600   via 算法
+     43 TP3                     cls  score=0.8600   via 算法
+     78 TP1                     cls  score=0.8600   via 算法
+    137 结构                      kw   score=0.8600   via 算法
+    752 algorithms              kw   score=0.8600   via 算法
+     47 学习                      kw   score=0.8512   via 算法
+   2589 算法与应用                   kw   score=0.8223   via 算法
+     56 机器                      kw   score=0.8175   via 算法
+   1020 实现                      kw   score=0.8069   via 算法
+     54 智能                      kw   score=0.8013   via 算法
+
+[hop 2] 224 个主题（显示 top 10）
+      6 设计                      kw   score=0.7396   via 算法 → 结构
+     10 data                    kw   score=0.7396   via 算法 → 数据
+     16 材料                      kw   score=0.7396   via 算法 → 结构
+     27 开发                      kw   score=0.7396   via 算法 → TP3
+     30 力学                      kw   score=0.7396   via 算法 → 结构
+     33 learning                kw   score=0.7396   via 算法 → TP1
+     34 security                kw   score=0.7396   via 算法 → TP3
+     46 TB3                     cls  score=0.7396   via 算法 → 结构
+     75 intelligence            kw   score=0.7396   via 算法 → TP1
+     77 programming             kw   score=0.7396   via 算法 → TP3
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991002424546304181  基于ROS的智能机器人控制                                  cls=TP/TP2  via 「机器」
+  991001613113704181  Python数学建模算法与应用习题解答                            cls=O/O1  via 「算法」
+  991001549712104181  Python数学建模算法与应用                                cls=O/O1  via 「算法」
+  991002129306804181  基于ROS的机器人设计与开发                                 cls=TP/TP2  via 「机器」
+  991001561435504181  TensorFlow机器学习 = Machine learning with Tenso   cls=TP/TP1  via 「学习」
+
+---stderr---
+

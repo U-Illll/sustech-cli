@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 37 --hops 2 --top 10 --evidence 5
+[exit=0]  # seed term = 哲学  (search rank-1)
+=== around 37 「哲学」 (kw, freq=1483, cluster=114, cls=B) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 263 主题 / 书证据 50074 本 / 扫描边 400 / 权重 0.082~1.000(中位 0.469) / 289.9ms
+
+[hop 1] 20 个主题（显示 top 10）
+     58 B2                      cls  score=0.8600   via 哲学
+     71 主义                      kw   score=0.8600   via 哲学
+    107 政治                      kw   score=0.8600   via 哲学
+    127 A8                      cls  score=0.8600   via 哲学
+    143 B5                      cls  score=0.8600   via 哲学
+    211 philosophy              kw   score=0.8600   via 哲学
+    251 N0                      cls  score=0.8600   via 哲学
+    345 B0                      cls  score=0.8600   via 哲学
+    488 B                       cls  score=0.8600   via 哲学
+    648 西方                      kw   score=0.8600   via 哲学
+
+[hop 2] 242 个主题（显示 top 10）
+      0 经济                      kw   score=0.7396   via 哲学 → 政治
+      4 经济学                     kw   score=0.7396   via 哲学 → 政治
+      8 F0                      cls  score=0.7396   via 哲学 → 主义
+     23 社会                      kw   score=0.7396   via 哲学 → 主义
+     32 history                 kw   score=0.7396   via 哲学 → philosophy
+     91 技术                      kw   score=0.7396   via 哲学 → N0
+     94 现代                      kw   score=0.7396   via 哲学 → 西方
+    115 science                 kw   score=0.7396   via 哲学 → philosophy
+    140 D0                      cls  score=0.7396   via 哲学 → 主义
+    144 理论                      kw   score=0.7396   via 哲学 → A8
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991002631873404181  西方哲学思想讲义 = Lectures on western philosophy      cls=B/B5  via 「哲学」
+  991000777879704181  柏拉图式政治哲学研究 = Studies in platonic political p   cls=B/B5  via 「哲学」
+  991001123399704181  承认哲学的历史逻辑 黑格尔、马克思与当代左翼政治思潮                     cls=B/B0  via 「哲学」
+  991001082709704181  马克思主义民主集中制思想与当代中国政治发展                          cls=A/A8  via 「政治」
+  991001747513404181  马克思哲学变革的当代阐明 = The contemporary clarificatio   cls=B/B0  via 「哲学」
+
+---stderr---
+

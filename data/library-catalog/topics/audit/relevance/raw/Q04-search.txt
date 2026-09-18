@@ -1,0 +1,23 @@
+$ topic_graph.py --data $D search "economics 教材" --top 10
+[exit=0]
+[search] query='economics 教材' → 归一 'economics教材' | 字面命中 5 个 | 近词扩展 9 个（50 张卡命中 1126 张） | 534.2ms
+    id term                     type    freq  cluster cls   src                   w
+    62 economics                kw       960      362 F     token             6.181
+   120 economic                 kw       859      351 F     prefix            5.405
+   612 macroeconomics           kw       124      362 F     substr            2.897
+   983 microeconomics           kw        69      362 F     substr            2.549
+  1948 ic                       kw        28      195 TN    substr            2.020
+
+[近词扩展] TF-IDF 检索相关书目 → 聚合书的 top-5 主题（退化路径 ②；源: catalog_vector 同源 TF-IDF）
+   124 oxford                   kw       278       10 F     tfidf-expand      0.977   支持书: 991001348996804181、991000094809704181
+   197 health                   kw       480      265 R     tfidf-expand      0.647   支持书: 991000127389704181、991001304519604181
+   447 policy                   kw       536      351 F     tfidf-expand      0.614   支持书: 991000481249704181、991000400989704181
+    20 international            kw      1966      303 TP    tfidf-expand      0.381   支持书: 991000400989704181、991000400979704181
+    32 history                  kw      2923      248 K     tfidf-expand      0.361   支持书: 991000253669704181、991000106679704181
+   578 principles               kw      1336       11 O     tfidf-expand      0.325   支持书: 991000403459704181、991000213849704181
+    81 theory                   kw      3548      214 O     tfidf-expand      0.318   支持书: 991000203279704181、991000400989704181
+     4 经济学                      kw      1425      362 F     tfidf-expand      0.297   支持书: 991000756669704181、991001345579204181
+     6 设计                       kw      4440      295 TP    tfidf-expand      0.294   支持书: 991000933749704181、991000974689704181
+
+---stderr---
+

@@ -1,0 +1,127 @@
+{
+ "edges_pre_r2": 99268,
+ "edges_d1fixed_same_nodes": 99268,
+ "only_in_pre_r2": 9,
+ "only_in_d1fixed": 9,
+ "weight_diff_on_common": 0,
+ "added_all_are_registered_hier": true,
+ "added_hier_w1": true,
+ "dropped_type_breakdown": {
+  "kw->kw": 8,
+  "kw->cls": 1
+ },
+ "added_hier_terms": [
+  [
+   "global",
+   "f8"
+  ],
+  [
+   "实验",
+   "tp3"
+  ],
+  [
+   "方法",
+   "f2"
+  ],
+  [
+   "时代",
+   "f2"
+  ],
+  [
+   "computational",
+   "tp3"
+  ],
+  [
+   "世纪",
+   "i2"
+  ],
+  [
+   "principles",
+   "tp3"
+  ],
+  [
+   "经典",
+   "tp3"
+  ],
+  [
+   "仿真",
+   "tp3"
+  ]
+ ],
+ "only_in_pre_r2_sample": [
+  [
+   "global",
+   "citizenship"
+  ],
+  [
+   "实验",
+   "基础"
+  ],
+  [
+   "方法",
+   "实践"
+  ],
+  [
+   "时代",
+   "高校"
+  ],
+  [
+   "computational",
+   "biology"
+  ],
+  [
+   "世纪",
+   "法国"
+  ],
+  [
+   "principles",
+   "原理与应用"
+  ],
+  [
+   "经典",
+   "e1"
+  ],
+  [
+   "仿真",
+   "pcb"
+  ]
+ ],
+ "only_in_d1fixed_sample": [
+  [
+   "global",
+   "f8"
+  ],
+  [
+   "实验",
+   "tp3"
+  ],
+  [
+   "方法",
+   "f2"
+  ],
+  [
+   "时代",
+   "f2"
+  ],
+  [
+   "computational",
+   "tp3"
+  ],
+  [
+   "世纪",
+   "i2"
+  ],
+  [
+   "principles",
+   "tp3"
+  ],
+  [
+   "经典",
+   "tp3"
+  ],
+  [
+   "仿真",
+   "tp3"
+  ]
+ ]
+}

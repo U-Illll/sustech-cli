@@ -1,0 +1,35 @@
+=== around 4 「经济学」 (kw, freq=1425, cluster=362, cls=F) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤1
+区域: 21 主题 / 书证据 5685 本 / 扫描边 20 / 权重 0.504~1.000(中位 0.860) / 255.1ms
+
+[hop 1] 20 个主题（显示 top 20）
+      0 经济                      kw   score=0.8600   via 经济学
+      8 F0                      cls  score=0.8600   via 经济学
+     14 F2                      cls  score=0.8600   via 经济学
+     60 F1                      cls  score=0.8600   via 经济学
+     62 economics               kw   score=0.8600   via 经济学
+    107 政治                      kw   score=0.8600   via 经济学
+    417 宏观                      kw   score=0.8600   via 经济学
+    593 微观                      kw   score=0.8600   via 经济学
+    597 学家                      kw   score=0.8600   via 经济学
+    612 macroeconomics          kw   score=0.8600   via 经济学
+    680 计量                      kw   score=0.8600   via 经济学
+    845 F                       cls  score=0.8600   via 经济学
+    923 econometrics            kw   score=0.8600   via 经济学
+    983 microeconomics          kw   score=0.8600   via 经济学
+   1319 行为                      kw   score=0.8600   via 经济学
+   1403 微观经济学                   kw   score=0.8600   via 经济学
+    487 political               kw   score=0.8175   via 经济学
+   2061 学讲义                     kw   score=0.7506   via 经济学
+   2139 economist               kw   score=0.6687   via 经济学
+   3233 学说                      kw   score=0.5036   via 经济学
+
+[书证据] 抽 8 张卡（card_topics 反查）
+  991002401390204181  微观经济学 = Microeconomics                         cls=F/F0  via 「经济学」
+  991002128214504181  微观经济学 = Microeconomics                         cls=F/F0  via 「经济学」
+  991002621915804181  经济学原理 = Principles of economics 第10版 微观经济学分册   cls=F/F0  via 「经济学」
+  991002621551604181  经济学原理 = Principles of economics 第10版 宏观经济学分册   cls=F/F0  via 「经济学」
+  991001603279004181  中级微观经济学 = Microeconomics                       cls=F/F0  via 「经济学」
+  991000927849704181  最优化原理与微观经济学                                    cls=F/F0  via 「经济学」
+  991001764488704181  基于实践的微观经济学 = An empirically-based microecono   cls=F/F0  via 「经济学」
+  991002452538604181  微观经济学 = Foundations of microeconomics          cls=F/F0  via 「经济学」

@@ -1,0 +1,3 @@
+[search] query='唐诗' → 归一 '唐诗' | 字面命中 1 个 | 3.9ms
+    id term                     type    freq  cluster cls   src                   w
+   552 唐诗                       kw        84      283 I     exact             0.485

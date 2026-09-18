@@ -1,0 +1,78 @@
+{
+ "n": 5187,
+ "positions_equal_to_maxcc_int_key": 2711,
+ "positions_equal_to_float_score_key": 5187,
+ "positions_equal_to_freq_key": 27,
+ "maxcc_int_key_monotone": false,
+ "adjacent_primary_key_violations": 0,
+ "adjacent_tiebreak_violations(max_cc equal, freq ascending)": 62,
+ "nodes_where_float_score_differs_from_max_cc": 184,
+ "distinct_max_cc_values": 303,
+ "largest_tie_group": [
+  3,
+  652
+ ],
+ "nodes_in_tie_groups>1": 5057,
+ "head10": [
+  [
+   "经济",
+   3598,
+   994,
+   994.0
+  ],
+  [
+   "design",
+   2836,
+   918,
+   918.0
+  ],
+  [
+   "D9",
+   3717,
+   834,
+   834.0
+  ],
+  [
+   "金融",
+   1750,
+   701,
+   701.0
+  ],
+  [
+   "经济学",
+   1425,
+   662,
+   662.0
+  ],
+  [
+   "F8",
+   6517,
+   653,
+   653.0
+  ],
+  [
+   "设计",
+   4440,
+   631,
+   631.0
+  ],
+  [
+   "数学",
+   1131,
+   609,
+   609.0
+  ],
+  [
+   "F0",
+   2527,
+   608,
+   608.0
+  ],
+  [
+   "数据",
+   1988,
+   602,
+   602.0
+  ]
+ ]
+}

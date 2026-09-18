@@ -1,0 +1,52 @@
+# P1 50词分层抽检（高频17/中频17/低频16；噪声判定标准：无意义bigram/泛词/乱码）
+# stratum	id	term	type	freq	cluster	cls	sources	verdict	reason
+high	103	B9	cls	901	311	B9	C	正常	合法 CLC 二级类目（type=cls）
+high	556	生活	kw	882	185	B	A+B	正常	三源主题词，含簇关键词/类目证据
+high	282	全球	kw	849	174	F	A+B	正常	三源主题词，含簇关键词/类目证据
+high	133	artificial	kw	417	101	TP	A+B	正常	三源主题词，含簇关键词/类目证据
+high	1650	organization	kw	180	227	C	B	正常	TF-IDF 高频主题词，书目证据充分
+high	630	drug	kw	175	164	R	A+B	正常	三源主题词，含簇关键词/类目证据
+high	694	fuel	kw	133	349	TM	A+B	正常	三源主题词，含簇关键词/类目证据
+high	2708	人文	kw	129	264	K	B	正常	TF-IDF 高频主题词，书目证据充分
+high	457	法典	kw	95	347	D	A	正常	三源主题词，含簇关键词/类目证据
+high	2032	tissue	kw	88	349	R	A+B	正常	三源主题词，含簇关键词/类目证据
+high	780	css	kw	83	231	TP	B	正常	TF-IDF 高频主题词，书目证据充分
+high	1275	5g	kw	81	132	TN	B	正常	TF-IDF 高频主题词，书目证据充分
+high	2009	inorganic	kw	77	36	TB	B	正常	TF-IDF 高频主题词，书目证据充分
+high	1885	qualitative	kw	76	356	C	B	正常	TF-IDF 高频主题词，书目证据充分
+high	1201	psychological	kw	73	262	B	A+B	正常	三源主题词，含簇关键词/类目证据
+high	699	chronicle	kw	64	248	E	A+B	正常	三源主题词，含簇关键词/类目证据
+high	2707	eu	kw	55	1	D	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	1693	variable	kw	48	107	O	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	2517	atmosphere	kw	48	314	P	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	1699	文化交流	kw	42	105	K	A	正常	三源主题词，含簇关键词/类目证据
+mid	3466	bone	kw	37	7	R	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	3486	calculations	kw	34	195	O	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	4013	重大	kw	31	64	F	B	噪声	泛词（形容词），非主题
+mid	3538	engagement	kw	28	78	G	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	2874	病毒	kw	26	232	Q	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	2339	人权	kw	25	382	D	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	3591	hierarchical	kw	25	219	O	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	3613	业化	kw	24	369	F	B	噪声	跨词残片（工业化/产业化）
+mid	4130	iterative	kw	23	11	O	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	1468	websites	kw	23	231	TP	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	4646	augmented	kw	22	3	TP	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	4150	curvature	kw	22	214	O	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	2355	aerodynamic	kw	22	201	V	B	正常	TF-IDF 高频主题词，书目证据充分
+mid	1409	代数学	kw	20	66	O	B	正常	TF-IDF 高频主题词，书目证据充分
+low	4701	geological	kw	19	214	P	B	正常	TF-IDF 高频主题词，书目证据充分
+low	2939	协议	kw	19	230	TN	B	正常	TF-IDF 高频主题词，书目证据充分
+low	4739	reproduction	kw	18	1	Q	B	正常	TF-IDF 高频主题词，书目证据充分
+low	3747	图论	kw	18	194	O	B	正常	TF-IDF 高频主题词，书目证据充分
+low	4779	manifesto	kw	17	351	C	B	正常	TF-IDF 高频主题词，书目证据充分
+low	4805	accountability	kw	16	50	F	B	正常	TF-IDF 高频主题词，书目证据充分
+low	5098	empowerment	kw	16	3	F	B	正常	TF-IDF 高频主题词，书目证据充分
+low	2398	黑龙江	kw	16	83	J	B	正常	TF-IDF 高频主题词，书目证据充分
+low	1845	docker	kw	15	334	TP	B	正常	TF-IDF 高频主题词，书目证据充分
+low	2399	nanodevices	kw	15	36	TB	B	正常	TF-IDF 高频主题词，书目证据充分
+low	4867	inductive	kw	15	98	TP	B	正常	TF-IDF 高频主题词，书目证据充分
+low	4945	wellbeing	kw	14	50	G	B	正常	TF-IDF 高频主题词，书目证据充分
+low	2679	globalizing	kw	13	266	F	B	正常	TF-IDF 高频主题词，书目证据充分
+low	3395	黄帝内经	kw	12	269	R	A	正常	三源主题词，含簇关键词/类目证据
+low	3022	柳如是	kw	9	181	C	A	正常	三源主题词，含簇关键词/类目证据
+low	3410	春秋公羊传	kw	5	269	K	A	正常	三源主题词，含簇关键词/类目证据

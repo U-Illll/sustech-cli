@@ -1,0 +1,34 @@
+=== around 188 「量子」 (kw, freq=415, cluster=167, cls=O) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 255 主题 / 书证据 47449 本 / 扫描边 420 / 权重 0.058~1.000(中位 0.362) / 307.8ms
+
+[hop 1] 20 个主题（显示 top 10）
+     30 力学                      kw   score=0.8600   via 量子
+     70 O4                      cls  score=0.8600   via 量子
+    168 quantum                 kw   score=0.8600   via 量子
+    305 mechanics               kw   score=0.7898   via 量子
+    248 动力学                     kw   score=0.6756   via 量子
+    181 计算                      kw   score=0.6659   via 量子
+    379 信息                      kw   score=0.6552   via 量子
+    174 光学                      kw   score=0.6197   via 量子
+    593 物理学                     kw   score=0.6197   via 量子
+    654 导论                      kw   score=0.6197   via 量子
+
+[hop 2] 234 个主题（显示 top 10）
+     16 材料                      kw   score=0.7396   via 量子 → 力学
+     46 TB3                     cls  score=0.7396   via 量子 → 力学
+     55 V2                      cls  score=0.7396   via 量子 → 力学
+     82 theory                  kw   score=0.7396   via 量子 → O4
+     94 O3                      cls  score=0.7396   via 量子 → 力学
+    138 结构                      kw   score=0.7396   via 量子 → 力学
+    202 工程                      kw   score=0.7396   via 量子 → 力学
+    211 physics                 kw   score=0.7396   via 量子 → O4
+    225 动力                      kw   score=0.7396   via 量子 → 力学
+    247 电磁                      kw   score=0.7396   via 量子 → O4
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991001594904204181  外部扰动下量子点激光器的非线性动力学研究                           cls=O/O4  via 「量子」
+  991002618527304181  量子光学讲义 = Lectures on quantum optics            cls=O/O4  via 「量子」
+  991002555284504181  纳米量子光学 = Nano and quantum optics               cls=O/O4  via 「量子」
+  991001384400604181  量子力学的哲学基础                                      cls=CTC/B  via 「量子」
+  991001567515004181  Foundations of quantum mechanics = 量子力学基础 :    cls=O/O4  via 「量子」

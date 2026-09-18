@@ -1,0 +1,17 @@
+{
+ "candidates_rows": 50,
+ "reviewed_rows": 50,
+ "id_set_equal": true,
+ "cand_id_field_mismatch": 0,
+ "cand_rep_mismatch": 0,
+ "cand_clsrep_mismatch": 0,
+ "cand_ncl_mismatch": 0,
+ "reviewed_field_mismatch": 0,
+ "reviewed_cols": [
+  10
+ ],
+ "cand_cols": [
+  13
+ ],
+ "cand_rep_sample": []
+}

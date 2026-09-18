@@ -1,0 +1,47 @@
+{
+  "nodes": 5187,
+  "kw": 4838,
+  "cls": 349,
+  "cards": 188512,
+  "cards_with_cls2": 179587,
+  "cards_empty_topics": 22573,
+  "cards_topic_count_hist": {
+    "0": 22573,
+    "1": 32886,
+    "2": 38925,
+    "3": 34190,
+    "4": 25063,
+    "5": 34875
+  },
+  "mms_line_mismatch": 0,
+  "pairs_aug_raw": 1112854,
+  "pairs_spec_raw": 640623,
+  "pairs_same_cluster_raw": 60185,
+  "distinct_pairs_aug": 330426,
+  "distinct_pairs_kwkw": 245779,
+  "distinct_pairs_same_cluster": 9167,
+  "hierarchical_edges": 4832,
+  "kw_without_hier_edge": 6,
+  "cooccur_count_dist": {
+    "n": 330426,
+    "min": 1.0,
+    "median": 1.0,
+    "mean": 3.3679,
+    "p90": 5.0,
+    "max": 1256.0
+  },
+  "cooccur_saturated_pairs": 2253,
+  "cooccur_saturated_share": 0.0068,
+  "cooccur_singleton_share": 0.6227,
+  "same_cluster_cnt_dist": {
+    "n": 330426,
+    "min": 0.0,
+    "median": 0.0,
+    "mean": 0.1821,
+    "p90": 0.0,
+    "max": 579.0
+  },
+  "same_cluster_hit_pairs": 9167,
+  "w_ge_1_pair_share": 0.0082,
+  "scan_seconds": 2.7
+}

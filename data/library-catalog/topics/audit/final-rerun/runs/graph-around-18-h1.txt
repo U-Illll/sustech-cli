@@ -1,0 +1,27 @@
+=== around 18 「中国」 (kw, freq=10379, cluster=323, cls=F) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤1
+区域: 21 主题 / 书证据 17809 本 / 扫描边 20 / 权重 0.860~1.000(中位 0.860) / 254.0ms
+
+[hop 1] 20 个主题（显示 top 12）
+     21 文化                      kw   score=0.8600   via 中国
+     22 I2                      cls  score=0.8600   via 中国
+     44 J6                      cls  score=0.8600   via 中国
+     58 B2                      cls  score=0.8600   via 中国
+     60 F1                      cls  score=0.8600   via 中国
+     65 文学                      kw   score=0.8600   via 中国
+     66 K2                      cls  score=0.8600   via 中国
+     76 china                   kw   score=0.8600   via 中国
+     79 发展                      kw   score=0.8600   via 中国
+     94 现代                      kw   score=0.8600   via 中国
+     95 集成                      kw   score=0.8600   via 中国
+    106 音乐                      kw   score=0.8600   via 中国
+
+[书证据] 抽 8 张卡（card_topics 反查）
+  991001092109704181  马克思的文化观与当代中国文化建设                               cls=A/A8  via 「中国」
+  991000920749704181  毛泽东与中国文化                                       cls=A/A7  via 「中国」
+  991002353999004181  诸子的智慧 中国文化元典中的100个关键词                          cls=B/B2  via 「中国」
+  991000924039704181  孟子与中国文化                                        cls=B/B2  via 「中国」
+  991000964309704181  墨子与中国文化                                        cls=B/B2  via 「中国」
+  991002618928604181  中国民族学的新使命 =The new mission of chinese ethnol   cls=C/C9  via 「中国」
+  991001034769704181  中国民族发展报告 2015                                  cls=D/D6  via 「中国」
+  991000941559704181  中国民族研究年鉴 = China's yearbook of ethnic resear   cls=D/D6  via 「中国」

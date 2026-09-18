@@ -1,0 +1,55 @@
+=== around 184 「量子」 (kw, freq=415, cluster=167, cls=O) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤3
+区域: 1524 主题 / 书证据 130762 本 / 扫描边 4779 / 权重 0.050~1.000(中位 0.238) / 459.6ms
+
+[hop 1] 20 个主题（显示 top 12）
+     30 力学                      kw   score=0.8600   via 量子
+     70 O4                      cls  score=0.8600   via 量子
+    166 quantum                 kw   score=0.8600   via 量子
+    298 mechanics               kw   score=0.7898   via 量子
+    177 计算                      kw   score=0.6761   via 量子
+    243 动力学                     kw   score=0.6756   via 量子
+    368 信息                      kw   score=0.6659   via 量子
+    171 光学                      kw   score=0.6197   via 量子
+    565 物理学                     kw   score=0.6197   via 量子
+    624 导论                      kw   score=0.6197   via 量子
+    579 field                   kw   score=0.5610   via 量子
+    715 学基础                     kw   score=0.5610   via 量子
+
+[hop 2] 221 个主题（显示 top 12）
+     16 材料                      kw   score=0.7396   via 量子 → 力学
+     46 TB3                     cls  score=0.7396   via 量子 → 力学
+     55 V2                      cls  score=0.7396   via 量子 → 力学
+     81 theory                  kw   score=0.7396   via 量子 → O4
+     93 O3                      cls  score=0.7396   via 量子 → 力学
+    137 结构                      kw   score=0.7396   via 量子 → 力学
+    144 理论                      kw   score=0.7396   via 量子 → 力学
+    198 工程                      kw   score=0.7396   via 量子 → 力学
+    207 physics                 kw   score=0.7396   via 量子 → O4
+    220 动力                      kw   score=0.7396   via 量子 → 力学
+    242 电磁                      kw   score=0.7396   via 量子 → O4
+    350 information             kw   score=0.7396   via 量子 → quantum
+
+[hop 3] 1282 个主题（显示 top 12）
+      5 F8                      cls  score=0.6361   via 量子 → 力学 → 理论
+      6 设计                      kw   score=0.6361   via 量子 → 力学 → 结构
+      8 F0                      cls  score=0.6361   via 量子 → 力学 → 理论
+      9 数据                      kw   score=0.6361   via 量子 → 力学 → 结构
+     10 data                    kw   score=0.6361   via 量子 → O4 → statistical
+     11 applications            kw   score=0.6361   via 量子 → O4 → theory
+     12 O1                      cls  score=0.6361   via 量子 → O4 → theory
+     17 TH1                     cls  score=0.6361   via 量子 → 力学 → 工程
+     34 security                kw   score=0.6361   via 量子 → quantum → information
+     38 机械                      kw   score=0.6361   via 量子 → 力学 → 工程
+     45 engineering             kw   score=0.6361   via 量子 → 力学 → 工程
+     52 management              kw   score=0.6361   via 量子 → quantum → information
+
+[书证据] 抽 8 张卡（card_topics 反查）
+  991002555284504181  纳米量子光学 = Nano and quantum optics               cls=O/O4  via 「量子」
+  991001723707204181  热力学与统计物理 = Thermodynamics and statistical ph   cls=O/O4  via 「力学」
+  991002618526704181  Structural mechanics = 结构力学                    cls=O/O3  via 「力学」
+  991000725959704181  分析结构力学 = Mechanics of analysis structural      cls=O/O3  via 「力学」
+  991001594907904181  结构力学 = Structural mechanics 下册                 cls=O/O3  via 「力学」
+  991002618947704181  Many-body quantum theory in condensed matter   cls=O/O4  via 「quantum」
+  991002452433204181  凝聚态物理的全量子效应 = Full quantum effects in conden   cls=O/O4  via 「量子」
+  991002618527304181  量子光学讲义 = Lectures on quantum optics            cls=O/O4  via 「量子」

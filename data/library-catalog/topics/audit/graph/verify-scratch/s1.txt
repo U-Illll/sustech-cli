@@ -1,0 +1,43 @@
+{
+ "query": "机器学习",
+ "normalized": "机器学习",
+ "literal_hits": [
+  {
+   "id": 47,
+   "term": "学习",
+   "type": "kw",
+   "freq": 1239,
+   "cluster": 156,
+   "cls": "TP",
+   "sources": [
+    "A",
+    "B"
+   ],
+   "src": "token",
+   "match": 0.9,
+   "w": 6.4106
+  },
+  {
+   "id": 56,
+   "term": "机器",
+   "type": "kw",
+   "freq": 817,
+   "cluster": 338,
+   "cls": "TP",
+   "sources": [
+    "A",
+    "B"
+   ],
+   "src": "token",
+   "match": 0.9,
+   "w": 6.0362
+  }
+ ],
+ "literal_total": 2,
+ "expand": {
+  "used": false,
+  "mode": "no"
+ },
+ "expanded_hits": [],
+ "elapsed_ms": 1.45
+}

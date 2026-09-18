@@ -1,0 +1,758 @@
+{
+ "findings": [
+  {
+   "id": "F1",
+   "severity": "中",
+   "title": "截断排序键 `_score = freq × rep` 代数退化：rep = 主导簇卡数/freq ⇒ _score ≡ 主导簇卡数（freq 被约掉），与报告/代码注释所声称的‘频次×簇内代表性’不符",
+   "evidence": {
+    "score_line": [
+     652,
+     660
+    ],
+    "rep_line": [
+     558
+    ],
+    "algebra": "score = freq * (max(cl_counts)/freq) = max(cl_counts)",
+    "consequence": "截断主键实为单簇聚集度：偏向大盘簇专词，压低跨簇通用词与稀有簇专词",
+    "numeric_proof": {}
+   },
+   "repro": "python3 audit_p1.py -> S4（全量 5187 节点顺序 == sort(-max_cc,-freq,term)）",
+   "suggestion": "改键为真正的联合量（rep 独立归一化，或 log1p(freq)*rep），或按实际语义改写报告文案。"
+  },
+  {
+   "id": "F2",
+   "severity": "高",
+   "title": "长词包含率证据 ext_df 双计数：pass1（A 匹配扩展）与 pass1.5（B-CJK 扩展）对同一卡片的同一扩展词各 +1，ext_df 可超过卡片数，containment_ratio 丧失‘卡片级包含率’语义，导致 A 源词被误判为跨词边界碎片而剔除",
+   "evidence": {
+    "pass1_ext_increment": [
+     469,
+     494
+    ],
+    "pass15_block": [
+     481
+    ],
+    "measurement": {}
+   },
+   "repro": "python3 audit_p1.py -> S3",
+   "suggestion": "两趟按 card 去重（或合并为一趟）后重算 ratio，并重跑 P1 基线。"
+  },
+  {
+   "id": "F3",
+   "severity": "中",
+   "title": "B-only CJK 准入政策：报告 params.b_cjk_policy 与文件头注释称‘B-only CJK 须在 A 词表或学科词表内，否则剔除’，实现另有第三条通路 `b_df>=min_df_cjk 且 长词包含率<0.9`，报告未披露",
+   "evidence": {
+    "impl_line": [
+     610
+    ],
+    "numeric": {}
+   },
+   "repro": "python3 audit_p1.py -> S5",
+   "suggestion": "报告按三条通路分别计数披露，或收紧实现与声明一致。"
+  },
+  {
+   "id": "F4",
+   "severity": "低",
+   "title": "归一化口径与实现不符：报告写‘长度1-16’，term_ok_kw 另拒 len==1 ⇒ kw 有效区间 2..16（cls 1..6）",
+   "evidence": {
+    "evidence_line": [
+     239
+    ],
+    "reject_len1_line": [
+     247
+    ]
+   },
+   "repro": "对照 evidence/report_vs_impl.json",
+   "suggestion": "报告改‘长度 2-16（cls 1-6）’。"
+  },
+  {
+   "id": "F5",
+   "severity": "低",
+   "title": "多处死代码/不可达分支，其中‘超上限告警不可达’会让自测产生‘规模受控’的假安全感",
+   "evidence": {
+    "match_a 的 single 集恒空（a_set 已被 term_ok_kw 拒绝 len==1）": [
+     363
+    ],
+    "超上限告警 `if n > args.max_nodes` 不可达（截断后 n<=max_nodes）": [
+     678
+    ],
+    "截断 if/else 两分支同一 sort（重复代码）": [
+     666,
+     669
+    ],
+    "sources 兜底分支不可达（A/B/C 至少一路置位）": [
+     650
+    ],
+    "english_gate_ok 仅是 english_quality_ok 的别名": [
+     582
+    ],
+    "representativeness/mode_cluster 的 a_membership 兜底不可达（入表节点 freq>=1 ⇒ cl_counts 非空）": [
+     539,
+     554
+    ],
+    "accepted_b 循环内重复 term_ok_kw/is_stop（b_keep 已过滤）": [
+     604
+    ]
+   },
+   "repro": "python3 audit_p1.py -> S0",
+   "suggestion": "删除死分支并把可达性写进自测断言。"
+  },
+  {
+   "id": "F6",
+   "severity": "中",
+   "title": "nodes.json `cls` 字段层级混用：kw 写一级分类（F/TP），cls 节点写自身 cls2（349/349 cls==term）；按 `cls` 聚合的消费方会把两级代码混在一起",
+   "evidence": {
+    "impl_line": [
+     643
+    ],
+    "artifact": {}
+   },
+   "repro": "python3 audit_p1.py -> S5",
+   "suggestion": "cls 节点写父 cls1，或新增 cls1/cls2 双字段并冻结 schema。"
+  },
+  {
+   "id": "F7",
+   "severity": "低",
+   "title": "sources 语义 = ‘在该源词表中出现’，非‘该源通路实际采纳’：源码对 a_set 全量置 A 位（含被 A 碎片/零频规则剔除、后经 B 通路入表的词），A/B 的贡献度无法从 sources 还原",
+   "evidence": {
+    "impl_line": [
+     530,
+     588
+    ],
+    "numeric": {}
+   },
+   "repro": "python3 audit_p1.py -> S5",
+   "suggestion": "sources 记录‘被采纳来源’，另加 dropped_by 字段。"
+  },
+  {
+   "id": "F8",
+   "severity": "中",
+   "title": "`--min-df 12` 只约束 B 源（b_keep）；A/C 通路无频次下限，A-only/C-only 节点 freq 可低至 1。报告把 min_df 呈现为词频闸门，实际有 752/5187 节点不受其约束",
+   "evidence": {
+    "numeric": {}
+   },
+   "repro": "python3 audit_p1.py -> S5",
+   "suggestion": "报告中限定 min_df 的作用域；如需全局下限需另设参数并重跑基线。"
+  },
+  {
+   "id": "F9",
+   "severity": "中",
+   "title": "英文质量闸门为三分量 OR（freq>=200 或 cls_rep>=0.6 或 len>=9）：低频词天然满足 cls_rep≈1.0（freq==1 时恒为 1.0），且 len>=9 是无条件旁路，闸门对低频英文词近乎失效",
+   "evidence": {
+    "impl_line": [
+     578
+    ],
+    "numeric": {}
+   },
+   "repro": "python3 audit_p1.py -> S5",
+   "suggestion": "改为 AND/加权（如 freq>=min_df 且 cls_rep 达标），按新口径重跑留痕。"
+  },
+  {
+   "id": "F10",
+   "severity": "低",
+   "title": "cluster 归属并存两套口径（卡片级众数 vs 簇关键词表级众数），量纲不同；实现中 a_membership 兜底恒不可达，但与 F6 同类：代码/报告未声明该分歧",
+   "evidence": {
+    "impl_line": [
+     535
+    ],
+    "numeric": {}
+   },
+   "repro": "python3 audit_p1.py -> S2",
+   "suggestion": "删兜底臂并在报告写明 cluster = 卡片级众数（tie 取小 id）。"
+  },
+  {
+   "id": "F18",
+   "severity": "中",
+   "title": "报告 counts.source_a_kept=1518 高估 A 源实际贡献：161 个通过 A 闸门的词在 entry 阶段被英文质量门二次过滤而未入 nodes.json，且漏斗中无对应计数器（source_a_kept ≠ 含 A 证据的节点数）",
+   "evidence": {
+    "a_set_n": 2841,
+    "a_keep_recomputed": 1518,
+    "dropped_zero_recomputed": 429,
+    "dropped_embedded_recomputed": 894,
+    "report_a_kept": 1518,
+    "report_dropped_zero": 429,
+    "report_dropped_embedded": 894,
+    "a_keep_terms_in_nodes": 1357,
+    "a_keep_terms_absent_from_nodes": 161,
+    "a_keep_absent_english": 161,
+    "a_keep_absent_sample": [
+     "1a",
+     "1b",
+     "access",
+     "albert",
+     "animals",
+     "apps",
+     "april",
+     "artists",
+     "arts",
+     "asian",
+     "august",
+     "autocad"
+    ],
+    "report_has_counter_for_absent": false
+   },
+   "repro": "python3 audit_p1.py -> S3",
+   "suggestion": "新增 dropped_a_english_gate 计数器，并把各源漏斗计数与产物做 A1 级交叉校验。"
+  },
+  {
+   "id": "F2b",
+   "severity": "高",
+   "title": "【F2 实证】长词包含率可 >1.0（卡片级比值不可能 >1）并导致误判：有 A 源词仅因 ext_df 双计数越过 0.9 阈值被当碎片剔除",
+   "evidence": {
+    "ratio_gt1_terms": 580,
+    "flips": 129,
+    "inflation_max": [
+     {
+      "ext": "德国农民",
+      "code": 8,
+      "cards": 4,
+      "ratio": 2.0
+     },
+     {
+      "ext": "德国农",
+      "code": 8,
+      "cards": 4,
+      "ratio": 2.0
+     },
+     {
+      "ext": "资本论第",
+      "code": 2,
+      "cards": 1,
+      "ratio": 2.0
+     }
+    ],
+    "flip_sample": [
+     {
+      "term": "治理论",
+      "freq": 45,
+      "ratio_code": 0.978,
+      "ratio_dedup": 0.867,
+      "in_nodes": false
+     },
+     {
+      "term": "高分子",
+      "freq": 112,
+      "ratio_code": 1.107,
+      "ratio_dedup": 0.67,
+      "in_nodes": false
+     },
+     {
+      "term": "文全集",
+      "freq": 36,
+      "ratio_code": 1.556,
+      "ratio_dedup": 0.778,
+      "in_nodes": false
+     },
+     {
+      "term": "信集",
+      "freq": 69,
+      "ratio_code": 1.043,
+      "ratio_dedup": 0.667,
+      "in_nodes": false
+     },
+     {
+      "term": "国城乡",
+      "freq": 7,
+      "ratio_code": 1.143,
+      "ratio_dedup": 0.571,
+      "in_nodes": false
+     },
+     {
+      "term": "学模拟",
+      "freq": 4,
+      "ratio_code": 1.25,
+      "ratio_dedup": 0.75,
+      "in_nodes": false
+     }
+    ]
+   },
+   "repro": "python3 audit_p1.py -> S3",
+   "suggestion": "按 card 去重重算 ratio 并重跑 P1 基线。"
+  },
+  {
+   "id": "F1b",
+   "severity": "中",
+   "title": "【F1 实证】交付顺序 == sort(-freq×rep, -freq, term)，且 freq×rep 在同分组内受 1 ulp 浮点噪声支配 ⇒ 声明的次级键 (-freq, term) 实际不生效，同分组的先后由浮点噪声决定（截断边界随之由噪声决定，但可复现）",
+   "evidence": {
+    "n": 5187,
+    "positions_equal_to_maxcc_int_key": 2711,
+    "positions_equal_to_float_score_key": 5187,
+    "positions_equal_to_freq_key": 27,
+    "maxcc_int_key_monotone": false,
+    "adjacent_primary_key_violations": 0,
+    "adjacent_tiebreak_violations(max_cc equal, freq ascending)": 62,
+    "nodes_where_float_score_differs_from_max_cc": 184,
+    "distinct_max_cc_values": 303,
+    "largest_tie_group": [
+     3,
+     652
+    ],
+    "nodes_in_tie_groups>1": 5057,
+    "head10": [
+     [
+      "经济",
+      3598,
+      994,
+      994.0
+     ],
+     [
+      "design",
+      2836,
+      918,
+      918.0
+     ],
+     [
+      "D9",
+      3717,
+      834,
+      834.0
+     ],
+     [
+      "金融",
+      1750,
+      701,
+      701.0
+     ],
+     [
+      "经济学",
+      1425,
+      662,
+      662.0
+     ],
+     [
+      "F8",
+      6517,
+      653,
+      653.0
+     ],
+     [
+      "设计",
+      4440,
+      631,
+      631.0
+     ],
+     [
+      "数学",
+      1131,
+      609,
+      609.0
+     ],
+     [
+      "F0",
+      2527,
+      608,
+      608.0
+     ],
+     [
+      "数据",
+      1988,
+      602,
+      602.0
+     ]
+    ]
+   },
+   "repro": "python3 audit_p1.py -> S4",
+   "suggestion": "排序键改用整数/Decimal 量（如 (-max_cc, -freq, term)），并明确簇内代表性与频次的权重。"
+  },
+  {
+   "id": "F17",
+   "severity": "中",
+   "title": "114 个 kw 节点的 `cls` 不是其卡片证据的众数，而是 `fallback_cls_for_cluster` 用簇级 top_subjects[0] 推断填充（这些词的卡片 cls1 全为空）；同类缺失数据同时把 cls_rep 算成 1.0，使英文闸门的‘分类纯度’分量为真——纯度语义在缺数据时反转",
+   "evidence": {
+    "fallback_filled_nodes": 114,
+    "sample": [
+     {
+      "id": 290,
+      "term": "java",
+      "type": "kw",
+      "freq": 425,
+      "my_freq": 425,
+      "cluster": 206,
+      "my_cluster": 206,
+      "cls": "TP",
+      "my_cls1": "",
+      "max_cc": 111,
+      "max_cls": 363,
+      "ncl": 42,
+      "sources": "A+B",
+      "a": 425,
+      "b": 415,
+      "c": 0
+     },
+     {
+      "id": 302,
+      "term": "server",
+      "type": "kw",
+      "freq": 218,
+      "my_freq": 218,
+      "cluster": 118,
+      "my_cluster": 118,
+      "cls": "TP",
+      "my_cls1": "",
+      "max_cc": 106,
+      "max_cls": 118,
+      "ncl": 15,
+      "sources": "A+B",
+      "a": 218,
+      "b": 216,
+      "c": 0
+     },
+     {
+      "id": 365,
+      "term": "palace",
+      "type": "kw",
+      "freq": 108,
+      "my_freq": 108,
+      "cluster": 282,
+      "my_cluster": 282,
+      "cls": "K",
+      "my_cls1": "",
+      "max_cc": 87,
+      "max_cls": 79,
+      "ncl": 15,
+      "sources": "A+B",
+      "a": 108,
+      "b": 90,
+      "c": 0
+     },
+     {
+      "id": 373,
+      "term": "novel",
+      "type": "kw",
+      "freq": 508,
+      "my_freq": 508,
+      "cluster": 345,
+      "my_cluster": 345,
+      "cls": "K",
+      "my_cls1": "",
+      "max_cc": 84,
+      "max_cls": 274,
+      "ncl": 84,
+      "sources": "A+B",
+      "a": 508,
+      "b": 490,
+      "c": 0
+     },
+     {
+      "id": 376,
+      "term": "visual",
+      "type": "kw",
+      "freq": 413,
+      "my_freq": 413,
+      "cluster": 72,
+      "my_cluster": 72,
+      "cls": "TP",
+      "my_cls1": "",
+      "max_cc": 83,
+      "max_cls": 171,
+      "ncl": 85,
+      "sources": "A+B",
+      "a": 413,
+      "b": 392,
+      "c": 0
+     },
+     {
+      "id": 386,
+      "term": "oracle",
+      "type": "kw",
+      "freq": 151,
+      "my_freq": 151,
+      "cluster": 334,
+      "my_cluster": 334,
+      "cls": "TP",
+      "my_cls1": "",
+      "max_cc": 82,
+      "max_cls": 106,
+      "ncl": 17,
+      "sources": "A+B",
+      "a": 151,
+      "b": 149,
+      "c": 0
+     },
+     {
+      "id": 395,
+      "term": "authoritative",
+      "type": "kw",
+      "freq": 110,
+      "my_freq": 110,
+      "cluster": 237,
+      "my_cluster": 237,
+      "cls": "O",
+      "my_cls1": "",
+      "max_cc": 80,
+      "max_cls": 61,
+      "ncl": 15,
+      "sources": "A+B",
+      "a": 110,
+      "b": 109,
+      "c": 0
+     },
+     {
+      "id": 441,
+      "term": "胡适",
+      "type": "kw",
+      "freq": 77,
+      "my_freq": 77,
+      "cluster": 160,
+      "my_cluster": 160,
+      "cls": "I",
+      "my_cls1": "",
+      "max_cc": 72,
+      "max_cls": 22,
+      "ncl": 5,
+      "sources": "A+B",
+      "a": 77,
+      "b": 53,
+      "c": 0
+     }
+    ],
+    "cards_without_cls1": 7118,
+    "only_cls_rep_cohort": 785,
+    "cohort_without_cls1_data": 27
+   },
+   "repro": "python3 audit_p1.py -> S2/S5",
+   "suggestion": "区分‘真实分类纯度’与‘无分类数据’：cls_rep 分母只统计有 cls1 的卡片；cls 字段缺证据时留空或标注 inferred。"
+  },
+  {
+   "id": "F15",
+   "severity": "低",
+   "title": "截断路径本身自洽（3000 节点 = 全量顺序前缀），但切点落在 333 个同整数分（同主导簇卡数）节点中间，具体取舍由 1 ulp 浮点噪声决定；交付基线 truncated=false，该路径未被基线覆盖",
+   "evidence": {
+    "present": true,
+    "n": 3000,
+    "truncated": true,
+    "counts_nodes": 3000,
+    "sha256": "21f57aaa816acb7618e7caf6cce0a0c912f277251a8a3a75156a5aa060b55f1a",
+    "prefix_of_delivered_order": true,
+    "equals_topN_by_float_score_key": true,
+    "equals_topN_by_maxcc_int_key": false,
+    "cut_node": {
+     "term": "马来语",
+     "freq": 14,
+     "max_cc": 6,
+     "score": 6.0
+    },
+    "nodes_sharing_cut_int_score": 333,
+    "nodes_sharing_cut_float_score": 330
+   },
+   "repro": "bash audit/p1/scratch/run_experiments.sh",
+   "suggestion": "排序键改用整数键后重跑，并把一次 --max-nodes 触发态纳入验收。"
+  },
+  {
+   "id": "F16",
+   "severity": "低",
+   "title": "自测件 p1-sample50.txt（人工判定留痕）比生成件 p1-sample50-candidates.txt 少 3 列（cls_rep/rep/n_clusters）——判定所依据的数值证据未随判定件留存，噪声率 0.04 无法在该文件内被复核",
+   "evidence": {
+    "candidates_rows": 50,
+    "reviewed_rows": 50,
+    "id_set_equal": true,
+    "cand_id_field_mismatch": 0,
+    "cand_rep_mismatch": 0,
+    "cand_clsrep_mismatch": 0,
+    "cand_ncl_mismatch": 0,
+    "reviewed_field_mismatch": 0,
+    "reviewed_cols": [
+     10
+    ],
+    "cand_cols": [
+     13
+    ],
+    "cand_rep_sample": []
+   },
+   "repro": "python3 audit_p1.py -> S7",
+   "suggestion": "判定件保留生成件全部数值列（或在报告注明候选件为数值证据源）。"
+  }
+ ],
+ "log": [
+  "[   0.0s] == AUDIT-P1 开始 data=/home/wzh/go/lib-catalog-data audit=/home/wzh/go/lib-catalog-data/topics/audit/p1 ==",
+  "[   0.0s] nodes=5,187 report.nodes=5,187",
+  "[   0.0s] == S0 静态源码审计 ==",
+  "[   0.0s]   !! F1 [中] 截断排序键 `_score = freq × rep` 代数退化：rep = 主导簇卡数/freq ⇒ _score ≡ 主导簇卡数（freq 被约掉），与报告/代码注释所声称的‘频次×簇内代表性’不符",
+  "[   0.0s]   !! F2 [高] 长词包含率证据 ext_df 双计数：pass1（A 匹配扩展）与 pass1.5（B-CJK 扩展）对同一卡片的同一扩展词各 +1，ext_df 可超过卡片数，containment_ratio 丧失‘卡片级包含率’语义，导致 A 源词被误判为跨词边界碎片而剔除",
+  "[   0.0s]   !! F3 [中] B-only CJK 准入政策：报告 params.b_cjk_policy 与文件头注释称‘B-only CJK 须在 A 词表或学科词表内，否则剔除’，实现另有第三条通路 `b_df>=min_df_cjk 且 长词包含率<0.9`，报告未披露",
+  "[   0.0s]   !! F4 [低] 归一化口径与实现不符：报告写‘长度1-16’，term_ok_kw 另拒 len==1 ⇒ kw 有效区间 2..16（cls 1..6）",
+  "[   0.0s]   !! F5 [低] 多处死代码/不可达分支，其中‘超上限告警不可达’会让自测产生‘规模受控’的假安全感",
+  "[   0.0s]   !! F6 [中] nodes.json `cls` 字段层级混用：kw 写一级分类（F/TP），cls 节点写自身 cls2（349/349 cls==term）；按 `cls` 聚合的消费方会把两级代码混在一起",
+  "[   0.0s]   !! F7 [低] sources 语义 = ‘在该源词表中出现’，非‘该源通路实际采纳’：源码对 a_set 全量置 A 位（含被 A 碎片/零频规则剔除、后经 B 通路入表的词），A/B 的贡献度无法从 sources 还原",
+  "[   0.0s]   !! F8 [中] `--min-df 12` 只约束 B 源（b_keep）；A/C 通路无频次下限，A-only/C-only 节点 freq 可低至 1。报告把 min_df 呈现为词频闸门，实际有 752/5187 节点不受其约束",
+  "[   0.0s]   !! F9 [中] 英文质量闸门为三分量 OR（freq>=200 或 cls_rep>=0.6 或 len>=9）：低频词天然满足 cls_rep≈1.0（freq==1 时恒为 1.0），且 len>=9 是无条件旁路，闸门对低频英文词近乎失效",
+  "[   0.0s]   !! F10 [低] cluster 归属并存两套口径（卡片级众数 vs 簇关键词表级众数），量纲不同；实现中 a_membership 兜底恒不可达，但与 F6 同类：代码/报告未声明该分歧",
+  "[   0.0s] == S1 产物层不变量 + A1 一致性 ==",
+  "[   0.0s]   违规桶={} id_continuous=True",
+  "[   0.0s]   A1: nodes/kw/cls=True/True/True sources={'A+B': True, 'C': True, 'B': True, 'A': True} freq={'min': True, 'median': True, 'max': True, 'p25': True, 'p90': True, 'zero_freq': True}",
+  "[   0.0s]   -> evidence/invariants.json (79 B)",
+  "[   0.3s]   对齐: cards.jsonl=188,512 indptr-1=188,512 aligned=True",
+  "[   0.3s] == S2 独立重算（趟1: merged word df；趟2: 证据累计）==",
+  "[  13.1s]   趟1: my_b_df=224,511 code_b_df=224,511 (报告 224,511) | 自实现 vs 源码 keep=9,044/9,044 (报告 9,044) | interest 内 df 相等 6680/6,680 | keep 差集样本=[]",
+  "[  24.6s]   趟2: freq_terms=6,247 无 cls1 的卡片数=7,118",
+  "[  24.7s]   比对: freq 不符=0/5,187 | cluster 不符=0 | kw.cls 不符=114（其中簇级兜底填充=114）",
+  "[  24.7s]   -> evidence/freq50.json (14,861 B)",
+  "[  24.7s]   50 词分层抽查: freq 全等=50/50",
+  "[  24.7s]   -> evidence/cluster20.json (7,041 B)",
+  "[  24.7s]   20 词 cluster: 与卡片级众数一致=20/20; A 词表口径可比 3 个、一致 2",
+  "[  24.7s] == S2b top_title_tokens 原语检验（200 卡）==",
+  "[  25.8s]   -> evidence/primitive_topM.json (105 B)",
+  "[  25.8s]   top-M 选择与独立重算不符=0 幂等失败=0 重复 token 卡数=0",
+  "[  25.8s] == S3 ext_df 双计数复算（card 级去重对照）==",
+  "[  40.0s]   -> evidence/ext_double_count.json (4,016 B)",
+  "[  40.0s]   ext: code 增量=1,052,602 去重卡数=845,006 双计数事件=207,596（恒等式差=0） | ratio>1.0 词=580 | 误判碎片翻转=129（其中未进 nodes 的=129）",
+  "[  40.0s]   A 源漏斗复算: a_keep=1518（报告 1518） 零频=429（报告 429） 碎片=894（报告 894） | a_keep 中实际入表=1357，未入表=161（英文 161）",
+  "[  40.0s]   !! F18 [中] 报告 counts.source_a_kept=1518 高估 A 源实际贡献：161 个通过 A 闸门的词在 entry 阶段被英文质量门二次过滤而未入 nodes.json，且漏斗中无对应计数器（source_a_kept ≠ 含 A 证据的节点数）",
+  "[  40.0s]   [ok] A 源漏斗计数与独立复算一致（±2，含 tie 边界）",
+  "[  40.0s]   !! F2b [高] 【F2 实证】长词包含率可 >1.0（卡片级比值不可能 >1）并导致误判：有 A 源词仅因 ext_df 双计数越过 0.9 阈值被当碎片剔除",
+  "[  40.0s] == S4 排序键真实语义 ==",
+  "[  40.0s]   -> evidence/order_test.json (921 B)",
+  "[  40.0s]   顺序复现: float score 键同位=5187/5187 | max_cc 整数键同位=2711 | freq 键=27 | 主键相邻违例=0 | 次级键(-freq)相邻违例=62 | score≠max_cc 的节点=184 | 最大同分组=(3, 652)",
+  "[  40.0s]   !! F1b [中] 【F1 实证】交付顺序 == sort(-freq×rep, -freq, term)，且 freq×rep 在同分组内受 1 ulp 浮点噪声支配 ⇒ 声明的次级键 (-freq, term) 实际不生效，同分组的先后由浮点噪声决定（截断边界随之由噪声决定，但可复现）",
+  "[  40.0s] == S5 边界与口径 ==",
+  "[  40.0s]   !! F17 [中] 114 个 kw 节点的 `cls` 不是其卡片证据的众数，而是 `fallback_cls_for_cluster` 用簇级 top_subjects[0] 推断填充（这些词的卡片 cls1 全为空）；同类缺失数据同时把 cls_rep 算成 1.0，使英文闸门的‘分类纯度’分量为真——纯度语义在缺数据时反转",
+  "[  40.0s]   -> evidence/boundary.json (3,014 B)",
+  "[  40.0s]   -> evidence/cls_level.json (190 B)",
+  "[  40.0s]   -> evidence/compound_probe.json (1,474 B)",
+  "[  40.0s]   频控: A:n=403,min=1; A+B:n=954,min=13; B:n=3481,min=12; C:n=349,min=1",
+  "[  40.0s]   英文闸门: n=2693 freq<200=2385 仅靠 cls_rep 过闸=785 len>=9 旁路=1715 freq<min_df12=25",
+  "[  40.0s]   B-only CJK=1361 其中无 A/学科词表证据（纯 df 通路）=1351",
+  "[  40.0s]   复合词探针: 机器:df=339, 器学:df=72, 学习:df=176, 机器学习:df=0, 人工:df=225, 工智:df=87, 智能:df=353, 人工智能:df=0",
+  "[  40.0s] == S6 实验（确定性 / 截断）==",
+  "[  40.0s]   -> evidence/experiments.json (804 B)",
+  "[  40.0s]   确定性: d1==d2 ? True (n=5187/5187)",
+  "[  40.0s]   截断: n=3000 truncated=True 是全量顺序前缀=True 等于 float 键前N=True 整数键前N=False 切点同整数分节点数=333",
+  "[  40.0s]   !! F15 [低] 截断路径本身自洽（3000 节点 = 全量顺序前缀），但切点落在 333 个同整数分（同主导簇卡数）节点中间，具体取舍由 1 ulp 浮点噪声决定；交付基线 truncated=false，该路径未被基线覆盖",
+  "[  40.0s] == S7 50 词自测件数值列复核 ==",
+  "[  40.0s]   -> evidence/sample50_check.json (288 B)",
+  "[  40.0s]   候选件 50 行/列数 [13]；已判定件 50 行/列数 [10]；id 集相同=True；rep 不符=0 cls_rep 不符=0 n_clusters 不符=0；已判定件字段不符=0",
+  "[  40.0s]   !! F16 [低] 自测件 p1-sample50.txt（人工判定留痕）比生成件 p1-sample50-candidates.txt 少 3 列（cls_rep/rep/n_clusters）——判定所依据的数值证据未随判定件留存，噪声率 0.04 无法在该文件内被复核"
+ ],
+ "static": {
+  "src": "/home/wzh/go/reasonix-scripts/lib-catalog/topic_build.py",
+  "bytes": 36084,
+  "lines": 788,
+  "sha256": "26864b3c926181584109a914bd7ecb2df2c1b8bae56ef948a86b081db1307ccb",
+  "score_lines": [
+   652,
+   660
+  ],
+  "rep_lines": [
+   558
+  ],
+  "ext_incr_lines": [
+   469,
+   494
+  ],
+  "pass15_line": [
+   481
+  ],
+  "b_cjk_df_path": [
+   610
+  ],
+  "len_lines": [
+   239,
+   247
+  ],
+  "dead_code": {
+   "match_a 的 single 集恒空（a_set 已被 term_ok_kw 拒绝 len==1）": [
+    363
+   ],
+   "超上限告警 `if n > args.max_nodes` 不可达（截断后 n<=max_nodes）": [
+    678
+   ],
+   "截断 if/else 两分支同一 sort（重复代码）": [
+    666,
+    669
+   ],
+   "sources 兜底分支不可达（A/B/C 至少一路置位）": [
+    650
+   ],
+   "english_gate_ok 仅是 english_quality_ok 的别名": [
+    582
+   ],
+   "representativeness/mode_cluster 的 a_membership 兜底不可达（入表节点 freq>=1 ⇒ cl_counts 非空）": [
+    539,
+    554
+   ],
+   "accepted_b 循环内重复 term_ok_kw/is_stop（b_keep 已过滤）": [
+    604
+   ]
+  },
+  "cls_v_line": [
+   643
+  ],
+  "a_mask_line": [
+   530,
+   588
+  ],
+  "en_gate_line": [
+   578
+  ]
+ },
+ "artifact": {
+  "invariants": {
+   "id_continuous": true,
+   "term_unique": true,
+   "violations": {},
+   "n": 5187
+  },
+  "a1": {
+   "nodes_ok": true,
+   "kw_ok": true,
+   "cls_ok": true,
+   "sources_ok": {
+    "A+B": true,
+    "C": true,
+    "B": true,
+    "A": true
+   },
+   "freq_ok": {
+    "min": true,
+    "median": true,
+    "max": true,
+    "p25": true,
+    "p90": true,
+    "zero_freq": true
+   },
+   "recomputed": {
+    "nodes": 5187,
+    "kw": 4838,
+    "cls": 349,
+    "sources": {
+     "A+B": 954,
+     "C": 349,
+     "B": 3481,
+     "A": 403
+    },
+    "freq": {
+     "min": 1,
+     "median": 29,
+     "max": 11534,
+     "p25": 17,
+     "p90": 267,
+     "zero_freq": 0
+    }
+   }
+  }
+ },
+ "merge_check": {
+  "my_unique": 224511,
+  "code_unique": 224511,
+  "report_unique": 224511,
+  "my_keep": 9044,
+  "code_keep": 9044,
+  "report_keep": 9044,
+  "interest_df_equal": 6680,
+  "interest_n": 6680,
+  "keep_symdiff_sample": []
+ },
+ "primitive_topM": {
+  "sampled_cards": 200,
+  "mismatch": 0,
+  "non_idempotent": 0,
+  "dup_tokens": 0,
+  "sample_mismatch": []
+ },
+ "align": {
+  "cards_jsonl_lines": 188512,
+  "indptr_rows": 188512,
+  "labels": 188512,
+  "aligned": true,
+  "silent_drop_risk": false
+ }
+}

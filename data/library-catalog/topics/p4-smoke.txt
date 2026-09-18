@@ -1,0 +1,190 @@
+### 注：本文件为 **R1.1 修复前**（近词扩展窗口=200、证据按卡序）的抽测记录；R1.1 修复后的复测见 `p4-relevance.md` §4。
+=== P4 抽测记录（topic_graph.py · 四命令 10 例）===
+生成: 2026-09-18T19:08:02+0800 | 数据: /home/wzh/go/lib-catalog-data | 脚本: reasonix-scripts/lib-catalog/topic_graph.py
+说明: 每例给出【命令】→【输出摘要（截断）】+ 工具自报耗时（elapsed_ms / ms）
+
+----------------------------------------------------------------
+【① search 机器学习（4 子命令覆盖：search）】
+$ python3 topic_graph.py search 机器学习 --top 5
+[search] query='机器学习' → 归一 '机器学习' | 命中 2 个主题，显示 top 2 | 1.4ms
+    id term                     type    freq  cluster cls    match        w
+    56 机器                       kw       817      338 TP      0.80    5.365
+    47 学习                       kw      1239      156 TP      0.60    4.274
+  [exit=0 | wall=0.61s]
+----------------------------------------------------------------
+【② search 量子】
+$ python3 topic_graph.py search 量子 --top 5
+[search] query='量子' → 归一 '量子' | 命中 1 个主题，显示 top 1 | 1.3ms
+    id term                     type    freq  cluster cls    match        w
+   184 量子                       kw       415      167 O       1.00    6.031
+  [exit=0 | wall=0.61s]
+----------------------------------------------------------------
+【③ search 小说】
+$ python3 topic_graph.py search 小说 --top 3
+[search] query='小说' → 归一 '小说' | 命中 4 个主题，显示 top 3 | 1.1ms
+    id term                     type    freq  cluster cls    match        w
+   158 小说                       kw       789      396 I       1.00    6.672
+  1806 代小说                      kw        33      357 I       0.80    2.821
+  2167 小说月报                     kw        17      302 I       0.80    2.312
+  [exit=0 | wall=0.61s]
+----------------------------------------------------------------
+【④ search design（纯 ASCII）】
+$ python3 topic_graph.py search design --top 3
+[search] query='design' → 归一 'design' | 命中 4 个主题，显示 top 3 | 1.1ms
+    id term                     type    freq  cluster cls    match        w
+     1 design                   kw      2836      195 TP      1.00    7.951
+   335 designing                kw       228      195 TP      0.80    4.347
+  1528 designer                 kw        56      375 TN      0.80    3.234
+  [exit=0 | wall=0.71s]
+----------------------------------------------------------------
+【⑤ around 热门#1 id=56「机器」hops=2】
+$ python3 topic_graph.py around 56 --hops 2 --top 4 --evidence 3
+=== around 56 「机器」 (kw, freq=817, cluster=338, cls=TP) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 157 主题 / 书证据 59575 本 / 扫描边 420 / 权重 0.207~1.000(中位 0.740) / 192.5ms
+
+[hop 1] 20 个主题（显示 top 4）
+     33 learning                kw   score=0.8600   via 机器
+     47 学习                      kw   score=0.8600   via 机器
+     54 智能                      kw   score=0.8600   via 机器
+     63 TP2                     cls  score=0.8600   via 机器
+
+[hop 2] 136 个主题（显示 top 4）
+      6 设计                      kw   score=0.7396   via 机器 → 工业
+      7 数学                      kw   score=0.7396   via 机器 → 学习
+      9 数据                      kw   score=0.7396   via 机器 → TP2
+  [exit=0 | wall=0.81s]
+----------------------------------------------------------------
+【⑥ around 热门#2 id=18「中国」hops=2】
+$ python3 topic_graph.py around 18 --hops 2 --top 4 --evidence 3
+=== around 18 「中国」 (kw, freq=10379, cluster=323, cls=F) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 206 主题 / 书证据 71755 本 / 扫描边 420 / 权重 0.207~1.000(中位 0.740) / 189.8ms
+
+[hop 1] 20 个主题（显示 top 4）
+     21 文化                      kw   score=0.8600   via 中国
+     65 文学                      kw   score=0.8600   via 中国
+     66 K2                      cls  score=0.8600   via 中国
+     76 china                   kw   score=0.8600   via 中国
+
+[hop 2] 185 个主题（显示 top 4）
+      0 经济                      kw   score=0.7396   via 中国 → china
+      1 design                  kw   score=0.7396   via 中国 → chinese
+      3 金融                      kw   score=0.7396   via 中国 → 发展
+  [exit=0 | wall=0.81s]
+----------------------------------------------------------------
+【⑦ around 低频 id=1647「urtext」freq=13 hops=3】
+$ python3 topic_graph.py around 1647 --hops 3 --top 4 --evidence 2
+=== around 1647 「urtext」 (kw, freq=13, cluster=381, cls=J) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤3
+区域: 561 主题 / 书证据 114366 本 / 扫描边 1627 / 权重 0.053~1.000(中位 0.489) / 223.8ms
+
+[hop 1] 5 个主题（显示 top 4）
+     44 J6                      cls  score=0.8600   via urtext
+    136 钢琴                      kw   score=0.8600   via urtext
+    543 作品                      kw   score=0.8600   via urtext
+   1346 chopin                  kw   score=0.8600   via urtext
+
+[hop 2] 55 个主题（显示 top 4）
+     18 中国                      kw   score=0.7396   via urtext → J6
+     22 I2                      cls  score=0.7396   via urtext → 作品
+     25 艺术                      kw   score=0.7396   via urtext → J6
+  [exit=0 | wall=0.91s]
+----------------------------------------------------------------
+【⑧ graph id=65「文学」hops=1（JSON）】
+$ python3 topic_graph.py graph 65 --hops 1 --json-out /tmp/tg-smoke-graph1.json
+[graph] seed=65「文学」 节点 21 / 边 153 / 187.5ms → /tmp/tg-smoke-graph1.json
+  [exit=0 | wall=0.81s]
+----------------------------------------------------------------
+【⑨ graph id=56「机器」hops=2（JSON，含 stats）】
+$ python3 topic_graph.py graph 56 --hops 2 --json-out /tmp/tg-smoke-graph2.json
+[graph] seed=56「机器」 节点 157 / 边 1787 / 195.3ms → /tmp/tg-smoke-graph2.json
+  [exit=0 | wall=0.81s]
+----------------------------------------------------------------
+【⑩ summarize id=56「机器」hops=2（TOPIC_LLM=off 默认）】
+$ python3 topic_graph.py summarize 56 --hops 2
+### 主题区域摘要（存根）· 机器（id=56, kw, freq=817）
+
+【off：纯结构化占位输出（未调用任何模型）】
+
+- **扩散规则**：w_hop = w_parent × edge_w × 0.86，阈值 0.05，hops=2
+- **区域规模**：157 个主题 / 证据书 59575 本
+- **权重分布**：min 0.2067 / 中位 0.7396 / max 1.0000
+- **层级**：hop1 20 个；hop2 136 个
+- **代表主题**：learning、学习、智能、TP2、TP1、设计、数学、数据
+- **证据书样例**：《机器学习背景下社会经济学中的因果科学理论与应用》(991002624501904181)；《机器同伴 = Robot companions 智能“涌现”下人与社交机器人的关系演进》(991002556504904181)；《向亚洲哲学学习 = Learning from Asian philosophy》(991000681049704181)
+
+> 本段由 `summarize_topic_region(region) -> str` 存根生成：**签名固定、待与作者讨论**；
+> 默认 `TOPIC_LLM=off` 不触网，结构化数据请用 `graph --json` / `around --json`。
+  [exit=0 | wall=0.81s]
+
+--- 附加一致性检查 ---
+/tmp/tg-smoke-graph1.json: seed=65「文学」 hops=1 nodes=21 edges=153 visited=21 ms=187.52
+/tmp/tg-smoke-graph2.json: seed=56「机器」 hops=2 nodes=157 edges=1787 visited=157 ms=195.28
+命令覆盖：search×4 / around×3（热门2+低频1）/ graph×2 / summarize×1 = 10 例，四命令全覆盖
+
+=================================================================
+P4 二期追加：非词表查询的退化路径（TF-IDF 近词扩展，§4-P4 坑位要求项）
+触发规则：--expand auto（默认）= 查询本身不是主题词表词（无整词精确命中）时启用
+=================================================================
+----------------------------------------------------------------
+【⑪ 非词表#1 search「机器学习 入门」】
+$ python3 topic_graph.py search "机器学习 入门" --top 3 --expand-top 6
+[search] query='机器学习 入门' → 归一 '机器学习入门' | 字面命中 2 个 | 近词扩展 4 个（200 张卡命中 2882 张） | 444.5ms
+    id term                     type    freq  cluster cls   src                   w
+    47 学习                       kw      1239      156 TP    token             6.411
+    56 机器                       kw       817      338 TP    token             6.036
+
+[近词扩展] TF-IDF 检索相关书目 → 聚合书的 top-5 主题（退化路径 ②；源: catalog_vector 同源 TF-IDF）
+   139 machine                  kw       529      253 TP    tfidf-expand      2.224   支持书: 991001143979704181、991001536594504181
+    33 learning                 kw      1221      253 TP    tfidf-expand      1.328   支持书: 991001143979704181、991001536594504181
+   109 python                   kw       663       90 TP    tfidf-expand      0.905   支持书: 991001399580104181、991001399398104181
+   255 算法                       kw       603      194 TP    tfidf-expand      0.797   支持书: 991001611908204181、991002424554304181
+  [exit=0 | wall=1.01s]
+----------------------------------------------------------------
+【⑫ 非词表#2 search「量子 科普」】
+$ python3 topic_graph.py search "量子 科普" --top 3 --expand-top 6
+[search] query='量子 科普' → 归一 '量子科普' | 字面命中 2 个 | 近词扩展 4 个（200 张卡命中 473 张） | 434.9ms
+    id term                     type    freq  cluster cls   src                   w
+   184 量子                       kw       415      167 O     token             5.428
+  2601 科普                       kw        22      114 B     token             2.822
+
+[近词扩展] TF-IDF 检索相关书目 → 聚合书的 top-5 主题（退化路径 ②；源: catalog_vector 同源 TF-IDF）
+    30 力学                       kw      1437      332 O     tfidf-expand      3.105   支持书: 991001298310204181、991001603294804181
+   166 quantum                  kw      1284      214 O     tfidf-expand      2.316   支持书: 991001603294804181、991000663409704181
+   298 mechanics                kw       953      214 O     tfidf-expand      0.919   支持书: 991001603294804181、991001230949704181
+    37 哲学                       kw      1483      114 B     tfidf-expand      0.516   支持书: 991001835697604181、991001523539004181
+  [exit=0 | wall=1.11s]
+----------------------------------------------------------------
+【⑬ 非词表#3 search「人工智能 伦理」】
+$ python3 topic_graph.py search "人工智能 伦理" --top 3 --expand-top 6
+[search] query='人工智能 伦理' → 归一 '人工智能伦理' | 字面命中 1 个 | 近词扩展 5 个（200 张卡命中 1577 张） | 450.8ms
+    id term                     type    freq  cluster cls   src                   w
+    54 智能                       kw      1139      338 TP    token             6.335
+
+[近词扩展] TF-IDF 检索相关书目 → 聚合书的 top-5 主题（退化路径 ②；源: catalog_vector 同源 TF-IDF）
+    75 intelligence             kw       591      101 TP    tfidf-expand      1.325   支持书: 991002621913404181、991002618774504181
+   133 artificial               kw       417      101 TP    tfidf-expand      1.220   支持书: 991002621913404181、991002618774504181
+   145 应用                       kw      4824      120 TP    tfidf-expand      0.751   支持书: 991002621904204181、991002624419004181
+    91 技术                       kw      5616      310 TP    tfidf-expand      0.655   支持书: 991002274380104181、991002621904204181
+   421 ai                       kw       425      338 TP    tfidf-expand      0.453   支持书: 991002271892504181、991002556612404181
+  [exit=0 | wall=1.11s]
+----------------------------------------------------------------
+【⑭ 对照：search「量子」（词表整词精确命中 → 不触发扩展）】
+$ python3 topic_graph.py search 量子 --top 3
+[search] query='量子' → 归一 '量子' | 字面命中 1 个 | 1.1ms
+    id term                     type    freq  cluster cls   src                   w
+   184 量子                       kw       415      167 O     exact             6.031
+  [exit=0 | wall=0.61s]
+----------------------------------------------------------------
+【⑮ 对照：--expand no 强制关闭扩展】
+$ python3 topic_graph.py search "机器学习 入门" --top 3 --expand no
+[search] query='机器学习 入门' → 归一 '机器学习入门' | 字面命中 2 个 | 1.5ms
+    id term                     type    freq  cluster cls   src                   w
+    47 学习                       kw      1239      156 TP    token             6.411
+    56 机器                       kw       817      338 TP    token             6.036
+  [exit=0 | wall=0.61s]
+
+--- 扩展路径一致性检查 ---
+字面命中 src 标注：exact（整词精确）/ token（查询 token 精确）/ prefix / substr；扩展命中 src=tfidf-expand
+扩展口径：与 catalog_vector.Index.q_kw 同源（token 计数 × idf、查询向量 L2 归一、X@qᵀ 余弦）→ top 200 相关书 → 聚合其 card_topics 主题

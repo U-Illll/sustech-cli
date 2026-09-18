@@ -1,0 +1,196 @@
+{
+ "post": {
+  "registered": 5151,
+  "present": 5151,
+  "missing": 0,
+  "missing_ids": [],
+  "missing_terms": [],
+  "cls_of_sample": {
+   "经济": "F0",
+   "design": "TP3",
+   "金融": "F8",
+   "经济学": "F0",
+   "设计": "TP3"
+  }
+ },
+ "pre_r2": {
+  "registered": 4832,
+  "present": 4823,
+  "missing": 9,
+  "missing_ids": [
+   116,
+   153,
+   348,
+   391,
+   392,
+   427,
+   578,
+   623,
+   738
+  ],
+  "missing_terms": [
+   "global",
+   "实验",
+   "方法",
+   "时代",
+   "computational",
+   "世纪",
+   "principles",
+   "经典",
+   "仿真"
+  ],
+  "cls_of_sample": {
+   "经济": "F0",
+   "design": "TP3",
+   "金融": "F8",
+   "经济学": "F0",
+   "设计": "TP3"
+  }
+ },
+ "registered_from_report": 5151,
+ "pre_r2_registered_from_report": 4832,
+ "matches_registered": true,
+ "pre_r2_missing": 9,
+ "probe_9_previously_missing": [
+  {
+   "term": "global",
+   "pre_r2_target": "F8",
+   "pre_r2_present": false,
+   "r2a_target": "F8",
+   "target_unchanged": true,
+   "r2a_u": 117,
+   "r2a_v": 5,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  },
+  {
+   "term": "实验",
+   "pre_r2_target": "TP3",
+   "pre_r2_present": false,
+   "r2a_target": "TP3",
+   "target_unchanged": true,
+   "r2a_u": 154,
+   "r2a_v": 43,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  },
+  {
+   "term": "方法",
+   "pre_r2_target": "F2",
+   "pre_r2_present": false,
+   "r2a_target": "F2",
+   "target_unchanged": true,
+   "r2a_u": 360,
+   "r2a_v": 14,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  },
+  {
+   "term": "时代",
+   "pre_r2_target": "F2",
+   "pre_r2_present": false,
+   "r2a_target": "F2",
+   "target_unchanged": true,
+   "r2a_u": 405,
+   "r2a_v": 14,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  },
+  {
+   "term": "computational",
+   "pre_r2_target": "TP3",
+   "pre_r2_present": false,
+   "r2a_target": "TP3",
+   "target_unchanged": true,
+   "r2a_u": 406,
+   "r2a_v": 43,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  },
+  {
+   "term": "世纪",
+   "pre_r2_target": "I2",
+   "pre_r2_present": false,
+   "r2a_target": "I2",
+   "target_unchanged": true,
+   "r2a_u": 443,
+   "r2a_v": 22,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  },
+  {
+   "term": "principles",
+   "pre_r2_target": "TP3",
+   "pre_r2_present": false,
+   "r2a_target": "TP3",
+   "target_unchanged": true,
+   "r2a_u": 605,
+   "r2a_v": 43,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  },
+  {
+   "term": "经典",
+   "pre_r2_target": "TP3",
+   "pre_r2_present": false,
+   "r2a_target": "I2",
+   "target_unchanged": false,
+   "r2a_u": 653,
+   "r2a_v": 22,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  },
+  {
+   "term": "仿真",
+   "pre_r2_target": "TP3",
+   "pre_r2_present": false,
+   "r2a_target": "TP3",
+   "target_unchanged": true,
+   "r2a_u": 775,
+   "r2a_v": 43,
+   "r2a_registered_edge_present": true,
+   "r2a_w": 1.0
+  }
+ ],
+ "probe_9_registered_present": true,
+ "probe_9_targets_unchanged": 8,
+ "probe_9_pre_r2_present": 0,
+ "sample_edge_weights": [
+  {
+   "pair": [
+    "经济",
+    "经济学"
+   ],
+   "u": 0,
+   "v": 4,
+   "w_r2a": 1.0,
+   "w_pre_r2": 1.0,
+   "identical": true
+  },
+  {
+   "pair": [
+    "经济",
+    "economics"
+   ],
+   "u": 0,
+   "v": 62,
+   "w_r2a": 1.0,
+   "w_pre_r2": 1.0,
+   "identical": true
+  },
+  {
+   "pair": [
+    "经济",
+    "宏观"
+   ],
+   "u": 0,
+   "v": 432,
+   "w_r2a": 1.0,
+   "w_pre_r2": 1.0,
+   "identical": true
+  }
+ ],
+ "sample_weights_identical": true,
+ "edges_final": 105414,
+ "nodes": 5507
+}

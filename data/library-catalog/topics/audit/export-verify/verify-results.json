@@ -1,0 +1,814 @@
+{
+ "checks": [
+  {
+   "section": "A",
+   "check": "manifest 条目数",
+   "ok": true,
+   "detail": "files[] = 8 项（期望 8）"
+  },
+  {
+   "section": "A",
+   "check": "topics/nodes.json",
+   "ok": true,
+   "detail": "size 685410==685410 ; sha256 一致"
+  },
+  {
+   "section": "A",
+   "check": "topics/edges_indptr.i64.bin",
+   "ok": true,
+   "detail": "size 41504==41504 ; sha256 一致"
+  },
+  {
+   "section": "A",
+   "check": "topics/edges_indices.i32.bin",
+   "ok": true,
+   "detail": "size 397072==397072 ; sha256 一致"
+  },
+  {
+   "section": "A",
+   "check": "topics/edges_weights.u8.bin",
+   "ok": true,
+   "detail": "size 99268==99268 ; sha256 一致"
+  },
+  {
+   "section": "A",
+   "check": "topics/card_topics_indptr.i32.bin",
+   "ok": true,
+   "detail": "size 754052==754052 ; sha256 一致"
+  },
+  {
+   "section": "A",
+   "check": "topics/card_topics_ids.i32.bin",
+   "ok": true,
+   "detail": "size 1951732==1951732 ; sha256 一致"
+  },
+  {
+   "section": "A",
+   "check": "topics/meta.json",
+   "ok": true,
+   "detail": "size 72830==72830 ; sha256 一致"
+  },
+  {
+   "section": "A",
+   "check": "topics/manifest.topics.json",
+   "ok": true,
+   "detail": "size 2238==2238 ; sha256 一致"
+  },
+  {
+   "section": "A",
+   "check": "total_bytes",
+   "ok": true,
+   "detail": "重算 4004106 == 清单 4004106"
+  },
+  {
+   "section": "A",
+   "check": "两份清单自洽",
+   "ok": true,
+   "detail": "总清单 topics/ 子集 8 项 = 分册 7 项 + 自登记项 ['topics/manifest.topics.json']；共有项 sha256/size 全等（分册按构造不含自身，属预期）"
+  },
+  {
+   "section": "A",
+   "check": "manifest.topics.json 自登记",
+   "ok": true,
+   "detail": "总清单已为分册文件提供 sha256（可独立重算，无循环依赖）"
+  },
+  {
+   "section": "A",
+   "check": "stats.nodes 与清单声明",
+   "ok": true,
+   "detail": "5187（见 §B/§C 实际重算比对）"
+  },
+  {
+   "section": "A",
+   "check": "stats.edges 与清单声明",
+   "ok": true,
+   "detail": "99268（见 §B/§C 实际重算比对）"
+  },
+  {
+   "section": "A",
+   "check": "stats.cards 与清单声明",
+   "ok": true,
+   "detail": "188512（见 §B/§C 实际重算比对）"
+  },
+  {
+   "section": "A",
+   "check": "stats.card_topic_links 与清单声明",
+   "ok": true,
+   "detail": "487933（见 §B/§C 实际重算比对）"
+  },
+  {
+   "section": "A",
+   "check": "分册 manifest.topics.json 7 项独立重算",
+   "ok": true,
+   "detail": "7/7 一致 → 7+8 = 15 项全量重算通过（8/8 总清单 + 7/7 分册）"
+  },
+  {
+   "section": "B",
+   "check": "indptr 长度/dtype",
+   "ok": true,
+   "detail": "导出 5188 vs 源 5188（n+1=5188, int64 LE）"
+  },
+  {
+   "section": "B",
+   "check": "indices 长度/dtype",
+   "ok": true,
+   "detail": "nnz 导出 99268 vs 源 99268（int32 LE）"
+  },
+  {
+   "section": "B",
+   "check": "weights 长度/dtype",
+   "ok": true,
+   "detail": "nnz 导出 99268 vs 源 99268（uint8 LE）"
+  },
+  {
+   "section": "B",
+   "check": "indptr 全量逐位一致",
+   "ok": true,
+   "detail": "差异 0/5188 项"
+  },
+  {
+   "section": "B",
+   "check": "indices 全量逐位一致",
+   "ok": true,
+   "detail": "差异 0/99268 项"
+  },
+  {
+   "section": "B",
+   "check": "CSR 结构不变量",
+   "ok": true,
+   "detail": "{\"indptr[0]==0\": true, \"单调不减\": true, \"indptr[-1]==nnz\": true, \"出度上限<=20\": true, \"列索引在界内\": true}"
+  },
+  {
+   "section": "B",
+   "check": "孤立点/出度统计",
+   "ok": true,
+   "detail": "出度 min/median/p90/max = 0/20/20/20；出度=0 节点 3；平均出度 19.138"
+  },
+  {
+   "section": "B",
+   "check": "还原误差 ≤ 0.5/255 理论界",
+   "ok": true,
+   "detail": "mean 5.275e-04 p99 1.945e-03 max 1.959e-03（界 0.001961，越界 0）"
+  },
+  {
+   "section": "B",
+   "check": "误差分布表",
+   "ok": true,
+   "detail": "=0（精确）=8010(8.0691%)；≤5e-4=55549(55.9586%)；≤1e-3=20932(21.0864%)；≤1.5e-3=8943(9.0089%)；≤0.001961（界）=5834(5.877%)；>界=0(0.0%)"
+  },
+  {
+   "section": "B",
+   "check": "边界 w=1.0 → u8 255 精确映射",
+   "ok": true,
+   "detail": "源 w==1.0 共 8010 条（8.1%），全部落到 255；还原回 1.000000 误差 0"
+  },
+  {
+   "section": "B",
+   "check": "边界 w=0.0 → u8 0 精确映射",
+   "ok": true,
+   "detail": "源 w==0.0 共 0 条（数据内该边界不存在，min=0.1763；仅能合成验证）"
+  },
+  {
+   "section": "B",
+   "check": "无饱和截断风险",
+   "ok": true,
+   "detail": "源权重越界 0/0 条 → clip(0,255) 未造成失真"
+  },
+  {
+   "section": "B",
+   "check": "边界合成往返（w=0/1/半值）",
+   "ok": true,
+   "detail": "0.0→0→0.000000 ; 1.0→255→1.000000 ; 0.5→128→0.501961（0.5 非格点，误差 1.961e-03）"
+  },
+  {
+   "section": "B",
+   "check": "再量化幂等（无损闭环）",
+   "ok": true,
+   "detail": "quantize(v/255) == v 差异 0 项 → 还原-量化不动点成立"
+  },
+  {
+   "section": "C",
+   "check": "indptr 长度（N_cards+1）",
+   "ok": true,
+   "detail": "导出 188513 vs 源 188513 vs cards.jsonl 行数 188512"
+  },
+  {
+   "section": "C",
+   "check": "indptr 全量逐位一致",
+   "ok": true,
+   "detail": "差异 0 项"
+  },
+  {
+   "section": "C",
+   "check": "ids 全量逐位一致（含行内顺序）",
+   "ok": true,
+   "detail": "差异 0 项 / nnz 487933"
+  },
+  {
+   "section": "C",
+   "check": "CSR 结构不变量",
+   "ok": true,
+   "detail": "{\"indptr[0]==0\": true, \"单调不减\": true, \"indptr[-1]==nnz\": true, \"每卡<=5\": true, \"id 在 [0,5187)\": true}"
+  },
+  {
+   "section": "C",
+   "check": "规模统计",
+   "ok": true,
+   "detail": "卡 188512 / 链接 487933 / 每卡 min-median-max 0-2-5 / 空主题卡 22573（12.0%）"
+  },
+  {
+   "section": "C",
+   "check": "正向 卡→主题（500 卡，逐卡列表含序比对）",
+   "ok": true,
+   "detail": "不一致 0 卡（seed=20260918，覆盖链接 1246 条）"
+  },
+  {
+   "section": "C",
+   "check": "反向 主题→卡（776 命中主题全量 + 全局抽 500 主题，倒排列表逐项比对）",
+   "ok": true,
+   "detail": "不一致 0 主题；源侧倒排覆盖 776 个主题（500 卡命中集）/ 全局 4838 个主题"
+  },
+  {
+   "section": "C",
+   "check": "双向闭合（正向∧反向）",
+   "ok": true,
+   "detail": "500 卡正反两个方向均可由导出包无损重建"
+  },
+  {
+   "section": "D",
+   "check": "nodes.json 与源字节一致",
+   "ok": true,
+   "detail": "sha256 相同（9f5437d7034bfdaa…）→ 该产物导后未再改动"
+  },
+  {
+   "section": "D",
+   "check": "meta.json 与源字节一致",
+   "ok": false,
+   "detail": "源 c907c84126874cb3…（mtime 20:01:04）vs 导出 5a760c76e5f6da6b…（mtime 19:46:33） → 见 §F 定性"
+  },
+  {
+   "section": "D",
+   "check": "nodes.json 结构与行序",
+   "ok": true,
+   "detail": "5187 节点，id 严格等于 CSR 行号（0..5186）"
+  },
+  {
+   "section": "D",
+   "check": "节点类型构成",
+   "ok": true,
+   "detail": "kw 4838 / cls 349"
+  },
+  {
+   "section": "E",
+   "check": "风格基线",
+   "ok": true,
+   "detail": "/home/wzh/go/lib-catalog-release/v1（v1 瘦身发行包，20 项文件；含 embeddings_int8.bin/tfidf CSR/knn CSR）"
+  },
+  {
+   "section": "E",
+   "check": "CSR 惯例一致",
+   "ok": true,
+   "detail": "{\"CSR 拆分 indptr/indices 两文件\": true, \"CSR 行偏移独立于列索引\": true, \"卡行序 CSR 与 knn 同构\": true}"
+  },
+  {
+   "section": "E",
+   "check": "uint8 无外部 scale 量化惯例",
+   "ok": true,
+   "detail": "v1 knn_sims.u8.bin = 1885120 B = 188512×10 → 同款 u8 + 固定 /255 还原；topics 边权沿用（非 int8+per-row scale 的 embeddings 路线，因权重值域固定 [0,1]）"
+  },
+  {
+   "section": "E",
+   "check": "小端（LE）字节序",
+   "ok": true,
+   "detail": "LE 解：indptr[0]=0 末=99268 单调✓ 列索引∈[0,5187)✓；BE 解：indptr[0]=0 末=-4286581320814952448 列索引 max=2131951616 → BE 越界/非法，证伪"
+  },
+  {
+   "section": "E",
+   "check": "int8 路线与其适用域",
+   "ok": true,
+   "detail": "v1 对 bge 向量用 int8（72388608 B）+ 外部 float32 scale （754048 B）；topics 权重为标量非向量，采用 u8 更贴惯例，二者不混用"
+  },
+  {
+   "section": "E",
+   "check": "导出对齐 R1 修复后主产物",
+   "ok": true,
+   "detail": "nnz 99268 == edges.csr.npz nnz 99268"
+  },
+  {
+   "section": "E",
+   "check": "非 R1 前旧产物（无回退）",
+   "ok": true,
+   "detail": "pre-r1 nnz=99268（与导出同为 99268：R1 为去重+排序键修复，top-20 截断下 nnz 不变）；权重差异 85456/99268（86.1%）、列索引差异 85264 → 载荷取自修复后边表"
+  },
+  {
+   "section": "E",
+   "check": "R1 修复仍在位（排序键+去重口径）",
+   "ok": true,
+   "detail": "若为 pre-r1 载荷则权重应 100% 相同；实测仅 13.91% 相同 → 修复已进入载荷"
+  },
+  {
+   "section": "F",
+   "check": "载荷修订判定（对两个候选源逐位命中率）",
+   "ok": true,
+   "detail": "对 post-r1 命中 99268/99268（100.0%）；对 pre-r1 命中 13812/99268（13.91%）→ 载荷 = post-r1"
+  },
+  {
+   "section": "F",
+   "check": "登记含 R1 修复块",
+   "ok": false,
+   "detail": "导出 meta.json stages.P2 顶层键 = ['acceptance_scripts', 'artifacts', 'counts', 'edge_stats', 'generated_at', 'generator', 'p2-tuning', 'p3_gate_note', 'params', 'report_file', 'seconds', 'self_test', 'stage', 'tuning_evidence']（无 r1_fix）"
+  },
+  {
+   "section": "F",
+   "check": "登记 tie_break 描述与载荷排序键一致",
+   "ok": false,
+   "detail": "登记原文「权重 desc → 排序键 desc → 目标 id asc；层级边优先保留（排序键置顶）」= R1 前「权重优先」口径；而载荷与 post-r1（rank_by=assoc 主键）100% 吻合 → 登记落后载荷一个修订"
+  },
+  {
+   "section": "F",
+   "check": "登记原始对实例数与载荷修订一致",
+   "ok": false,
+   "detail": "导出登记 pairs_aug_raw=1753477（R1 前含共现重复计数）；当前源登记 1112854（去重后）→ 差 640623（36.5%）"
+  },
+  {
+   "section": "F",
+   "check": "登记覆盖率与载荷修订一致",
+   "ok": false,
+   "detail": "导出登记 hop12①=0.8972（R1 前旧数字）；当前源登记 0.9188 → 登记描述的图非本包所载之图"
+  },
+  {
+   "section": "F",
+   "check": "登记 updated_at 早于载荷 mtime",
+   "ok": true,
+   "detail": "登记 updated_at=2026-09-18T19:13:59+0800；载荷 edges.csr.npz mtime=2026-09-18T19:45:26；导出生成 2026-09-18 19:46:33 → 导出在登记刷新前执行，复制到的是 R1 前登记快照"
+  },
+  {
+   "section": "F",
+   "check": "登记规模计数与载荷吻合（自洽部分）",
+   "ok": true,
+   "detail": "nodes 5187 / edges_final 99268==nnz 99268 / cards 188512（规模层自洽，口径层落后）"
+  },
+  {
+   "section": "G",
+   "check": "复核上游发现：包内登记 vs 包内载荷反算",
+   "ok": true,
+   "detail": "w_eq_1_share 登记 0.1138 vs 反算 0.0807（差 0.0331）；w̄ 登记 0.5187 vs 反算 0.3646；中位 登记 0.4093 vs 0.2275；p90 登记 1.0 vs 0.8745 → 不同源**属实**（4/5 项不符）"
+  },
+  {
+   "section": "G",
+   "check": "登记/载荷各自指向的修订",
+   "ok": true,
+   "detail": "登记 5 项与 pre-r1 总偏差 0.0001（逐字段全等 pre-r1）；载荷 5 项与 post-r1 总偏差 0.0030（逐字段全等 post-r1）"
+  },
+  {
+   "section": "G",
+   "check": "登记是「整修订自洽」的 pre-R1 快照",
+   "ok": true,
+   "detail": "7 项独立口径全部指向 pre-R1（口径层）+ 规模层自洽 → 非混算产物：{\"pairs_aug_raw=pre-R1 值\": true, \"pairs_same_cluster_raw=pre-R1 值\": true, \"tie_break 文本=pre-R1 权重优先\": true, \"缺 r1_fix 块\": true, \"hop12①=pre-R1 旧值 0.8972\": true, \"cooccur 饱和对=pre-R1 值 3878\": true, \"规模计数与载荷一致(5187/99268/188512)\": true}"
+  },
+  {
+   "section": "G",
+   "check": "决定性佐证：登记刷新后重导出即自洽",
+   "ok": true,
+   "detail": "20:44 重导出包登记 sha256 == 当前源登记（逐字节相同）；其 w_eq_1_share=0.0807（=载荷反算 0.0807）、pairs_aug_raw=1112854（=去重后）、含 r1_fix → 同一导出代码在登记刷新后产出**自洽包**"
+  },
+  {
+   "section": "G",
+   "check": "根因裁决 = 快照过期（非生成逻辑 bug）",
+   "ok": true,
+   "detail": "时间线 登记 2026-09-18T19:13:59+0800(P2 登记于 2026-09-18T18:50:24+0800) < 载荷 19:45:26 < 随包生成 19:46:33 < 登记刷新 20:01:04；export_topics 以 shutil.copyfile 逐字节复制「当时磁盘上的 meta.json」→ 复制到的是 R1 前登记快照；登记刷新后同一代码即产出自洽包（§G4）"
+  }
+ ],
+ "sections": {
+  "A": [
+   [
+    "manifest 条目数",
+    true,
+    "files[] = 8 项（期望 8）"
+   ],
+   [
+    "topics/nodes.json",
+    true,
+    "size 685410==685410 ; sha256 一致"
+   ],
+   [
+    "topics/edges_indptr.i64.bin",
+    true,
+    "size 41504==41504 ; sha256 一致"
+   ],
+   [
+    "topics/edges_indices.i32.bin",
+    true,
+    "size 397072==397072 ; sha256 一致"
+   ],
+   [
+    "topics/edges_weights.u8.bin",
+    true,
+    "size 99268==99268 ; sha256 一致"
+   ],
+   [
+    "topics/card_topics_indptr.i32.bin",
+    true,
+    "size 754052==754052 ; sha256 一致"
+   ],
+   [
+    "topics/card_topics_ids.i32.bin",
+    true,
+    "size 1951732==1951732 ; sha256 一致"
+   ],
+   [
+    "topics/meta.json",
+    true,
+    "size 72830==72830 ; sha256 一致"
+   ],
+   [
+    "topics/manifest.topics.json",
+    true,
+    "size 2238==2238 ; sha256 一致"
+   ],
+   [
+    "total_bytes",
+    true,
+    "重算 4004106 == 清单 4004106"
+   ],
+   [
+    "两份清单自洽",
+    true,
+    "总清单 topics/ 子集 8 项 = 分册 7 项 + 自登记项 ['topics/manifest.topics.json']；共有项 sha256/size 全等（分册按构造不含自身，属预期）"
+   ],
+   [
+    "manifest.topics.json 自登记",
+    true,
+    "总清单已为分册文件提供 sha256（可独立重算，无循环依赖）"
+   ],
+   [
+    "stats.nodes 与清单声明",
+    true,
+    "5187（见 §B/§C 实际重算比对）"
+   ],
+   [
+    "stats.edges 与清单声明",
+    true,
+    "99268（见 §B/§C 实际重算比对）"
+   ],
+   [
+    "stats.cards 与清单声明",
+    true,
+    "188512（见 §B/§C 实际重算比对）"
+   ],
+   [
+    "stats.card_topic_links 与清单声明",
+    true,
+    "487933（见 §B/§C 实际重算比对）"
+   ],
+   [
+    "分册 manifest.topics.json 7 项独立重算",
+    true,
+    "7/7 一致 → 7+8 = 15 项全量重算通过（8/8 总清单 + 7/7 分册）"
+   ]
+  ],
+  "A_rows": [
+   {
+    "path": "topics/nodes.json",
+    "size": 685410,
+    "size_ok": true,
+    "sha256": "9f5437d7034bfdaad8d47915777738ea254830d1a37f2039744d9bf501f70460",
+    "sha_ok": true
+   },
+   {
+    "path": "topics/edges_indptr.i64.bin",
+    "size": 41504,
+    "size_ok": true,
+    "sha256": "4a573bfbcf76a3e759c2c12a99bf54fcc9f11597af170ca8c284a688c87aab7e",
+    "sha_ok": true
+   },
+   {
+    "path": "topics/edges_indices.i32.bin",
+    "size": 397072,
+    "size_ok": true,
+    "sha256": "0badd6188b3ea0a2d60a0065befdca05f38e3f778867b6bd892077f4104544a7",
+    "sha_ok": true
+   },
+   {
+    "path": "topics/edges_weights.u8.bin",
+    "size": 99268,
+    "size_ok": true,
+    "sha256": "9f0aadbce1892e6b09dbe426b0acbb0fb160551fcdd691d907a1c53e29686104",
+    "sha_ok": true
+   },
+   {
+    "path": "topics/card_topics_indptr.i32.bin",
+    "size": 754052,
+    "size_ok": true,
+    "sha256": "b7892bc0c4e4f8b2529e641d435be7912f4f5040d1ffde7bb123ab839ad9a837",
+    "sha_ok": true
+   },
+   {
+    "path": "topics/card_topics_ids.i32.bin",
+    "size": 1951732,
+    "size_ok": true,
+    "sha256": "dd11ddebfe71d8ce32fb1ef66f5dd8c567e80c48b64e5ef15b8b06d201dd7cb5",
+    "sha_ok": true
+   },
+   {
+    "path": "topics/meta.json",
+    "size": 72830,
+    "size_ok": true,
+    "sha256": "5a760c76e5f6da6b8c119bd424bad2db773fb21be0c83afb625775d48511ba6a",
+    "sha_ok": true
+   },
+   {
+    "path": "topics/manifest.topics.json",
+    "size": 2238,
+    "size_ok": true,
+    "sha256": "e5588f6be65e48e634640d45db7281d2b2c0487f577a70869823c423accdf610",
+    "sha_ok": true
+   }
+  ],
+  "A_sub_rows": [
+   {
+    "path": "topics/nodes.json",
+    "size_ok": true,
+    "sha_ok": true
+   },
+   {
+    "path": "topics/edges_indptr.i64.bin",
+    "size_ok": true,
+    "sha_ok": true
+   },
+   {
+    "path": "topics/edges_indices.i32.bin",
+    "size_ok": true,
+    "sha_ok": true
+   },
+   {
+    "path": "topics/edges_weights.u8.bin",
+    "size_ok": true,
+    "sha_ok": true
+   },
+   {
+    "path": "topics/card_topics_indptr.i32.bin",
+    "size_ok": true,
+    "sha_ok": true
+   },
+   {
+    "path": "topics/card_topics_ids.i32.bin",
+    "size_ok": true,
+    "sha_ok": true
+   },
+   {
+    "path": "topics/meta.json",
+    "size_ok": true,
+    "sha_ok": true
+   }
+  ],
+  "B": {
+   "stats": {
+    "n": 99268,
+    "mean": 0.0005275153671391308,
+    "p50": 0.00017915666103363037,
+    "p90": 0.0014659762382507324,
+    "p99": 0.0019445419311523438,
+    "p999": 0.001953721046447754,
+    "max": 0.001959383487701416,
+    "theory_bound": 0.00196078431372549,
+    "over_bound": 0
+   },
+   "boundary": {
+    "u8==0": 0,
+    "u8==255": 8014,
+    "src w==0.0": 0,
+    "src w==1.0": 8010,
+    "src w>1.0": 0,
+    "src w<0.0": 0,
+    "src min": 0.17629143595695496,
+    "src max": 1.0
+   }
+  },
+  "B_err_table": [
+   {
+    "bucket": "=0（精确）",
+    "count": 8010,
+    "pct": 8.0691
+   },
+   {
+    "bucket": "≤5e-4",
+    "count": 55549,
+    "pct": 55.9586
+   },
+   {
+    "bucket": "≤1e-3",
+    "count": 20932,
+    "pct": 21.0864
+   },
+   {
+    "bucket": "≤1.5e-3",
+    "count": 8943,
+    "pct": 9.0089
+   },
+   {
+    "bucket": "≤0.001961（界）",
+    "count": 5834,
+    "pct": 5.877
+   },
+   {
+    "bucket": ">界",
+    "count": 0,
+    "pct": 0.0
+   }
+  ],
+  "C": [
+   [
+    "indptr 长度（N_cards+1）",
+    true,
+    "导出 188513 vs 源 188513 vs cards.jsonl 行数 188512"
+   ],
+   [
+    "indptr 全量逐位一致",
+    true,
+    "差异 0 项"
+   ],
+   [
+    "ids 全量逐位一致（含行内顺序）",
+    true,
+    "差异 0 项 / nnz 487933"
+   ],
+   [
+    "CSR 结构不变量",
+    true,
+    "{\"indptr[0]==0\": true, \"单调不减\": true, \"indptr[-1]==nnz\": true, \"每卡<=5\": true, \"id 在 [0,5187)\": true}"
+   ],
+   [
+    "规模统计",
+    true,
+    "卡 188512 / 链接 487933 / 每卡 min-median-max 0-2-5 / 空主题卡 22573（12.0%）"
+   ],
+   [
+    "正向 卡→主题（500 卡，逐卡列表含序比对）",
+    true,
+    "不一致 0 卡（seed=20260918，覆盖链接 1246 条）"
+   ],
+   [
+    "反向 主题→卡（776 命中主题全量 + 全局抽 500 主题，倒排列表逐项比对）",
+    true,
+    "不一致 0 主题；源侧倒排覆盖 776 个主题（500 卡命中集）/ 全局 4838 个主题"
+   ],
+   [
+    "双向闭合（正向∧反向）",
+    true,
+    "500 卡正反两个方向均可由导出包无损重建"
+   ]
+  ],
+  "D_copy": {
+   "nodes.json": {
+    "identical": true,
+    "src_sha": "9f5437d7034bfdaad8d47915777738ea254830d1a37f2039744d9bf501f70460",
+    "exp_sha": "9f5437d7034bfdaad8d47915777738ea254830d1a37f2039744d9bf501f70460",
+    "src_mtime": "18:12:14",
+    "exp_mtime": "19:46:33"
+   },
+   "meta.json": {
+    "identical": false,
+    "src_sha": "c907c84126874cb3100c75ea3c3a1f5819adb88cfc8839792915643b98139cba",
+    "exp_sha": "5a760c76e5f6da6b8c119bd424bad2db773fb21be0c83afb625775d48511ba6a",
+    "src_mtime": "20:01:04",
+    "exp_mtime": "19:46:33"
+   }
+  },
+  "D": [
+   [
+    "nodes.json 与源字节一致",
+    true,
+    "sha256 相同（9f5437d7034bfdaa…）→ 该产物导后未再改动"
+   ],
+   [
+    "meta.json 与源字节一致",
+    false,
+    "源 c907c84126874cb3…（mtime 20:01:04）vs 导出 5a760c76e5f6da6b…（mtime 19:46:33） → 见 §F 定性"
+   ],
+   [
+    "nodes.json 结构与行序",
+    true,
+    "5187 节点，id 严格等于 CSR 行号（0..5186）"
+   ],
+   [
+    "节点类型构成",
+    true,
+    "kw 4838 / cls 349"
+   ]
+  ],
+  "E": [
+   [
+    "风格基线",
+    true,
+    "/home/wzh/go/lib-catalog-release/v1（v1 瘦身发行包，20 项文件；含 embeddings_int8.bin/tfidf CSR/knn CSR）"
+   ],
+   [
+    "CSR 惯例一致",
+    true,
+    "{\"CSR 拆分 indptr/indices 两文件\": true, \"CSR 行偏移独立于列索引\": true, \"卡行序 CSR 与 knn 同构\": true}"
+   ],
+   [
+    "uint8 无外部 scale 量化惯例",
+    true,
+    "v1 knn_sims.u8.bin = 1885120 B = 188512×10 → 同款 u8 + 固定 /255 还原；topics 边权沿用（非 int8+per-row scale 的 embeddings 路线，因权重值域固定 [0,1]）"
+   ],
+   [
+    "小端（LE）字节序",
+    true,
+    "LE 解：indptr[0]=0 末=99268 单调✓ 列索引∈[0,5187)✓；BE 解：indptr[0]=0 末=-4286581320814952448 列索引 max=2131951616 → BE 越界/非法，证伪"
+   ],
+   [
+    "int8 路线与其适用域",
+    true,
+    "v1 对 bge 向量用 int8（72388608 B）+ 外部 float32 scale （754048 B）；topics 权重为标量非向量，采用 u8 更贴惯例，二者不混用"
+   ],
+   [
+    "导出对齐 R1 修复后主产物",
+    true,
+    "nnz 99268 == edges.csr.npz nnz 99268"
+   ],
+   [
+    "非 R1 前旧产物（无回退）",
+    true,
+    "pre-r1 nnz=99268（与导出同为 99268：R1 为去重+排序键修复，top-20 截断下 nnz 不变）；权重差异 85456/99268（86.1%）、列索引差异 85264 → 载荷取自修复后边表"
+   ],
+   [
+    "R1 修复仍在位（排序键+去重口径）",
+    true,
+    "若为 pre-r1 载荷则权重应 100% 相同；实测仅 13.91% 相同 → 修复已进入载荷"
+   ]
+  ],
+  "F": [
+   [
+    "载荷修订判定（对两个候选源逐位命中率）",
+    true,
+    "对 post-r1 命中 99268/99268（100.0%）；对 pre-r1 命中 13812/99268（13.91%）→ 载荷 = post-r1"
+   ],
+   [
+    "登记含 R1 修复块",
+    false,
+    "导出 meta.json stages.P2 顶层键 = ['acceptance_scripts', 'artifacts', 'counts', 'edge_stats', 'generated_at', 'generator', 'p2-tuning', 'p3_gate_note', 'params', 'report_file', 'seconds', 'self_test', 'stage', 'tuning_evidence']（无 r1_fix）"
+   ],
+   [
+    "登记 tie_break 描述与载荷排序键一致",
+    false,
+    "登记原文「权重 desc → 排序键 desc → 目标 id asc；层级边优先保留（排序键置顶）」= R1 前「权重优先」口径；而载荷与 post-r1（rank_by=assoc 主键）100% 吻合 → 登记落后载荷一个修订"
+   ],
+   [
+    "登记原始对实例数与载荷修订一致",
+    false,
+    "导出登记 pairs_aug_raw=1753477（R1 前含共现重复计数）；当前源登记 1112854（去重后）→ 差 640623（36.5%）"
+   ],
+   [
+    "登记覆盖率与载荷修订一致",
+    false,
+    "导出登记 hop12①=0.8972（R1 前旧数字）；当前源登记 0.9188 → 登记描述的图非本包所载之图"
+   ],
+   [
+    "登记 updated_at 早于载荷 mtime",
+    true,
+    "登记 updated_at=2026-09-18T19:13:59+0800；载荷 edges.csr.npz mtime=2026-09-18T19:45:26；导出生成 2026-09-18 19:46:33 → 导出在登记刷新前执行，复制到的是 R1 前登记快照"
+   ],
+   [
+    "登记规模计数与载荷吻合（自洽部分）",
+    true,
+    "nodes 5187 / edges_final 99268==nnz 99268 / cards 188512（规模层自洽，口径层落后）"
+   ]
+  ],
+  "G": [
+   [
+    "复核上游发现：包内登记 vs 包内载荷反算",
+    true,
+    "w_eq_1_share 登记 0.1138 vs 反算 0.0807（差 0.0331）；w̄ 登记 0.5187 vs 反算 0.3646；中位 登记 0.4093 vs 0.2275；p90 登记 1.0 vs 0.8745 → 不同源**属实**（4/5 项不符）"
+   ],
+   [
+    "登记/载荷各自指向的修订",
+    true,
+    "登记 5 项与 pre-r1 总偏差 0.0001（逐字段全等 pre-r1）；载荷 5 项与 post-r1 总偏差 0.0030（逐字段全等 post-r1）"
+   ],
+   [
+    "登记是「整修订自洽」的 pre-R1 快照",
+    true,
+    "7 项独立口径全部指向 pre-R1（口径层）+ 规模层自洽 → 非混算产物：{\"pairs_aug_raw=pre-R1 值\": true, \"pairs_same_cluster_raw=pre-R1 值\": true, \"tie_break 文本=pre-R1 权重优先\": true, \"缺 r1_fix 块\": true, \"hop12①=pre-R1 旧值 0.8972\": true, \"cooccur 饱和对=pre-R1 值 3878\": true, \"规模计数与载荷一致(5187/99268/188512)\": true}"
+   ],
+   [
+    "决定性佐证：登记刷新后重导出即自洽",
+    true,
+    "20:44 重导出包登记 sha256 == 当前源登记（逐字节相同）；其 w_eq_1_share=0.0807（=载荷反算 0.0807）、pairs_aug_raw=1112854（=去重后）、含 r1_fix → 同一导出代码在登记刷新后产出**自洽包**"
+   ],
+   [
+    "根因裁决 = 快照过期（非生成逻辑 bug）",
+    true,
+    "时间线 登记 2026-09-18T19:13:59+0800(P2 登记于 2026-09-18T18:50:24+0800) < 载荷 19:45:26 < 随包生成 19:46:33 < 登记刷新 20:01:04；export_topics 以 shutil.copyfile 逐字节复制「当时磁盘上的 meta.json」→ 复制到的是 R1 前登记快照；登记刷新后同一代码即产出自洽包（§G4）"
+   ]
+  ]
+ },
+ "errors": [
+  "D/meta.json 与源字节一致: 源 c907c84126874cb3…（mtime 20:01:04）vs 导出 5a760c76e5f6da6b…（mtime 19:46:33） → 见 §F 定性",
+  "F/登记含 R1 修复块: 导出 meta.json stages.P2 顶层键 = ['acceptance_scripts', 'artifacts', 'counts', 'edge_stats', 'generated_at', 'generator', 'p2-tuning', 'p3_gate_note', 'params', 'report_file', 'seconds', 'self_test', 'stage', 'tuning_evidence']（无 r1_fix）",
+  "F/登记 tie_break 描述与载荷排序键一致: 登记原文「权重 desc → 排序键 desc → 目标 id asc；层级边优先保留（排序键置顶）」= R1 前「权重优先」口径；而载荷与 post-r1（rank_by=assoc 主键）100% 吻合 → 登记落后载荷一个修订",
+  "F/登记原始对实例数与载荷修订一致: 导出登记 pairs_aug_raw=1753477（R1 前含共现重复计数）；当前源登记 1112854（去重后）→ 差 640623（36.5%）",
+  "F/登记覆盖率与载荷修订一致: 导出登记 hop12①=0.8972（R1 前旧数字）；当前源登记 0.9188 → 登记描述的图非本包所载之图"
+ ]
+}

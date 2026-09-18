@@ -1,0 +1,11 @@
+qid	query	seed_id	seed_term	around_rc
+Q01	机器学习 入门	47	学习	0
+Q02	量子 计算	177	计算	0
+Q03	中国 文学史	18	中国	0
+Q04	economics 教材	62	economics	0
+Q05	climate change	64	climate	0
+Q06	唐诗	529	唐诗	0
+Q07	数据结构 算法	9	数据	0
+Q08	佛教 哲学	37	哲学	0
+Q09	deep learning	33	learning	0
+Q10	城市规划	74	城市	0

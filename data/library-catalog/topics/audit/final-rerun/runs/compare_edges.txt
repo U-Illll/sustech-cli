@@ -1,0 +1,65 @@
+指标	R1前	R1后	变化
+nodes	5187	5187	0.0
+edges	99268	99268	0.0
+avg_outdegree	19.1378	19.1378	0.0
+max_outdegree	20	20	0.0
+min_outdegree	0	0	0.0
+isolated_nodes	3	3	0.0
+weight_mean	0.5187	0.3647	-0.154
+weight_median	0.4093	0.2292	-0.1801
+weight_p90	1.0	0.8734	-0.1266
+weight_min	0.176291	0.176291	0.0
+weight_max	1.0	1.0	0.0
+w_eq_1_count	11294	8010	-3284.0
+w_eq_1_ratio	0.1138	0.0807	-0.0331
+w_ge_0.8_ratio	0.1791	0.115	-0.0641
+w_lt_0.1_ratio	0.0	0.0	0.0
+dtype_indptr	int64	int64	
+dtype_indices	int32	int32	
+dtype_weights	float32	float32	
+
+JSON:
+{
+  "before": {
+    "path": "/home/wzh/go/lib-catalog-data/topics/edges.csr.pre-r1.npz",
+    "nodes": 5187,
+    "edges": 99268,
+    "avg_outdegree": 19.1378,
+    "max_outdegree": 20,
+    "min_outdegree": 0,
+    "isolated_nodes": 3,
+    "weight_mean": 0.5187,
+    "weight_median": 0.4093,
+    "weight_p90": 1.0,
+    "weight_min": 0.176291,
+    "weight_max": 1.0,
+    "w_eq_1_count": 11294,
+    "w_eq_1_ratio": 0.1138,
+    "w_ge_0.8_ratio": 0.1791,
+    "w_lt_0.1_ratio": 0.0,
+    "dtype_indptr": "int64",
+    "dtype_indices": "int32",
+    "dtype_weights": "float32"
+  },
+  "after": {
+    "path": "/home/wzh/go/lib-catalog-data/topics/edges.csr.npz",
+    "nodes": 5187,
+    "edges": 99268,
+    "avg_outdegree": 19.1378,
+    "max_outdegree": 20,
+    "min_outdegree": 0,
+    "isolated_nodes": 3,
+    "weight_mean": 0.3647,
+    "weight_median": 0.2292,
+    "weight_p90": 0.8734,
+    "weight_min": 0.176291,
+    "weight_max": 1.0,
+    "w_eq_1_count": 8010,
+    "w_eq_1_ratio": 0.0807,
+    "w_ge_0.8_ratio": 0.115,
+    "w_lt_0.1_ratio": 0.0,
+    "dtype_indptr": "int64",
+    "dtype_indices": "int32",
+    "dtype_weights": "float32"
+  }
+}

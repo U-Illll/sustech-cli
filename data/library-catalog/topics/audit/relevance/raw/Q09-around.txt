@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 33 --hops 2 --top 10 --evidence 5
+[exit=0]  # seed term = learning  (search rank-1)
+=== around 33 「learning」 (kw, freq=1221, cluster=253, cls=TP) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 240 主题 / 书证据 35884 本 / 扫描边 420 / 权重 0.053~1.000(中位 0.482) / 385.4ms
+
+[hop 1] 20 个主题（显示 top 10）
+     47 学习                      kw   score=0.8600   via learning
+     78 TP1                     cls  score=0.8600   via learning
+     85 G6                      cls  score=0.8600   via learning
+    139 machine                 kw   score=0.8600   via learning
+    152 G4                      cls  score=0.8600   via learning
+    398 teaching                kw   score=0.8600   via learning
+    407 deep                    kw   score=0.8600   via learning
+    752 algorithms              kw   score=0.8600   via learning
+     24 education               kw   score=0.8421   via learning
+     10 data                    kw   score=0.8326   via learning
+
+[hop 2] 219 个主题（显示 top 10）
+     29 教育                      kw   score=0.7396   via learning → G6
+     40 H3                      cls  score=0.7396   via learning → teaching
+     43 TP3                     cls  score=0.7396   via learning → machine
+     54 智能                      kw   score=0.7396   via learning → TP1
+     75 intelligence            kw   score=0.7396   via learning → TP1
+     87 模型                      kw   score=0.7396   via learning → TP1
+    133 artificial              kw   score=0.7396   via learning → TP1
+    253 美国                      kw   score=0.7396   via learning → G6
+    255 算法                      kw   score=0.7396   via learning → algorithms
+    286 O2                      cls  score=0.7396   via learning → algorithms
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991001561435504181  TensorFlow机器学习 = Machine learning with Tenso   cls=TP/TP1  via 「learning」
+  991001555989504181  TensorFlow深度学习项目实战 = TensorFlow deep learnin   cls=TP/TP1  via 「learning」
+  991002556502704181  多智能体强化学习 = Multi-agent reinforcement learnin   cls=TP/TP1  via 「learning」
+  991001317851404181  Python+Tensorflow机器学习实战                        cls=TP/TP1  via 「学习」
+  991002625053304181  AI and ML for coders in PyTorch : a coder's    cls=TP/TP1  via 「learning」
+
+---stderr---
+

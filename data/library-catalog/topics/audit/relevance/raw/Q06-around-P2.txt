@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 529 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = 唐诗 (整词命中中 freq 最低)
+=== around 529 「唐诗」 (kw, freq=84, cluster=283, cls=I) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 99 主题 / 书证据 19490 本 / 扫描边 402 / 权重 0.053~1.000(中位 0.152) / 286.5ms
+
+[hop 1] 20 个主题（显示 top 10）
+     22 I2                      cls  score=0.8600   via 唐诗
+    657 辞典                      kw   score=0.4548   via 唐诗
+   1537 宋词                      kw   score=0.3124   via 唐诗
+    583 诗选                      kw   score=0.2403   via 唐诗
+    693 旅行                      kw   score=0.2403   via 唐诗
+   1366 poems                   kw   score=0.2403   via 唐诗
+   1298 chinese-english         kw   score=0.1516   via 唐诗
+   2143 蒋勋                      kw   score=0.1516   via 唐诗
+   2336 汉英                      kw   score=0.1516   via 唐诗
+   2385 李白                      kw   score=0.1516   via 唐诗
+
+[hop 2] 78 个主题（显示 top 10）
+     18 中国                      kw   score=0.7396   via 唐诗 → I2
+     65 文学                      kw   score=0.7396   via 唐诗 → I2
+    158 小说                      kw   score=0.7396   via 唐诗 → I2
+    468 红楼梦                     kw   score=0.7396   via 唐诗 → I2
+    475 当代                      kw   score=0.7396   via 唐诗 → I2
+    481 诗歌                      kw   score=0.7396   via 唐诗 → I2
+    543 作品                      kw   score=0.7396   via 唐诗 → I2
+    581 散文                      kw   score=0.7396   via 唐诗 → I2
+    706 诗词                      kw   score=0.7396   via 唐诗 → I2
+    938 演义                      kw   score=0.7396   via 唐诗 → I2
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991002424579604181  书写“中国气派” 当代文学与民族形式建构                           cls=I/I2  via 「当代」
+  991001082149704181  蒋勋说中国文学之美 从《诗经》到陶渊明                            cls=I/I2  via 「文学」
+  991000546579704181  儒学与中国古代小说关系论稿                                  cls=B/B2  via 「小说」
+  991002128128504181  当代小说 = Contemporary fiction                    cls=/  via 「小说」
+  991000555419704181  中国古代小说与吴越文化                                    cls=I/I2  via 「小说」
+
+---stderr---
+

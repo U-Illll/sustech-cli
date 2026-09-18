@@ -1,0 +1,74 @@
+[
+ {
+  "cfg": "weight/20",
+  "rank_by": "weight",
+  "max_out": 20,
+  "mutual": 0,
+  "avg_out": 19.138,
+  "kw": 0.7744,
+  "all_": 0.7874,
+  "uc": 0.8429,
+  "sym": 0.92,
+  "edges": 99268
+ },
+ {
+  "cfg": "weight/30",
+  "rank_by": "weight",
+  "max_out": 30,
+  "mutual": 0,
+  "avg_out": 27.814,
+  "kw": 0.8553,
+  "all_": 0.867,
+  "uc": null,
+  "sym": null,
+  "edges": 144272
+ },
+ {
+  "cfg": "assoc/20",
+  "rank_by": "assoc",
+  "max_out": 20,
+  "mutual": 0,
+  "avg_out": 19.138,
+  "kw": 0.8972,
+  "all_": 0.903,
+  "uc": 0.9797,
+  "sym": 0.92,
+  "edges": 99268
+ },
+ {
+  "cfg": "assoc/30",
+  "rank_by": "assoc",
+  "max_out": 30,
+  "mutual": 0,
+  "avg_out": 27.814,
+  "kw": 0.9028,
+  "all_": 0.9088,
+  "uc": 0.9845,
+  "sym": 0.92,
+  "edges": 144272
+ },
+ {
+  "cfg": "assoc/20+mutual1",
+  "rank_by": "assoc",
+  "max_out": 20,
+  "mutual": 1,
+  "avg_out": 19.138,
+  "kw": 0.8972,
+  "all_": 0.903,
+  "uc": 0.9797,
+  "sym": 0.92,
+  "edges": 99268
+ },
+ {
+  "cfg": "assoc/20+mutual3",
+  "rank_by": "assoc",
+  "max_out": 20,
+  "mutual": 3,
+  "avg_out": 19.138,
+  "kw": 0.8972,
+  "all_": 0.903,
+  "uc": 0.9797,
+  "sym": 0.92,
+  "edges": 99268
+ }
+]

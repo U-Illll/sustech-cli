@@ -1,0 +1,303 @@
+{
+ "checks": [
+  {
+   "check": "A1 id 连续 0..N-1 且 term 唯一（交付序为全序）",
+   "ok": true,
+   "detail": "N=5507 term 唯一=True",
+   "kind": "check"
+  },
+  {
+   "check": "A2 freq 可由 card_topics 独立重算（口径缺口）",
+   "ok": null,
+   "detail": "不符 1285/5507（23.3%）——card_topics 只存每卡 top-5，而 freq 定义在有书目证据的**完整**卡集上；例：[('经济', 3598, 2548), ('design', 2836, 2122), ('D9', 3717, 0)]",
+   "kind": "gap"
+  },
+  {
+   "check": "A3 排序键 max_cc 可由已交付证据链重算",
+   "ok": null,
+   "detail": "两种 card_topics 派生键与交付序分歧 5505/5507、5503/5507 位 —— max_cc（=freq×rep）依赖 top-5 截断前的完整卡集，该卡集**未落档**（AUDIT-NUM §5 同源问题）",
+   "kind": "gap"
+  },
+  {
+   "check": "A4 cluster 字段 == 卡集主导簇（截断视图）",
+   "ok": null,
+   "detail": "不符 53/5507 节点（截断视图下主导簇可能改变，故非硬结论）",
+   "kind": "info"
+  },
+  {
+   "check": "A5 freq 沿交付序非增",
+   "ok": null,
+   "detail": "否（max_cc 为主键时 freq 本不必单调）",
+   "kind": "info"
+  },
+  {
+   "check": "B1 types dtype=uint8 且长度 == nnz",
+   "ok": true,
+   "detail": "dtype=uint8 len=105414 nnz=105414",
+   "kind": "check"
+  },
+  {
+   "check": "B2 值域 ⊆ {1,3,5,7}（bit0 恒置位 + 合法组合）",
+   "ok": true,
+   "detail": "实测值域=[1, 3, 5, 7]",
+   "kind": "check"
+  },
+  {
+   "check": "B3 bit0（①共现）全量置位（105,414 条）",
+   "ok": true,
+   "detail": "违例 0",
+   "kind": "check"
+  },
+  {
+   "check": "B4 bit1（②同簇加成）== c_sc>0 全量吻合（105,414 条独立重算）",
+   "ok": true,
+   "detail": "不符 0",
+   "kind": "check"
+  },
+  {
+   "check": "B5 单向不变式 bit1 ⇒ 两端同 cluster",
+   "ok": true,
+   "detail": "违例 0",
+   "kind": "check"
+  },
+  {
+   "check": "B6 bit2（③层级）== (src→cls_of[src]) 全量吻合（105,414 条）",
+   "ok": true,
+   "detail": "不符 0",
+   "kind": "check"
+  },
+  {
+   "check": "C1 vs pre-r2c：indptr/indices/weights **逐位一致**（R2-C 仅新增 types）",
+   "ok": true,
+   "detail": "indptr=True indices=True weights=True；pre-r2c 键=['indices', 'indptr', 'weights']",
+   "kind": "check"
+  },
+  {
+   "check": "C2 vs pre-r2：R2-A 重建后三数组必不相同（词表 +320 节点）—— 属预期，非缺陷",
+   "ok": true,
+   "detail": "pre-r2 nnz=99,268（无 types 键）→ 现 nnz=105,414（+6,146）",
+   "kind": "check"
+  },
+  {
+   "check": "C3 导出包 edges_types.u8.bin == 源 npz types（逐位）",
+   "ok": true,
+   "detail": "topics/export-sample/v1/topics/edges_types.u8.bin len=105414",
+   "kind": "check"
+  },
+  {
+   "check": "D1 M2 抽测①：`search D9` 与 `search d9` 命中数一致且 ≥1",
+   "ok": true,
+   "detail": "rc=0/0 命中=3/3",
+   "kind": "check"
+  },
+  {
+   "check": "D2 M2 抽测②：`around --term TP3` 与 `tp3` 均 exit 0 且定位同一 cls 节点",
+   "ok": true,
+   "detail": "rc=0/0 | === around 43 「TP3」 (cls, freq=11534, cluster=65, cls=TP3) =",
+   "kind": "check"
+  },
+  {
+   "check": "D3 P4 抽测①：`around 56`（机器）exit 0 且证据段非空",
+   "ok": true,
+   "detail": "rc=0",
+   "kind": "check"
+  },
+  {
+   "check": "D4 P4 抽测②：`around 65`（文学）exit 0 且证据段非空",
+   "ok": true,
+   "detail": "rc=0",
+   "kind": "check"
+  },
+  {
+   "check": "E Q02「量子 计算」两命令均成功返回（协议可复跑）",
+   "ok": true,
+   "detail": "种子=188 hop1=20 证据=5",
+   "kind": "check"
+  },
+  {
+   "check": "E Q06「唐诗」两命令均成功返回（协议可复跑）",
+   "ok": true,
+   "detail": "种子=552 hop1=20 证据=5",
+   "kind": "check"
+  }
+ ],
+ "pass": 16,
+ "fail": 0,
+ "gap": 2,
+ "info": 2,
+ "f1": {
+  "structural_ok": true,
+  "freq_gap": 1285,
+  "variants_diff": {
+   "max_all_clusters": 5505,
+   "own_cluster_count": 5503
+  },
+  "cluster_gap": 53,
+  "independently_verifiable": false
+ },
+ "types": {
+  "nnz": 105414,
+  "domain": [
+   1,
+   3,
+   5,
+   7
+  ],
+  "dist": {
+   "7": 793,
+   "3": 10620,
+   "1": 89643,
+   "5": 4358
+  },
+  "sampled": 300,
+  "bit0_viol": 0,
+  "bit1_viol": 0,
+  "bit1_converse_viol": 0,
+  "bit2_viol": 0,
+  "pre_r2c_bitidentical": true,
+  "pre_r2_nnz": 99268,
+  "export_types_match": true,
+  "w_eq1_share": 0.08051112755421481,
+  "w_mean": 0.36559852957725525,
+  "pre_r2_w_eq1_share": 0.08069065559898457,
+  "pre_r2_w_mean": 0.3647242486476898
+ },
+ "tool_spotcheck": {
+  "m2_1": {
+   "D9": 3,
+   "d9": 3
+  },
+  "m2_2": {
+   "rc": [
+    0,
+    0
+   ]
+  },
+  "search_first": {
+   "机器学习": "56 机器                       kw       817      338 TP    toke",
+   "量子计算": "188 量子                       kw       415      167 O     tok"
+  },
+  "p4_1": {
+   "rc": 0
+  },
+  "p4_2": {
+   "rc": 0
+  }
+ },
+ "relevance_spotcheck": {
+  "Q02": {
+   "query": "量子 计算",
+   "seed": 188,
+   "hop1": [
+    [
+     "力学",
+     "kw"
+    ],
+    [
+     "O4",
+     "cls"
+    ],
+    [
+     "quantum",
+     "kw"
+    ],
+    [
+     "mechanics",
+     "kw"
+    ],
+    [
+     "动力学",
+     "kw"
+    ],
+    [
+     "计算",
+     "kw"
+    ],
+    [
+     "信息",
+     "kw"
+    ],
+    [
+     "光学",
+     "kw"
+    ],
+    [
+     "物理学",
+     "kw"
+    ],
+    [
+     "导论",
+     "kw"
+    ]
+   ],
+   "evidence": [
+    "991001594904204181  外部扰动下量子点激光器的非线性动力学研究                           cls=O/O4  via 「量子」",
+    "991002618527304181  量子光学讲义 = Lectures on quantum optics            cls=O/O4  via 「量子」",
+    "991002555284504181  纳米量子光学 = Nano and quantum optics               cls=O/O4  via 「量子」",
+    "991001384400604181  量子力学的哲学基础                                      cls=CTC/B  via 「量子」",
+    "991001567515004181  Foundations of quantum mechanics = 量子力学基础 :    cls=O/O4  via 「量子」"
+   ],
+   "rc": [
+    0,
+    0
+   ]
+  },
+  "Q06": {
+   "query": "唐诗",
+   "seed": 552,
+   "hop1": [
+    [
+     "I2",
+     "cls"
+    ],
+    [
+     "辞典",
+     "kw"
+    ],
+    [
+     "宋词",
+     "kw"
+    ],
+    [
+     "诗选",
+     "kw"
+    ],
+    [
+     "旅行",
+     "kw"
+    ],
+    [
+     "poems",
+     "kw"
+    ],
+    [
+     "chinese-english",
+     "kw"
+    ],
+    [
+     "蒋勋",
+     "kw"
+    ],
+    [
+     "汉英",
+     "kw"
+    ],
+    [
+     "李白",
+     "kw"
+    ]
+   ],
+   "evidence": [
+    "991001000449704181  唐诗选 = Choix de poèmes des Tang                 cls=/  via 「唐诗」",
+    "991001296980904181  六朝声律与唐诗体格                                      cls=I/I2  via 「唐诗」",
+    "991000554959704181  唐诗宋词中的风雅与时尚                                    cls=I/I2  via 「唐诗」",
+    "991001340517804181  唐诗的乐园意识                                        cls=I/I2  via 「唐诗」",
+    "991002414420504181  总有诗人解我忧 唐诗心理商谈室                                cls=I/I2  via 「唐诗」"
+   ],
+   "rc": [
+    0,
+    0
+   ]
+  }
+ }
+}

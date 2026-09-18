@@ -1,0 +1,1464 @@
+{
+ "stage": "P2",
+ "generated_at": "2026-09-18T21:35:07+0800",
+ "data_dir": "/home/wzh/go/lib-catalog-data",
+ "out_dir": "/home/wzh/go/lib-catalog-data/topics",
+ "seconds": 14.3,
+ "params": {
+  "top_per_card": 10,
+  "top_k": 5,
+  "max_out": 20,
+  "cap_count": 50,
+  "combine": "sum",
+  "variant": "aug",
+  "rank_by": "assoc",
+  "variant_mode": "auto",
+  "cls_in_cooccurrence": "auto",
+  "coverage_samples": 400,
+  "seed": 42,
+  "b1_weight_rule": "score(card,term)=Σ tfidf(card, token) over tokens⊆term（ASCII 精确/CJK 相邻 bigram 求和）",
+  "b1_cls_policy": "cls 不占卡 top-5 名额",
+  "b2_pair_members": "卡 top-5 kw ∪ {卡 cls2}",
+  "b2_weight": "w1=log1p(min(共现书数,cap))/log1p(cap)",
+  "b3_weight": "w2=0.3×log1p(簇内共现)/log1p(cap)",
+  "b3_combine": "sum",
+  "b3_new_pairs": 0,
+  "b3_note": "同簇对必然已有共现边（cnt_sc>0 ⟹ cnt>0）；sum 口径下 ② 为加成项，max 口径下 ② 恒被 ① 支配而失效",
+  "b4_weight": "主题→cls2 类目，w=1.0，单向（无自环）",
+  "b4_target_rule": "cls 节点词表 = §3.1 源 C 的 CLC cls2；节点表 cls 字段是 cls1（无对应节点），故层级边目标由卡级证据投票取众数 cls2",
+  "b5_arrays": {
+   "indptr": "int64",
+   "indices": "int32",
+   "weights": "float32",
+   "types": "uint8（R2-C 新增；与 indices 行序对齐，bit0=共现 bit1=同簇加成 bit2=层级）"
+  },
+  "b5_edgetype_rule": "R2-C/AUDIT-EDGETYPE 方案 a：pair 行 =1（共现）；c_sc>0 置 bit1 →3；层级行 =1|4=5（该 (u,cid) 对必有共现证据）；去重时同键按 bitwise_or 归并 → 合法值域 {1,3,5,7}",
+  "normalization": "三类公式均已用 log1p(cap) 归一到 [0,1]；最终 clamp ≤1.0",
+  "tie_break": "R1 修复后：primary=assoc 时键序 src↑ → 关联度↓ → 权重↓ → dst↑（权重退为 tie-break）；primary=weight 时 src↑ → 权重↓ → 关联度↓ → dst↑。两种模式层级边均置顶（tie=1e9/w=1.0）",
+  "rank_by_note": "截断排序键默认 assoc=count/√(freq_u·freq_v)（权重公式不变）；--rank-by weight 可复现 §3.2 字面口径；R1 修复②前 assoc 仅作权重平局 tie-break（未生效），修复后为**主键**"
+ },
+ "counts": {
+  "nodes": 5507,
+  "kw": 5158,
+  "cls": 349,
+  "cards": 188512,
+  "cards_with_cls2": 179587,
+  "cards_empty_topics": 21607,
+  "cards_topic_count_hist": {
+   "0": 21607,
+   "1": 31456,
+   "2": 37907,
+   "3": 34090,
+   "4": 25595,
+   "5": 37857
+  },
+  "pairs_aug_raw": 1157011,
+  "pairs_spec_raw": 672317,
+  "pairs_same_cluster_raw": 67139,
+  "distinct_pairs_aug": 349680,
+  "distinct_pairs_kwkw": 261376,
+  "distinct_pairs_same_cluster": 10102,
+  "hierarchical_edges": 5151,
+  "kw_without_hier_edge": 7,
+  "edges_final": 105414
+ },
+ "edge_stats": {
+  "chosen": "aug",
+  "avg_out_degree": 19.142,
+  "out_degree": {
+   "min": 0,
+   "median": 20,
+   "p90": 20.0,
+   "max": 20
+  },
+  "isolated_out0": 3,
+  "weight_dist": {
+   "n": 105414,
+   "min": 0.1763,
+   "median": 0.2292,
+   "mean": 0.3656,
+   "p90": 0.8734,
+   "max": 1.0
+  },
+  "w_eq_1_share": 0.0805,
+  "cooccur_count_dist": {
+   "n": 349680,
+   "min": 1.0,
+   "median": 1.0,
+   "mean": 3.309,
+   "p90": 5.0,
+   "max": 1221.0
+  },
+  "cooccur_saturated_pairs": 2302,
+  "cooccur_saturated_share": 0.0066,
+  "cooccur_singleton_share": 0.6268,
+  "kwkw_edge_share": 0.7475
+ },
+ "variants": {
+  "spec": {
+   "edges": {
+    "edges": 98346,
+    "avg_out_degree": 17.858,
+    "out_degree": {
+     "min": 0,
+     "median": 20,
+     "p90": 20.0,
+     "max": 20
+    },
+    "isolated_out0": 350,
+    "weight": {
+     "n": 98346,
+     "min": 0.1763,
+     "median": 0.1763,
+     "mean": 0.3479,
+     "p90": 0.8083,
+     "max": 1.0
+    },
+    "w_eq_1": 7262,
+    "types": {
+     "dtype": "uint8",
+     "values": [
+      1,
+      3,
+      5
+     ],
+     "hist": {
+      "1": 83732,
+      "3": 9463,
+      "5": 5151
+     },
+     "bits": {
+      "bit0=1": "共现",
+      "bit1=2": "同簇加成",
+      "bit2=4": "层级"
+     },
+     "multi_type_edges": 14614
+    }
+   },
+   "coverage": {
+    "hop12_kw_seeds_mean": 0.9054,
+    "hop12_kw_seeds_median": 0.9354,
+    "hop12_all_seeds_mean": 0.8176,
+    "hop12_all_seeds_median": 0.9231,
+    "hop12_kw_seeds_cluster_or_cls_mean": 0.9839,
+    "hop12_kw_seeds_symmetric_mean": 0.9113,
+    "hop12_kw_seeds_cluster_or_cls_symmetric_mean": 0.9908,
+    "curve_kw_mean": [
+     0.1274,
+     0.4095,
+     0.802,
+     0.903,
+     0.9054,
+     0.9054,
+     0.9054,
+     0.9054,
+     0.9054,
+     0.9054,
+     0.9054,
+     0.9054
+    ],
+    "curve_kw_median": [
+     0.0953,
+     0.3889,
+     0.8462,
+     0.9333,
+     0.9354,
+     0.9354,
+     0.9354,
+     0.9354,
+     0.9354,
+     0.9354,
+     0.9354,
+     0.9354
+    ],
+    "components": {
+     "components": 154,
+     "largest": 5354,
+     "largest_pct": 0.972217
+    }
+   }
+  },
+  "aug": {
+   "edges": {
+    "edges": 105414,
+    "avg_out_degree": 19.142,
+    "out_degree": {
+     "min": 0,
+     "median": 20,
+     "p90": 20.0,
+     "max": 20
+    },
+    "isolated_out0": 3,
+    "weight": {
+     "n": 105414,
+     "min": 0.1763,
+     "median": 0.2292,
+     "mean": 0.3656,
+     "p90": 0.8734,
+     "max": 1.0
+    },
+    "w_eq_1": 8487,
+    "types": {
+     "dtype": "uint8",
+     "values": [
+      1,
+      3,
+      5,
+      7
+     ],
+     "hist": {
+      "1": 89643,
+      "3": 10620,
+      "5": 4358,
+      "7": 793
+     },
+     "bits": {
+      "bit0=1": "共现",
+      "bit1=2": "同簇加成",
+      "bit2=4": "层级"
+     },
+     "multi_type_edges": 15771
+    }
+   },
+   "coverage": {
+    "hop12_kw_seeds_mean": 0.9246,
+    "hop12_kw_seeds_median": 0.9474,
+    "hop12_all_seeds_mean": 0.9257,
+    "hop12_all_seeds_median": 0.9444,
+    "hop12_kw_seeds_cluster_or_cls_mean": 0.9927,
+    "hop12_kw_seeds_symmetric_mean": 0.9286,
+    "hop12_kw_seeds_cluster_or_cls_symmetric_mean": 0.9955,
+    "curve_kw_mean": [
+     0.1303,
+     0.4363,
+     0.826,
+     0.9242,
+     0.9246,
+     0.9246,
+     0.9246,
+     0.9246,
+     0.9246,
+     0.9246,
+     0.9246,
+     0.9246
+    ],
+    "curve_kw_median": [
+     0.093,
+     0.4258,
+     0.8654,
+     0.9459,
+     0.9474,
+     0.9474,
+     0.9474,
+     0.9474,
+     0.9474,
+     0.9474,
+     0.9474,
+     0.9474
+    ],
+    "components": {
+     "components": 4,
+     "largest": 5504,
+     "largest_pct": 0.999455
+    }
+   }
+  }
+ },
+ "self_test": {
+  "avg_out_degree_le_max": true,
+  "hop12_kw_seeds_mean": 0.9246,
+  "hop12_all_seeds_mean": 0.9257,
+  "components": {
+   "components": 4,
+   "largest": 5504,
+   "largest_pct": 0.999455
+  },
+  "hot_nodes": [
+   {
+    "id": 43,
+    "term": "TP3",
+    "type": "cls",
+    "freq": 11534,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "security",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "software",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "计算机",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "web",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "computer",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "linux",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "computing",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "windows",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.1,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 18,
+    "term": "中国",
+    "type": "kw",
+    "freq": 10379,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "I2",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "古代",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "D6",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "china",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": true
+     },
+     {
+      "term": "K2",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "代思想",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "国民",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "代中",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.1,
+    "neighbor_same_cls_pct": 0.1
+   },
+   {
+    "id": 22,
+    "term": "I2",
+    "type": "cls",
+    "freq": 8849,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "文学",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "小说",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "散文",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "演义",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "诗词",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "红楼梦",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "唐诗",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "中国",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.05,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 14,
+    "term": "F2",
+    "type": "cls",
+    "freq": 7522,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "企业",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "财务",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "管理",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "accounting",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "corporate",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "公司",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "business",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "会计",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.2,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 5,
+    "term": "F8",
+    "type": "cls",
+    "freq": 6517,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "金融",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "投资",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "financial",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "银行",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "货币",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "保险",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "finance",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "banking",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.2,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 92,
+    "term": "技术",
+    "type": "kw",
+    "freq": 5616,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "TP3",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "技术与应用",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": true
+     },
+     {
+      "term": "应用",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "制造技术",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "技术史",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "处理技术",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "控制技术",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "测试",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.05,
+    "neighbor_same_cls_pct": 0.35
+   },
+   {
+    "id": 12,
+    "term": "O1",
+    "type": "cls",
+    "freq": 5121,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "数学",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "geometry",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "differential",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "代数",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "algebra",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "equations",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "mathematics",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "algebraic",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.05,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 146,
+    "term": "应用",
+    "type": "kw",
+    "freq": 4824,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "TP3",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "及应",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "技术与应用",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "及其",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "原理与应用",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "技术",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "原理",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "开发",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.0,
+    "neighbor_same_cls_pct": 0.6
+   },
+   {
+    "id": 42,
+    "term": "K8",
+    "type": "cls",
+    "freq": 4785,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "发掘报告",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "考古",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "国知",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "archaeology",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "学家",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "成就",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "评传",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "回忆录",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.2,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 70,
+    "term": "O4",
+    "type": "cls",
+    "freq": 4638,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "quantum",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "量子",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "physics",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "relativity",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "mechanics",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "optics",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "field",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "光学",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.5,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 6,
+    "term": "设计",
+    "type": "kw",
+    "freq": 4440,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "TP3",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "TB4",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "程序",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "机械设计",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "产品",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "TH1",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "机械",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "计基",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.15,
+    "neighbor_same_cls_pct": 0.2
+   },
+   {
+    "id": 105,
+    "term": "B8",
+    "type": "cls",
+    "freq": 4281,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "心理学",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "人生",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "psychology",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "美学",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "理学",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "自己",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "伦理学",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "aesthetics",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.15,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 11,
+    "term": "applications",
+    "type": "kw",
+    "freq": 4108,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "TB3",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "fundamentals",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "theory",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "properties",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "synthesis",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "principles",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "O1",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "nanomaterials",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.05,
+    "neighbor_same_cls_pct": 0.15
+   },
+   {
+    "id": 31,
+    "term": "I5",
+    "type": "cls",
+    "freq": 3987,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "shakespeare",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "shakespearian",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "dover",
+      "w": 0.9318,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "wilson",
+      "w": 0.9318,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "诗选",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "la",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "poetry",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "莎士比亚",
+      "w": 0.9318,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.15,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 49,
+    "term": "TN9",
+    "type": "cls",
+    "freq": 3829,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "signal",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "communications",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "wireless",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "mobile",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "信号处理",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "radar",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "processing",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "雷达",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.4,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 2,
+    "term": "D9",
+    "type": "cls",
+    "freq": 3717,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "law",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "法律",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "dispute",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "reports",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "settlement",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "法治",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "criminal",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "法典",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.4,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 0,
+    "term": "经济",
+    "type": "kw",
+    "freq": 3598,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "F0",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "经济学",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": true
+     },
+     {
+      "term": "F1",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "国经",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "中国经",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "economics",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": true
+     },
+     {
+      "term": "宏观",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": true
+     },
+     {
+      "term": "经济发展",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.4,
+    "neighbor_same_cls_pct": 0.8
+   },
+   {
+    "id": 66,
+    "term": "K2",
+    "type": "cls",
+    "freq": 3575,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "历史文",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "文化",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "历史",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "中国",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "中国文化",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "anti-japanese",
+      "w": 0.8734,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "国史",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "国文化",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.2,
+    "neighbor_same_cls_pct": 0.0
+   },
+   {
+    "id": 82,
+    "term": "theory",
+    "type": "kw",
+    "freq": 3548,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "O1",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "practice",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "O4",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "field",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": true
+     },
+     {
+      "term": "quantum",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": true
+     },
+     {
+      "term": "applications",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": true
+     },
+     {
+      "term": "O2",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "ergodic",
+      "w": 0.7489,
+      "same_cluster": false,
+      "same_cls": true
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.4,
+    "neighbor_same_cls_pct": 0.6
+   },
+   {
+    "id": 46,
+    "term": "TB3",
+    "type": "cls",
+    "freq": 3436,
+    "deg": 20,
+    "top_neighbors": [
+     {
+      "term": "材料",
+      "w": 1.0,
+      "same_cluster": true,
+      "same_cls": false
+     },
+     {
+      "term": "materials",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "nanomaterials",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "composites",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "composite",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "properties",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "graphene",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     },
+     {
+      "term": "nanoscience",
+      "w": 1.0,
+      "same_cluster": false,
+      "same_cls": false
+     }
+    ],
+    "neighbor_same_cluster_pct": 0.05,
+    "neighbor_same_cls_pct": 0.0
+   }
+  ]
+ },
+ "artifacts": {
+  "edges": "topics/edges.csr.npz",
+  "variant_other": "topics/edges.variant-spec.csr.npz",
+  "card_topics": "topics/card_topics.jsonl"
+ }
+}

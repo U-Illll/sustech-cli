@@ -1,0 +1,23 @@
+$ topic_graph.py --data $D search "deep learning" --top 10
+[exit=0]
+[search] query='deep learning' → 归一 'deeplearning' | 字面命中 6 个 | 近词扩展 8 个（50 张卡命中 2005 张） | 538.4ms
+    id term                     type    freq  cluster cls   src                   w
+    33 learning                 kw      1221      253 TP    token             6.397
+   407 deep                     kw       267      156 TP    token             5.032
+  2321 ee                       kw        29      170 TP    substr            2.041
+  3224 deepseek                 kw        24      334 TP    substr            1.931
+  2641 pl                       kw        17      334 TP    substr            1.734
+  3011 e-learning               kw        12      253 G     substr            1.539
+
+[近词扩展] TF-IDF 检索相关书目 → 聚合书的 top-5 主题（退化路径 ②；源: catalog_vector 同源 TF-IDF）
+   139 machine                  kw       529      253 TP    tfidf-expand      0.742   支持书: 991001523004304181、991001544802604181
+  1075 neural                   kw       160      253 TP    tfidf-expand      0.581   支持书: 991001338265504181、991001522910004181
+   109 python                   kw       663       90 TP    tfidf-expand      0.470   支持书: 991001551661704181、991001544694904181
+  1490 hands-on                 kw       100      253 TP    tfidf-expand      0.333   支持书: 991001522910004181、991001401770304181
+   133 artificial               kw       417      101 TP    tfidf-expand      0.288   支持书: 991001401174304181、991001401275904181
+    47 学习                       kw      1239      156 TP    tfidf-expand      0.280   支持书: 991002624548704181、991001231149704181
+   421 ai                       kw       425      338 TP    tfidf-expand      0.246   支持书: 991002413655304181、991001401196204181
+    11 applications             kw      4108      233 O     tfidf-expand      0.203   支持书: 991001564601304181、991001523004304181
+
+---stderr---
+

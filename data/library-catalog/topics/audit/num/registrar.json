@@ -1,0 +1,78 @@
+{
+  "meta_generated_at": "2026-09-18T19:45:26+0800",
+  "files": {
+    "meta.json": {
+      "generated_at": "2026-09-18T19:45:26+0800",
+      "seconds": 13.9
+    }
+  },
+  "mismatch": [],
+  "unregistered": [
+    {
+      "registry": "meta.json#stages.P2.edge_stats",
+      "key": "out_degree",
+      "registered": {
+        "min": 0,
+        "median": 20,
+        "p90": 20.0,
+        "max": 20
+      },
+      "note": "本审计未独立复算该项"
+    },
+    {
+      "registry": "meta.json#stages.P2.edge_stats",
+      "key": "weight_dist",
+      "registered": {
+        "n": 99268,
+        "min": 0.1763,
+        "median": 0.2292,
+        "mean": 0.3647,
+        "p90": 0.8734,
+        "max": 1.0
+      },
+      "note": "本审计未独立复算该项"
+    },
+    {
+      "registry": "meta.json#stages.P2.edge_stats",
+      "key": "kwkw_edge_share",
+      "registered": 0.7438,
+      "note": "本审计未独立复算该项"
+    },
+    {
+      "registry": "p2-build-report.json#edge_stats",
+      "key": "out_degree",
+      "registered": {
+        "min": 0,
+        "median": 20,
+        "p90": 20.0,
+        "max": 20
+      },
+      "note": "本审计未独立复算该项"
+    },
+    {
+      "registry": "p2-build-report.json#edge_stats",
+      "key": "weight_dist",
+      "registered": {
+        "n": 99268,
+        "min": 0.1763,
+        "median": 0.2292,
+        "mean": 0.3647,
+        "p90": 0.8734,
+        "max": 1.0
+      },
+      "note": "本审计未独立复算该项"
+    },
+    {
+      "registry": "p2-build-report.json#edge_stats",
+      "key": "kwkw_edge_share",
+      "registered": 0.7438,
+      "note": "本审计未独立复算该项"
+    }
+  ],
+  "hierarchy_actual": {
+    "registered": 4832,
+    "evidence_expected": 4832,
+    "present_in_artifact": 4823,
+    "missing_in_artifact": 9
+  }
+}

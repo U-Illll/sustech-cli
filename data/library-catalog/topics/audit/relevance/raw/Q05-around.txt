@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 64 --hops 2 --top 10 --evidence 5
+[exit=0]  # seed term = climate  (search rank-1)
+=== around 64 「climate」 (kw, freq=544, cluster=172, cls=P) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 273 主题 / 书证据 26066 本 / 扫描边 420 / 权重 0.053~1.000(中位 0.149) / 407.3ms
+
+[hop 1] 20 个主题（显示 top 10）
+    116 global                  kw   score=0.8600   via climate
+    141 P4                      cls  score=0.8600   via climate
+    268 X1                      cls  score=0.8600   via climate
+   1156 adaptation              kw   score=0.8600   via climate
+    447 policy                  kw   score=0.8277   via climate
+   1776 气候                      kw   score=0.8014   via climate
+     88 water                   kw   score=0.6951   via climate
+   2081 mitigation              kw   score=0.6946   via climate
+   2098 vulnerability           kw   score=0.6946   via climate
+   2653 variability             kw   score=0.6800   via climate
+
+[hop 2] 252 个主题（显示 top 10）
+     36 环境                      kw   score=0.7396   via climate → X1
+     60 F1                      cls  score=0.7396   via climate → global
+     69 生态                      kw   score=0.7396   via climate → X1
+    282 全球                      kw   score=0.7396   via climate → global
+    346 environmental           kw   score=0.7396   via climate → X1
+    589 chemistry               kw   score=0.7396   via climate → X1
+    841 environment             kw   score=0.7396   via climate → X1
+   1589 atmospheric             kw   score=0.7396   via climate → P4
+      5 F8                      cls  score=0.7118   via climate → policy
+     72 financial               kw   score=0.7118   via climate → global
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991000315569704181  Environment, energy and climate change. I, E   cls=X/X1  via 「climate」
+  991001536360404181  流域水环境学 = Watershed water environment           cls=X/X1  via 「environment」
+  991000463299704181  Atmospheric chemistry and physics : from air   cls=P/P4  via 「climate」
+  991000058329704181  Climate for change : non-state actors and th   cls=X/X1  via 「climate」
+  991002414338004181  Environmental pollution and public health :    cls=R/R1  via 「environmental」
+
+---stderr---
+

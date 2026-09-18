@@ -1,0 +1,4198 @@
+{
+  "freq": [
+    {
+      "id": 18,
+      "term": "中国",
+      "freq": 10379,
+      "top5_cards": 8411,
+      "raw_title_cards": 10379,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.234
+    },
+    {
+      "id": 213,
+      "term": "健康",
+      "freq": 360,
+      "top5_cards": 356,
+      "raw_title_cards": 360,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.011
+    },
+    {
+      "id": 288,
+      "term": "逻辑",
+      "freq": 220,
+      "top5_cards": 215,
+      "raw_title_cards": 555,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.023
+    },
+    {
+      "id": 299,
+      "term": "开发实",
+      "freq": 184,
+      "top5_cards": 183,
+      "raw_title_cards": 183,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.005
+    },
+    {
+      "id": 375,
+      "term": "politics",
+      "freq": 509,
+      "top5_cards": 501,
+      "raw_title_cards": 537,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.016
+    },
+    {
+      "id": 623,
+      "term": "经典",
+      "freq": 897,
+      "top5_cards": 873,
+      "raw_title_cards": 897,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.027
+    },
+    {
+      "id": 833,
+      "term": "credit",
+      "freq": 120,
+      "top5_cards": 119,
+      "raw_title_cards": 137,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.008
+    },
+    {
+      "id": 987,
+      "term": "spacecraft",
+      "freq": 55,
+      "top5_cards": 55,
+      "raw_title_cards": 55,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 1009,
+      "term": "考古",
+      "freq": 72,
+      "top5_cards": 71,
+      "raw_title_cards": 306,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.014
+    },
+    {
+      "id": 1015,
+      "term": "知日",
+      "freq": 35,
+      "top5_cards": 35,
+      "raw_title_cards": 38,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 1215,
+      "term": "叢刊",
+      "freq": 31,
+      "top5_cards": 31,
+      "raw_title_cards": 31,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 1222,
+      "term": "structural",
+      "freq": 271,
+      "top5_cards": 259,
+      "raw_title_cards": 296,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.046
+    },
+    {
+      "id": 1317,
+      "term": "waves",
+      "freq": 143,
+      "top5_cards": 142,
+      "raw_title_cards": 155,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.007
+    },
+    {
+      "id": 1504,
+      "term": "冲突",
+      "freq": 103,
+      "top5_cards": 103,
+      "raw_title_cards": 103,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 1601,
+      "term": "三维",
+      "freq": 81,
+      "top5_cards": 81,
+      "raw_title_cards": 129,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 1794,
+      "term": "战后",
+      "freq": 46,
+      "top5_cards": 46,
+      "raw_title_cards": 93,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 1810,
+      "term": "pcb",
+      "freq": 28,
+      "top5_cards": 28,
+      "raw_title_cards": 30,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 1891,
+      "term": "批判",
+      "freq": 64,
+      "top5_cards": 64,
+      "raw_title_cards": 218,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 1917,
+      "term": "demystified",
+      "freq": 43,
+      "top5_cards": 43,
+      "raw_title_cards": 43,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 2185,
+      "term": "应用大全",
+      "freq": 14,
+      "top5_cards": 14,
+      "raw_title_cards": 14,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 2243,
+      "term": "histories",
+      "freq": 59,
+      "top5_cards": 59,
+      "raw_title_cards": 68,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 2367,
+      "term": "赏析",
+      "freq": 20,
+      "top5_cards": 20,
+      "raw_title_cards": 105,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 2452,
+      "term": "metaphysics",
+      "freq": 50,
+      "top5_cards": 50,
+      "raw_title_cards": 51,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 2477,
+      "term": "lasers",
+      "freq": 91,
+      "top5_cards": 90,
+      "raw_title_cards": 94,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.011
+    },
+    {
+      "id": 2543,
+      "term": "investor",
+      "freq": 37,
+      "top5_cards": 37,
+      "raw_title_cards": 84,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 2961,
+      "term": "西欧",
+      "freq": 17,
+      "top5_cards": 17,
+      "raw_title_cards": 21,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 2967,
+      "term": "funding",
+      "freq": 16,
+      "top5_cards": 16,
+      "raw_title_cards": 29,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3175,
+      "term": "energetic",
+      "freq": 29,
+      "top5_cards": 29,
+      "raw_title_cards": 37,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3354,
+      "term": "阴谋",
+      "freq": 15,
+      "top5_cards": 15,
+      "raw_title_cards": 28,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3459,
+      "term": "expression",
+      "freq": 39,
+      "top5_cards": 39,
+      "raw_title_cards": 61,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3581,
+      "term": "红外",
+      "freq": 26,
+      "top5_cards": 26,
+      "raw_title_cards": 53,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3593,
+      "term": "rendering",
+      "freq": 25,
+      "top5_cards": 25,
+      "raw_title_cards": 27,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3613,
+      "term": "业化",
+      "freq": 24,
+      "top5_cards": 24,
+      "raw_title_cards": 49,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3736,
+      "term": "interacting",
+      "freq": 18,
+      "top5_cards": 18,
+      "raw_title_cards": 19,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3885,
+      "term": "sewage",
+      "freq": 13,
+      "top5_cards": 13,
+      "raw_title_cards": 14,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3896,
+      "term": "front-end",
+      "freq": 12,
+      "top5_cards": 12,
+      "raw_title_cards": 17,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3920,
+      "term": "婚姻史",
+      "freq": 8,
+      "top5_cards": 8,
+      "raw_title_cards": 8,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 3997,
+      "term": "mediterranean",
+      "freq": 32,
+      "top5_cards": 32,
+      "raw_title_cards": 33,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4125,
+      "term": "existence",
+      "freq": 23,
+      "top5_cards": 23,
+      "raw_title_cards": 32,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4157,
+      "term": "quarks",
+      "freq": 22,
+      "top5_cards": 22,
+      "raw_title_cards": 23,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4191,
+      "term": "奇异",
+      "freq": 21,
+      "top5_cards": 21,
+      "raw_title_cards": 32,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4226,
+      "term": "charged",
+      "freq": 19,
+      "top5_cards": 19,
+      "raw_title_cards": 22,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4386,
+      "term": "硅基",
+      "freq": 16,
+      "top5_cards": 16,
+      "raw_title_cards": 20,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4687,
+      "term": "schrodinger",
+      "freq": 20,
+      "top5_cards": 20,
+      "raw_title_cards": 20,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4763,
+      "term": "风雨",
+      "freq": 18,
+      "top5_cards": 18,
+      "raw_title_cards": 30,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4776,
+      "term": "homology",
+      "freq": 17,
+      "top5_cards": 17,
+      "raw_title_cards": 49,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4860,
+      "term": "euclidean",
+      "freq": 15,
+      "top5_cards": 15,
+      "raw_title_cards": 19,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 4913,
+      "term": "centennial",
+      "freq": 14,
+      "top5_cards": 14,
+      "raw_title_cards": 14,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 5033,
+      "term": "many-particle",
+      "freq": 12,
+      "top5_cards": 12,
+      "raw_title_cards": 12,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    },
+    {
+      "id": 5183,
+      "term": "夜行记",
+      "freq": 1,
+      "top5_cards": 1,
+      "raw_title_cards": 1,
+      "geq_top5": true,
+      "ratio_freq_top5": 1.0
+    }
+  ],
+  "cluster": {
+    "18": {
+      "term": "中国",
+      "declared": 323,
+      "recomputed": 357,
+      "match": false,
+      "evidence_cards": 8411
+    },
+    "213": {
+      "term": "健康",
+      "declared": 35,
+      "recomputed": 35,
+      "match": true,
+      "evidence_cards": 356
+    },
+    "288": {
+      "term": "逻辑",
+      "declared": 204,
+      "recomputed": 204,
+      "match": true,
+      "evidence_cards": 215
+    },
+    "299": {
+      "term": "开发实",
+      "declared": 170,
+      "recomputed": 170,
+      "match": true,
+      "evidence_cards": 183
+    },
+    "375": {
+      "term": "politics",
+      "declared": 1,
+      "recomputed": 1,
+      "match": true,
+      "evidence_cards": 501
+    },
+    "623": {
+      "term": "经典",
+      "declared": 268,
+      "recomputed": 268,
+      "match": true,
+      "evidence_cards": 873
+    },
+    "833": {
+      "term": "credit",
+      "declared": 346,
+      "recomputed": 346,
+      "match": true,
+      "evidence_cards": 119
+    },
+    "987": {
+      "term": "spacecraft",
+      "declared": 326,
+      "recomputed": 326,
+      "match": true,
+      "evidence_cards": 55
+    },
+    "1009": {
+      "term": "考古",
+      "declared": 212,
+      "recomputed": 212,
+      "match": true,
+      "evidence_cards": 71
+    },
+    "1015": {
+      "term": "知日",
+      "declared": 281,
+      "recomputed": 281,
+      "match": true,
+      "evidence_cards": 35
+    },
+    "1215": {
+      "term": "叢刊",
+      "declared": 181,
+      "recomputed": 181,
+      "match": true,
+      "evidence_cards": 31
+    },
+    "1222": {
+      "term": "structural",
+      "declared": 214,
+      "recomputed": 214,
+      "match": true,
+      "evidence_cards": 259
+    },
+    "1317": {
+      "term": "waves",
+      "declared": 46,
+      "recomputed": 46,
+      "match": true,
+      "evidence_cards": 142
+    },
+    "1504": {
+      "term": "冲突",
+      "declared": 26,
+      "recomputed": 26,
+      "match": true,
+      "evidence_cards": 103
+    },
+    "1601": {
+      "term": "三维",
+      "declared": 65,
+      "recomputed": 65,
+      "match": true,
+      "evidence_cards": 81
+    },
+    "1794": {
+      "term": "战后",
+      "declared": 246,
+      "recomputed": 246,
+      "match": true,
+      "evidence_cards": 46
+    },
+    "1810": {
+      "term": "pcb",
+      "declared": 306,
+      "recomputed": 306,
+      "match": true,
+      "evidence_cards": 28
+    },
+    "1891": {
+      "term": "批判",
+      "declared": 43,
+      "recomputed": 43,
+      "match": true,
+      "evidence_cards": 64
+    },
+    "1917": {
+      "term": "demystified",
+      "declared": 175,
+      "recomputed": 175,
+      "match": true,
+      "evidence_cards": 43
+    },
+    "2185": {
+      "term": "应用大全",
+      "declared": 249,
+      "recomputed": 249,
+      "match": true,
+      "evidence_cards": 14
+    },
+    "2243": {
+      "term": "histories",
+      "declared": 140,
+      "recomputed": 140,
+      "match": true,
+      "evidence_cards": 59
+    },
+    "2367": {
+      "term": "赏析",
+      "declared": 268,
+      "recomputed": 268,
+      "match": true,
+      "evidence_cards": 20
+    },
+    "2452": {
+      "term": "metaphysics",
+      "declared": 16,
+      "recomputed": 16,
+      "match": true,
+      "evidence_cards": 50
+    },
+    "2477": {
+      "term": "lasers",
+      "declared": 359,
+      "recomputed": 359,
+      "match": true,
+      "evidence_cards": 90
+    },
+    "2543": {
+      "term": "investor",
+      "declared": 322,
+      "recomputed": 322,
+      "match": true,
+      "evidence_cards": 37
+    },
+    "2961": {
+      "term": "西欧",
+      "declared": 110,
+      "recomputed": 110,
+      "match": true,
+      "evidence_cards": 17
+    },
+    "2967": {
+      "term": "funding",
+      "declared": 346,
+      "recomputed": 346,
+      "match": true,
+      "evidence_cards": 16
+    },
+    "3175": {
+      "term": "energetic",
+      "declared": 223,
+      "recomputed": 223,
+      "match": true,
+      "evidence_cards": 29
+    },
+    "3354": {
+      "term": "阴谋",
+      "declared": 162,
+      "recomputed": 162,
+      "match": true,
+      "evidence_cards": 15
+    },
+    "3459": {
+      "term": "expression",
+      "declared": 31,
+      "recomputed": 31,
+      "match": true,
+      "evidence_cards": 39
+    },
+    "3581": {
+      "term": "红外",
+      "declared": 17,
+      "recomputed": 17,
+      "match": true,
+      "evidence_cards": 26
+    },
+    "3593": {
+      "term": "rendering",
+      "declared": 9,
+      "recomputed": 9,
+      "match": true,
+      "evidence_cards": 25
+    },
+    "3613": {
+      "term": "业化",
+      "declared": 369,
+      "recomputed": 369,
+      "match": true,
+      "evidence_cards": 24
+    },
+    "3736": {
+      "term": "interacting",
+      "declared": 11,
+      "recomputed": 11,
+      "match": true,
+      "evidence_cards": 18
+    },
+    "3885": {
+      "term": "sewage",
+      "declared": 158,
+      "recomputed": 158,
+      "match": true,
+      "evidence_cards": 13
+    },
+    "3896": {
+      "term": "front-end",
+      "declared": 195,
+      "recomputed": 195,
+      "match": true,
+      "evidence_cards": 12
+    },
+    "3920": {
+      "term": "婚姻史",
+      "declared": 32,
+      "recomputed": 32,
+      "match": true,
+      "evidence_cards": 8
+    },
+    "3997": {
+      "term": "mediterranean",
+      "declared": 140,
+      "recomputed": 140,
+      "match": true,
+      "evidence_cards": 32
+    },
+    "4125": {
+      "term": "existence",
+      "declared": 313,
+      "recomputed": 313,
+      "match": true,
+      "evidence_cards": 23
+    },
+    "4157": {
+      "term": "quarks",
+      "declared": 202,
+      "recomputed": 202,
+      "match": true,
+      "evidence_cards": 22
+    },
+    "4191": {
+      "term": "奇异",
+      "declared": 14,
+      "recomputed": 14,
+      "match": true,
+      "evidence_cards": 21
+    },
+    "4226": {
+      "term": "charged",
+      "declared": 386,
+      "recomputed": 386,
+      "match": true,
+      "evidence_cards": 19
+    },
+    "4386": {
+      "term": "硅基",
+      "declared": 17,
+      "recomputed": 17,
+      "match": true,
+      "evidence_cards": 16
+    },
+    "4687": {
+      "term": "schrodinger",
+      "declared": 11,
+      "recomputed": 11,
+      "match": true,
+      "evidence_cards": 20
+    },
+    "4763": {
+      "term": "风雨",
+      "declared": 64,
+      "recomputed": 64,
+      "match": true,
+      "evidence_cards": 18
+    },
+    "4776": {
+      "term": "homology",
+      "declared": 16,
+      "recomputed": 16,
+      "match": true,
+      "evidence_cards": 17
+    },
+    "4860": {
+      "term": "euclidean",
+      "declared": 11,
+      "recomputed": 11,
+      "match": true,
+      "evidence_cards": 15
+    },
+    "4913": {
+      "term": "centennial",
+      "declared": 140,
+      "recomputed": 140,
+      "match": true,
+      "evidence_cards": 14
+    },
+    "5033": {
+      "term": "many-particle",
+      "declared": 36,
+      "recomputed": 36,
+      "match": true,
+      "evidence_cards": 12
+    },
+    "5183": {
+      "term": "夜行记",
+      "declared": 377,
+      "recomputed": 377,
+      "match": true,
+      "evidence_cards": 1
+    }
+  },
+  "cls": {
+    "18": {
+      "term": "中国",
+      "declared": "F",
+      "recomputed": "K",
+      "match": false,
+      "evidence_cards": 8039,
+      "fallback_needed": false
+    },
+    "213": {
+      "term": "健康",
+      "declared": "R",
+      "recomputed": "R",
+      "match": true,
+      "evidence_cards": 355,
+      "fallback_needed": false
+    },
+    "288": {
+      "term": "逻辑",
+      "declared": "B",
+      "recomputed": "B",
+      "match": true,
+      "evidence_cards": 215,
+      "fallback_needed": false
+    },
+    "299": {
+      "term": "开发实",
+      "declared": "TP",
+      "recomputed": "TP",
+      "match": true,
+      "evidence_cards": 131,
+      "fallback_needed": false
+    },
+    "375": {
+      "term": "politics",
+      "declared": "D",
+      "recomputed": "D",
+      "match": true,
+      "evidence_cards": 498,
+      "fallback_needed": false
+    },
+    "623": {
+      "term": "经典",
+      "declared": "I",
+      "recomputed": "I",
+      "match": true,
+      "evidence_cards": 750,
+      "fallback_needed": false
+    },
+    "833": {
+      "term": "credit",
+      "declared": "F",
+      "recomputed": "F",
+      "match": true,
+      "evidence_cards": 119,
+      "fallback_needed": false
+    },
+    "987": {
+      "term": "spacecraft",
+      "declared": "V",
+      "recomputed": "V",
+      "match": true,
+      "evidence_cards": 55,
+      "fallback_needed": false
+    },
+    "1009": {
+      "term": "考古",
+      "declared": "K",
+      "recomputed": "K",
+      "match": true,
+      "evidence_cards": 70,
+      "fallback_needed": false
+    },
+    "1015": {
+      "term": "知日",
+      "declared": "G",
+      "recomputed": "G",
+      "match": true,
+      "evidence_cards": 35,
+      "fallback_needed": false
+    },
+    "1215": {
+      "term": "叢刊",
+      "declared": "K",
+      "recomputed": "K",
+      "match": true,
+      "evidence_cards": 20,
+      "fallback_needed": false
+    },
+    "1222": {
+      "term": "structural",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 259,
+      "fallback_needed": false
+    },
+    "1317": {
+      "term": "waves",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 141,
+      "fallback_needed": false
+    },
+    "1504": {
+      "term": "冲突",
+      "declared": "D",
+      "recomputed": "D",
+      "match": true,
+      "evidence_cards": 103,
+      "fallback_needed": false
+    },
+    "1601": {
+      "term": "三维",
+      "declared": "TP",
+      "recomputed": "TP",
+      "match": true,
+      "evidence_cards": 79,
+      "fallback_needed": false
+    },
+    "1794": {
+      "term": "战后",
+      "declared": "D",
+      "recomputed": "D",
+      "match": true,
+      "evidence_cards": 46,
+      "fallback_needed": false
+    },
+    "1810": {
+      "term": "pcb",
+      "declared": "TN",
+      "recomputed": "TN",
+      "match": true,
+      "evidence_cards": 28,
+      "fallback_needed": false
+    },
+    "1891": {
+      "term": "批判",
+      "declared": "B",
+      "recomputed": "B",
+      "match": true,
+      "evidence_cards": 64,
+      "fallback_needed": false
+    },
+    "1917": {
+      "term": "demystified",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 42,
+      "fallback_needed": false
+    },
+    "2185": {
+      "term": "应用大全",
+      "declared": "TP",
+      "recomputed": "TP",
+      "match": true,
+      "evidence_cards": 14,
+      "fallback_needed": false
+    },
+    "2243": {
+      "term": "histories",
+      "declared": "K",
+      "recomputed": "K",
+      "match": true,
+      "evidence_cards": 59,
+      "fallback_needed": false
+    },
+    "2367": {
+      "term": "赏析",
+      "declared": "J",
+      "recomputed": "J",
+      "match": true,
+      "evidence_cards": 11,
+      "fallback_needed": false
+    },
+    "2452": {
+      "term": "metaphysics",
+      "declared": "B",
+      "recomputed": "B",
+      "match": true,
+      "evidence_cards": 50,
+      "fallback_needed": false
+    },
+    "2477": {
+      "term": "lasers",
+      "declared": "TN",
+      "recomputed": "TN",
+      "match": true,
+      "evidence_cards": 90,
+      "fallback_needed": false
+    },
+    "2543": {
+      "term": "investor",
+      "declared": "F",
+      "recomputed": "F",
+      "match": true,
+      "evidence_cards": 37,
+      "fallback_needed": false
+    },
+    "2961": {
+      "term": "西欧",
+      "declared": "K",
+      "recomputed": "K",
+      "match": true,
+      "evidence_cards": 17,
+      "fallback_needed": false
+    },
+    "2967": {
+      "term": "funding",
+      "declared": "F",
+      "recomputed": "F",
+      "match": true,
+      "evidence_cards": 16,
+      "fallback_needed": false
+    },
+    "3175": {
+      "term": "energetic",
+      "declared": "TB",
+      "recomputed": "TB",
+      "match": true,
+      "evidence_cards": 29,
+      "fallback_needed": false
+    },
+    "3354": {
+      "term": "阴谋",
+      "declared": "I",
+      "recomputed": "I",
+      "match": true,
+      "evidence_cards": 15,
+      "fallback_needed": false
+    },
+    "3459": {
+      "term": "expression",
+      "declared": "Q",
+      "recomputed": "Q",
+      "match": true,
+      "evidence_cards": 38,
+      "fallback_needed": false
+    },
+    "3581": {
+      "term": "红外",
+      "declared": "TN",
+      "recomputed": "TN",
+      "match": true,
+      "evidence_cards": 26,
+      "fallback_needed": false
+    },
+    "3593": {
+      "term": "rendering",
+      "declared": "TP",
+      "recomputed": "TP",
+      "match": true,
+      "evidence_cards": 24,
+      "fallback_needed": false
+    },
+    "3613": {
+      "term": "业化",
+      "declared": "F",
+      "recomputed": "F",
+      "match": true,
+      "evidence_cards": 24,
+      "fallback_needed": false
+    },
+    "3736": {
+      "term": "interacting",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 18,
+      "fallback_needed": false
+    },
+    "3885": {
+      "term": "sewage",
+      "declared": "X",
+      "recomputed": "X",
+      "match": true,
+      "evidence_cards": 13,
+      "fallback_needed": false
+    },
+    "3896": {
+      "term": "front-end",
+      "declared": "TN",
+      "recomputed": "TN",
+      "match": true,
+      "evidence_cards": 12,
+      "fallback_needed": false
+    },
+    "3920": {
+      "term": "婚姻史",
+      "declared": "K",
+      "recomputed": "K",
+      "match": true,
+      "evidence_cards": 8,
+      "fallback_needed": false
+    },
+    "3997": {
+      "term": "mediterranean",
+      "declared": "K",
+      "recomputed": "K",
+      "match": true,
+      "evidence_cards": 31,
+      "fallback_needed": false
+    },
+    "4125": {
+      "term": "existence",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 23,
+      "fallback_needed": false
+    },
+    "4157": {
+      "term": "quarks",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 22,
+      "fallback_needed": false
+    },
+    "4191": {
+      "term": "奇异",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 20,
+      "fallback_needed": false
+    },
+    "4226": {
+      "term": "charged",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 19,
+      "fallback_needed": false
+    },
+    "4386": {
+      "term": "硅基",
+      "declared": "TN",
+      "recomputed": "TN",
+      "match": true,
+      "evidence_cards": 16,
+      "fallback_needed": false
+    },
+    "4687": {
+      "term": "schrodinger",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 20,
+      "fallback_needed": false
+    },
+    "4763": {
+      "term": "风雨",
+      "declared": "K",
+      "recomputed": "K",
+      "match": true,
+      "evidence_cards": 17,
+      "fallback_needed": false
+    },
+    "4776": {
+      "term": "homology",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 17,
+      "fallback_needed": false
+    },
+    "4860": {
+      "term": "euclidean",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 15,
+      "fallback_needed": false
+    },
+    "4913": {
+      "term": "centennial",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 14,
+      "fallback_needed": false
+    },
+    "5033": {
+      "term": "many-particle",
+      "declared": "O",
+      "recomputed": "O",
+      "match": true,
+      "evidence_cards": 12,
+      "fallback_needed": false
+    },
+    "5183": {
+      "term": "夜行记",
+      "declared": "I",
+      "recomputed": "I",
+      "match": true,
+      "evidence_cards": 1,
+      "fallback_needed": false
+    }
+  },
+  "summary": {
+    "n": 50,
+    "freq_geq_top5": 50,
+    "freq_geq_top5_rate": 1.0,
+    "freq_eq_top5": 39,
+    "freq_eq_raw_title": 13,
+    "cluster_match": 49,
+    "cluster_match_rate": 0.98,
+    "cls_match": 49,
+    "cls_match_rate": 0.98,
+    "cls_fallback_cases": 0
+  },
+  "full_cluster": {
+    "declared_total": 4838,
+    "recomputable": 4838,
+    "match": 4792,
+    "mismatch_ids": [
+      13,
+      18,
+      91,
+      99,
+      101,
+      145,
+      261,
+      329,
+      337,
+      392,
+      506,
+      523,
+      578,
+      594,
+      675,
+      699,
+      717,
+      732,
+      747,
+      752,
+      785,
+      840,
+      934,
+      1025,
+      1075,
+      1364,
+      1481,
+      1576,
+      1578,
+      1663,
+      1670,
+      1741,
+      1744,
+      1861,
+      1863,
+      2013,
+      2044,
+      2266,
+      2497,
+      3168,
+      3968,
+      4050,
+      4064,
+      4714,
+      5143,
+      5156
+    ],
+    "mismatch_detail": [
+      {
+        "id": 13,
+        "term": "管理",
+        "declared": 136,
+        "recomputed": 330,
+        "declared_votes": 389,
+        "recomputed_votes": 483,
+        "top2": [
+          [
+            330,
+            483
+          ],
+          [
+            136,
+            389
+          ]
+        ]
+      },
+      {
+        "id": 18,
+        "term": "中国",
+        "declared": 323,
+        "recomputed": 357,
+        "declared_votes": 421,
+        "recomputed_votes": 436,
+        "top2": [
+          [
+            357,
+            436
+          ],
+          [
+            323,
+            421
+          ]
+        ]
+      },
+      {
+        "id": 91,
+        "term": "技术",
+        "declared": 310,
+        "recomputed": 272,
+        "declared_votes": 216,
+        "recomputed_votes": 238,
+        "top2": [
+          [
+            272,
+            238
+          ],
+          [
+            159,
+            228
+          ]
+        ]
+      },
+      {
+        "id": 99,
+        "term": "电路",
+        "declared": 306,
+        "recomputed": 388,
+        "declared_votes": 228,
+        "recomputed_votes": 236,
+        "top2": [
+          [
+            388,
+            236
+          ],
+          [
+            306,
+            228
+          ]
+        ]
+      },
+      {
+        "id": 101,
+        "term": "分析",
+        "declared": 37,
+        "recomputed": 194,
+        "declared_votes": 94,
+        "recomputed_votes": 129,
+        "top2": [
+          [
+            194,
+            129
+          ],
+          [
+            66,
+            99
+          ]
+        ]
+      },
+      {
+        "id": 145,
+        "term": "应用",
+        "declared": 120,
+        "recomputed": 61,
+        "declared_votes": 40,
+        "recomputed_votes": 129,
+        "top2": [
+          [
+            61,
+            129
+          ],
+          [
+            310,
+            129
+          ]
+        ]
+      },
+      {
+        "id": 261,
+        "term": "world",
+        "declared": 399,
+        "recomputed": 236,
+        "declared_votes": 96,
+        "recomputed_votes": 104,
+        "top2": [
+          [
+            236,
+            104
+          ],
+          [
+            399,
+            96
+          ]
+        ]
+      },
+      {
+        "id": 329,
+        "term": "公司",
+        "declared": 227,
+        "recomputed": 131,
+        "declared_votes": 62,
+        "recomputed_votes": 75,
+        "top2": [
+          [
+            131,
+            75
+          ],
+          [
+            227,
+            62
+          ]
+        ]
+      },
+      {
+        "id": 337,
+        "term": "语言",
+        "declared": 290,
+        "recomputed": 72,
+        "declared_votes": 82,
+        "recomputed_votes": 85,
+        "top2": [
+          [
+            72,
+            85
+          ],
+          [
+            290,
+            82
+          ]
+        ]
+      },
+      {
+        "id": 392,
+        "term": "computational",
+        "declared": 383,
+        "recomputed": 88,
+        "declared_votes": 77,
+        "recomputed_votes": 78,
+        "top2": [
+          [
+            88,
+            78
+          ],
+          [
+            383,
+            77
+          ]
+        ]
+      },
+      {
+        "id": 506,
+        "term": "practice",
+        "declared": 78,
+        "recomputed": 50,
+        "declared_votes": 53,
+        "recomputed_votes": 56,
+        "top2": [
+          [
+            50,
+            56
+          ],
+          [
+            78,
+            53
+          ]
+        ]
+      },
+      {
+        "id": 523,
+        "term": "组织",
+        "declared": 227,
+        "recomputed": 135,
+        "declared_votes": 48,
+        "recomputed_votes": 52,
+        "top2": [
+          [
+            135,
+            52
+          ],
+          [
+            227,
+            48
+          ]
+        ]
+      },
+      {
+        "id": 578,
+        "term": "principles",
+        "declared": 11,
+        "recomputed": 59,
+        "declared_votes": 45,
+        "recomputed_votes": 50,
+        "top2": [
+          [
+            59,
+            50
+          ],
+          [
+            11,
+            45
+          ]
+        ]
+      },
+      {
+        "id": 594,
+        "term": "dynamics",
+        "declared": 167,
+        "recomputed": 214,
+        "declared_votes": 29,
+        "recomputed_votes": 35,
+        "top2": [
+          [
+            214,
+            35
+          ],
+          [
+            167,
+            29
+          ]
+        ]
+      },
+      {
+        "id": 675,
+        "term": "模拟",
+        "declared": 306,
+        "recomputed": 161,
+        "declared_votes": 35,
+        "recomputed_votes": 37,
+        "top2": [
+          [
+            161,
+            37
+          ],
+          [
+            306,
+            35
+          ]
+        ]
+      },
+      {
+        "id": 699,
+        "term": "chronicle",
+        "declared": 248,
+        "recomputed": 289,
+        "declared_votes": 2,
+        "recomputed_votes": 5,
+        "top2": [
+          [
+            289,
+            5
+          ],
+          [
+            62,
+            3
+          ]
+        ]
+      },
+      {
+        "id": 717,
+        "term": "circuits",
+        "declared": 195,
+        "recomputed": 306,
+        "declared_votes": 37,
+        "recomputed_votes": 38,
+        "top2": [
+          [
+            306,
+            38
+          ],
+          [
+            195,
+            37
+          ]
+        ]
+      },
+      {
+        "id": 732,
+        "term": "naval",
+        "declared": 248,
+        "recomputed": 74,
+        "declared_votes": 0,
+        "recomputed_votes": 4,
+        "top2": [
+          [
+            74,
+            4
+          ],
+          [
+            236,
+            2
+          ]
+        ]
+      },
+      {
+        "id": 747,
+        "term": "royal",
+        "declared": 248,
+        "recomputed": 385,
+        "declared_votes": 0,
+        "recomputed_votes": 6,
+        "top2": [
+          [
+            385,
+            6
+          ],
+          [
+            236,
+            3
+          ]
+        ]
+      },
+      {
+        "id": 752,
+        "term": "algorithms",
+        "declared": 253,
+        "recomputed": 177,
+        "declared_votes": 35,
+        "recomputed_votes": 36,
+        "top2": [
+          [
+            177,
+            36
+          ],
+          [
+            253,
+            35
+          ]
+        ]
+      },
+      {
+        "id": 785,
+        "term": "capital",
+        "declared": 305,
+        "recomputed": 131,
+        "declared_votes": 35,
+        "recomputed_votes": 35,
+        "top2": [
+          [
+            131,
+            35
+          ],
+          [
+            305,
+            35
+          ]
+        ]
+      },
+      {
+        "id": 840,
+        "term": "structures",
+        "declared": 11,
+        "recomputed": 177,
+        "declared_votes": 31,
+        "recomputed_votes": 33,
+        "top2": [
+          [
+            177,
+            33
+          ],
+          [
+            11,
+            31
+          ]
+        ]
+      },
+      {
+        "id": 934,
+        "term": "sustainable",
+        "declared": 85,
+        "recomputed": 266,
+        "declared_votes": 28,
+        "recomputed_votes": 29,
+        "top2": [
+          [
+            266,
+            29
+          ],
+          [
+            85,
+            28
+          ]
+        ]
+      },
+      {
+        "id": 1025,
+        "term": "semiconductor",
+        "declared": 165,
+        "recomputed": 36,
+        "declared_votes": 24,
+        "recomputed_votes": 24,
+        "top2": [
+          [
+            36,
+            24
+          ],
+          [
+            165,
+            24
+          ]
+        ]
+      },
+      {
+        "id": 1075,
+        "term": "neural",
+        "declared": 253,
+        "recomputed": 132,
+        "declared_votes": 21,
+        "recomputed_votes": 22,
+        "top2": [
+          [
+            132,
+            22
+          ],
+          [
+            253,
+            21
+          ]
+        ]
+      },
+      {
+        "id": 1364,
+        "term": "regulation",
+        "declared": 176,
+        "recomputed": 346,
+        "declared_votes": 15,
+        "recomputed_votes": 16,
+        "top2": [
+          [
+            346,
+            16
+          ],
+          [
+            176,
+            15
+          ]
+        ]
+      },
+      {
+        "id": 1481,
+        "term": "decisions",
+        "declared": 196,
+        "recomputed": 1,
+        "declared_votes": 7,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            1,
+            8
+          ],
+          [
+            196,
+            7
+          ]
+        ]
+      },
+      {
+        "id": 1576,
+        "term": "group",
+        "declared": 214,
+        "recomputed": 391,
+        "declared_votes": 9,
+        "recomputed_votes": 10,
+        "top2": [
+          [
+            391,
+            10
+          ],
+          [
+            214,
+            9
+          ]
+        ]
+      },
+      {
+        "id": 1578,
+        "term": "geometric",
+        "declared": 11,
+        "recomputed": 214,
+        "declared_votes": 13,
+        "recomputed_votes": 14,
+        "top2": [
+          [
+            214,
+            14
+          ],
+          [
+            11,
+            13
+          ]
+        ]
+      },
+      {
+        "id": 1663,
+        "term": "solids",
+        "declared": 386,
+        "recomputed": 391,
+        "declared_votes": 11,
+        "recomputed_votes": 12,
+        "top2": [
+          [
+            391,
+            12
+          ],
+          [
+            386,
+            11
+          ]
+        ]
+      },
+      {
+        "id": 1670,
+        "term": "algebras",
+        "declared": 289,
+        "recomputed": 154,
+        "declared_votes": 11,
+        "recomputed_votes": 11,
+        "top2": [
+          [
+            154,
+            11
+          ],
+          [
+            289,
+            11
+          ]
+        ]
+      },
+      {
+        "id": 1741,
+        "term": "solid",
+        "declared": 386,
+        "recomputed": 167,
+        "declared_votes": 10,
+        "recomputed_votes": 10,
+        "top2": [
+          [
+            167,
+            10
+          ],
+          [
+            214,
+            10
+          ]
+        ]
+      },
+      {
+        "id": 1744,
+        "term": "protection",
+        "declared": 301,
+        "recomputed": 15,
+        "declared_votes": 7,
+        "recomputed_votes": 7,
+        "top2": [
+          [
+            15,
+            7
+          ],
+          [
+            301,
+            7
+          ]
+        ]
+      },
+      {
+        "id": 1861,
+        "term": "selection",
+        "declared": 1,
+        "recomputed": 239,
+        "declared_votes": 0,
+        "recomputed_votes": 7,
+        "top2": [
+          [
+            239,
+            7
+          ],
+          [
+            268,
+            7
+          ]
+        ]
+      },
+      {
+        "id": 1863,
+        "term": "random",
+        "declared": 214,
+        "recomputed": 2,
+        "declared_votes": 8,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            2,
+            8
+          ],
+          [
+            214,
+            8
+          ]
+        ]
+      },
+      {
+        "id": 2013,
+        "term": "behavior",
+        "declared": 1,
+        "recomputed": 75,
+        "declared_votes": 8,
+        "recomputed_votes": 9,
+        "top2": [
+          [
+            75,
+            9
+          ],
+          [
+            78,
+            9
+          ]
+        ]
+      },
+      {
+        "id": 2044,
+        "term": "verification",
+        "declared": 195,
+        "recomputed": 303,
+        "declared_votes": 8,
+        "recomputed_votes": 9,
+        "top2": [
+          [
+            303,
+            9
+          ],
+          [
+            195,
+            8
+          ]
+        ]
+      },
+      {
+        "id": 2266,
+        "term": "deployment",
+        "declared": 3,
+        "recomputed": 132,
+        "declared_votes": 7,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            132,
+            8
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      },
+      {
+        "id": 2497,
+        "term": "我国",
+        "declared": 229,
+        "recomputed": 131,
+        "declared_votes": 6,
+        "recomputed_votes": 6,
+        "top2": [
+          [
+            131,
+            6
+          ],
+          [
+            229,
+            6
+          ]
+        ]
+      },
+      {
+        "id": 3168,
+        "term": "公元",
+        "declared": 104,
+        "recomputed": 62,
+        "declared_votes": 3,
+        "recomputed_votes": 4,
+        "top2": [
+          [
+            62,
+            4
+          ],
+          [
+            104,
+            3
+          ]
+        ]
+      },
+      {
+        "id": 3968,
+        "term": "学概",
+        "declared": 167,
+        "recomputed": 357,
+        "declared_votes": 2,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            357,
+            3
+          ],
+          [
+            41,
+            2
+          ]
+        ]
+      },
+      {
+        "id": 4050,
+        "term": "再生",
+        "declared": 133,
+        "recomputed": 216,
+        "declared_votes": 2,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            216,
+            3
+          ],
+          [
+            272,
+            3
+          ]
+        ]
+      },
+      {
+        "id": 4064,
+        "term": "supersymmetry",
+        "declared": 107,
+        "recomputed": 214,
+        "declared_votes": 2,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            214,
+            3
+          ],
+          [
+            391,
+            3
+          ]
+        ]
+      },
+      {
+        "id": 4714,
+        "term": "人生活",
+        "declared": 12,
+        "recomputed": 55,
+        "declared_votes": 2,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            55,
+            3
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      {
+        "id": 5143,
+        "term": "统计算",
+        "declared": 90,
+        "recomputed": 389,
+        "declared_votes": 1,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            389,
+            2
+          ],
+          [
+            90,
+            1
+          ]
+        ]
+      },
+      {
+        "id": 5156,
+        "term": "原理论",
+        "declared": 139,
+        "recomputed": 94,
+        "declared_votes": 1,
+        "recomputed_votes": 1,
+        "top2": [
+          [
+            94,
+            1
+          ],
+          [
+            139,
+            1
+          ]
+        ]
+      }
+    ],
+    "match_rate": 0.99049
+  },
+  "full_cls": {
+    "declared_total": 4838,
+    "with_cls1_evidence": 4832,
+    "match": 4744,
+    "fallback_used": 6,
+    "mismatch_ids": [
+      18,
+      94,
+      95,
+      137,
+      169,
+      182,
+      337,
+      365,
+      373,
+      387,
+      395,
+      434,
+      444,
+      475,
+      506,
+      606,
+      641,
+      699,
+      702,
+      718,
+      719,
+      744,
+      747,
+      864,
+      874,
+      1016,
+      1087,
+      1088,
+      1178,
+      1256,
+      1283,
+      1290,
+      1294,
+      1295,
+      1302,
+      1336,
+      1383,
+      1488,
+      1628,
+      1676,
+      1744,
+      1843,
+      1846,
+      1848,
+      1850,
+      1861,
+      1881,
+      1901,
+      1976,
+      1990,
+      2013,
+      2089,
+      2190,
+      2194,
+      2317,
+      2381,
+      2419,
+      2652,
+      2743,
+      2895,
+      2977,
+      2999,
+      3012,
+      3032,
+      3196,
+      3270,
+      3398,
+      3434,
+      3441,
+      3571,
+      3815,
+      3825,
+      3902,
+      3926,
+      3948,
+      4049,
+      4050,
+      4217,
+      4292,
+      4403,
+      4542,
+      4693,
+      4696,
+      4736,
+      4801,
+      4893,
+      4903,
+      4996
+    ],
+    "mismatch_detail": [
+      {
+        "id": 18,
+        "term": "中国",
+        "declared": "F",
+        "recomputed": "K",
+        "declared_votes": 1219,
+        "recomputed_votes": 1396,
+        "top2": [
+          [
+            "K",
+            1396
+          ],
+          [
+            "F",
+            1219
+          ]
+        ]
+      },
+      {
+        "id": 94,
+        "term": "现代",
+        "declared": "F",
+        "recomputed": "B",
+        "declared_votes": 235,
+        "recomputed_votes": 239,
+        "top2": [
+          [
+            "B",
+            239
+          ],
+          [
+            "F",
+            235
+          ]
+        ]
+      },
+      {
+        "id": 95,
+        "term": "集成",
+        "declared": "TN",
+        "recomputed": "J",
+        "declared_votes": 154,
+        "recomputed_votes": 180,
+        "top2": [
+          [
+            "J",
+            180
+          ],
+          [
+            "TN",
+            154
+          ]
+        ]
+      },
+      {
+        "id": 137,
+        "term": "结构",
+        "declared": "F",
+        "recomputed": "TP",
+        "declared_votes": 168,
+        "recomputed_votes": 174,
+        "top2": [
+          [
+            "TP",
+            174
+          ],
+          [
+            "F",
+            168
+          ]
+        ]
+      },
+      {
+        "id": 169,
+        "term": "化学",
+        "declared": "Q",
+        "recomputed": "TQ",
+        "declared_votes": 128,
+        "recomputed_votes": 140,
+        "top2": [
+          [
+            "TQ",
+            140
+          ],
+          [
+            "Q",
+            128
+          ]
+        ]
+      },
+      {
+        "id": 182,
+        "term": "annual",
+        "declared": "D",
+        "recomputed": "I",
+        "declared_votes": 61,
+        "recomputed_votes": 62,
+        "top2": [
+          [
+            "F",
+            62
+          ],
+          [
+            "I",
+            62
+          ]
+        ]
+      },
+      {
+        "id": 337,
+        "term": "语言",
+        "declared": "TP",
+        "recomputed": "H",
+        "declared_votes": 219,
+        "recomputed_votes": 227,
+        "top2": [
+          [
+            "H",
+            227
+          ],
+          [
+            "TP",
+            219
+          ]
+        ]
+      },
+      {
+        "id": 365,
+        "term": "palace",
+        "declared": "K",
+        "recomputed": "I",
+        "declared_votes": 9,
+        "recomputed_votes": 10,
+        "top2": [
+          [
+            "I",
+            10
+          ],
+          [
+            "K",
+            9
+          ]
+        ]
+      },
+      {
+        "id": 373,
+        "term": "novel",
+        "declared": "K",
+        "recomputed": "I",
+        "declared_votes": 1,
+        "recomputed_votes": 77,
+        "top2": [
+          [
+            "I",
+            77
+          ],
+          [
+            "O",
+            24
+          ]
+        ]
+      },
+      {
+        "id": 387,
+        "term": "制度",
+        "declared": "F",
+        "recomputed": "D",
+        "declared_votes": 291,
+        "recomputed_votes": 314,
+        "top2": [
+          [
+            "D",
+            314
+          ],
+          [
+            "F",
+            291
+          ]
+        ]
+      },
+      {
+        "id": 395,
+        "term": "authoritative",
+        "declared": "O",
+        "recomputed": "I",
+        "declared_votes": 0,
+        "recomputed_votes": 39,
+        "top2": [
+          [
+            "I",
+            39
+          ],
+          [
+            "K",
+            5
+          ]
+        ]
+      },
+      {
+        "id": 434,
+        "term": "united",
+        "declared": "TN",
+        "recomputed": "D",
+        "declared_votes": 19,
+        "recomputed_votes": 45,
+        "top2": [
+          [
+            "D",
+            45
+          ],
+          [
+            "F",
+            32
+          ]
+        ]
+      },
+      {
+        "id": 444,
+        "term": "text",
+        "declared": "O",
+        "recomputed": "TP",
+        "declared_votes": 12,
+        "recomputed_votes": 41,
+        "top2": [
+          [
+            "TP",
+            41
+          ],
+          [
+            "I",
+            31
+          ]
+        ]
+      },
+      {
+        "id": 475,
+        "term": "当代",
+        "declared": "D",
+        "recomputed": "I",
+        "declared_votes": 165,
+        "recomputed_votes": 171,
+        "top2": [
+          [
+            "I",
+            171
+          ],
+          [
+            "D",
+            165
+          ]
+        ]
+      },
+      {
+        "id": 506,
+        "term": "practice",
+        "declared": "F",
+        "recomputed": "R",
+        "declared_votes": 139,
+        "recomputed_votes": 142,
+        "top2": [
+          [
+            "R",
+            142
+          ],
+          [
+            "F",
+            139
+          ]
+        ]
+      },
+      {
+        "id": 606,
+        "term": "stories",
+        "declared": "VI",
+        "recomputed": "I",
+        "declared_votes": 26,
+        "recomputed_votes": 87,
+        "top2": [
+          [
+            "I",
+            87
+          ],
+          [
+            "OC",
+            28
+          ]
+        ]
+      },
+      {
+        "id": 641,
+        "term": "marine",
+        "declared": "Q",
+        "recomputed": "P",
+        "declared_votes": 88,
+        "recomputed_votes": 90,
+        "top2": [
+          [
+            "P",
+            90
+          ],
+          [
+            "Q",
+            88
+          ]
+        ]
+      },
+      {
+        "id": 699,
+        "term": "chronicle",
+        "declared": "E",
+        "recomputed": "K",
+        "declared_votes": 0,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "K",
+            8
+          ],
+          [
+            "OC",
+            4
+          ]
+        ]
+      },
+      {
+        "id": 702,
+        "term": "concepts",
+        "declared": "TP",
+        "recomputed": "O",
+        "declared_votes": 110,
+        "recomputed_votes": 113,
+        "top2": [
+          [
+            "O",
+            113
+          ],
+          [
+            "TP",
+            110
+          ]
+        ]
+      },
+      {
+        "id": 718,
+        "term": "collection",
+        "declared": "K",
+        "recomputed": "J",
+        "declared_votes": 19,
+        "recomputed_votes": 42,
+        "top2": [
+          [
+            "J",
+            42
+          ],
+          [
+            "O",
+            21
+          ]
+        ]
+      },
+      {
+        "id": 719,
+        "term": "treatment",
+        "declared": "R",
+        "recomputed": "X",
+        "declared_votes": 107,
+        "recomputed_votes": 116,
+        "top2": [
+          [
+            "X",
+            116
+          ],
+          [
+            "R",
+            107
+          ]
+        ]
+      },
+      {
+        "id": 744,
+        "term": "backgrounds",
+        "declared": "O",
+        "recomputed": "I",
+        "declared_votes": 1,
+        "recomputed_votes": 27,
+        "top2": [
+          [
+            "I",
+            27
+          ],
+          [
+            "K",
+            6
+          ]
+        ]
+      },
+      {
+        "id": 747,
+        "term": "royal",
+        "declared": "E",
+        "recomputed": "K",
+        "declared_votes": 5,
+        "recomputed_votes": 6,
+        "top2": [
+          [
+            "K",
+            6
+          ],
+          [
+            "E",
+            5
+          ]
+        ]
+      },
+      {
+        "id": 864,
+        "term": "国大",
+        "declared": "K",
+        "recomputed": "G",
+        "declared_votes": 46,
+        "recomputed_votes": 48,
+        "top2": [
+          [
+            "G",
+            48
+          ],
+          [
+            "K",
+            46
+          ]
+        ]
+      },
+      {
+        "id": 874,
+        "term": "图典",
+        "declared": "K",
+        "recomputed": "Q",
+        "declared_votes": 6,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "Q",
+            8
+          ],
+          [
+            "K",
+            6
+          ]
+        ]
+      },
+      {
+        "id": 1016,
+        "term": "industrial",
+        "declared": "TP",
+        "recomputed": "TB",
+        "declared_votes": 61,
+        "recomputed_votes": 62,
+        "top2": [
+          [
+            "TB",
+            62
+          ],
+          [
+            "TP",
+            61
+          ]
+        ]
+      },
+      {
+        "id": 1087,
+        "term": "collections",
+        "declared": "K",
+        "recomputed": "G",
+        "declared_votes": 4,
+        "recomputed_votes": 10,
+        "top2": [
+          [
+            "G",
+            10
+          ],
+          [
+            "K",
+            4
+          ]
+        ]
+      },
+      {
+        "id": 1088,
+        "term": "compendium",
+        "declared": "K",
+        "recomputed": "Q",
+        "declared_votes": 1,
+        "recomputed_votes": 4,
+        "top2": [
+          [
+            "Q",
+            4
+          ],
+          [
+            "D",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 1178,
+        "term": "女王",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 8,
+        "recomputed_votes": 9,
+        "top2": [
+          [
+            "K",
+            9
+          ],
+          [
+            "I",
+            8
+          ]
+        ]
+      },
+      {
+        "id": 1256,
+        "term": "beethoven",
+        "declared": "I",
+        "recomputed": "J",
+        "declared_votes": 0,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "J",
+            8
+          ],
+          [
+            "K",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 1283,
+        "term": "paintings",
+        "declared": "K",
+        "recomputed": "J",
+        "declared_votes": 2,
+        "recomputed_votes": 20,
+        "top2": [
+          [
+            "J",
+            20
+          ],
+          [
+            "I",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 1290,
+        "term": "歷代",
+        "declared": "J",
+        "recomputed": "D",
+        "declared_votes": 4,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "D",
+            8
+          ],
+          [
+            "I",
+            7
+          ]
+        ]
+      },
+      {
+        "id": 1294,
+        "term": "海派",
+        "declared": "J",
+        "recomputed": "G",
+        "declared_votes": 1,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            "G",
+            3
+          ],
+          [
+            "I",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 1295,
+        "term": "代表",
+        "declared": "J",
+        "recomputed": "B",
+        "declared_votes": 1,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "B",
+            2
+          ],
+          [
+            "D",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 1302,
+        "term": "representatives",
+        "declared": "J",
+        "recomputed": "F",
+        "declared_votes": 0,
+        "recomputed_votes": 1,
+        "top2": [
+          [
+            "D",
+            1
+          ],
+          [
+            "F",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 1336,
+        "term": "总统",
+        "declared": "D",
+        "recomputed": "K",
+        "declared_votes": 9,
+        "recomputed_votes": 12,
+        "top2": [
+          [
+            "K",
+            12
+          ],
+          [
+            "D",
+            9
+          ]
+        ]
+      },
+      {
+        "id": 1383,
+        "term": "性能",
+        "declared": "TP",
+        "recomputed": "TB",
+        "declared_votes": 13,
+        "recomputed_votes": 16,
+        "top2": [
+          [
+            "TB",
+            16
+          ],
+          [
+            "TP",
+            13
+          ]
+        ]
+      },
+      {
+        "id": 1488,
+        "term": "integration",
+        "declared": "TP",
+        "recomputed": "TN",
+        "declared_votes": 36,
+        "recomputed_votes": 37,
+        "top2": [
+          [
+            "TN",
+            37
+          ],
+          [
+            "TP",
+            36
+          ]
+        ]
+      },
+      {
+        "id": 1628,
+        "term": "总动员",
+        "declared": "I",
+        "recomputed": "TP",
+        "declared_votes": 0,
+        "recomputed_votes": 7,
+        "top2": [
+          [
+            "TP",
+            7
+          ],
+          [
+            "H",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 1676,
+        "term": "轻松",
+        "declared": "H",
+        "recomputed": "TP",
+        "declared_votes": 9,
+        "recomputed_votes": 12,
+        "top2": [
+          [
+            "TP",
+            12
+          ],
+          [
+            "TN",
+            10
+          ]
+        ]
+      },
+      {
+        "id": 1744,
+        "term": "protection",
+        "declared": "D",
+        "recomputed": "TP",
+        "declared_votes": 21,
+        "recomputed_votes": 24,
+        "top2": [
+          [
+            "TP",
+            24
+          ],
+          [
+            "D",
+            21
+          ]
+        ]
+      },
+      {
+        "id": 1843,
+        "term": "百态",
+        "declared": "I",
+        "recomputed": "D",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "D",
+            2
+          ],
+          [
+            "J",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 1846,
+        "term": "木雕",
+        "declared": "I",
+        "recomputed": "J",
+        "declared_votes": 0,
+        "recomputed_votes": 1,
+        "top2": [
+          [
+            "G",
+            1
+          ],
+          [
+            "J",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 1848,
+        "term": "symphonies",
+        "declared": "I",
+        "recomputed": "J",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "J",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 1850,
+        "term": "guanzhong",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "K",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 1861,
+        "term": "selection",
+        "declared": "D",
+        "recomputed": "I",
+        "declared_votes": 2,
+        "recomputed_votes": 13,
+        "top2": [
+          [
+            "F",
+            13
+          ],
+          [
+            "I",
+            13
+          ]
+        ]
+      },
+      {
+        "id": 1881,
+        "term": "adventures",
+        "declared": "VI",
+        "recomputed": "K",
+        "declared_votes": 3,
+        "recomputed_votes": 9,
+        "top2": [
+          [
+            "I",
+            9
+          ],
+          [
+            "K",
+            9
+          ]
+        ]
+      },
+      {
+        "id": 1901,
+        "term": "英文",
+        "declared": "I",
+        "recomputed": "H",
+        "declared_votes": 1,
+        "recomputed_votes": 20,
+        "top2": [
+          [
+            "H",
+            20
+          ],
+          [
+            "A",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 1976,
+        "term": "善本",
+        "declared": "K",
+        "recomputed": "I",
+        "declared_votes": 0,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "I",
+            8
+          ],
+          [
+            "F",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 1990,
+        "term": "brahms",
+        "declared": "I",
+        "recomputed": "J",
+        "declared_votes": 0,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            "J",
+            3
+          ],
+          [
+            "K",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 2013,
+        "term": "behavior",
+        "declared": "C",
+        "recomputed": "F",
+        "declared_votes": 38,
+        "recomputed_votes": 38,
+        "top2": [
+          [
+            "C",
+            38
+          ],
+          [
+            "F",
+            38
+          ]
+        ]
+      },
+      {
+        "id": 2089,
+        "term": "大传",
+        "declared": "K",
+        "recomputed": "B",
+        "declared_votes": 4,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "B",
+            8
+          ],
+          [
+            "I",
+            7
+          ]
+        ]
+      },
+      {
+        "id": 2190,
+        "term": "requiem",
+        "declared": "I",
+        "recomputed": "VI",
+        "declared_votes": 1,
+        "recomputed_votes": 1,
+        "top2": [
+          [
+            "D",
+            1
+          ],
+          [
+            "I",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 2194,
+        "term": "陈独秀",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 0,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            "K",
+            3
+          ],
+          [
+            "D",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 2317,
+        "term": "impossible",
+        "declared": "K",
+        "recomputed": "O",
+        "declared_votes": 1,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "B",
+            2
+          ],
+          [
+            "C",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 2381,
+        "term": "中英文对照",
+        "declared": "I",
+        "recomputed": "F",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "F",
+            2
+          ],
+          [
+            "D",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 2419,
+        "term": "specimens",
+        "declared": "K",
+        "recomputed": "TH",
+        "declared_votes": 0,
+        "recomputed_votes": 1,
+        "top2": [
+          [
+            "O",
+            1
+          ],
+          [
+            "Q",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 2652,
+        "term": "concert",
+        "declared": "I",
+        "recomputed": "J",
+        "declared_votes": 0,
+        "recomputed_votes": 5,
+        "top2": [
+          [
+            "J",
+            5
+          ],
+          [
+            "VI",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 2743,
+        "term": "海外",
+        "declared": "K",
+        "recomputed": "I",
+        "declared_votes": 4,
+        "recomputed_votes": 10,
+        "top2": [
+          [
+            "D",
+            10
+          ],
+          [
+            "I",
+            10
+          ]
+        ]
+      },
+      {
+        "id": 2895,
+        "term": "康熙",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 2,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "K",
+            8
+          ],
+          [
+            "H",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 2977,
+        "term": "prejudice",
+        "declared": "B",
+        "recomputed": "I",
+        "declared_votes": 1,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "H",
+            2
+          ],
+          [
+            "I",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 2999,
+        "term": "求生",
+        "declared": "I",
+        "recomputed": "Q",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "K",
+            2
+          ],
+          [
+            "Q",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 3012,
+        "term": "handmade",
+        "declared": "I",
+        "recomputed": "J",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "J",
+            2
+          ],
+          [
+            "TS",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 3032,
+        "term": "圖書館藏",
+        "declared": "J",
+        "recomputed": "Z",
+        "declared_votes": 0,
+        "recomputed_votes": 1,
+        "top2": [
+          [
+            "G",
+            1
+          ],
+          [
+            "K",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 3196,
+        "term": "catalogue",
+        "declared": "K",
+        "recomputed": "J",
+        "declared_votes": 0,
+        "recomputed_votes": 4,
+        "top2": [
+          [
+            "J",
+            4
+          ],
+          [
+            "G",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 3270,
+        "term": "个关",
+        "declared": "B",
+        "recomputed": "R",
+        "declared_votes": 3,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            "B",
+            3
+          ],
+          [
+            "F",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 3398,
+        "term": "首饰",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 0,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            "J",
+            3
+          ],
+          [
+            "K",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 3434,
+        "term": "和他",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 7,
+        "recomputed_votes": 11,
+        "top2": [
+          [
+            "K",
+            11
+          ],
+          [
+            "I",
+            7
+          ]
+        ]
+      },
+      {
+        "id": 3441,
+        "term": "invisible",
+        "declared": "B",
+        "recomputed": "I",
+        "declared_votes": 0,
+        "recomputed_votes": 7,
+        "top2": [
+          [
+            "I",
+            7
+          ],
+          [
+            "F",
+            5
+          ]
+        ]
+      },
+      {
+        "id": 3571,
+        "term": "treasures",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 2,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "K",
+            8
+          ],
+          [
+            "I",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 3815,
+        "term": "舌尖上",
+        "declared": "I",
+        "recomputed": "TS",
+        "declared_votes": 2,
+        "recomputed_votes": 4,
+        "top2": [
+          [
+            "TS",
+            4
+          ],
+          [
+            "I",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 3825,
+        "term": "furniture",
+        "declared": "K",
+        "recomputed": "TS",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "J",
+            2
+          ],
+          [
+            "TS",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 3902,
+        "term": "migrations",
+        "declared": "Q",
+        "recomputed": "D",
+        "declared_votes": 0,
+        "recomputed_votes": 4,
+        "top2": [
+          [
+            "D",
+            4
+          ],
+          [
+            "G",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 3926,
+        "term": "牛棚",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 0,
+        "recomputed_votes": 1,
+        "top2": [
+          [
+            "C",
+            1
+          ],
+          [
+            "K",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 3948,
+        "term": "关系",
+        "declared": "F",
+        "recomputed": "C",
+        "declared_votes": 7,
+        "recomputed_votes": 8,
+        "top2": [
+          [
+            "C",
+            8
+          ],
+          [
+            "D",
+            7
+          ]
+        ]
+      },
+      {
+        "id": 4049,
+        "term": "underground",
+        "declared": "D",
+        "recomputed": "I",
+        "declared_votes": 2,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            "I",
+            3
+          ],
+          [
+            "D",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 4050,
+        "term": "再生",
+        "declared": "R",
+        "recomputed": "I",
+        "declared_votes": 4,
+        "recomputed_votes": 5,
+        "top2": [
+          [
+            "I",
+            5
+          ],
+          [
+            "R",
+            4
+          ]
+        ]
+      },
+      {
+        "id": 4217,
+        "term": "英对照",
+        "declared": "H",
+        "recomputed": "K",
+        "declared_votes": 2,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "H",
+            2
+          ],
+          [
+            "K",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 4292,
+        "term": "奥巴马",
+        "declared": "I",
+        "recomputed": "D",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "D",
+            2
+          ],
+          [
+            "C",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 4403,
+        "term": "exceptional",
+        "declared": "K",
+        "recomputed": "O",
+        "declared_votes": 0,
+        "recomputed_votes": 4,
+        "top2": [
+          [
+            "O",
+            4
+          ],
+          [
+            "B",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 4542,
+        "term": "pan",
+        "declared": "J",
+        "recomputed": "OC",
+        "declared_votes": 0,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "OC",
+            2
+          ],
+          [
+            "R",
+            1
+          ]
+        ]
+      },
+      {
+        "id": 4693,
+        "term": "自传",
+        "declared": "Q",
+        "recomputed": "K",
+        "declared_votes": 0,
+        "recomputed_votes": 4,
+        "top2": [
+          [
+            "K",
+            4
+          ],
+          [
+            "B",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 4696,
+        "term": "钻石",
+        "declared": "I",
+        "recomputed": "TS",
+        "declared_votes": 2,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "F",
+            2
+          ],
+          [
+            "I",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 4736,
+        "term": "fortran",
+        "declared": "O",
+        "recomputed": "TP",
+        "declared_votes": 2,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "O",
+            2
+          ],
+          [
+            "TP",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 4801,
+        "term": "语版",
+        "declared": "TP",
+        "recomputed": "Q",
+        "declared_votes": 0,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            "H",
+            3
+          ],
+          [
+            "Q",
+            3
+          ]
+        ]
+      },
+      {
+        "id": 4893,
+        "term": "完整",
+        "declared": "I",
+        "recomputed": "TN",
+        "declared_votes": 2,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "B",
+            2
+          ],
+          [
+            "I",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 4903,
+        "term": "麦克",
+        "declared": "I",
+        "recomputed": "K",
+        "declared_votes": 0,
+        "recomputed_votes": 3,
+        "top2": [
+          [
+            "K",
+            3
+          ],
+          [
+            "D",
+            2
+          ]
+        ]
+      },
+      {
+        "id": 4996,
+        "term": "accelerated",
+        "declared": "O",
+        "recomputed": "TB",
+        "declared_votes": 1,
+        "recomputed_votes": 2,
+        "top2": [
+          [
+            "TB",
+            2
+          ],
+          [
+            "F",
+            1
+          ]
+        ]
+      }
+    ],
+    "match_rate": 0.98179
+  },
+  "exposure": {
+    "cluster": {
+      "mismatch_nodes": 46,
+      "pairs_incident": 19033,
+      "pairs_incident_with_same_cluster_bonus": 246,
+      "distinct_pairs_total": 330426,
+      "share_of_pairs": 0.0576
+    },
+    "cls": {
+      "mismatch_nodes": 88,
+      "pairs_incident": 15674,
+      "pairs_incident_with_same_cluster_bonus": 252,
+      "distinct_pairs_total": 330426,
+      "share_of_pairs": 0.04744
+    },
+    "note": "cluster/cls 字段同时被 P2 同簇加成(②)与 P3 冻结门槛 cluster_or_cls 使用（topic_edges.py: ncl/ncls 直读 nodes.json）"
+  },
+  "raw_evidence_check": {
+    "18": {
+      "term": "中国",
+      "declared_cluster": 323,
+      "declared_cls": "F",
+      "raw_cards": 10379,
+      "cluster_raw_mode": 323,
+      "cls1_raw_mode": "F"
+    },
+    "213": {
+      "term": "健康",
+      "declared_cluster": 35,
+      "declared_cls": "R",
+      "raw_cards": 360,
+      "cluster_raw_mode": 35,
+      "cls1_raw_mode": "R"
+    },
+    "288": {
+      "term": "逻辑",
+      "declared_cluster": 204,
+      "declared_cls": "B",
+      "raw_cards": 555,
+      "cluster_raw_mode": 204,
+      "cls1_raw_mode": "B"
+    },
+    "299": {
+      "term": "开发实",
+      "declared_cluster": 170,
+      "declared_cls": "TP",
+      "raw_cards": 183,
+      "cluster_raw_mode": 170,
+      "cls1_raw_mode": "TP"
+    },
+    "375": {
+      "term": "politics",
+      "declared_cluster": 1,
+      "declared_cls": "D",
+      "raw_cards": 537,
+      "cluster_raw_mode": 1,
+      "cls1_raw_mode": "D"
+    },
+    "623": {
+      "term": "经典",
+      "declared_cluster": 268,
+      "declared_cls": "I",
+      "raw_cards": 897,
+      "cluster_raw_mode": 268,
+      "cls1_raw_mode": "I"
+    },
+    "833": {
+      "term": "credit",
+      "declared_cluster": 346,
+      "declared_cls": "F",
+      "raw_cards": 137,
+      "cluster_raw_mode": 346,
+      "cls1_raw_mode": "F"
+    },
+    "987": {
+      "term": "spacecraft",
+      "declared_cluster": 326,
+      "declared_cls": "V",
+      "raw_cards": 55,
+      "cluster_raw_mode": 326,
+      "cls1_raw_mode": "V"
+    },
+    "1009": {
+      "term": "考古",
+      "declared_cluster": 212,
+      "declared_cls": "K",
+      "raw_cards": 306,
+      "cluster_raw_mode": 212,
+      "cls1_raw_mode": "K"
+    },
+    "1015": {
+      "term": "知日",
+      "declared_cluster": 281,
+      "declared_cls": "G",
+      "raw_cards": 38,
+      "cluster_raw_mode": 281,
+      "cls1_raw_mode": "G"
+    },
+    "1215": {
+      "term": "叢刊",
+      "declared_cluster": 181,
+      "declared_cls": "K",
+      "raw_cards": 31,
+      "cluster_raw_mode": 181,
+      "cls1_raw_mode": "K"
+    },
+    "1222": {
+      "term": "structural",
+      "declared_cluster": 214,
+      "declared_cls": "O",
+      "raw_cards": 296,
+      "cluster_raw_mode": 214,
+      "cls1_raw_mode": "O"
+    },
+    "1317": {
+      "term": "waves",
+      "declared_cluster": 46,
+      "declared_cls": "O",
+      "raw_cards": 155,
+      "cluster_raw_mode": 98,
+      "cls1_raw_mode": "O"
+    },
+    "1504": {
+      "term": "冲突",
+      "declared_cluster": 26,
+      "declared_cls": "D",
+      "raw_cards": 103,
+      "cluster_raw_mode": 26,
+      "cls1_raw_mode": "D"
+    },
+    "1601": {
+      "term": "三维",
+      "declared_cluster": 65,
+      "declared_cls": "TP",
+      "raw_cards": 129,
+      "cluster_raw_mode": 65,
+      "cls1_raw_mode": "TP"
+    },
+    "1794": {
+      "term": "战后",
+      "declared_cluster": 246,
+      "declared_cls": "D",
+      "raw_cards": 93,
+      "cluster_raw_mode": 246,
+      "cls1_raw_mode": "D"
+    },
+    "1810": {
+      "term": "pcb",
+      "declared_cluster": 306,
+      "declared_cls": "TN",
+      "raw_cards": 30,
+      "cluster_raw_mode": 306,
+      "cls1_raw_mode": "TN"
+    },
+    "1891": {
+      "term": "批判",
+      "declared_cluster": 43,
+      "declared_cls": "B",
+      "raw_cards": 218,
+      "cluster_raw_mode": 114,
+      "cls1_raw_mode": "B"
+    },
+    "1917": {
+      "term": "demystified",
+      "declared_cluster": 175,
+      "declared_cls": "O",
+      "raw_cards": 43,
+      "cluster_raw_mode": 175,
+      "cls1_raw_mode": "O"
+    },
+    "2185": {
+      "term": "应用大全",
+      "declared_cluster": 249,
+      "declared_cls": "TP",
+      "raw_cards": 14,
+      "cluster_raw_mode": 249,
+      "cls1_raw_mode": "TP"
+    },
+    "2243": {
+      "term": "histories",
+      "declared_cluster": 140,
+      "declared_cls": "K",
+      "raw_cards": 68,
+      "cluster_raw_mode": 140,
+      "cls1_raw_mode": "K"
+    },
+    "2367": {
+      "term": "赏析",
+      "declared_cluster": 268,
+      "declared_cls": "J",
+      "raw_cards": 105,
+      "cluster_raw_mode": 268,
+      "cls1_raw_mode": "J"
+    },
+    "2452": {
+      "term": "metaphysics",
+      "declared_cluster": 16,
+      "declared_cls": "B",
+      "raw_cards": 51,
+      "cluster_raw_mode": 16,
+      "cls1_raw_mode": "B"
+    },
+    "2477": {
+      "term": "lasers",
+      "declared_cluster": 359,
+      "declared_cls": "TN",
+      "raw_cards": 94,
+      "cluster_raw_mode": 17,
+      "cls1_raw_mode": "TN"
+    },
+    "2543": {
+      "term": "investor",
+      "declared_cluster": 322,
+      "declared_cls": "F",
+      "raw_cards": 84,
+      "cluster_raw_mode": 322,
+      "cls1_raw_mode": "F"
+    },
+    "2961": {
+      "term": "西欧",
+      "declared_cluster": 110,
+      "declared_cls": "K",
+      "raw_cards": 21,
+      "cluster_raw_mode": 110,
+      "cls1_raw_mode": "K"
+    },
+    "2967": {
+      "term": "funding",
+      "declared_cluster": 346,
+      "declared_cls": "F",
+      "raw_cards": 29,
+      "cluster_raw_mode": 346,
+      "cls1_raw_mode": "F"
+    },
+    "3175": {
+      "term": "energetic",
+      "declared_cluster": 223,
+      "declared_cls": "TB",
+      "raw_cards": 37,
+      "cluster_raw_mode": 223,
+      "cls1_raw_mode": "TB"
+    },
+    "3354": {
+      "term": "阴谋",
+      "declared_cluster": 162,
+      "declared_cls": "I",
+      "raw_cards": 28,
+      "cluster_raw_mode": 162,
+      "cls1_raw_mode": "I"
+    },
+    "3459": {
+      "term": "expression",
+      "declared_cluster": 31,
+      "declared_cls": "Q",
+      "raw_cards": 61,
+      "cluster_raw_mode": 290,
+      "cls1_raw_mode": "Q"
+    },
+    "3581": {
+      "term": "红外",
+      "declared_cluster": 17,
+      "declared_cls": "TN",
+      "raw_cards": 53,
+      "cluster_raw_mode": 17,
+      "cls1_raw_mode": "TN"
+    },
+    "3593": {
+      "term": "rendering",
+      "declared_cluster": 9,
+      "declared_cls": "TP",
+      "raw_cards": 27,
+      "cluster_raw_mode": 9,
+      "cls1_raw_mode": "TP"
+    },
+    "3613": {
+      "term": "业化",
+      "declared_cluster": 369,
+      "declared_cls": "F",
+      "raw_cards": 49,
+      "cluster_raw_mode": 369,
+      "cls1_raw_mode": "F"
+    },
+    "3736": {
+      "term": "interacting",
+      "declared_cluster": 11,
+      "declared_cls": "O",
+      "raw_cards": 19,
+      "cluster_raw_mode": 11,
+      "cls1_raw_mode": "O"
+    },
+    "3885": {
+      "term": "sewage",
+      "declared_cluster": 158,
+      "declared_cls": "X",
+      "raw_cards": 14,
+      "cluster_raw_mode": 158,
+      "cls1_raw_mode": "X"
+    },
+    "3896": {
+      "term": "front-end",
+      "declared_cluster": 195,
+      "declared_cls": "TN",
+      "raw_cards": 17,
+      "cluster_raw_mode": 195,
+      "cls1_raw_mode": "TN"
+    },
+    "3920": {
+      "term": "婚姻史",
+      "declared_cluster": 32,
+      "declared_cls": "K",
+      "raw_cards": 8,
+      "cluster_raw_mode": 32,
+      "cls1_raw_mode": "K"
+    },
+    "3997": {
+      "term": "mediterranean",
+      "declared_cluster": 140,
+      "declared_cls": "K",
+      "raw_cards": 33,
+      "cluster_raw_mode": 140,
+      "cls1_raw_mode": "K"
+    },
+    "4125": {
+      "term": "existence",
+      "declared_cluster": 313,
+      "declared_cls": "O",
+      "raw_cards": 32,
+      "cluster_raw_mode": 93,
+      "cls1_raw_mode": "O"
+    },
+    "4157": {
+      "term": "quarks",
+      "declared_cluster": 202,
+      "declared_cls": "O",
+      "raw_cards": 23,
+      "cluster_raw_mode": 202,
+      "cls1_raw_mode": "O"
+    },
+    "4191": {
+      "term": "奇异",
+      "declared_cluster": 14,
+      "declared_cls": "O",
+      "raw_cards": 32,
+      "cluster_raw_mode": 147,
+      "cls1_raw_mode": "O"
+    },
+    "4226": {
+      "term": "charged",
+      "declared_cluster": 386,
+      "declared_cls": "O",
+      "raw_cards": 22,
+      "cluster_raw_mode": 386,
+      "cls1_raw_mode": "O"
+    },
+    "4386": {
+      "term": "硅基",
+      "declared_cluster": 17,
+      "declared_cls": "TN",
+      "raw_cards": 20,
+      "cluster_raw_mode": 17,
+      "cls1_raw_mode": "TN"
+    },
+    "4687": {
+      "term": "schrodinger",
+      "declared_cluster": 11,
+      "declared_cls": "O",
+      "raw_cards": 20,
+      "cluster_raw_mode": 11,
+      "cls1_raw_mode": "O"
+    },
+    "4763": {
+      "term": "风雨",
+      "declared_cluster": 64,
+      "declared_cls": "K",
+      "raw_cards": 30,
+      "cluster_raw_mode": 87,
+      "cls1_raw_mode": "I"
+    },
+    "4776": {
+      "term": "homology",
+      "declared_cluster": 16,
+      "declared_cls": "O",
+      "raw_cards": 49,
+      "cluster_raw_mode": 289,
+      "cls1_raw_mode": "O"
+    },
+    "4860": {
+      "term": "euclidean",
+      "declared_cluster": 11,
+      "declared_cls": "O",
+      "raw_cards": 19,
+      "cluster_raw_mode": 359,
+      "cls1_raw_mode": "O"
+    },
+    "4913": {
+      "term": "centennial",
+      "declared_cluster": 140,
+      "declared_cls": "O",
+      "raw_cards": 14,
+      "cluster_raw_mode": 140,
+      "cls1_raw_mode": "O"
+    },
+    "5033": {
+      "term": "many-particle",
+      "declared_cluster": 36,
+      "declared_cls": "O",
+      "raw_cards": 12,
+      "cluster_raw_mode": 36,
+      "cls1_raw_mode": "O"
+    },
+    "5183": {
+      "term": "夜行记",
+      "declared_cluster": 377,
+      "declared_cls": "I",
+      "raw_cards": 1,
+      "cluster_raw_mode": 377,
+      "cls1_raw_mode": "I"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+$ topic_graph.py --data $D around 56 --hops 2 --top 10 --evidence 5
+[exit=0]  # P2 seed = 机器 (整词命中中 freq 最低)
+=== around 56 「机器」 (kw, freq=817, cluster=338, cls=TP) ===
+规则: w_hop = w_parent × edge_w × 0.86 | 阈值 0.05 | hops ≤2
+区域: 242 主题 / 书证据 38115 本 / 扫描边 420 / 权重 0.084~1.000(中位 0.421) / 306.0ms
+
+[hop 1] 20 个主题（显示 top 10）
+     47 学习                      kw   score=0.8600   via 机器
+     54 智能                      kw   score=0.8600   via 机器
+     63 TP2                     cls  score=0.8600   via 机器
+     78 TP1                     cls  score=0.8600   via 机器
+    139 machine                 kw   score=0.8600   via 机器
+    236 控制                      kw   score=0.8600   via 机器
+    669 robot                   kw   score=0.8600   via 机器
+    869 robotics                kw   score=0.8600   via 机器
+   1113 robots                  kw   score=0.8600   via 机器
+     33 learning                kw   score=0.8277   via 机器
+
+[hop 2] 221 个主题（显示 top 10）
+      9 数据                      kw   score=0.7396   via 机器 → 智能
+     10 data                    kw   score=0.7396   via 机器 → TP2
+     17 TH1                     cls  score=0.7396   via 机器 → 智能
+     43 TP3                     cls  score=0.7396   via 机器 → machine
+     55 V2                      cls  score=0.7396   via 机器 → 控制
+     75 intelligence            kw   score=0.7396   via 机器 → 智能
+     87 模型                      kw   score=0.7396   via 机器 → TP1
+     91 技术                      kw   score=0.7396   via 机器 → 智能
+     97 系统                      kw   score=0.7396   via 机器 → 智能
+    133 artificial              kw   score=0.7396   via 机器 → TP1
+
+[书证据] 抽 5 张卡（card_topics 反查）
+  991002424546304181  基于ROS的智能机器人控制                                  cls=TP/TP2  via 「机器」
+  991001561435504181  TensorFlow机器学习 = Machine learning with Tenso   cls=TP/TP1  via 「机器」
+  991002129306804181  基于ROS的机器人设计与开发                                 cls=TP/TP2  via 「机器」
+  991001761866804181  多智能体机器人系统控制及其应用 = Multi-agent robots: their    cls=TP/TP2  via 「机器」
+  991001317851404181  Python+Tensorflow机器学习实战                        cls=TP/TP1  via 「机器」
+
+---stderr---
+

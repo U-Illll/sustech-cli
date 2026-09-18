@@ -1,0 +1,217 @@
+{
+ "generated_at": "2026-09-18 22:07:56",
+ "data_dir": "/home/wzh/go/lib-catalog-data",
+ "toolchain_dir": "/home/wzh/go/reasonix-scripts/lib-catalog",
+ "data": [
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/meta.json",
+   "size": 95617,
+   "sha256": "a55d871e85ba3c16241a265710a41e94ce57bb7bc809caa85ee62fa0f6736379",
+   "mtime": "2026-09-18 22:07:47",
+   "mtime_epoch": 1789740467.2588198,
+   "rel": "topics/meta.json"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/card_topics.jsonl",
+   "size": 9621257,
+   "sha256": "3890295d514f66bd30fa8edda8da46feb5b6d7690b2b18efd381dc642b1ca77b",
+   "mtime": "2026-09-18 21:35:05",
+   "mtime_epoch": 1789738505.0949266,
+   "rel": "topics/card_topics.jsonl"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/nodes.json",
+   "size": 727446,
+   "sha256": "ba1ff2603ee759b2b36a04474c8b1a23c305fd26b13fa104a910fc993d322286",
+   "mtime": "2026-09-18 21:06:25",
+   "mtime_epoch": 1789736785.7150066,
+   "rel": "topics/nodes.json"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/edges.csr.npz",
+   "size": 993790,
+   "sha256": "afd32610bd9b1adb18c9e3b480fb687b6ff0ef966b21f02981f325056c26750a",
+   "mtime": "2026-09-18 21:35:07",
+   "mtime_epoch": 1789738507.8623374,
+   "rel": "topics/edges.csr.npz"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/edges.variant-spec.csr.npz",
+   "size": 930178,
+   "sha256": "71aeb8f584d42a20131d18bb182799340f564c2f0b549db08f6aa913c040386d",
+   "mtime": "2026-09-18 21:35:07",
+   "mtime_epoch": 1789738507.8636656,
+   "rel": "topics/edges.variant-spec.csr.npz"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/p1-build-report.json",
+   "size": 14952,
+   "sha256": "26a0cbfa1696e7573825a8b7d5cedcf2ae80b6ad72b860d6ff0f1102f501e1c3",
+   "mtime": "2026-09-18 21:06:25",
+   "mtime_epoch": 1789736785.723691,
+   "rel": "topics/p1-build-report.json"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/p2-build-report.json",
+   "size": 28119,
+   "sha256": "73af4de3c7ffb91e146a00d00c55e078c14414f0cdf03b07b7fba262659d6141",
+   "mtime": "2026-09-18 21:35:07",
+   "mtime_epoch": 1789738507.8749263,
+   "rel": "topics/p2-build-report.json"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/topics-report.json",
+   "size": 15818,
+   "sha256": "d1dd63b7576a9dd3874438e41a236dc0762432ca4641b2aec545f27802c5c933",
+   "mtime": "2026-09-18 21:29:36",
+   "mtime_epoch": 1789738176.0323079,
+   "rel": "topics/topics-report.json"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/README.md",
+   "size": 62018,
+   "sha256": "6809c1bd1882514f06f19c6e2cc47351eca44b0df0562909c013667d706ebbd5",
+   "mtime": "2026-09-18 22:06:51",
+   "mtime_epoch": 1789740411.2995346,
+   "rel": "topics/README.md"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/ACCEPTANCE-REPORT.md",
+   "size": 83503,
+   "sha256": "77444124541d7bdcf37bcf4001f372116561a28797f61eaf72ee77a33a2a3681",
+   "mtime": "2026-09-18 22:07:47",
+   "mtime_epoch": 1789740467.234322,
+   "rel": "topics/ACCEPTANCE-REPORT.md"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/INTERFACE-PROPOSAL.md",
+   "size": 10045,
+   "sha256": "21893f649ebf18db5cd74a8aa4cecdf43c1e1fd3de495fe582f2cffb99855f65",
+   "mtime": "2026-09-18 19:18:16",
+   "mtime_epoch": 1789730296.6745052,
+   "rel": "topics/INTERFACE-PROPOSAL.md"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/export-sample/v1/manifest.json",
+   "size": 3672,
+   "sha256": "1f40a173919f30cb457818ff812808387f20d84865355da7d77ea48d7f8429a9",
+   "mtime": "2026-09-18 21:37:42",
+   "mtime_epoch": 1789738662.216645,
+   "rel": "topics/export-sample/v1/manifest.json"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/export-sample/v1/topics/manifest.topics.json",
+   "size": 4178,
+   "sha256": "ac97567dae751ee2870f7e0ba118cb2be69274027abdd0f17fbf1b6276ab7f3a",
+   "mtime": "2026-09-18 21:37:42",
+   "mtime_epoch": 1789738662.207138,
+   "rel": "topics/export-sample/v1/topics/manifest.topics.json"
+  },
+  {
+   "path": "/home/wzh/go/lib-catalog-data/topics/export-sample/v1/topics/meta.json",
+   "size": 88858,
+   "sha256": "9baca57153478057d228d1dcaa6a29925439684ba5a9a27ee6ef5a38dd35222b",
+   "mtime": "2026-09-18 21:37:42",
+   "mtime_epoch": 1789738662.2028148,
+   "rel": "topics/export-sample/v1/topics/meta.json"
+  }
+ ],
+ "toolchain": [
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/topic_build.py",
+   "size": 39054,
+   "sha256": "1f0da80e8d9a3fbbdeb48e29fc66ffe7e58ec7941a1196881728d37a352ed8e2",
+   "mtime": "2026-09-18 21:44:23",
+   "mtime_epoch": 1789739063.7388904,
+   "rel": "topic_build.py"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/topic_edges.py",
+   "size": 33515,
+   "sha256": "d0ce2228b51862d2d6706d1ed61c352c64e667217b9c06f2b63ca2b7f26c7549",
+   "mtime": "2026-09-18 21:34:26",
+   "mtime_epoch": 1789738466.9389293,
+   "rel": "topic_edges.py"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/topics_report.py",
+   "size": 40980,
+   "sha256": "980b9f6502367507f6b2c11f9e95668a85360f16b162a3406bc4b920492e55f9",
+   "mtime": "2026-09-18 18:52:50",
+   "mtime_epoch": 1789728770.8249867,
+   "rel": "topics_report.py"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/topic_graph.py",
+   "size": 45738,
+   "sha256": "39e04d9bae7f5fd2bc729a7fbcd918baceabc29b2a69abec97815bb648bfd4ce",
+   "mtime": "2026-09-18 21:15:15",
+   "mtime_epoch": 1789737315.1549819,
+   "rel": "topic_graph.py"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/topics_meta.py",
+   "size": 13011,
+   "sha256": "d3e4c47edca15aec9eca29a5129eb4da43bedfa79130b1201bed6a958b5fb0df",
+   "mtime": "2026-09-18 19:13:59",
+   "mtime_epoch": 1789730039.2072546,
+   "rel": "topics_meta.py"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/export_release.py",
+   "size": 25596,
+   "sha256": "221831679c9a0e16eaa858aa90ccb24715e8fe4d3889d4a05e85c78e0aa38c81",
+   "mtime": "2026-09-18 21:31:10",
+   "mtime_epoch": 1789738270.5229313,
+   "rel": "export_release.py"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p0.sh",
+   "size": 3152,
+   "sha256": "730475f0b351dbae62c9a1a6d81d282f53f92e5784463ceced7fc9bc748f100e",
+   "mtime": "2026-09-18 17:32:20",
+   "mtime_epoch": 1789723940.6936626,
+   "rel": "acceptance/topics-p0.sh"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p1.sh",
+   "size": 7197,
+   "sha256": "82737d263bae6b6c5612e6e95164c6de834e70b01c0e9efa06823fcbad7b34ce",
+   "mtime": "2026-09-18 18:40:30",
+   "mtime_epoch": 1789728030.6266198,
+   "rel": "acceptance/topics-p1.sh"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p2.sh",
+   "size": 14469,
+   "sha256": "198086287f340ee6f38c9eedbca5ef6c8ca436d8a873abb6cb388b15055e6fbc",
+   "mtime": "2026-09-18 21:37:06",
+   "mtime_epoch": 1789738626.530913,
+   "rel": "acceptance/topics-p2.sh"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p3.sh",
+   "size": 9383,
+   "sha256": "822856e60ddf1832681ed9fa80ce76c6f89c6034de8ab06c575b2715209d664c",
+   "mtime": "2026-09-18 19:56:00",
+   "mtime_epoch": 1789732560.6581786,
+   "rel": "acceptance/topics-p3.sh"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p4.sh",
+   "size": 15490,
+   "sha256": "fb7fca2bbf1a41d99ae0f98644c94636828344e037646cf16d16358fd6bd8821",
+   "mtime": "2026-09-18 19:56:00",
+   "mtime_epoch": 1789732560.658324,
+   "rel": "acceptance/topics-p4.sh"
+  },
+  {
+   "path": "/home/wzh/go/reasonix-scripts/lib-catalog/acceptance/topics-p5.sh",
+   "size": 7521,
+   "sha256": "a0a92b588a62f68f9a7c038e330dc0b9c57b6a93186b97ebd162afec819e3672",
+   "mtime": "2026-09-18 19:22:19",
+   "mtime_epoch": 1789730539.6104913,
+   "rel": "acceptance/topics-p5.sh"
+  }
+ ]
+}

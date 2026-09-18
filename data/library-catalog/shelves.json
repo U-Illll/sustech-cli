@@ -1,0 +1,5632 @@
+{
+ "shelves": [
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Foreign Language Fictions",
+   "shelf": "第1架(Shelf No.1)",
+   "books_count": 262,
+   "top_subjects": []
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Foreign Language Fictions",
+   "shelf": "第2架(Shelf No.2)",
+   "books_count": 212,
+   "top_subjects": []
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Foreign Language Fictions",
+   "shelf": "第3架(Shelf No.3)",
+   "books_count": 233,
+   "top_subjects": [
+    [
+     "I",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Foreign Language Fictions",
+   "shelf": "第4架(Shelf No.4)",
+   "books_count": 232,
+   "top_subjects": [
+    [
+     "MCC",
+     7
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Foreign Language Fictions",
+   "shelf": "第5架(Shelf No.5)",
+   "books_count": 176,
+   "top_subjects": []
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Foreign Language Fictions",
+   "shelf": "第6架(Shelf No.6)",
+   "books_count": 281,
+   "top_subjects": []
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor New Arrival",
+   "shelf": "第54排A面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "I",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor New Arrival",
+   "shelf": "第55排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "I",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor New Arrival",
+   "shelf": "第56排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "I",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor New Arrival",
+   "shelf": "第57排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "I",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第1排B面",
+   "books_count": 132,
+   "top_subjects": [
+    [
+     "F",
+     54
+    ],
+    [
+     "D",
+     29
+    ],
+    [
+     "B",
+     27
+    ],
+    [
+     "C",
+     20
+    ],
+    [
+     "E",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第2排A面",
+   "books_count": 82,
+   "top_subjects": [
+    [
+     "F",
+     43
+    ],
+    [
+     "G",
+     39
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第2排B面",
+   "books_count": 114,
+   "top_subjects": [
+    [
+     "H",
+     94
+    ],
+    [
+     "G",
+     20
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第3排A面",
+   "books_count": 115,
+   "top_subjects": [
+    [
+     "H",
+     90
+    ],
+    [
+     "I",
+     25
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第3排B面",
+   "books_count": 109,
+   "top_subjects": [
+    [
+     "O",
+     88
+    ],
+    [
+     "N",
+     17
+    ],
+    [
+     "K",
+     4
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第4排A面",
+   "books_count": 99,
+   "top_subjects": [
+    [
+     "J",
+     64
+    ],
+    [
+     "I",
+     28
+    ],
+    [
+     "K",
+     7
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第4排B面",
+   "books_count": 88,
+   "top_subjects": [
+    [
+     "K",
+     88
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第5排A面",
+   "books_count": 24,
+   "top_subjects": [
+    [
+     "O",
+     24
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第5排B面",
+   "books_count": 152,
+   "top_subjects": [
+    [
+     "Z",
+     57
+    ],
+    [
+     "X",
+     53
+    ],
+    [
+     "R",
+     28
+    ],
+    [
+     "U",
+     3
+    ],
+    [
+     "V",
+     2
+    ],
+    [
+     "S",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第6排A面",
+   "books_count": 103,
+   "top_subjects": [
+    [
+     "Q",
+     56
+    ],
+    [
+     "P",
+     45
+    ],
+    [
+     "O",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "1st Floor Reference",
+   "shelf": "第6排B面",
+   "books_count": 150,
+   "top_subjects": [
+    [
+     "Q",
+     76
+    ],
+    [
+     "R",
+     74
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第1排A面",
+   "books_count": 459,
+   "top_subjects": [
+    [
+     "F",
+     459
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第1排B面",
+   "books_count": 440,
+   "top_subjects": [
+    [
+     "F",
+     440
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第2排A面",
+   "books_count": 393,
+   "top_subjects": [
+    [
+     "F",
+     393
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第2排B面",
+   "books_count": 393,
+   "top_subjects": [
+    [
+     "F",
+     393
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第3排A面",
+   "books_count": 373,
+   "top_subjects": [
+    [
+     "F",
+     373
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第3排B面",
+   "books_count": 387,
+   "top_subjects": [
+    [
+     "F",
+     387
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第4排A面",
+   "books_count": 481,
+   "top_subjects": [
+    [
+     "F",
+     481
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第4排B面",
+   "books_count": 378,
+   "top_subjects": [
+    [
+     "F",
+     378
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第5排A面",
+   "books_count": 409,
+   "top_subjects": [
+    [
+     "F",
+     409
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第5排B面",
+   "books_count": 419,
+   "top_subjects": [
+    [
+     "F",
+     419
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第6排A面",
+   "books_count": 504,
+   "top_subjects": [
+    [
+     "F",
+     504
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第6排B面",
+   "books_count": 501,
+   "top_subjects": [
+    [
+     "F",
+     501
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第7排A面",
+   "books_count": 420,
+   "top_subjects": [
+    [
+     "F",
+     420
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第7排B面",
+   "books_count": 597,
+   "top_subjects": [
+    [
+     "F",
+     597
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第8排A面",
+   "books_count": 477,
+   "top_subjects": [
+    [
+     "F",
+     477
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第8排B面",
+   "books_count": 498,
+   "top_subjects": [
+    [
+     "F",
+     498
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第9排A面",
+   "books_count": 388,
+   "top_subjects": [
+    [
+     "F",
+     388
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第9排B面",
+   "books_count": 773,
+   "top_subjects": [
+    [
+     "F",
+     773
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第10排A面",
+   "books_count": 417,
+   "top_subjects": [
+    [
+     "F",
+     417
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第10排B面",
+   "books_count": 587,
+   "top_subjects": [
+    [
+     "F",
+     587
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第11排A面",
+   "books_count": 251,
+   "top_subjects": [
+    [
+     "F",
+     251
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第11排B面",
+   "books_count": 330,
+   "top_subjects": [
+    [
+     "F",
+     330
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第12排A面",
+   "books_count": 383,
+   "top_subjects": [
+    [
+     "F",
+     383
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第12排B面",
+   "books_count": 269,
+   "top_subjects": [
+    [
+     "F",
+     269
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第13排A面",
+   "books_count": 295,
+   "top_subjects": [
+    [
+     "F",
+     295
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第13排B面",
+   "books_count": 341,
+   "top_subjects": [
+    [
+     "F",
+     341
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第14排A面",
+   "books_count": 293,
+   "top_subjects": [
+    [
+     "F",
+     293
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第14排B面",
+   "books_count": 221,
+   "top_subjects": [
+    [
+     "F",
+     221
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第15排A面",
+   "books_count": 332,
+   "top_subjects": [
+    [
+     "F",
+     332
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第15排B面",
+   "books_count": 15,
+   "top_subjects": [
+    [
+     "F",
+     15
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第16排A面",
+   "books_count": 359,
+   "top_subjects": [
+    [
+     "F",
+     359
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第16排B面",
+   "books_count": 180,
+   "top_subjects": [
+    [
+     "F",
+     180
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第17排A面",
+   "books_count": 34,
+   "top_subjects": [
+    [
+     "F",
+     34
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第17排B面",
+   "books_count": 16,
+   "top_subjects": [
+    [
+     "F",
+     16
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第18排A面",
+   "books_count": 105,
+   "top_subjects": [
+    [
+     "F",
+     105
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第18排B面",
+   "books_count": 93,
+   "top_subjects": [
+    [
+     "F",
+     93
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第19排A面",
+   "books_count": 25,
+   "top_subjects": [
+    [
+     "F",
+     25
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第19排B面",
+   "books_count": 101,
+   "top_subjects": [
+    [
+     "F",
+     101
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第20排A面",
+   "books_count": 19,
+   "top_subjects": [
+    [
+     "F",
+     19
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第20排B面",
+   "books_count": 24,
+   "top_subjects": [
+    [
+     "F",
+     24
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第21排A面",
+   "books_count": 515,
+   "top_subjects": [
+    [
+     "F",
+     515
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第21排B面",
+   "books_count": 448,
+   "top_subjects": [
+    [
+     "F",
+     448
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第22排A面",
+   "books_count": 483,
+   "top_subjects": [
+    [
+     "F",
+     483
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第22排B面",
+   "books_count": 353,
+   "top_subjects": [
+    [
+     "F",
+     353
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第23排A面",
+   "books_count": 550,
+   "top_subjects": [
+    [
+     "F",
+     550
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第23排B面",
+   "books_count": 432,
+   "top_subjects": [
+    [
+     "F",
+     432
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第24排A面",
+   "books_count": 488,
+   "top_subjects": [
+    [
+     "F",
+     488
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第24排B面",
+   "books_count": 352,
+   "top_subjects": [
+    [
+     "F",
+     352
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第25排A面",
+   "books_count": 482,
+   "top_subjects": [
+    [
+     "F",
+     482
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第25排B面",
+   "books_count": 531,
+   "top_subjects": [
+    [
+     "F",
+     531
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第26排A面",
+   "books_count": 553,
+   "top_subjects": [
+    [
+     "F",
+     553
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第26排B面",
+   "books_count": 602,
+   "top_subjects": [
+    [
+     "F",
+     602
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第27排A面",
+   "books_count": 498,
+   "top_subjects": [
+    [
+     "F",
+     498
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第27排B面",
+   "books_count": 382,
+   "top_subjects": [
+    [
+     "G",
+     382
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第28排A面",
+   "books_count": 461,
+   "top_subjects": [
+    [
+     "G",
+     259
+    ],
+    [
+     "F",
+     201
+    ],
+    [
+     "FO",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第28排B面",
+   "books_count": 358,
+   "top_subjects": [
+    [
+     "G",
+     358
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第29排A面",
+   "books_count": 420,
+   "top_subjects": [
+    [
+     "G",
+     420
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第29排B面",
+   "books_count": 391,
+   "top_subjects": [
+    [
+     "G",
+     391
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第30排A面",
+   "books_count": 326,
+   "top_subjects": [
+    [
+     "G",
+     326
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第30排B面",
+   "books_count": 488,
+   "top_subjects": [
+    [
+     "G",
+     488
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第31排A面",
+   "books_count": 411,
+   "top_subjects": [
+    [
+     "G",
+     411
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第31排B面",
+   "books_count": 424,
+   "top_subjects": [
+    [
+     "G",
+     424
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第32排A面",
+   "books_count": 326,
+   "top_subjects": [
+    [
+     "G",
+     326
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第32排B面",
+   "books_count": 401,
+   "top_subjects": [
+    [
+     "G",
+     401
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第33排A面",
+   "books_count": 456,
+   "top_subjects": [
+    [
+     "G",
+     456
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第33排B面",
+   "books_count": 398,
+   "top_subjects": [
+    [
+     "G",
+     398
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第34排A面",
+   "books_count": 431,
+   "top_subjects": [
+    [
+     "G",
+     431
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第34排B面",
+   "books_count": 412,
+   "top_subjects": [
+    [
+     "G",
+     412
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第35排A面",
+   "books_count": 329,
+   "top_subjects": [
+    [
+     "G",
+     329
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第35排B面",
+   "books_count": 361,
+   "top_subjects": [
+    [
+     "G",
+     361
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第36排A面",
+   "books_count": 373,
+   "top_subjects": [
+    [
+     "G",
+     373
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第36排B面",
+   "books_count": 375,
+   "top_subjects": [
+    [
+     "G",
+     375
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第37排A面",
+   "books_count": 350,
+   "top_subjects": [
+    [
+     "H",
+     206
+    ],
+    [
+     "G",
+     144
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第37排B面",
+   "books_count": 356,
+   "top_subjects": [
+    [
+     "H",
+     356
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第38排A面",
+   "books_count": 377,
+   "top_subjects": [
+    [
+     "H",
+     377
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第38排B面",
+   "books_count": 469,
+   "top_subjects": [
+    [
+     "H",
+     469
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第39排A面",
+   "books_count": 308,
+   "top_subjects": [
+    [
+     "H",
+     308
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第39排B面",
+   "books_count": 366,
+   "top_subjects": [
+    [
+     "H",
+     366
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第40排A面",
+   "books_count": 287,
+   "top_subjects": [
+    [
+     "H",
+     286
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第40排B面",
+   "books_count": 199,
+   "top_subjects": [
+    [
+     "H",
+     194
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第41排A面",
+   "books_count": 382,
+   "top_subjects": [
+    [
+     "H",
+     375
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第41排B面",
+   "books_count": 305,
+   "top_subjects": []
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第42排A面",
+   "books_count": 435,
+   "top_subjects": [
+    [
+     "H",
+     435
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第42排B面",
+   "books_count": 260,
+   "top_subjects": [
+    [
+     "H",
+     4
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第43排A面",
+   "books_count": 291,
+   "top_subjects": [
+    [
+     "H",
+     99
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第43排B面",
+   "books_count": 381,
+   "top_subjects": [
+    [
+     "I",
+     378
+    ],
+    [
+     "H",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第44排A面",
+   "books_count": 406,
+   "top_subjects": [
+    [
+     "H",
+     385
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第44排B面",
+   "books_count": 514,
+   "top_subjects": [
+    [
+     "H",
+     480
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第45排A面",
+   "books_count": 403,
+   "top_subjects": [
+    [
+     "I",
+     403
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第45排B面",
+   "books_count": 327,
+   "top_subjects": [
+    [
+     "I",
+     327
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第46排A面",
+   "books_count": 324,
+   "top_subjects": [
+    [
+     "I",
+     324
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第46排B面",
+   "books_count": 288,
+   "top_subjects": [
+    [
+     "I",
+     288
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第47排A面",
+   "books_count": 359,
+   "top_subjects": [
+    [
+     "I",
+     359
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第47排B面",
+   "books_count": 376,
+   "top_subjects": [
+    [
+     "I",
+     376
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第48排A面",
+   "books_count": 374,
+   "top_subjects": [
+    [
+     "I",
+     374
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第48排B面",
+   "books_count": 356,
+   "top_subjects": [
+    [
+     "I",
+     356
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第49排A面",
+   "books_count": 391,
+   "top_subjects": [
+    [
+     "I",
+     391
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第49排B面",
+   "books_count": 383,
+   "top_subjects": [
+    [
+     "I",
+     383
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第50排A面",
+   "books_count": 373,
+   "top_subjects": [
+    [
+     "I",
+     373
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第50排B面",
+   "books_count": 360,
+   "top_subjects": [
+    [
+     "I",
+     360
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第51排A面",
+   "books_count": 305,
+   "top_subjects": [
+    [
+     "I",
+     305
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第51排B面",
+   "books_count": 426,
+   "top_subjects": [
+    [
+     "I",
+     426
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第52排A面",
+   "books_count": 307,
+   "top_subjects": [
+    [
+     "I",
+     307
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第52排B面",
+   "books_count": 415,
+   "top_subjects": [
+    [
+     "I",
+     415
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第53排A面",
+   "books_count": 332,
+   "top_subjects": [
+    [
+     "I",
+     332
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第53排B面",
+   "books_count": 557,
+   "top_subjects": [
+    [
+     "I",
+     557
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第54排A面",
+   "books_count": 472,
+   "top_subjects": [
+    [
+     "I",
+     472
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第54排B面",
+   "books_count": 508,
+   "top_subjects": [
+    [
+     "I",
+     508
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第55排A面",
+   "books_count": 405,
+   "top_subjects": [
+    [
+     "I",
+     405
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第55排B面",
+   "books_count": 480,
+   "top_subjects": [
+    [
+     "I",
+     480
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第56排A面",
+   "books_count": 327,
+   "top_subjects": [
+    [
+     "I",
+     327
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第56排B面",
+   "books_count": 319,
+   "top_subjects": [
+    [
+     "I",
+     319
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第57排A面",
+   "books_count": 309,
+   "top_subjects": [
+    [
+     "I",
+     309
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第57排B面",
+   "books_count": 624,
+   "top_subjects": [
+    [
+     "I",
+     624
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第58排A面",
+   "books_count": 494,
+   "top_subjects": [
+    [
+     "I",
+     494
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第58排B面",
+   "books_count": 407,
+   "top_subjects": [
+    [
+     "I",
+     407
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第59排A面",
+   "books_count": 471,
+   "top_subjects": [
+    [
+     "I",
+     470
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第59排B面",
+   "books_count": 315,
+   "top_subjects": [
+    [
+     "I",
+     315
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第60排A面",
+   "books_count": 436,
+   "top_subjects": [
+    [
+     "I",
+     434
+    ],
+    [
+     "J",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第60排B面",
+   "books_count": 513,
+   "top_subjects": [
+    [
+     "I",
+     513
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第61排A面",
+   "books_count": 329,
+   "top_subjects": [
+    [
+     "I",
+     329
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第61排B面",
+   "books_count": 305,
+   "top_subjects": [
+    [
+     "I",
+     305
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第62排A面",
+   "books_count": 306,
+   "top_subjects": [
+    [
+     "I",
+     306
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第62排B面",
+   "books_count": 282,
+   "top_subjects": [
+    [
+     "I",
+     282
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第63排A面",
+   "books_count": 336,
+   "top_subjects": [
+    [
+     "I",
+     336
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第63排B面",
+   "books_count": 472,
+   "top_subjects": [
+    [
+     "I",
+     472
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第64排A面",
+   "books_count": 517,
+   "top_subjects": [
+    [
+     "I",
+     517
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第64排B面",
+   "books_count": 350,
+   "top_subjects": [
+    [
+     "I",
+     350
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第65排A面",
+   "books_count": 462,
+   "top_subjects": [
+    [
+     "I",
+     462
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第65排B面",
+   "books_count": 464,
+   "top_subjects": [
+    [
+     "I",
+     464
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第66排A面",
+   "books_count": 379,
+   "top_subjects": [
+    [
+     "I",
+     379
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第66排B面",
+   "books_count": 371,
+   "top_subjects": [
+    [
+     "I",
+     371
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第67排A面",
+   "books_count": 450,
+   "top_subjects": [
+    [
+     "I",
+     450
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第67排B面",
+   "books_count": 602,
+   "top_subjects": [
+    [
+     "J",
+     602
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第68排A面",
+   "books_count": 437,
+   "top_subjects": [
+    [
+     "J",
+     417
+    ],
+    [
+     "I",
+     20
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第68排B面",
+   "books_count": 607,
+   "top_subjects": [
+    [
+     "J",
+     607
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第69排A面",
+   "books_count": 834,
+   "top_subjects": [
+    [
+     "J",
+     825
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第69排B面",
+   "books_count": 697,
+   "top_subjects": [
+    [
+     "J",
+     697
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第70排A面",
+   "books_count": 993,
+   "top_subjects": [
+    [
+     "J",
+     924
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第70排B面",
+   "books_count": 849,
+   "top_subjects": [
+    [
+     "J",
+     813
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第71排A面",
+   "books_count": 879,
+   "top_subjects": [
+    [
+     "J",
+     877
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第71排B面",
+   "books_count": 445,
+   "top_subjects": [
+    [
+     "K",
+     445
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第72排A面",
+   "books_count": 768,
+   "top_subjects": [
+    [
+     "J",
+     767
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第72排B面",
+   "books_count": 633,
+   "top_subjects": [
+    [
+     "K",
+     606
+    ],
+    [
+     "J",
+     26
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第73排A面",
+   "books_count": 483,
+   "top_subjects": [
+    [
+     "K",
+     483
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第73排B面",
+   "books_count": 1082,
+   "top_subjects": [
+    [
+     "K",
+     1082
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第74排A面",
+   "books_count": 575,
+   "top_subjects": [
+    [
+     "K",
+     575
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第74排B面",
+   "books_count": 68,
+   "top_subjects": [
+    [
+     "K",
+     68
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第75排A面",
+   "books_count": 401,
+   "top_subjects": [
+    [
+     "K",
+     401
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第75排B面",
+   "books_count": 536,
+   "top_subjects": [
+    [
+     "K",
+     536
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第76排A面",
+   "books_count": 319,
+   "top_subjects": [
+    [
+     "K",
+     319
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第76排B面",
+   "books_count": 430,
+   "top_subjects": [
+    [
+     "K",
+     430
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第77排A面",
+   "books_count": 399,
+   "top_subjects": [
+    [
+     "K",
+     399
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第77排B面",
+   "books_count": 359,
+   "top_subjects": [
+    [
+     "K",
+     359
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第78排A面",
+   "books_count": 510,
+   "top_subjects": [
+    [
+     "K",
+     510
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第78排B面",
+   "books_count": 473,
+   "top_subjects": [
+    [
+     "K",
+     473
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第79排A面",
+   "books_count": 384,
+   "top_subjects": [
+    [
+     "K",
+     384
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第79排B面",
+   "books_count": 463,
+   "top_subjects": [
+    [
+     "K",
+     227
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第80排A面",
+   "books_count": 499,
+   "top_subjects": [
+    [
+     "K",
+     498
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第80排B面",
+   "books_count": 531,
+   "top_subjects": [
+    [
+     "K",
+     504
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第81排A面",
+   "books_count": 451,
+   "top_subjects": [
+    [
+     "K",
+     262
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第81排B面",
+   "books_count": 427,
+   "top_subjects": [
+    [
+     "K",
+     252
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第82排A面",
+   "books_count": 621,
+   "top_subjects": [
+    [
+     "K",
+     456
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第82排B面",
+   "books_count": 506,
+   "top_subjects": [
+    [
+     "K",
+     177
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第83排A面",
+   "books_count": 386,
+   "top_subjects": [
+    [
+     "K",
+     298
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第83排B面",
+   "books_count": 559,
+   "top_subjects": [
+    [
+     "K",
+     487
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第84排A面",
+   "books_count": 902,
+   "top_subjects": [
+    [
+     "K",
+     681
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第84排B面",
+   "books_count": 94,
+   "top_subjects": [
+    [
+     "K",
+     88
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第85排A面",
+   "books_count": 502,
+   "top_subjects": [
+    [
+     "K",
+     502
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第85排B面",
+   "books_count": 811,
+   "top_subjects": [
+    [
+     "K",
+     811
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第86排A面",
+   "books_count": 596,
+   "top_subjects": [
+    [
+     "K",
+     596
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第86排B面",
+   "books_count": 763,
+   "top_subjects": [
+    [
+     "K",
+     763
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第87排",
+   "books_count": 291,
+   "top_subjects": [
+    [
+     "N",
+     291
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第88排A面",
+   "books_count": 337,
+   "top_subjects": [
+    [
+     "N",
+     337
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第88排B面",
+   "books_count": 310,
+   "top_subjects": [
+    [
+     "O",
+     310
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第89排A面",
+   "books_count": 398,
+   "top_subjects": [
+    [
+     "N",
+     398
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第89排B面",
+   "books_count": 512,
+   "top_subjects": [
+    [
+     "O",
+     449
+    ],
+    [
+     "N",
+     62
+    ],
+    [
+     "NO",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第90排A面",
+   "books_count": 366,
+   "top_subjects": [
+    [
+     "O",
+     366
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第90排B面",
+   "books_count": 349,
+   "top_subjects": [
+    [
+     "O",
+     349
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第91排A面",
+   "books_count": 387,
+   "top_subjects": [
+    [
+     "O",
+     387
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第91排B面",
+   "books_count": 489,
+   "top_subjects": [
+    [
+     "O",
+     489
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第92排A面",
+   "books_count": 348,
+   "top_subjects": [
+    [
+     "O",
+     348
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第92排B面",
+   "books_count": 432,
+   "top_subjects": [
+    [
+     "O",
+     432
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第93排A面",
+   "books_count": 448,
+   "top_subjects": [
+    [
+     "O",
+     448
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第93排B面",
+   "books_count": 466,
+   "top_subjects": [
+    [
+     "O",
+     466
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第94排A面",
+   "books_count": 353,
+   "top_subjects": [
+    [
+     "O",
+     353
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第94排B面",
+   "books_count": 368,
+   "top_subjects": [
+    [
+     "O",
+     368
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第95排A面",
+   "books_count": 557,
+   "top_subjects": [
+    [
+     "O",
+     557
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第95排B面",
+   "books_count": 404,
+   "top_subjects": [
+    [
+     "O",
+     404
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第96排A面",
+   "books_count": 352,
+   "top_subjects": [
+    [
+     "O",
+     352
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第96排B面",
+   "books_count": 313,
+   "top_subjects": [
+    [
+     "O",
+     313
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第97排A面",
+   "books_count": 510,
+   "top_subjects": [
+    [
+     "O",
+     510
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第97排B面",
+   "books_count": 483,
+   "top_subjects": [
+    [
+     "O",
+     483
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第98排A面",
+   "books_count": 246,
+   "top_subjects": [
+    [
+     "O",
+     246
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第98排B面",
+   "books_count": 98,
+   "top_subjects": [
+    [
+     "O",
+     97
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第99排A面",
+   "books_count": 432,
+   "top_subjects": [
+    [
+     "O",
+     432
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第99排B面",
+   "books_count": 563,
+   "top_subjects": [
+    [
+     "O",
+     563
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第100排",
+   "books_count": 22,
+   "top_subjects": [
+    [
+     "O",
+     22
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第101排",
+   "books_count": 319,
+   "top_subjects": [
+    [
+     "O",
+     319
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第102排A面",
+   "books_count": 418,
+   "top_subjects": [
+    [
+     "O",
+     418
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第102排B面",
+   "books_count": 384,
+   "top_subjects": [
+    [
+     "O",
+     384
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第103排A面",
+   "books_count": 540,
+   "top_subjects": [
+    [
+     "O",
+     540
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第103排B面",
+   "books_count": 578,
+   "top_subjects": [
+    [
+     "O",
+     578
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第104排A面",
+   "books_count": 371,
+   "top_subjects": [
+    [
+     "O",
+     371
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第104排B面",
+   "books_count": 358,
+   "top_subjects": [
+    [
+     "O",
+     358
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第105排A面",
+   "books_count": 470,
+   "top_subjects": [
+    [
+     "O",
+     470
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第105排B面",
+   "books_count": 388,
+   "top_subjects": [
+    [
+     "O",
+     388
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第106排A面",
+   "books_count": 380,
+   "top_subjects": [
+    [
+     "O",
+     380
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第106排B面",
+   "books_count": 335,
+   "top_subjects": [
+    [
+     "O",
+     335
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第107排A面",
+   "books_count": 462,
+   "top_subjects": [
+    [
+     "O",
+     462
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第107排B面",
+   "books_count": 438,
+   "top_subjects": [
+    [
+     "O",
+     438
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第108排A面",
+   "books_count": 343,
+   "top_subjects": [
+    [
+     "O",
+     343
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第108排B面",
+   "books_count": 18,
+   "top_subjects": [
+    [
+     "O",
+     18
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第109排A面",
+   "books_count": 151,
+   "top_subjects": [
+    [
+     "O",
+     151
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第109排B面",
+   "books_count": 15,
+   "top_subjects": [
+    [
+     "O",
+     15
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第110排A面",
+   "books_count": 8,
+   "top_subjects": [
+    [
+     "O",
+     8
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第110排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "O",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第111排A面",
+   "books_count": 4,
+   "top_subjects": [
+    [
+     "O",
+     4
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第111排B面",
+   "books_count": 9,
+   "top_subjects": [
+    [
+     "O",
+     9
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第112排B面",
+   "books_count": 2,
+   "top_subjects": [
+    [
+     "O",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第113排A面",
+   "books_count": 7,
+   "top_subjects": [
+    [
+     "O",
+     7
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第113排B面",
+   "books_count": 14,
+   "top_subjects": [
+    [
+     "O",
+     14
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第114排A面",
+   "books_count": 5,
+   "top_subjects": [
+    [
+     "O",
+     5
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第114排B面",
+   "books_count": 374,
+   "top_subjects": [
+    [
+     "O",
+     374
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第115排A面",
+   "books_count": 5,
+   "top_subjects": [
+    [
+     "O",
+     5
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第115排B面",
+   "books_count": 4,
+   "top_subjects": [
+    [
+     "O",
+     4
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第116排A面",
+   "books_count": 863,
+   "top_subjects": [
+    [
+     "P",
+     863
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第116排B面",
+   "books_count": 1017,
+   "top_subjects": [
+    [
+     "P",
+     1017
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第117排A面",
+   "books_count": 876,
+   "top_subjects": [
+    [
+     "P",
+     876
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第117排B面",
+   "books_count": 944,
+   "top_subjects": [
+    [
+     "P",
+     944
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第118排A面",
+   "books_count": 825,
+   "top_subjects": [
+    [
+     "Q",
+     538
+    ],
+    [
+     "P",
+     287
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第118排B面",
+   "books_count": 822,
+   "top_subjects": [
+    [
+     "Q",
+     822
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第119排A面",
+   "books_count": 762,
+   "top_subjects": [
+    [
+     "Q",
+     762
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第119排B面",
+   "books_count": 808,
+   "top_subjects": [
+    [
+     "Q",
+     808
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第120排A面",
+   "books_count": 758,
+   "top_subjects": [
+    [
+     "Q",
+     758
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第120排B面",
+   "books_count": 822,
+   "top_subjects": [
+    [
+     "Q",
+     822
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第121排A面",
+   "books_count": 800,
+   "top_subjects": [
+    [
+     "Q",
+     800
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第121排B面",
+   "books_count": 774,
+   "top_subjects": [
+    [
+     "Q",
+     774
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第122排A面",
+   "books_count": 858,
+   "top_subjects": [
+    [
+     "R",
+     646
+    ],
+    [
+     "Q",
+     212
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第122排B面",
+   "books_count": 566,
+   "top_subjects": [
+    [
+     "R",
+     566
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第123排A面",
+   "books_count": 544,
+   "top_subjects": [
+    [
+     "R",
+     544
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第123排B面",
+   "books_count": 379,
+   "top_subjects": [
+    [
+     "R",
+     379
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第124排A面",
+   "books_count": 511,
+   "top_subjects": [
+    [
+     "R",
+     511
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第124排B面",
+   "books_count": 474,
+   "top_subjects": [
+    [
+     "R",
+     474
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第125排A面",
+   "books_count": 594,
+   "top_subjects": [
+    [
+     "R",
+     594
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第125排B面",
+   "books_count": 543,
+   "top_subjects": [
+    [
+     "R",
+     543
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第126排A面",
+   "books_count": 665,
+   "top_subjects": [
+    [
+     "R",
+     665
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第126排B面",
+   "books_count": 725,
+   "top_subjects": [
+    [
+     "R",
+     725
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第127排A面",
+   "books_count": 767,
+   "top_subjects": [
+    [
+     "R",
+     767
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第127排B面",
+   "books_count": 1041,
+   "top_subjects": [
+    [
+     "R",
+     1041
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第128排A面",
+   "books_count": 700,
+   "top_subjects": [
+    [
+     "R",
+     698
+    ],
+    [
+     "S",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第128排B面",
+   "books_count": 950,
+   "top_subjects": [
+    [
+     "S",
+     541
+    ],
+    [
+     "U",
+     409
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第129排A面",
+   "books_count": 963,
+   "top_subjects": [
+    [
+     "V",
+     963
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第129排B面",
+   "books_count": 879,
+   "top_subjects": [
+    [
+     "V",
+     863
+    ],
+    [
+     "X",
+     14
+    ],
+    [
+     "VI",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第130排A面",
+   "books_count": 736,
+   "top_subjects": [
+    [
+     "X",
+     736
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第130排B面",
+   "books_count": 677,
+   "top_subjects": [
+    [
+     "X",
+     677
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第131排A面",
+   "books_count": 678,
+   "top_subjects": [
+    [
+     "X",
+     677
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第131排B面",
+   "books_count": 984,
+   "top_subjects": [
+    [
+     "X",
+     984
+    ]
+   ]
+  },
+  {
+   "library": "LYNN",
+   "library_name": "琳恩图书馆",
+   "sublocation": "3rd Floor",
+   "shelf": "第132排",
+   "books_count": 900,
+   "top_subjects": [
+    [
+     "Z",
+     853
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第1排A面",
+   "books_count": 600,
+   "top_subjects": [
+    [
+     "A",
+     600
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第1排B面",
+   "books_count": 518,
+   "top_subjects": [
+    [
+     "B",
+     452
+    ],
+    [
+     "A",
+     66
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第2排A面",
+   "books_count": 713,
+   "top_subjects": [
+    [
+     "B",
+     713
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第2排B面",
+   "books_count": 469,
+   "top_subjects": [
+    [
+     "B",
+     469
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第3排A面",
+   "books_count": 505,
+   "top_subjects": [
+    [
+     "B",
+     505
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第3排B面",
+   "books_count": 344,
+   "top_subjects": [
+    [
+     "B",
+     344
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第4排A面",
+   "books_count": 438,
+   "top_subjects": [
+    [
+     "B",
+     438
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第4排B面",
+   "books_count": 441,
+   "top_subjects": [
+    [
+     "B",
+     441
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第5排A面",
+   "books_count": 519,
+   "top_subjects": [
+    [
+     "B",
+     519
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第5排B面",
+   "books_count": 724,
+   "top_subjects": [
+    [
+     "B",
+     724
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第6排A面",
+   "books_count": 792,
+   "top_subjects": [
+    [
+     "B",
+     792
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第6排B面",
+   "books_count": 609,
+   "top_subjects": [
+    [
+     "B",
+     609
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第7排A面",
+   "books_count": 383,
+   "top_subjects": [
+    [
+     "B",
+     383
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第7排B面",
+   "books_count": 655,
+   "top_subjects": [
+    [
+     "B",
+     655
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第8排A面",
+   "books_count": 766,
+   "top_subjects": [
+    [
+     "B",
+     766
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第8排B面",
+   "books_count": 914,
+   "top_subjects": [
+    [
+     "B",
+     914
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第9排A面",
+   "books_count": 630,
+   "top_subjects": [
+    [
+     "B",
+     630
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第9排B面",
+   "books_count": 437,
+   "top_subjects": [
+    [
+     "B",
+     437
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第10排A面",
+   "books_count": 364,
+   "top_subjects": [
+    [
+     "B",
+     364
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第10排B面",
+   "books_count": 519,
+   "top_subjects": [
+    [
+     "C",
+     398
+    ],
+    [
+     "B",
+     121
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第11排A面",
+   "books_count": 579,
+   "top_subjects": [
+    [
+     "C",
+     579
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第11排B面",
+   "books_count": 723,
+   "top_subjects": [
+    [
+     "C",
+     723
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第12排A面",
+   "books_count": 1028,
+   "top_subjects": [
+    [
+     "C",
+     1028
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第12排B面",
+   "books_count": 822,
+   "top_subjects": [
+    [
+     "C",
+     822
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第13排A面",
+   "books_count": 986,
+   "top_subjects": [
+    [
+     "C",
+     986
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第13排B面",
+   "books_count": 803,
+   "top_subjects": [
+    [
+     "D",
+     674
+    ],
+    [
+     "C",
+     129
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第14排A面",
+   "books_count": 770,
+   "top_subjects": [
+    [
+     "D",
+     770
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第14排B面",
+   "books_count": 946,
+   "top_subjects": [
+    [
+     "D",
+     946
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第15排A面",
+   "books_count": 684,
+   "top_subjects": [
+    [
+     "D",
+     684
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第15排B面",
+   "books_count": 719,
+   "top_subjects": [
+    [
+     "D",
+     719
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第16排A面",
+   "books_count": 693,
+   "top_subjects": [
+    [
+     "D",
+     693
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第16排B面",
+   "books_count": 763,
+   "top_subjects": [
+    [
+     "D",
+     763
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第17排A面",
+   "books_count": 694,
+   "top_subjects": [
+    [
+     "D",
+     694
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第17排B面",
+   "books_count": 687,
+   "top_subjects": [
+    [
+     "D",
+     687
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第18排A面",
+   "books_count": 730,
+   "top_subjects": [
+    [
+     "D",
+     730
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第18排B面",
+   "books_count": 523,
+   "top_subjects": [
+    [
+     "D",
+     523
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第19排A面",
+   "books_count": 464,
+   "top_subjects": [
+    [
+     "D",
+     464
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第19排B面",
+   "books_count": 478,
+   "top_subjects": [
+    [
+     "D",
+     478
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第20排A面",
+   "books_count": 569,
+   "top_subjects": [
+    [
+     "D",
+     569
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第20排B面",
+   "books_count": 487,
+   "top_subjects": [
+    [
+     "D",
+     487
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第21排A面",
+   "books_count": 414,
+   "top_subjects": [
+    [
+     "E",
+     398
+    ],
+    [
+     "D",
+     16
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第21排B面",
+   "books_count": 358,
+   "top_subjects": [
+    [
+     "E",
+     358
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第22排A面",
+   "books_count": 274,
+   "top_subjects": [
+    [
+     "E",
+     274
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第22排B面",
+   "books_count": 635,
+   "top_subjects": [
+    [
+     "TB",
+     635
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第23排A面",
+   "books_count": 721,
+   "top_subjects": [
+    [
+     "TB",
+     573
+    ],
+    [
+     "TF",
+     78
+    ],
+    [
+     "TE",
+     50
+    ],
+    [
+     "TD",
+     15
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第23排B面",
+   "books_count": 593,
+   "top_subjects": [
+    [
+     "TG",
+     537
+    ],
+    [
+     "TH",
+     53
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第24排A面",
+   "books_count": 708,
+   "top_subjects": [
+    [
+     "TH",
+     401
+    ],
+    [
+     "TK",
+     173
+    ],
+    [
+     "TM",
+     59
+    ],
+    [
+     "TL",
+     43
+    ],
+    [
+     "TJ",
+     22
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第24排B面",
+   "books_count": 561,
+   "top_subjects": [
+    [
+     "TM",
+     561
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第25排A面",
+   "books_count": 562,
+   "top_subjects": [
+    [
+     "TN",
+     460
+    ],
+    [
+     "TM",
+     101
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第25排B面",
+   "books_count": 681,
+   "top_subjects": [
+    [
+     "TN",
+     681
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第26排A面",
+   "books_count": 542,
+   "top_subjects": [
+    [
+     "TN",
+     542
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第26排B面",
+   "books_count": 906,
+   "top_subjects": [
+    [
+     "TP",
+     733
+    ],
+    [
+     "TN",
+     173
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第27排A面",
+   "books_count": 600,
+   "top_subjects": [
+    [
+     "TP",
+     600
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第27排B面",
+   "books_count": 1615,
+   "top_subjects": [
+    [
+     "TP",
+     1615
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第28排A面",
+   "books_count": 759,
+   "top_subjects": [
+    [
+     "TP",
+     759
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第28排B面",
+   "books_count": 537,
+   "top_subjects": [
+    [
+     "TP",
+     261
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第29排A面",
+   "books_count": 785,
+   "top_subjects": [
+    [
+     "TP",
+     686
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第29排B面",
+   "books_count": 731,
+   "top_subjects": []
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第30排A面",
+   "books_count": 798,
+   "top_subjects": [
+    [
+     "TP",
+     428
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第30排B面",
+   "books_count": 783,
+   "top_subjects": [
+    [
+     "TP",
+     783
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第31排A面",
+   "books_count": 819,
+   "top_subjects": [
+    [
+     "TP",
+     819
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第31排B面",
+   "books_count": 765,
+   "top_subjects": [
+    [
+     "TP",
+     765
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第32排A面",
+   "books_count": 686,
+   "top_subjects": [
+    [
+     "TP",
+     686
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第32排B面",
+   "books_count": 611,
+   "top_subjects": [
+    [
+     "TP",
+     605
+    ],
+    [
+     "TQ",
+     5
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第33排A面",
+   "books_count": 725,
+   "top_subjects": [
+    [
+     "TQ",
+     710
+    ],
+    [
+     "TS",
+     15
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "1st Floor Compact Book Shelves",
+   "shelf": "第33排B面",
+   "books_count": 769,
+   "top_subjects": [
+    [
+     "TU",
+     469
+    ],
+    [
+     "TS",
+     263
+    ],
+    [
+     "TV",
+     37
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第1排A面",
+   "books_count": 314,
+   "top_subjects": [
+    [
+     "TP",
+     314
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第1排B面",
+   "books_count": 669,
+   "top_subjects": [
+    [
+     "TP",
+     669
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第2排A面",
+   "books_count": 612,
+   "top_subjects": [
+    [
+     "TP",
+     612
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第2排B面",
+   "books_count": 384,
+   "top_subjects": [
+    [
+     "TP",
+     384
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第3排A面",
+   "books_count": 452,
+   "top_subjects": [
+    [
+     "TP",
+     452
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第3排B面",
+   "books_count": 478,
+   "top_subjects": [
+    [
+     "TP",
+     478
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第4排A面",
+   "books_count": 396,
+   "top_subjects": [
+    [
+     "TP",
+     396
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第4排B面",
+   "books_count": 307,
+   "top_subjects": [
+    [
+     "TP",
+     307
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第5排A面",
+   "books_count": 418,
+   "top_subjects": [
+    [
+     "TP",
+     290
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第5排B面",
+   "books_count": 266,
+   "top_subjects": [
+    [
+     "TP",
+     10
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第6排A面",
+   "books_count": 488,
+   "top_subjects": [
+    [
+     "TP",
+     488
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第6排B面",
+   "books_count": 731,
+   "top_subjects": [
+    [
+     "TP",
+     485
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第7排A面",
+   "books_count": 581,
+   "top_subjects": []
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第7排B面",
+   "books_count": 600,
+   "top_subjects": []
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第8排A面",
+   "books_count": 607,
+   "top_subjects": [
+    [
+     "TP",
+     308
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第8排B面",
+   "books_count": 716,
+   "top_subjects": [
+    [
+     "TP",
+     713
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第9排A面",
+   "books_count": 902,
+   "top_subjects": [
+    [
+     "TP",
+     902
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第9排B面",
+   "books_count": 766,
+   "top_subjects": [
+    [
+     "TP",
+     766
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第10排A面",
+   "books_count": 888,
+   "top_subjects": [
+    [
+     "TP",
+     888
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第10排B面",
+   "books_count": 427,
+   "top_subjects": [
+    [
+     "TP",
+     427
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第11排A面",
+   "books_count": 2,
+   "top_subjects": [
+    [
+     "TP",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第11排B面",
+   "books_count": 876,
+   "top_subjects": [
+    [
+     "TP",
+     876
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第12排A面",
+   "books_count": 382,
+   "top_subjects": [
+    [
+     "TP",
+     382
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "2nd Floor Reading Space",
+   "shelf": "第12排B面",
+   "books_count": 631,
+   "top_subjects": [
+    [
+     "TP",
+     630
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第1排A面",
+   "books_count": 807,
+   "top_subjects": [
+    [
+     "TB",
+     802
+    ],
+    [
+     "T",
+     1
+    ],
+    [
+     "TA",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第1排B面",
+   "books_count": 682,
+   "top_subjects": [
+    [
+     "TB",
+     682
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第2排A面",
+   "books_count": 706,
+   "top_subjects": [
+    [
+     "TB",
+     706
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第2排B面",
+   "books_count": 787,
+   "top_subjects": [
+    [
+     "TB",
+     787
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第3排A面",
+   "books_count": 547,
+   "top_subjects": [
+    [
+     "TB",
+     547
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第3排B面",
+   "books_count": 1208,
+   "top_subjects": [
+    [
+     "TB",
+     1208
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第4排A面",
+   "books_count": 639,
+   "top_subjects": [
+    [
+     "TG",
+     340
+    ],
+    [
+     "TF",
+     126
+    ],
+    [
+     "TE",
+     112
+    ],
+    [
+     "TD",
+     40
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第4排B面",
+   "books_count": 643,
+   "top_subjects": [
+    [
+     "TG",
+     643
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第5排A面",
+   "books_count": 561,
+   "top_subjects": [
+    [
+     "TH",
+     542
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第5排B面",
+   "books_count": 916,
+   "top_subjects": [
+    [
+     "TH",
+     916
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第6排A面",
+   "books_count": 600,
+   "top_subjects": [
+    [
+     "TK",
+     394
+    ],
+    [
+     "TH",
+     158
+    ],
+    [
+     "TJ",
+     40
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第6排B面",
+   "books_count": 612,
+   "top_subjects": [
+    [
+     "TK",
+     612
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第7排A面",
+   "books_count": 519,
+   "top_subjects": [
+    [
+     "TM",
+     358
+    ],
+    [
+     "TL",
+     133
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第7排B面",
+   "books_count": 622,
+   "top_subjects": [
+    [
+     "TM",
+     622
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第8排A面",
+   "books_count": 701,
+   "top_subjects": [
+    [
+     "TM",
+     701
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "3rd Floor Reading Space",
+   "shelf": "第8排B面",
+   "books_count": 508,
+   "top_subjects": [
+    [
+     "TM",
+     508
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第1排A面",
+   "books_count": 621,
+   "top_subjects": [
+    [
+     "TN",
+     619
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第1排B面",
+   "books_count": 647,
+   "top_subjects": [
+    [
+     "TN",
+     647
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第2排A面",
+   "books_count": 554,
+   "top_subjects": [
+    [
+     "TN",
+     554
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第2排B面",
+   "books_count": 648,
+   "top_subjects": [
+    [
+     "TN",
+     648
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第3排A面",
+   "books_count": 593,
+   "top_subjects": [
+    [
+     "TN",
+     593
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第3排B面",
+   "books_count": 513,
+   "top_subjects": [
+    [
+     "TN",
+     513
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第4排A面",
+   "books_count": 741,
+   "top_subjects": [
+    [
+     "TN",
+     741
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第4排B面",
+   "books_count": 864,
+   "top_subjects": [
+    [
+     "TN",
+     864
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第5排A面",
+   "books_count": 649,
+   "top_subjects": [
+    [
+     "TN",
+     649
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第5排B面",
+   "books_count": 531,
+   "top_subjects": [
+    [
+     "TN",
+     531
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第6排A面",
+   "books_count": 733,
+   "top_subjects": [
+    [
+     "TN",
+     733
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第6排B面",
+   "books_count": 903,
+   "top_subjects": [
+    [
+     "TQ",
+     447
+    ],
+    [
+     "TN",
+     445
+    ],
+    [
+     "TP",
+     5
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第7排A面",
+   "books_count": 803,
+   "top_subjects": [
+    [
+     "TQ",
+     803
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第7排B面",
+   "books_count": 944,
+   "top_subjects": [
+    [
+     "TS",
+     543
+    ],
+    [
+     "TQ",
+     400
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第8排A面",
+   "books_count": 836,
+   "top_subjects": [
+    [
+     "TU",
+     483
+    ],
+    [
+     "TS",
+     323
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Reading Space",
+   "shelf": "第8排B面",
+   "books_count": 1018,
+   "top_subjects": [
+    [
+     "TU",
+     878
+    ],
+    [
+     "TV",
+     138
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第7排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "TS",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第8排B面",
+   "books_count": 2,
+   "top_subjects": [
+    [
+     "B",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第9排A面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "B",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第30排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "TP",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第31排A面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "G",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第32排A面",
+   "books_count": 2,
+   "top_subjects": [
+    [
+     "G",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第53排A面",
+   "books_count": 2,
+   "top_subjects": [
+    [
+     "I",
+     2
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第55排A面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "I",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第72排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "K",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第80排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "K",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第86排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "K",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第97排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "O",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第122排A面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "R",
+     1
+    ]
+   ]
+  },
+  {
+   "library": "yidan",
+   "library_name": "一丹图书馆",
+   "sublocation": "4th Floor Thematic Bookshelf_Yidan",
+   "shelf": "第124排B面",
+   "books_count": 1,
+   "top_subjects": [
+    [
+     "R",
+     1
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "name": "sustc-library-catalog-vector-db",
+ "version": "v1",
+ "generated_at": "2026-09-18 14:01:47",
+ "source": "南方科技大学图书馆公开检索系统导出（2026-09-18 补抓版，188,512 书目）",
+ "license_note": "公开书目事实数据；供 sustech-cli 等项目离线检索使用",
+ "stats": {
+  "cards": 188512,
+  "with_call_number": 179587,
+  "shelves": 416,
+  "knn_k": 10,
+  "knn_mutual_ratio": 0.4229301052452894,
+  "clusters": 400,
+  "dim": 512,
+  "model": "bge-small-zh-v1.5",
+  "tfidf": {
+   "rows": 188512,
+   "cols": 338358,
+   "nnz": 3665655
+  }
+ },
+ "docid_rule": {
+  "note": "与 Primo 记录标识的对应关系（供 sustech-cli 构造 reference/detailUrl）",
+  "docid": "L:alma<mms>",
+  "detail_url_template": "https://sustc.primo.exlibrisgroup.com.cn/discovery/fulldisplay?docid=alma{mms}&context=L&vid=86SUSTC_INST:86SUSTC_INST&lang=zh_CN"
+ },
+ "files": [
+  {
+   "path": "cards.jsonl.gz",
+   "size": 9990931,
+   "sha256": "7b3bb0d3c629a4b4eb0359ada7ce616e1e320ed8c30d3f8e67a559b73e6684c3",
+   "note": "书卡（每行一个 JSON；字段: mms/title/creator/publisher/year/language/type/hc/loc/cn/cls/cls2/src）"
+  },
+  {
+   "path": "pca_components.f32.bin",
+   "size": 786432,
+   "sha256": "1aef430fdf72d1e3c3fc59be78e70569379165a4bec168930fb818bc9ba86f2a",
+   "note": "PCA 投影矩阵 W（384×512, float32 LE）；查询与库向量均需投影: v_p = v @ W.T，投影后再归一化"
+  },
+  {
+   "path": "embeddings_int8.bin",
+   "size": 72388608,
+   "sha256": "72a60d6298b28907ee30218b8f287e6f65c45eef31a1bc786352153f9ce7986c",
+   "note": "bge-small-zh-v1.5 向量 int8 量化（188512×384, int8 LE）；还原: v = q * scale / 127"
+  },
+  {
+   "path": "embeddings_scale.f32.bin",
+   "size": 754048,
+   "sha256": "a88239f404d065ceac9021542180ab6dcf6d1eb20559d6409e479b9ef6fa340e",
+   "note": "每向量量化 scale（float32 LE, 188512）"
+  },
+  {
+   "path": "embeddings_meta.json",
+   "size": 361,
+   "sha256": "6656393d804c65a316778541e03733ea3d8828824e0513ee96a0957ac762be2c",
+   "note": "量化/PCA 说明与质量对照（vs 全维 float32）"
+  },
+  {
+   "path": "knn_indptr.i32.bin",
+   "size": 754052,
+   "sha256": "7354552b903cff3cf54c2d515cfad3c3b199a649eb5a7ec303ca44a5c31f16d8",
+   "note": "语义内链图 CSR 行偏移（int32 LE, N+1；每行恰 K 边）"
+  },
+  {
+   "path": "knn_indices.i32.bin",
+   "size": 7540480,
+   "sha256": "88990e45eb128b430eda2e1b2ae8f1d6af3a037af75b0cf8f904c81435dae975",
+   "note": "语义内链图 CSR 邻居行号（int32 LE, N×K）"
+  },
+  {
+   "path": "knn_sims.u8.bin",
+   "size": 1885120,
+   "sha256": "e1ffff80a0aa3f4170ffd794f97e5e667058fc548112169beb0640e33a0efff0",
+   "note": "邻居余弦相似度（uint8 LE：sim ≈ v / 255）"
+  },
+  {
+   "path": "clusters.i32.bin",
+   "size": 754048,
+   "sha256": "3e3e2c44b58f0c5fb1e71ced1c569c7bafef8b02588c2fbb584f2afe9bfc4cfc",
+   "note": "语义簇归属（int32 LE, N；行序对齐 cards）"
+  },
+  {
+   "path": "cluster_centroids.f32.bin",
+   "size": 819200,
+   "sha256": "c9977024c123edbe99b89f5847ce80c196646889431de2a3a887f9988f0ca102",
+   "note": "簇质心（float32 LE, k×512）"
+  },
+  {
+   "path": "clusters.json",
+   "size": 214022,
+   "sha256": "7a28d434a2625a6a680580d1ad6358e282dcebbaf2438991044f9b6c06fa966c",
+   "note": "簇目录（id/大小/关键词/代表书/学科分布）"
+  },
+  {
+   "path": "subjects.json",
+   "size": 15255,
+   "sha256": "5920acf22678d672fced518dace1b05e531c4c668e26e8666d648ee79d432059",
+   "note": "学科目录（中图法 38 组 + 馆藏代码 10 组）"
+  },
+  {
+   "path": "shelves.json",
+   "size": 91203,
+   "sha256": "a9c70efcb6e421415a7584d1d59517bc6298579790e69fea974ed3e4d680b16f",
+   "note": "书架层（416 架，含学科画像）"
+  },
+  {
+   "path": "tfidf/indptr.bin",
+   "size": 754052,
+   "sha256": "b16dd11230c7e0e3ff7cd23b68d018078a64e8ee74c0b39c3c94c7bc73b1b1d8",
+   "note": "CSR 行偏移（int32 LE, N+1）"
+  },
+  {
+   "path": "tfidf/indices.bin",
+   "size": 14662620,
+   "sha256": "c988e92d0372619fba50b503d0e63834ae466e80196b7263a3d30c15000ee655",
+   "note": "CSR 列索引（int32 LE, nnz）"
+  },
+  {
+   "path": "tfidf/data.f32.bin",
+   "size": 14662620,
+   "sha256": "d2a0fba284e7f611ca6aa0104a072b03569c0d1bfd32fc670beb7b195a216dc4",
+   "note": "CSR 数据（float32 LE, nnz；L2 归一化 tf-idf）"
+  },
+  {
+   "path": "tfidf/vocab.json",
+   "size": 3539087,
+   "sha256": "aeb86587d95d8b53a538e6df9c86cd6340c51c4c3833e6e44c6d9872c2024c6b",
+   "note": "词表（term 列表，id=下标）"
+  },
+  {
+   "path": "tfidf/idf.f32.bin",
+   "size": 1353432,
+   "sha256": "0de8bc2cf227eab54fcb6266e55a49aaab8683e4af8ca5afbb8d213a3db93382",
+   "note": "IDF 权重（float32 LE, V）"
+  },
+  {
+   "path": "README.md",
+   "size": 3627,
+   "sha256": "7933f9fe68c7fb724850cb79de8c289e833a7538fca754f5105cf2b5480e4a33",
+   "note": "静态资源（说明/示例；非数据文件）"
+  },
+  {
+   "path": "examples/node-client.js",
+   "size": 9551,
+   "sha256": "f4718cdd39fe059d27cd8a3e9ba76c8630276c2b5cdf108043a73656aef19812",
+   "note": "静态资源（说明/示例；非数据文件）"
+  }
+ ],
+ "total_bytes": 130978759
+}

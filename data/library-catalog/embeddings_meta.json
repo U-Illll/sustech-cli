@@ -1,0 +1,16 @@
+{
+ "model": "bge-small-zh-v1.5",
+ "dim_full": 512,
+ "dim": 384,
+ "n": 188512,
+ "pca": true,
+ "dtype": "int8",
+ "restore": "v_p = (q * scale / 127.0); 检索时先对 raw 向量做 q_raw @ W.T 再归一化",
+ "quality_vs_float32_full_dim": {
+  "n_queries": 200,
+  "topn": 20,
+  "overlap_mean": 0.9807499999999999,
+  "overlap_min": 0.9,
+  "rank1_same": 0.995
+ }
+}

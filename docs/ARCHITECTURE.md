@@ -4,6 +4,37 @@ The CLI is organized around one rule: service logic returns typed values and
 never prints. Commands turn those values into a `CommandResult`; the output
 layer renders text, JSON, or JSONL.
 
+## Teaching period to clock time mapping
+
+SUSTech schedules courses by period number (节次). The CLI converts periods to
+Asia/Shanghai clock times when day and period data are available.
+
+**Current schedule** (effective 2026-09-07):
+
+| Period | Start  | End    | Duration |
+|--------|--------|--------|----------|
+| 1      | 08:00  | 08:50  | 50min    |
+| 2      | 09:00  | 09:50  | 50min    |
+| 3      | 10:20  | 11:10  | 50min    |
+| 4      | 11:20  | 12:10  | 50min    |
+| 5      | 14:00  | 14:50  | 50min    |
+| 6      | 15:00  | 15:50  | 50min    |
+| 7      | 16:20  | 17:10  | 50min    |
+| 8      | 17:20  | 18:10  | 50min    |
+| 9      | 19:00  | 19:50  | 50min    |
+| 10     | 20:00  | 20:50  | 50min    |
+| 11     | 21:00  | 21:50  | 50min    |
+
+All periods are 50 minutes. When `tis schedule` and catalog search results
+include complete period data, structured `startAt` / `endAt` fields (time only,
+`HH:MM` format) are added alongside the existing `periodStart` / `periodEnd`
+fields. The period fields remain for compatibility; agents and scripts can now
+use clock times instead of reinventing period arithmetic.
+
+Legacy schedules (pre-2026-09-07) used different afternoon/evening times and
+additional periods 12-13; the CLI recognizes dates and selects the correct
+mapping automatically.
+
 ```text
 command parser
     ↓

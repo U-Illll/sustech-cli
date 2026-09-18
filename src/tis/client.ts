@@ -27,6 +27,7 @@ import {
   type EvaluationCourseStatus,
   type EvaluationStatusFilter,
 } from "./remaining-evaluation.js";
+import { PERIOD_START_TIMES, PERIOD_DURATION_MINUTES } from "./remaining-calendar.js";
 import type { SelectionPreview } from "./remaining-selection.js";
 import { bundleSelectionCourses, type SelectionCourseBundle } from "./selection-bundles.js";
 import type {
@@ -191,14 +192,14 @@ export class TisClient {
 
   public async enrolled(semester: Semester): Promise<PersonalScheduleEntry[]> {
     const response = await this.session.postForm("/xszykb/queryxszykbzong", { xn: semester.xn, xq: semester.xq });
-    return asRecords(response).map(normalisePersonalScheduleEntry);
+    return asRecords(response).map(normalisePersonalScheduleEntry).map(enrichScheduleEntryWithTime);
   }
 
   public async schedule(semester: Semester, week?: number): Promise<PersonalScheduleEntry[]> {
     const response = week === undefined
       ? await this.session.postForm("/xszykb/queryxszykbzong", { xn: semester.xn, xq: semester.xq })
       : await this.session.postForm("/xszykb/queryxszykbzhou", { xn: semester.xn, xq: semester.xq, zc: week });
-    return asRecords(response).map(normalisePersonalScheduleEntry);
+    return asRecords(response).map(normalisePersonalScheduleEntry).map(enrichScheduleEntryWithTime);
   }
 
   public async currentWeek(): Promise<number> {
@@ -660,4 +661,25 @@ function mutationTransportError(
       next: "Run `sustech tis selection reconcile` for this exact courseId/rwh/round target; do not repeat the mutation.",
     },
   );
+}
+
+function enrichScheduleEntryWithTime(entry: PersonalScheduleEntry): PersonalScheduleEntry {
+  if (entry.periodStart === undefined || entry.periodEnd === undefined) {
+    return entry;
+  }
+  const startSlot = PERIOD_START_TIMES[entry.periodStart];
+  const endSlot = PERIOD_START_TIMES[entry.periodEnd];
+  if (!startSlot || !endSlot) {
+    return entry;
+  }
+  const startHour = String(startSlot[0]).padStart(2, "0");
+  const startMinute = String(startSlot[1]).padStart(2, "0");
+  const endMinutes = endSlot[0] * 60 + endSlot[1] + PERIOD_DURATION_MINUTES;
+  const endHour = String(Math.floor(endMinutes / 60)).padStart(2, "0");
+  const endMinute = String(endMinutes % 60).padStart(2, "0");
+  return {
+    ...entry,
+    startAt: `${startHour}:${startMinute}`,
+    endAt: `${endHour}:${endMinute}`,
+  };
 }

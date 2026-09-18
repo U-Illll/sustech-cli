@@ -15,6 +15,17 @@ All notable changes to `sustech-cli` are documented in this file.
   headless servers, containers, and CI environments without requiring a desktop
   D-Bus session or `secret-tool`. The encrypted store requires a master password
   on first use and never stores credentials in plaintext.
+- `tis schedule` now supports `--date YYYY-MM-DD` to query a specific date's
+  schedule, resolving the teaching week from the academic calendar automatically.
+  The `today` behavior uses `--date` with the current Shanghai date internally.
+- Personal schedule entries (`tis schedule`) and course catalog search results
+  now include structured `startAt` / `endAt` clock times (Asia/Shanghai `HH:MM`)
+  alongside the existing `periodStart` / `periodEnd` fields when period data is
+  available. The official SUSTech period→clock mapping is documented in
+  `docs/ARCHITECTURE.md` so agents and humans share one source of truth.
+- Schedule entries with multiple rooms (e.g. "505, 506") now populate a
+  structured `rooms` array when parseable, while keeping the primary `room`
+  field for compatibility.
 
 ### Changed
 
@@ -22,6 +33,11 @@ All notable changes to `sustech-cli` are documented in this file.
   Secret Service is unavailable. Instead, it automatically uses the encrypted
   file backend at `~/.config/sustech-cli/encrypted-credentials/` with file
   mode `0600`.
+- Credential unlock failures now use stable, machine-readable error codes:
+  `MASTER_PASSWORD_REQUIRED` (missing master password for encrypted-file backend)
+  and `MASTER_PASSWORD_INVALID` (decryption failed). Remediation messages
+  consistently mention `SUSTECH_MASTER_PASSWORD` or interactive unlock across
+  `auth status`, `doctor`, and actual credential reads.
 
 ## [0.12.1] - 2026-09-12
 

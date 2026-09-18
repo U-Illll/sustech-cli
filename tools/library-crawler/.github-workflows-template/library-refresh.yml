@@ -1,0 +1,146 @@
+# library-refresh.yml —— 图书馆目录「增量刷新」定时工作流模板
+#
+# 使用方式：
+#   1. 把本文件复制到仓库的  .github/workflows/library-refresh.yml
+#      （本目录名带 `-template` 后缀，是为了未启用时不被 Actions 扫描）
+#   2. 可选：在仓库 Settings → Secrets and variables → Actions 里配置
+#        vars.CATALOG_URL     现有发行数据包的下载地址（含 cards.jsonl[.gz] 与 topics/nodes.json）
+#        vars.CATALOG_SUBDIR  解包后的子目录名（默认 lib-catalog-data）
+#   3. 手动触发：Actions → Library catalog refresh → Run workflow
+#
+# 网络前提（实测）：
+#   GitHub 托管 runner 可直连 https://sustc.primo.exlibrisgroup.com.cn（公网解析 + 302 跳转正常，标准 443，无需登录）。
+#   默认只跑几十~几百次请求（date-sweep 早停），远低于站点礼貌速率红线（实测 5.5 req/s 零错）。
+#   若托管 runner 出口不可达（区域策略/校园网/站点限流），改用 self-hosted runner —— 见文件末尾注释块。
+
+name: Library catalog refresh
+
+on:
+  schedule:
+    # UTC 周日 19:30 = 北京时间周一 03:30（避开白天检索高峰）
+    - cron: '30 19 * * 0'
+  workflow_dispatch:
+    inputs:
+      min_interval:
+        description: '请求最小间隔秒（默认 0.20 = 5 req/s；硬下限 0.18，脚本会拒绝更快的值）'
+        required: false
+        default: '0.20'
+      max_requests:
+        description: '本次运行请求预算'
+        required: false
+        default: '3000'
+      commit:
+        description: '把增量包提交到 data-refresh/<日期> 分支（true/false）'
+        required: false
+        default: 'false'
+
+# 只读仓库内容 + 允许上传 artifact；提交分支时需要 contents: write
+permissions:
+  contents: write
+
+concurrency:
+  # 防止上一次没跑完就叠加（重复抓取既浪费也会给对方站点添压力）
+  group: library-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r tools/library-crawler/requirements.txt || pip install requests numpy
+
+      - name: Obtain existing catalog (cards.jsonl + topics/nodes.json)
+        env:
+          CATALOG_URL: ${{ vars.CATALOG_URL }}
+          CATALOG_SUBDIR: ${{ vars.CATALOG_SUBDIR }}
+        run: |
+          set -euo pipefail
+          DEST="${CATALOG_SUBDIR:-lib-catalog-data}"
+          mkdir -p "$DEST"
+          if [ -n "${CATALOG_URL:-}" ]; then
+            echo "下载现有发行包：$CATALOG_URL"
+            curl -fsSL "$CATALOG_URL" -o catalog.tar.gz
+            tar -xzf catalog.tar.gz -C . --strip-components=0 || unzip -q catalog.tar.gz
+            # 若压缩包内层还有一层目录，自动探测含 cards.jsonl 的那一层
+            if [ ! -f "$DEST/cards.jsonl" ] && [ ! -f "$DEST/cards.jsonl.gz" ]; then
+              FOUND=$(dirname "$(find . -maxdepth 3 \( -name cards.jsonl -o -name cards.jsonl.gz \) | head -n1)")
+              [ -n "$FOUND" ] && DEST="$FOUND"
+            fi
+          else
+            echo "未配置 vars.CATALOG_URL —— 改为从仓库内取（适用于把数据也放在本仓库的场景）"
+            DEST="$(dirname "$(find . -maxdepth 4 \( -name cards.jsonl -o -name cards.jsonl.gz \) | head -n1)")"
+          fi
+          echo "CATALOG_DIR=$DEST" >> "$GITHUB_ENV"
+          test -f "$DEST/cards.jsonl" -o -f "$DEST/cards.jsonl.gz"
+          test -f "$DEST/topics/nodes.json"
+          echo "现有目录：$DEST"; du -sh "$DEST"
+
+      - name: Self-test (offline, must pass before touching the network)
+        run: python tools/library-crawler/refresh_catalog.py --self-test
+
+      - name: Incremental refresh
+        run: |
+          set -euo pipefail
+          OUT="refresh-$(date -u +%Y%m%d)"
+          python tools/library-crawler/refresh_catalog.py \
+            --catalog "$CATALOG_DIR" \
+            --out "$OUT" \
+            --min-interval "${{ github.event.inputs.min_interval || '0.20' }}" \
+            --max-requests "${{ github.event.inputs.max_requests || '3000' }}"
+          echo "REFRESH_OUT=$OUT" >> "$GITHUB_ENV"
+          echo "--- manifest ---"; cat "$OUT/manifest.json"
+
+      - name: Upload delta package as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: library-refresh-delta
+          path: |
+            ${{ env.REFRESH_OUT }}/cards_delta.jsonl
+            ${{ env.REFRESH_OUT }}/card_topics_delta.jsonl
+            ${{ env.REFRESH_OUT }}/card_topics_delta.readable.tsv
+            ${{ env.REFRESH_OUT }}/vocab_gap_report.json
+            ${{ env.REFRESH_OUT }}/manifest.json
+            ${{ env.REFRESH_OUT }}/MERGE.md
+          if-no-files-found: warn
+          retention-days: 30
+
+      # 可选：把增量包提交到独立分支，由人工/PR 审阅后再合并（推荐，避免机器人直推主分支）
+      - name: Commit delta to a review branch
+        if: ${{ github.event.inputs.commit == 'true' }}
+        run: |
+          set -euo pipefail
+          BR="data-refresh/$(date -u +%Y%m%d)"
+          git config user.name  "library-refresh-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BR"
+          mkdir -p data-refresh
+          cp "$REFRESH_OUT"/{cards_delta.jsonl,card_topics_delta.jsonl,vocab_gap_report.json,manifest.json,MERGE.md} data-refresh/ 2>/dev/null || true
+          git add data-refresh
+          git commit -m "chore(data): library catalog incremental refresh $(date -u +%Y-%m-%d)" || echo "无变更"
+          git push -u origin "$BR"
+
+# ---------------------------------------------------------------------------
+# 备选：self-hosted runner（托管 runner 出口不可达时使用）
+#
+#   1) 在一台能访问校园网/图书馆站点的机器上注册 runner（仓库 Settings → Actions → Runners）；
+#   2) 给 runner 打标签，例如：  ./config.sh --labels library-net,self-hosted
+#   3) 把上面的 `runs-on: ubuntu-latest` 换成：
+#        runs-on: [self-hosted, library-net]
+#   4) 内网机器通常是常驻的，可把 `--min-interval` 调大以示礼貌（如 0.5），并去掉 concurrency 也不需要——
+#      但保留它更安全（防止 cron 与手动触发叠加）。
+#
+#   5) 若站点对 datacenter 出口有额外限流，可再降并发：`--limit 100 --max-pages 5`。
+# ---------------------------------------------------------------------------

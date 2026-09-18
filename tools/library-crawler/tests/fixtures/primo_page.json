@@ -1,0 +1,126 @@
+{
+ "pages": [
+  {
+   "bucket": "A",
+   "info": {
+    "totalResultsLocal": 3
+   },
+   "docs": [
+    {
+     "pnx": {
+      "display": {
+       "mms": [
+        "999002329093604181"
+       ],
+       "title": [
+        "唯物史观视野中的生态文明 = Ecological civilization in the perspective of historical materialism"
+       ],
+       "creator": [
+        "张云飞著$$Q张云飞著"
+       ],
+       "publisher": [
+        "北京 ; 中国人民大学出版社"
+       ],
+       "creationdate": [
+        "2014"
+       ],
+       "language": [
+        "chi"
+       ],
+       "type": [
+        "book"
+       ]
+      }
+     },
+     "delivery": {
+      "holding": [
+       {
+        "libraryCode": "yidan",
+        "mainLocation": "Yidan Library",
+        "subLocation": "1st Floor Compact Book Shelves",
+        "callNumber": "A811.63 /21 第1排A面",
+        "availabilityStatus": "available"
+       }
+      ]
+     }
+    },
+    {
+     "pnx": {
+      "display": {
+       "mms": [
+        "999002618508804181"
+       ],
+       "title": [
+        "“喻”见马克思 《资本论》的比喻修辞研究"
+       ],
+       "creator": [
+        "胡士杰著$$Q胡士杰著"
+       ],
+       "publisher": [
+        "北京 ; 人民出版社"
+       ],
+       "creationdate": [
+        "2025"
+       ],
+       "language": [
+        "chi"
+       ],
+       "type": [
+        "book"
+       ]
+      }
+     },
+     "delivery": {
+      "holding": [
+       {
+        "libraryCode": "yidan",
+        "mainLocation": "Yidan Library",
+        "subLocation": "1st Floor Compact Book Shelves",
+        "callNumber": "A811.23 /25 第1排A面",
+        "availabilityStatus": "unavailable"
+       }
+      ]
+     }
+    },
+    {
+     "pnx": {
+      "display": {
+       "mms": [
+        "999001017879704181"
+       ],
+       "title": [
+        "国外马克思主义意识形态研究著作评析 = Analisysis of Marx ideology of foreign classics"
+       ],
+       "creator": [
+        "侯惠勤等编著$$Q侯惠勤等编著"
+       ],
+       "publisher": [
+        "北京 ; 中国社会科学出版社"
+       ],
+       "creationdate": [
+        "2015"
+       ],
+       "language": [
+        "chi"
+       ],
+       "type": [
+        "book"
+       ]
+      }
+     },
+     "delivery": {
+      "holding": [
+       {
+        "libraryCode": "yidan",
+        "mainLocation": "Yidan Library",
+        "subLocation": "1st Floor Compact Book Shelves",
+        "callNumber": "A811.63 /12 第1排A面",
+        "availabilityStatus": "available"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

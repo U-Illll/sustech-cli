@@ -41,7 +41,7 @@ LLM 接口（签名固定，实现为存根；**待与作者讨论**，见 topic
   * region 结构（R2-B 同步为实际实现，AUDIT-GRAPH F16）:
       {seed:{id,term,type,freq,cluster,cls}, hops, decay, threshold,
        layers:[{hop,n, nodes:[{id,term,type,score,path,hops_used}]}],
-       evidence:[{mms,title,cls,cls2,year,via_topic,via_id,min_hop,tier,region_cover_score}],
+       evidence:[{mms,title,cls,cls2,year,via_topic,via_id,min_hop,tier,region_cover_score,call,loc}],
        stats:{visited,edges_scanned,books,books_capped,saturated_budget,elapsed_ms,
               weight_min,weight_median,weight_max}}
   * 环境变量 TOPIC_LLM: off（默认；纯结构化占位文，不调用任何模型）| mock（确定性模板文）|<endpoint>
@@ -77,6 +77,7 @@ if _SCRIPT_DIR not in sys.path:
 
 from catalog_vector import tokenize                     # 同源分词，禁止另写
 from topic_build import normalize_term                   # 同源归一
+import book_labels as BL                                 # 书标编号/位置接入（labels.db，2026-09-20）
 
 DATA_DEFAULT = os.path.expanduser("~/go/lib-catalog-data")
 DECAY_DEFAULT = 0.86
@@ -568,6 +569,13 @@ def evidence_of(D, region, nodes, topic_cards, card_mms, k, per_topic=8, fwd=Non
                    "via_topic": nodes[nid]["term"], "via_id": nid,
                    "min_hop": region["layer"].get(nid, 0), "tier": tier,
                    "region_cover_score": round(rel, 4)})
+    # 书标编号 / 位置接入（2026-09-20）：mms → (loc, call) 概览（labels.db）
+    if ev:
+        _labs = BL.query_labels(D, [e["mms"] for e in ev])
+        for e in ev:
+            _loc, _call = BL.brief(_labs.get(e["mms"], []))
+            e["call"] = _call
+            e["loc"] = _loc
     return ev
 
 
@@ -651,7 +659,13 @@ def cmd_around(args):
     if region["evidence"]:
         print(f"\n[书证据] 抽 {len(region['evidence'])} 张卡（card_topics 反查）")
         for e in region["evidence"]:
-            print(f"  {e['mms']}  {e['title'][:44]:<46} cls={e['cls']}/{e['cls2']}  via 「{e['via_topic']}」")
+            seg = f"  {e['mms']}  {e['title'][:44]:<46} cls={e['cls']}/{e['cls2']}"
+            if e.get("call"):
+                seg += f"  [{e['call']}]"
+            if e.get("loc"):
+                seg += f"  @ {e['loc']}"
+            seg += f"  via 「{e['via_topic']}」"
+            print(seg)
     return 0
 
 

@@ -25,8 +25,8 @@ index/knn_csr.npz + clusters.npy + clusters.json（400 簇目录）
 # 0) 完整性检查（对任意导出目录；全量程序化交叉验证）
 python3 check_completeness.py --base "<导出目录>" [--out 报告.txt]
 
-# 1) 编译（默认从桌面当前版读取）
-python3 compile_cards.py --src "/mnt/c/Users/汪子恒/Desktop/南科大图书馆藏书目录" \
+# 1) 编译（--src 指向馆藏导出目录）
+python3 compile_cards.py --src "<导出目录>" \
                          --out ~/go/lib-catalog-data
 # 2) 双索引构建（实测 356s：TF-IDF 6s + 语义 encode 348s）
 python3 catalog_vector.py build
@@ -251,3 +251,29 @@ python3 graph_report.py --data ~/go/lib-catalog-data 2>&1 | tail -30   # ④ 校
 4. 🟡 **兼容性举证待补强**：工具链目录非 git 仓库，「git diff 证明」需以 sha256 快照替代或先 `git init`。
 5. 🟡 **口径类待讨论**（详见 `topics/INTERFACE-PROPOSAL.md`）：`cls` 双产物是否长期保留、出度上限是否放宽、同簇边 0.3 的定位、共现封顶 50、空主题卡 22,573 张、衰减系数 0.86 可否迁移、LLM 隐私边界与预算。
 6. ✅ **已闭环**：P3 门槛口径已裁定（② 0.9797 PASS，① 0.8972 并列观察项）；P4 查询编排与近词扩展已落地；五阶段验收脚本齐备且全绿；导出版分支已实现。
+
+---
+
+## v3.1 变更（2026-09-20）：书标编号 + 馆藏位置接入检索层
+
+**背景**：书架找书需要「书名+图书馆+书架+书标编号」四件套。原检索输出缺"完整书标编号"
+（书标=分类号+种次号，如 `TP393.08 /5:2`；旧输出至多显示分类大类 `[TP]`），主题图通道还缺"位置"。
+
+**新增数据**：`~/go/lib-catalog-data/labels.db`（221,767 行 / 187,477 mms；
+表 `label(mms, seq, lib, sub, shelf, call)`，由 `build_labels_db.py` 从书标编号加工产物
+`~/go/library-scrape-site-20260918/labels-20260920/catalog_labeled.csv` 构建，可随数据刷新重跑）。
+
+**新增模块**：`book_labels.py`（`query_labels / brief / loc_brief / all_calls`；多编号显示
+"首个 等N个"、多位置 "… 等N处"；labels.db 缺失时静默降级为旧行为）。
+
+**接入点（三处）**：
+
+| 脚本 | 命令 | 变化 |
+|---|---|---|
+| topic_graph.py | around / summarize | evidence 增加 `call`（书标编号）与 `loc`（位置短形式）；渲染行追加 `[编号] @ 位置`（JSON 同步，向后兼容） |
+| catalog_vector.py | search / kw / hybrid / get | 命中行标签 `[大类]` → `[完整编号]`（无编号退回大类）；`get` 新增 `call_labels` 段（位置→编号） |
+| booklist_gen.py | C/AI 书单 | 行尾新增 `｜ 编号：…`（2026-09-20 重生成，编号覆盖率 100%，strip 后与旧版 0 差异） |
+
+**回归**：search / summarize / links / kw 全通；JSON 字段只增不改。备份：各脚本 `*.bak-20260920`。
+
+**重跑方式**：`python3 build_labels_db.py`（数据刷新后）→ 三脚本自动读取。

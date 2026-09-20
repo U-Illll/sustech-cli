@@ -36,6 +36,11 @@ if os.path.isdir(_PYLIBS) and _PYLIBS not in sys.path:
     sys.path.insert(0, _PYLIBS)
 import numpy as np
 
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+if _SCRIPT_DIR not in sys.path:
+    sys.path.insert(0, _SCRIPT_DIR)
+import book_labels as BL                                 # 书标编号/位置接入（labels.db，2026-09-20）
+
 DATA_DEFAULT = os.path.expanduser("~/go/lib-catalog-data")
 MODEL_DEFAULT = os.path.expanduser("~/go/models/bge-small-zh-v1.5")
 
@@ -340,13 +345,15 @@ def topk(scores, k):
     return [(int(i), float(scores[i])) for i in part]
 
 
-def fmt_hit(rank, score, c):
+def fmt_hit(rank, score, c, lab=None):
     title = (c.get("title") or "").strip()
     creator = (c.get("creator") or "").split("$$Q")[0].strip()
     y = (c.get("year") or "").strip()
     lang = (c.get("language") or "").strip()
     cls = (c.get("cls") or "").strip()
-    tags = [t for t in (cls, lang if lang and lang != "chi" else "") if t]
+    # 书标编号（labels.db；2026-09-20 接入）优先于大类 cls 展示
+    call_disp = BL.brief(lab)[1] if lab else ""
+    tags = [t for t in (call_disp or cls, lang if lang and lang != "chi" else "") if t]
     title_suffix = f"  [{'·'.join(tags)}]" if tags else ""
     parts = []
     if creator:
@@ -386,10 +393,11 @@ def run_query(args, mode):
         return 1
     hits = topk(scores, args.top)
     cards = idx.read_cards([i for i, _ in hits])
+    labs = BL.query_labels(D, [c.get("mms") for c in cards])   # 书标编号（2026-09-20 接入）
     label = {"sem": "语义检索", "kw": "关键词检索(TF-IDF)", "hybrid": "混合检索(0.6语义+0.4关键词)"}[mode]
     print(f"=== {label}: {args.query}（top {len(hits)}，{time.time() - t0:.1f}s）=== ")
     for rank, ((i, s), c) in enumerate(zip(hits, cards), 1):
-        print(fmt_hit(rank, s, c))
+        print(fmt_hit(rank, s, c, labs.get(c.get("mms"))))
     return 0
 
 
@@ -414,6 +422,11 @@ def cmd_get(args):
         print(f"  locations: ")
         for seg in loc.split("; "):
             print(f"    - {seg}")
+    labs = BL.query_labels(D, [c.get("mms") or args.mms]).get(c.get("mms") or args.mms, [])
+    if labs:
+        print(f"  call_labels: (位置 → 书标编号)")
+        for _lib, _sub, _shelf, _call in labs:
+            print(f"    - {_call or '—'}  @ {BL.loc_brief(_lib, _sub, _shelf)}")
     if c.get("src") == "hy":
         print("  note: 涵泳艺术特藏（清单收录，位置未详）")
     lab = idx.labels()

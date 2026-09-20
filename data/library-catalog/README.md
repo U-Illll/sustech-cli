@@ -95,12 +95,29 @@ independent model review are documented in the reports.
 > sustech-cli itself does not embed an LLM today, so this interface is left for
 > future integration (agent side or optional CLI capability).
 
+## Book label layer (v3.1) — `labels.db`
+
+A **location-level label index**: for every catalog location it resolves the
+**book label call number** — the classification + accession code printed on the
+physical book spine (e.g. `TP393.08 /5:2`) — enabling shelf-precise lookup
+(book → label → shelf). Built from the 2026-09-20 labeled export.
+
+| File | Shape / Type | Description |
+|---|---|---|
+| `labels.db` | SQLite | `label(mms, seq, lib, sub, shelf, call)` + `mms` index — 221,767 rows / 187,477 records |
+
+Usage (stdlib `sqlite3`): `SELECT * FROM label WHERE mms = ?`. Multi-volume
+works carry one row per volume (distinct `call` suffix). Rebuild:
+`tools/lib-catalog/build_labels_db.py`; shared helpers:
+`tools/lib-catalog/book_labels.py`.
+
 ## Toolchain — `tools/lib-catalog/`
 
 The Python toolchain that built both layers, kept alongside for reproducibility:
 
 - Data: `compile_cards.py`, `catalog_vector.py`, `build_graph.py`, `graph_report.py`, `export_release.py`
 - Topic layer: `topic_build.py`, `topic_edges.py`, `topics_report.py`, `topic_graph.py` (search / around / graph / summarize CLI)
+- Labels: `build_labels_db.py`, `book_labels.py` (call-number lookup; retrieval outputs show `[call]` + shelf line)
 - Checks: `acceptance/` (topics-p0..p5.sh) and `tests/regression/` (237-check regression suite)
 
 ## Crawler — `tools/library-crawler/`
